@@ -117,6 +117,12 @@ function isDeliveryOrPaymentName(name) {
   return isShippingName(name) || isPaymentName(name);
 }
 
+// itemCode (col 45) starts with BILLING or SHIPPING → exclude from revenue
+function isBillingOrShippingItem(itemCode) {
+  const c = (itemCode || '').trim().toUpperCase();
+  return c.startsWith('BILLING') || c.startsWith('SHIPPING');
+}
+
 function normalizeDeliveryPaymentName(name) {
   const n = (name || '').trim();
   if (!n) return n;
@@ -176,6 +182,8 @@ function aggregateOrders(csv, eurMultiplier = 1) {
     }
 
     // Sum itemTotalPriceWithVat (col 55) and itemTotalPriceWithoutVat (col 56)
+    // Skip shipping and billing line items (itemCode col 45)
+    if (isBillingOrShippingItem(cols[45])) continue;
     byDay[date].revenue_vat += parseNum(cols[55]) * eurMultiplier;
     byDay[date].revenue     += parseNum(cols[56]) * eurMultiplier;
   }
@@ -208,6 +216,7 @@ function aggregateProducts(csv, eurMultiplier = 1) {
 
     if (!name || amount <= 0) continue;
     if (isDeliveryOrPaymentName(name)) continue;
+    if (isBillingOrShippingItem(cols[45])) continue;
 
     const key = `${date}||${name}`;
     if (!byDateProduct[key]) {
@@ -427,6 +436,9 @@ function aggregateHourly(csv) {
     if (!orderMeta.has(code)) {
       orderMeta.set(code, { date, hour, rev: 0 });
     }
+
+    // Skip shipping and billing line items
+    if (isBillingOrShippingItem(cols[45])) continue;
     orderMeta.get(code).rev += parseNum(cols[56]); // itemTotalPriceWithoutVat
   }
 
@@ -588,12 +600,17 @@ function aggregateRetention(csv) {
     if (EXCLUDED_STATUSES.has(status)) continue;
 
     const date   = cols[1].substring(0, 10);
-    const revVat = parseNum(cols[55]); // itemTotalPriceWithVat
-    const rev    = parseNum(cols[56]); // itemTotalPriceWithoutVat
 
     if (!orderTotals.has(code)) {
       orderTotals.set(code, { email, date, revVat: 0, rev: 0 });
     }
+
+    // Skip shipping and billing line items
+    if (isBillingOrShippingItem(cols[45])) continue;
+
+    const revVat = parseNum(cols[55]); // itemTotalPriceWithVat
+    const rev    = parseNum(cols[56]); // itemTotalPriceWithoutVat
+
     const o = orderTotals.get(code);
     o.revVat += revVat;
     o.rev    += rev;

@@ -33,13 +33,6 @@ export const productDataSK: ProductSaleRecord[] = [
   },
   {
     "date": "2024-04-24",
-    "name": "Osobný odber",
-    "amount": 3,
-    "revenue_vat": 0,
-    "revenue": 0
-  },
-  {
-    "date": "2024-04-24",
     "name": "Sardinky Luzienne 115 g",
     "amount": 1,
     "revenue_vat": 7.14,
@@ -58,13 +51,6 @@ export const productDataSK: ProductSaleRecord[] = [
     "amount": 5,
     "revenue_vat": 54,
     "revenue": 45
-  },
-  {
-    "date": "2024-04-26",
-    "name": "Osobný odber",
-    "amount": 3,
-    "revenue_vat": 0,
-    "revenue": 0
   },
   {
     "date": "2024-04-26",
@@ -100,13 +86,6 @@ export const productDataSK: ProductSaleRecord[] = [
     "amount": 1,
     "revenue_vat": 5.91,
     "revenue": 4.93
-  },
-  {
-    "date": "2024-06-02",
-    "name": "Osobný odber",
-    "amount": 1,
-    "revenue_vat": 0,
-    "revenue": 0
   },
   {
     "date": "2024-06-07",
@@ -835,13 +814,6 @@ export const productDataSK: ProductSaleRecord[] = [
     "amount": 1,
     "revenue_vat": 6.97,
     "revenue": 5.81
-  },
-  {
-    "date": "2024-07-19",
-    "name": "Osobný odber",
-    "amount": 1,
-    "revenue_vat": 0,
-    "revenue": 0
   },
   {
     "date": "2024-07-19",
@@ -1818,13 +1790,6 @@ export const productDataSK: ProductSaleRecord[] = [
   },
   {
     "date": "2024-09-24",
-    "name": "Osobný odber",
-    "amount": 1,
-    "revenue_vat": 0,
-    "revenue": 0
-  },
-  {
-    "date": "2024-09-24",
     "name": "Rajská záhrada",
     "amount": 1,
     "revenue_vat": 20.31,
@@ -1983,13 +1948,6 @@ export const productDataSK: ProductSaleRecord[] = [
     "amount": 1,
     "revenue_vat": 12.06,
     "revenue": 10.05
-  },
-  {
-    "date": "2024-09-27",
-    "name": "Osobný odber",
-    "amount": 1,
-    "revenue_vat": 0,
-    "revenue": 0
   },
   {
     "date": "2024-09-27",
@@ -2214,13 +2172,6 @@ export const productDataSK: ProductSaleRecord[] = [
     "amount": 1,
     "revenue_vat": 6.08,
     "revenue": 5.07
-  },
-  {
-    "date": "2024-10-04",
-    "name": "Osobný odber",
-    "amount": 1,
-    "revenue_vat": 0,
-    "revenue": 0
   },
   {
     "date": "2024-10-04",
@@ -2700,13 +2651,6 @@ export const productDataSK: ProductSaleRecord[] = [
   },
   {
     "date": "2024-10-13",
-    "name": "Osobný odber",
-    "amount": 1,
-    "revenue_vat": 0,
-    "revenue": 0
-  },
-  {
-    "date": "2024-10-13",
     "name": "Tuniak v olivovom oleji 160 g",
     "amount": 2,
     "revenue_vat": 21.72,
@@ -2886,13 +2830,6 @@ export const productDataSK: ProductSaleRecord[] = [
     "amount": 1,
     "revenue_vat": 4.76,
     "revenue": 3.97
-  },
-  {
-    "date": "2024-10-24",
-    "name": "Osobný odber",
-    "amount": 2,
-    "revenue_vat": 0,
-    "revenue": 0
   },
   {
     "date": "2024-10-24",
@@ -3337,13 +3274,6 @@ export const productDataSK: ProductSaleRecord[] = [
   },
   {
     "date": "2024-11-18",
-    "name": "Osobný odber",
-    "amount": 1,
-    "revenue_vat": 0,
-    "revenue": 0
-  },
-  {
-    "date": "2024-11-18",
     "name": "Royanské sardinky s omáčkou Ravigote 115 g",
     "amount": 1,
     "revenue_vat": 7.49,
@@ -3491,13 +3421,6 @@ export const productDataSK: ProductSaleRecord[] = [
   },
   {
     "date": "2024-11-23",
-    "name": "Osobný odber",
-    "amount": 1,
-    "revenue_vat": 0,
-    "revenue": 0
-  },
-  {
-    "date": "2024-11-23",
     "name": "Sardinky s olivovým olejom a citrónom 115 g",
     "amount": 1,
     "revenue_vat": 6.65,
@@ -3530,13 +3453,6 @@ export const productDataSK: ProductSaleRecord[] = [
     "amount": 1,
     "revenue_vat": 4.76,
     "revenue": 3.97
-  },
-  {
-    "date": "2024-11-24",
-    "name": "Osobný odber",
-    "amount": 1,
-    "revenue_vat": 0,
-    "revenue": 0
   },
   {
     "date": "2024-11-24",
@@ -3719,13 +3635,6 @@ export const productDataSK: ProductSaleRecord[] = [
     "amount": 1,
     "revenue_vat": 4.76,
     "revenue": 3.97
-  },
-  {
-    "date": "2024-11-28",
-    "name": "Osobný odber",
-    "amount": 1,
-    "revenue_vat": 0,
-    "revenue": 0
   },
   {
     "date": "2024-11-28",
@@ -4212,13 +4121,6 @@ export const productDataSK: ProductSaleRecord[] = [
   },
   {
     "date": "2024-12-09",
-    "name": "Osobný odber",
-    "amount": 2,
-    "revenue_vat": 0,
-    "revenue": 0
-  },
-  {
-    "date": "2024-12-09",
     "name": "Sardinky s maslom a pohánkou na konzumáciu po tepelnej úprave 115 g",
     "amount": 5,
     "revenue_vat": 37.08,
@@ -4244,13 +4146,6 @@ export const productDataSK: ProductSaleRecord[] = [
     "amount": 1,
     "revenue_vat": 6.1,
     "revenue": 5.08
-  },
-  {
-    "date": "2024-12-10",
-    "name": "Osobný odber",
-    "amount": 1,
-    "revenue_vat": 0,
-    "revenue": 0
   },
   {
     "date": "2024-12-10",
@@ -4338,13 +4233,6 @@ export const productDataSK: ProductSaleRecord[] = [
   },
   {
     "date": "2024-12-13",
-    "name": "Osobný odber",
-    "amount": 1,
-    "revenue_vat": 0,
-    "revenue": 0
-  },
-  {
-    "date": "2024-12-13",
     "name": "Penová nátierka z homára s koňakom 60 g",
     "amount": 1,
     "revenue_vat": 4.8,
@@ -4391,13 +4279,6 @@ export const productDataSK: ProductSaleRecord[] = [
     "amount": 2,
     "revenue_vat": 13.94,
     "revenue": 11.62
-  },
-  {
-    "date": "2024-12-14",
-    "name": "Osobný odber",
-    "amount": 1,
-    "revenue_vat": 0,
-    "revenue": 0
   },
   {
     "date": "2024-12-14",
@@ -4580,13 +4461,6 @@ export const productDataSK: ProductSaleRecord[] = [
     "amount": 1,
     "revenue_vat": 5.09,
     "revenue": 4.24
-  },
-  {
-    "date": "2024-12-17",
-    "name": "Osobný odber",
-    "amount": 1,
-    "revenue_vat": 0,
-    "revenue": 0
   },
   {
     "date": "2024-12-17",
@@ -5451,13 +5325,6 @@ export const productDataSK: ProductSaleRecord[] = [
   },
   {
     "date": "2025-01-30",
-    "name": "Osobný odber",
-    "amount": 1,
-    "revenue_vat": 0,
-    "revenue": 0
-  },
-  {
-    "date": "2025-01-30",
     "name": "Penová nátierka z homára s koňakom 60 g",
     "amount": 1,
     "revenue_vat": 4.8,
@@ -5924,13 +5791,6 @@ export const productDataSK: ProductSaleRecord[] = [
     "amount": 1,
     "revenue_vat": 4.76,
     "revenue": 4
-  },
-  {
-    "date": "2025-02-13",
-    "name": "Osobný odber",
-    "amount": 1,
-    "revenue_vat": 0,
-    "revenue": 0
   },
   {
     "date": "2025-02-13",
@@ -7250,13 +7110,6 @@ export const productDataSK: ProductSaleRecord[] = [
   },
   {
     "date": "2025-03-14",
-    "name": "Osobný odber",
-    "amount": 1,
-    "revenue_vat": 0,
-    "revenue": 0
-  },
-  {
-    "date": "2025-03-14",
     "name": "Penová nátierka z homára s koňakom 60 g",
     "amount": 1,
     "revenue_vat": 4.8,
@@ -7625,13 +7478,6 @@ export const productDataSK: ProductSaleRecord[] = [
     "amount": 1,
     "revenue_vat": 4.6,
     "revenue": 3.87
-  },
-  {
-    "date": "2025-03-23",
-    "name": "Osobný odber",
-    "amount": 1,
-    "revenue_vat": 0,
-    "revenue": 0
   },
   {
     "date": "2025-03-23",
@@ -8272,13 +8118,6 @@ export const productDataSK: ProductSaleRecord[] = [
   },
   {
     "date": "2025-04-06",
-    "name": "Osobný odber",
-    "amount": 1,
-    "revenue_vat": 0,
-    "revenue": 0
-  },
-  {
-    "date": "2025-04-06",
     "name": "Sardinky s olivovým olejom a zeleným korením 115 g",
     "amount": 1,
     "revenue_vat": 7.16,
@@ -8447,13 +8286,6 @@ export const productDataSK: ProductSaleRecord[] = [
   },
   {
     "date": "2025-04-13",
-    "name": "Osobný odber",
-    "amount": 1,
-    "revenue_vat": 0,
-    "revenue": 0
-  },
-  {
-    "date": "2025-04-13",
     "name": "Sardinky s olivovým olejom a zeleným korením 115 g",
     "amount": 1,
     "revenue_vat": 7.16,
@@ -8521,13 +8353,6 @@ export const productDataSK: ProductSaleRecord[] = [
     "amount": 1,
     "revenue_vat": 24.95,
     "revenue": 20.97
-  },
-  {
-    "date": "2025-04-15",
-    "name": "Osobný odber",
-    "amount": 1,
-    "revenue_vat": 0,
-    "revenue": 0
   },
   {
     "date": "2025-04-15",
@@ -8892,13 +8717,6 @@ export const productDataSK: ProductSaleRecord[] = [
     "amount": 1,
     "revenue_vat": 6.97,
     "revenue": 5.86
-  },
-  {
-    "date": "2025-04-21",
-    "name": "Osobný odber",
-    "amount": 1,
-    "revenue_vat": 0,
-    "revenue": 0
   },
   {
     "date": "2025-04-21",
@@ -9347,13 +9165,6 @@ export const productDataSK: ProductSaleRecord[] = [
     "amount": 1,
     "revenue_vat": 6.97,
     "revenue": 5.86
-  },
-  {
-    "date": "2025-05-10",
-    "name": "Osobný odber",
-    "amount": 1,
-    "revenue_vat": 0,
-    "revenue": 0
   },
   {
     "date": "2025-05-10",
@@ -9980,13 +9791,6 @@ export const productDataSK: ProductSaleRecord[] = [
   },
   {
     "date": "2025-05-25",
-    "name": "Osobný odber",
-    "amount": 1,
-    "revenue_vat": 0,
-    "revenue": 0
-  },
-  {
-    "date": "2025-05-25",
     "name": "Sardinky Nantaise na konzumáciu po tepelnej úprave 115 g",
     "amount": 2,
     "revenue_vat": 14.27,
@@ -10372,13 +10176,6 @@ export const productDataSK: ProductSaleRecord[] = [
   },
   {
     "date": "2025-06-02",
-    "name": "Osobný odber",
-    "amount": 1,
-    "revenue_vat": 0,
-    "revenue": 0
-  },
-  {
-    "date": "2025-06-02",
     "name": "Rajská záhrada",
     "amount": 1,
     "revenue_vat": 20.31,
@@ -10449,13 +10246,6 @@ export const productDataSK: ProductSaleRecord[] = [
   },
   {
     "date": "2025-06-06",
-    "name": "Osobný odber",
-    "amount": 1,
-    "revenue_vat": 0,
-    "revenue": 0
-  },
-  {
-    "date": "2025-06-06",
     "name": "Royanské sardinky s omáčkou Ravigote 115 g",
     "amount": 1,
     "revenue_vat": 7.49,
@@ -10519,13 +10309,6 @@ export const productDataSK: ProductSaleRecord[] = [
   },
   {
     "date": "2025-06-09",
-    "name": "Osobný odber",
-    "amount": 1,
-    "revenue_vat": 0,
-    "revenue": 0
-  },
-  {
-    "date": "2025-06-09",
     "name": "Penová nátierka z homára s koňakom 60 g",
     "amount": 1,
     "revenue_vat": 4.8,
@@ -10572,13 +10355,6 @@ export const productDataSK: ProductSaleRecord[] = [
     "amount": 1,
     "revenue_vat": 4.24,
     "revenue": 3.56
-  },
-  {
-    "date": "2025-06-11",
-    "name": "Osobný odber",
-    "amount": 1,
-    "revenue_vat": 0,
-    "revenue": 0
   },
   {
     "date": "2025-06-11",
@@ -10656,13 +10432,6 @@ export const productDataSK: ProductSaleRecord[] = [
     "amount": 1,
     "revenue_vat": 12.51,
     "revenue": 10.51
-  },
-  {
-    "date": "2025-06-14",
-    "name": "Osobný odber",
-    "amount": 1,
-    "revenue_vat": 0,
-    "revenue": 0
   },
   {
     "date": "2025-06-14",
@@ -10845,13 +10614,6 @@ export const productDataSK: ProductSaleRecord[] = [
     "amount": 1,
     "revenue_vat": 6.46,
     "revenue": 5.43
-  },
-  {
-    "date": "2025-06-18",
-    "name": "Osobný odber",
-    "amount": 1,
-    "revenue_vat": 0,
-    "revenue": 0
   },
   {
     "date": "2025-06-18",
@@ -11261,13 +11023,6 @@ export const productDataSK: ProductSaleRecord[] = [
   },
   {
     "date": "2025-06-26",
-    "name": "Osobný odber",
-    "amount": 1,
-    "revenue_vat": 0,
-    "revenue": 0
-  },
-  {
-    "date": "2025-06-26",
     "name": "Sardinky s citrónom a čili papričkami 115 g",
     "amount": 1,
     "revenue_vat": 7.43,
@@ -11457,13 +11212,6 @@ export const productDataSK: ProductSaleRecord[] = [
   },
   {
     "date": "2025-07-01",
-    "name": "Osobný odber",
-    "amount": 1,
-    "revenue_vat": 0,
-    "revenue": 0
-  },
-  {
-    "date": "2025-07-01",
     "name": "Rillettes z tresky so sečuánskym korením 60 g",
     "amount": 1,
     "revenue_vat": 4.71,
@@ -11573,13 +11321,6 @@ export const productDataSK: ProductSaleRecord[] = [
     "amount": 1,
     "revenue_vat": 4.24,
     "revenue": 3.56
-  },
-  {
-    "date": "2025-07-04",
-    "name": "Osobný odber",
-    "amount": 1,
-    "revenue_vat": 0,
-    "revenue": 0
   },
   {
     "date": "2025-07-04",
@@ -11793,13 +11534,6 @@ export const productDataSK: ProductSaleRecord[] = [
   },
   {
     "date": "2025-07-08",
-    "name": "Osobný odber",
-    "amount": 1,
-    "revenue_vat": 0,
-    "revenue": 0
-  },
-  {
-    "date": "2025-07-08",
     "name": "Sardinky marinované vínom Muscadet 115 g",
     "amount": 1,
     "revenue_vat": 7.73,
@@ -11958,13 +11692,6 @@ export const productDataSK: ProductSaleRecord[] = [
     "amount": 1,
     "revenue_vat": 29.08,
     "revenue": 24.44
-  },
-  {
-    "date": "2025-07-10",
-    "name": "Osobný odber",
-    "amount": 1,
-    "revenue_vat": 0,
-    "revenue": 0
   },
   {
     "date": "2025-07-10",
@@ -12241,13 +11968,6 @@ export const productDataSK: ProductSaleRecord[] = [
   },
   {
     "date": "2025-07-18",
-    "name": "Osobný odber",
-    "amount": 1,
-    "revenue_vat": 0,
-    "revenue": 0
-  },
-  {
-    "date": "2025-07-18",
     "name": "Sardinky s olivami z Nice 115 g",
     "amount": 1,
     "revenue_vat": 9.41,
@@ -12287,13 +12007,6 @@ export const productDataSK: ProductSaleRecord[] = [
     "amount": 1,
     "revenue_vat": 6.58,
     "revenue": 5.53
-  },
-  {
-    "date": "2025-07-20",
-    "name": "Osobný odber",
-    "amount": 1,
-    "revenue_vat": 0,
-    "revenue": 0
   },
   {
     "date": "2025-07-20",
@@ -13340,13 +13053,6 @@ export const productDataSK: ProductSaleRecord[] = [
   },
   {
     "date": "2025-08-16",
-    "name": "Osobný odber",
-    "amount": 1,
-    "revenue_vat": 0,
-    "revenue": 0
-  },
-  {
-    "date": "2025-08-16",
     "name": "Royanské sardinky s omáčkou Ravigote 115 g",
     "amount": 1,
     "revenue_vat": 8.01,
@@ -13526,13 +13232,6 @@ export const productDataSK: ProductSaleRecord[] = [
     "amount": 1,
     "revenue_vat": 58.79,
     "revenue": 49.4
-  },
-  {
-    "date": "2025-08-21",
-    "name": "Osobný odber",
-    "amount": 1,
-    "revenue_vat": 0,
-    "revenue": 0
   },
   {
     "date": "2025-08-21",
@@ -13960,13 +13659,6 @@ export const productDataSK: ProductSaleRecord[] = [
     "amount": 6,
     "revenue_vat": 38.23,
     "revenue": 32.13
-  },
-  {
-    "date": "2025-09-06",
-    "name": "Osobný odber",
-    "amount": 1,
-    "revenue_vat": 0,
-    "revenue": 0
   },
   {
     "date": "2025-09-06",
@@ -14670,13 +14362,6 @@ export const productDataSK: ProductSaleRecord[] = [
   },
   {
     "date": "2025-09-24",
-    "name": "Osobný odber",
-    "amount": 1,
-    "revenue_vat": 0,
-    "revenue": 0
-  },
-  {
-    "date": "2025-09-24",
     "name": "Sardinky s olivovým olejom a citrónom 115 g",
     "amount": 2,
     "revenue_vat": 14.7,
@@ -15272,13 +14957,6 @@ export const productDataSK: ProductSaleRecord[] = [
   },
   {
     "date": "2025-10-07",
-    "name": "Osobný odber",
-    "amount": 1,
-    "revenue_vat": 0,
-    "revenue": 0
-  },
-  {
-    "date": "2025-10-07",
     "name": "Sardinky s olivovou tapenádou 115 g",
     "amount": 2,
     "revenue_vat": 15.72,
@@ -15521,13 +15199,6 @@ export const productDataSK: ProductSaleRecord[] = [
     "amount": 3,
     "revenue_vat": 14.13,
     "revenue": 11.87
-  },
-  {
-    "date": "2025-10-13",
-    "name": "Osobný odber",
-    "amount": 2,
-    "revenue_vat": 0,
-    "revenue": 0
   },
   {
     "date": "2025-10-13",
@@ -16385,13 +16056,6 @@ export const productDataSK: ProductSaleRecord[] = [
   },
   {
     "date": "2025-11-02",
-    "name": "Osobný odber",
-    "amount": 1,
-    "revenue_vat": 0,
-    "revenue": 0
-  },
-  {
-    "date": "2025-11-02",
     "name": "Sardinky s batackým korením a kurkumou 115 g",
     "amount": 1,
     "revenue_vat": 7.51,
@@ -17155,13 +16819,6 @@ export const productDataSK: ProductSaleRecord[] = [
   },
   {
     "date": "2025-11-16",
-    "name": "Osobný odber",
-    "amount": 1,
-    "revenue_vat": 0,
-    "revenue": 0
-  },
-  {
-    "date": "2025-11-16",
     "name": "Sardinky s citrónom a čili papričkami 115 g",
     "amount": 1,
     "revenue_vat": 8.26,
@@ -17554,13 +17211,6 @@ export const productDataSK: ProductSaleRecord[] = [
   },
   {
     "date": "2025-11-23",
-    "name": "Osobný odber",
-    "amount": 1,
-    "revenue_vat": 0,
-    "revenue": 0
-  },
-  {
-    "date": "2025-11-23",
     "name": "Penová nátierka z homára s koňakom 60 g",
     "amount": 1,
     "revenue_vat": 4.91,
@@ -17677,13 +17327,6 @@ export const productDataSK: ProductSaleRecord[] = [
     "amount": 3,
     "revenue_vat": 14.13,
     "revenue": 11.88
-  },
-  {
-    "date": "2025-11-24",
-    "name": "Osobný odber",
-    "amount": 1,
-    "revenue_vat": 0,
-    "revenue": 0
   },
   {
     "date": "2025-11-24",
@@ -18254,13 +17897,6 @@ export const productDataSK: ProductSaleRecord[] = [
   },
   {
     "date": "2025-12-04",
-    "name": "Osobný odber",
-    "amount": 1,
-    "revenue_vat": 0,
-    "revenue": 0
-  },
-  {
-    "date": "2025-12-04",
     "name": "Penová nátierka z homára s koňakom 60 g",
     "amount": 1,
     "revenue_vat": 4.91,
@@ -18520,13 +18156,6 @@ export const productDataSK: ProductSaleRecord[] = [
   },
   {
     "date": "2025-12-09",
-    "name": "Osobný odber",
-    "amount": 1,
-    "revenue_vat": 0,
-    "revenue": 0
-  },
-  {
-    "date": "2025-12-09",
     "name": "Sardinky s batackým korením a kurkumou 115 g",
     "amount": 4,
     "revenue_vat": 30.04,
@@ -18769,13 +18398,6 @@ export const productDataSK: ProductSaleRecord[] = [
     "amount": 1,
     "revenue_vat": 27.15,
     "revenue": 22.82
-  },
-  {
-    "date": "2025-12-14",
-    "name": "Osobný odber",
-    "amount": 1,
-    "revenue_vat": 0,
-    "revenue": 0
   },
   {
     "date": "2025-12-14",
@@ -19497,13 +19119,6 @@ export const productDataSK: ProductSaleRecord[] = [
     "amount": 1,
     "revenue_vat": 12.51,
     "revenue": 10.51
-  },
-  {
-    "date": "2026-01-08",
-    "name": "Osobný odber",
-    "amount": 1,
-    "revenue_vat": 0,
-    "revenue": 0
   },
   {
     "date": "2026-01-08",
@@ -20403,13 +20018,6 @@ export const productDataSK: ProductSaleRecord[] = [
   },
   {
     "date": "2026-01-21",
-    "name": "Osobný odber",
-    "amount": 1,
-    "revenue_vat": 0,
-    "revenue": 0
-  },
-  {
-    "date": "2026-01-21",
     "name": "Royanské sardinky s omáčkou Ravigote 115 g",
     "amount": 1,
     "revenue_vat": 8.01,
@@ -20631,13 +20239,6 @@ export const productDataSK: ProductSaleRecord[] = [
     "amount": 1,
     "revenue_vat": 4.86,
     "revenue": 4.08
-  },
-  {
-    "date": "2026-01-26",
-    "name": "Osobný odber",
-    "amount": 1,
-    "revenue_vat": 0,
-    "revenue": 0
   },
   {
     "date": "2026-01-26",
@@ -21047,13 +20648,6 @@ export const productDataSK: ProductSaleRecord[] = [
   },
   {
     "date": "2026-02-01",
-    "name": "Osobný odber",
-    "amount": 1,
-    "revenue_vat": 0,
-    "revenue": 0
-  },
-  {
-    "date": "2026-02-01",
     "name": "Rillettes z tresky so sečuánskym korením 60 g",
     "amount": 3,
     "revenue_vat": 14.13,
@@ -21331,13 +20925,6 @@ export const productDataSK: ProductSaleRecord[] = [
     "amount": 1,
     "revenue_vat": 27.15,
     "revenue": 22.82
-  },
-  {
-    "date": "2026-02-04",
-    "name": "Osobný odber",
-    "amount": 1,
-    "revenue_vat": 0,
-    "revenue": 0
   },
   {
     "date": "2026-02-04",
@@ -21635,13 +21222,6 @@ export const productDataSK: ProductSaleRecord[] = [
   },
   {
     "date": "2026-02-09",
-    "name": "Osobný odber",
-    "amount": 1,
-    "revenue_vat": 0,
-    "revenue": 0
-  },
-  {
-    "date": "2026-02-09",
     "name": "Sardinky s citrónom a čili papričkami 115 g",
     "amount": 4,
     "revenue_vat": 33.04,
@@ -21866,13 +21446,6 @@ export const productDataSK: ProductSaleRecord[] = [
   },
   {
     "date": "2026-02-13",
-    "name": "Osobný odber",
-    "amount": 1,
-    "revenue_vat": 0,
-    "revenue": 0
-  },
-  {
-    "date": "2026-02-13",
     "name": "Rillettes z tresky so sečuánskym korením 60 g",
     "amount": 1,
     "revenue_vat": 4.71,
@@ -22055,13 +21628,6 @@ export const productDataSK: ProductSaleRecord[] = [
   },
   {
     "date": "2026-02-15",
-    "name": "Osobný odber",
-    "amount": 1,
-    "revenue_vat": 0,
-    "revenue": 0
-  },
-  {
-    "date": "2026-02-15",
     "name": "Penová nátierka z homára s koňakom 60 g",
     "amount": 1,
     "revenue_vat": 4.91,
@@ -22199,13 +21765,6 @@ export const productDataSK: ProductSaleRecord[] = [
     "amount": 1,
     "revenue_vat": 58.79,
     "revenue": 49.4
-  },
-  {
-    "date": "2026-02-16",
-    "name": "Osobný odber",
-    "amount": 1,
-    "revenue_vat": 0,
-    "revenue": 0
   },
   {
     "date": "2026-02-16",
@@ -22468,13 +22027,6 @@ export const productDataSK: ProductSaleRecord[] = [
   },
   {
     "date": "2026-02-19",
-    "name": "Osobný odber",
-    "amount": 1,
-    "revenue_vat": 0,
-    "revenue": 0
-  },
-  {
-    "date": "2026-02-19",
     "name": "Sardinky marinované vínom Muscadet 115 g",
     "amount": 1,
     "revenue_vat": 7.73,
@@ -22577,13 +22129,6 @@ export const productDataSK: ProductSaleRecord[] = [
     "amount": 2,
     "revenue_vat": 24.38,
     "revenue": 20.48
-  },
-  {
-    "date": "2026-02-21",
-    "name": "Osobný odber",
-    "amount": 1,
-    "revenue_vat": 0,
-    "revenue": 0
   },
   {
     "date": "2026-02-21",
@@ -22895,13 +22440,6 @@ export const productDataSK: ProductSaleRecord[] = [
   },
   {
     "date": "2026-02-26",
-    "name": "Osobný odber",
-    "amount": 1,
-    "revenue_vat": 0,
-    "revenue": 0
-  },
-  {
-    "date": "2026-02-26",
     "name": "Sardinky Nantaise na konzumáciu po tepelnej úprave 115 g",
     "amount": 1,
     "revenue_vat": 8.48,
@@ -22934,13 +22472,6 @@ export const productDataSK: ProductSaleRecord[] = [
     "amount": 1,
     "revenue_vat": 27.15,
     "revenue": 22.82
-  },
-  {
-    "date": "2026-02-27",
-    "name": "Osobný odber",
-    "amount": 2,
-    "revenue_vat": 0,
-    "revenue": 0
   },
   {
     "date": "2026-02-27",
@@ -23637,13 +23168,6 @@ export const productDataSK: ProductSaleRecord[] = [
   },
   {
     "date": "2026-03-10",
-    "name": "Osobný odber",
-    "amount": 1,
-    "revenue_vat": 0,
-    "revenue": 0
-  },
-  {
-    "date": "2026-03-10",
     "name": "Penová nátierka z homára s koňakom 60 g",
     "amount": 1,
     "revenue_vat": 4.91,
@@ -23711,13 +23235,6 @@ export const productDataSK: ProductSaleRecord[] = [
     "amount": 2,
     "revenue_vat": 17.78,
     "revenue": 14.94
-  },
-  {
-    "date": "2026-03-11",
-    "name": "Osobný odber",
-    "amount": 1,
-    "revenue_vat": 0,
-    "revenue": 0
   },
   {
     "date": "2026-03-11",

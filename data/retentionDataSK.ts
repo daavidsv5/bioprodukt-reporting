@@ -7,10 +7,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2024-03-26"
     ],
     "revenues": [
-      33.56
+      28.56
     ],
     "revsVat": [
-      33.56
+      28.56
     ]
   },
   {
@@ -21,14 +21,14 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2024-04-24"
     ],
     "revenues": [
-      9.46,
-      13.97,
+      5.08,
+      9.59,
       4.24,
       45
     ],
     "revsVat": [
-      11.35,
-      16.76,
+      6.1,
+      11.51,
       5.09,
       54
     ]
@@ -85,10 +85,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2024-06-07"
     ],
     "revenues": [
-      39.62
+      35.24
     ],
     "revsVat": [
-      47.53
+      42.28
     ]
   },
   {
@@ -96,10 +96,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2024-06-10"
     ],
     "revenues": [
-      71.68
+      70.43
     ],
     "revsVat": [
-      86.02
+      84.52
     ]
   },
   {
@@ -107,10 +107,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2024-06-11"
     ],
     "revenues": [
-      29.41
+      25.03
     ],
     "revsVat": [
-      35.28
+      30.03
     ]
   },
   {
@@ -118,10 +118,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2024-06-14"
     ],
     "revenues": [
-      50.06
+      45.68
     ],
     "revsVat": [
-      60.06
+      54.81
     ]
   },
   {
@@ -131,14 +131,14 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2025-11-09"
     ],
     "revenues": [
-      43.47,
-      74.34,
-      50.56
+      39.09,
+      73.08,
+      45.14
     ],
     "revsVat": [
-      52.17,
-      88.46,
-      60.17
+      46.92,
+      86.96,
+      53.72
     ]
   },
   {
@@ -146,10 +146,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2024-06-19"
     ],
     "revenues": [
-      37.3
+      32.92
     ],
     "revsVat": [
-      44.75
+      39.5
     ]
   },
   {
@@ -158,12 +158,12 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2024-08-30"
     ],
     "revenues": [
-      50.56,
-      65.1
+      46.18,
+      63.85
     ],
     "revsVat": [
-      60.67,
-      78.12
+      55.42,
+      76.62
     ]
   },
   {
@@ -183,12 +183,12 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2025-11-08"
     ],
     "revenues": [
-      62.78,
-      127.11
+      61.53,
+      125.85
     ],
     "revsVat": [
-      75.33,
-      151.26
+      73.83,
+      149.76
     ]
   },
   {
@@ -196,10 +196,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2024-06-26"
     ],
     "revenues": [
-      36.62
+      33.49
     ],
     "revsVat": [
-      43.95
+      40.2
     ]
   },
   {
@@ -207,10 +207,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2024-07-08"
     ],
     "revenues": [
-      37.94
+      34.81
     ],
     "revsVat": [
-      45.52
+      41.77
     ]
   },
   {
@@ -229,10 +229,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2024-07-12"
     ],
     "revenues": [
-      33.48
+      29.1
     ],
     "revsVat": [
-      40.18
+      34.93
     ]
   },
   {
@@ -240,10 +240,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2024-07-14"
     ],
     "revenues": [
-      46.82
+      42.44
     ],
     "revsVat": [
-      56.18
+      50.93
     ]
   },
   {
@@ -251,10 +251,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2024-07-15"
     ],
     "revenues": [
-      49.44
+      46.31
     ],
     "revsVat": [
-      59.32
+      55.57
     ]
   },
   {
@@ -262,10 +262,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2024-07-15"
     ],
     "revenues": [
-      62.01
+      60.76
     ],
     "revsVat": [
-      74.41
+      72.91
     ]
   },
   {
@@ -277,18 +277,18 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2025-08-05"
     ],
     "revenues": [
-      10.56,
-      99.8,
-      47.09,
-      23.37,
-      26.84
+      6.18,
+      98.55,
+      42.71,
+      19.21,
+      21.42
     ],
     "revsVat": [
-      12.67,
-      119.76,
-      56.51,
-      27.81,
-      31.94
+      7.42,
+      118.26,
+      51.26,
+      22.86,
+      25.49
     ]
   },
   {
@@ -307,10 +307,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2024-07-26"
     ],
     "revenues": [
-      26.07
+      21.69
     ],
     "revsVat": [
-      31.28
+      26.03
     ]
   },
   {
@@ -318,10 +318,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2024-07-26"
     ],
     "revenues": [
-      60.03
+      55.65
     ],
     "revsVat": [
-      72.03
+      66.78
     ]
   },
   {
@@ -340,10 +340,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2024-08-18"
     ],
     "revenues": [
-      35.81
+      32.68
     ],
     "revsVat": [
-      42.97
+      39.22
     ]
   },
   {
@@ -351,10 +351,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2024-08-19"
     ],
     "revenues": [
-      49.5
+      45.12
     ],
     "revsVat": [
-      59.39
+      54.14
     ]
   },
   {
@@ -362,10 +362,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2024-08-19"
     ],
     "revenues": [
-      27.45
+      23.07
     ],
     "revsVat": [
-      32.93
+      27.68
     ]
   },
   {
@@ -418,10 +418,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2024-08-31"
     ],
     "revenues": [
-      24.03
+      20.9
     ],
     "revsVat": [
-      28.83
+      25.08
     ]
   },
   {
@@ -430,12 +430,12 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2024-12-03"
     ],
     "revenues": [
-      77.43,
-      28.34
+      76.18,
+      23.96
     ],
     "revsVat": [
-      92.92,
-      34
+      91.42,
+      28.75
     ]
   },
   {
@@ -443,10 +443,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2024-09-05"
     ],
     "revenues": [
-      106.78
+      105.53
     ],
     "revsVat": [
-      128.14
+      126.64
     ]
   },
   {
@@ -454,10 +454,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2024-09-08"
     ],
     "revenues": [
-      80.52
+      79.27
     ],
     "revsVat": [
-      96.62
+      95.12
     ]
   },
   {
@@ -465,10 +465,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2024-09-08"
     ],
     "revenues": [
-      25.55
+      21.17
     ],
     "revsVat": [
-      30.66
+      25.41
     ]
   },
   {
@@ -477,12 +477,12 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2025-09-18"
     ],
     "revenues": [
-      32.69,
-      61.84
+      28.31,
+      56.42
     ],
     "revsVat": [
-      39.22,
-      73.59
+      33.97,
+      67.14
     ]
   },
   {
@@ -490,10 +490,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2024-09-09"
     ],
     "revenues": [
-      30.85
+      26.47
     ],
     "revsVat": [
-      37.01
+      31.76
     ]
   },
   {
@@ -501,10 +501,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2024-09-12"
     ],
     "revenues": [
-      21.51
+      17.55
     ],
     "revsVat": [
-      25.81
+      21.06
     ]
   },
   {
@@ -513,12 +513,12 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2024-09-23"
     ],
     "revenues": [
-      26.21,
-      30.94
+      21.83,
+      27.81
     ],
     "revsVat": [
-      31.44,
-      37.12
+      26.19,
+      33.37
     ]
   },
   {
@@ -537,10 +537,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2024-09-15"
     ],
     "revenues": [
-      14.26
+      9.88
     ],
     "revsVat": [
-      17.11
+      11.86
     ]
   },
   {
@@ -568,10 +568,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2024-09-20"
     ],
     "revenues": [
-      59.07
+      54.69
     ],
     "revsVat": [
-      70.88
+      65.63
     ]
   },
   {
@@ -581,11 +581,11 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
     ],
     "revenues": [
       78.51,
-      26.98
+      22.82
     ],
     "revsVat": [
       94.2,
-      32.1
+      27.15
     ]
   },
   {
@@ -593,10 +593,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2024-09-22"
     ],
     "revenues": [
-      27.75
+      24.62
     ],
     "revsVat": [
-      33.29
+      29.54
     ]
   },
   {
@@ -606,14 +606,14 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2025-09-23"
     ],
     "revenues": [
-      23.63,
-      44.57,
-      27.96
+      20.5,
+      41.44,
+      23.8
     ],
     "revsVat": [
-      28.35,
-      53.48,
-      33.27
+      24.6,
+      49.73,
+      28.32
     ]
   },
   {
@@ -621,10 +621,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2024-09-23"
     ],
     "revenues": [
-      31.23
+      26.85
     ],
     "revsVat": [
-      37.47
+      32.22
     ]
   },
   {
@@ -632,10 +632,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2024-09-24"
     ],
     "revenues": [
-      27.44
+      24.31
     ],
     "revsVat": [
-      32.93
+      29.18
     ]
   },
   {
@@ -643,10 +643,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2024-09-24"
     ],
     "revenues": [
-      39.53
+      36.4
     ],
     "revsVat": [
-      47.43
+      43.68
     ]
   },
   {
@@ -665,10 +665,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2024-09-25"
     ],
     "revenues": [
-      27.75
+      24.62
     ],
     "revsVat": [
-      33.29
+      29.54
     ]
   },
   {
@@ -676,10 +676,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2024-09-25"
     ],
     "revenues": [
-      25.14
+      22.01
     ],
     "revsVat": [
-      30.16
+      26.41
     ]
   },
   {
@@ -687,10 +687,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2024-09-26"
     ],
     "revenues": [
-      60.96
+      59.71
     ],
     "revsVat": [
-      73.15
+      71.65
     ]
   },
   {
@@ -709,10 +709,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2024-09-27"
     ],
     "revenues": [
-      16.6
+      12.22
     ],
     "revsVat": [
-      19.91
+      14.66
     ]
   },
   {
@@ -720,10 +720,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2024-09-29"
     ],
     "revenues": [
-      20.15
+      17.02
     ],
     "revsVat": [
-      24.17
+      20.42
     ]
   },
   {
@@ -731,10 +731,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2024-09-30"
     ],
     "revenues": [
-      22.28
+      17.9
     ],
     "revsVat": [
-      26.73
+      21.48
     ]
   },
   {
@@ -743,12 +743,12 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2025-02-01"
     ],
     "revenues": [
-      22.12,
-      35.89
+      17.74,
+      31.48
     ],
     "revsVat": [
-      26.54,
-      42.71
+      21.29,
+      37.46
     ]
   },
   {
@@ -756,10 +756,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2024-09-30"
     ],
     "revenues": [
-      64.09
+      62.84
     ],
     "revsVat": [
-      76.91
+      75.41
     ]
   },
   {
@@ -767,10 +767,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2024-09-30"
     ],
     "revenues": [
-      27.17
+      22.79
     ],
     "revsVat": [
-      32.6
+      27.35
     ]
   },
   {
@@ -789,10 +789,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2024-10-02"
     ],
     "revenues": [
-      59.76
+      58.51
     ],
     "revsVat": [
-      71.72
+      70.22
     ]
   },
   {
@@ -828,10 +828,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2024-10-05"
     ],
     "revenues": [
-      40.94
+      36.56
     ],
     "revsVat": [
-      49.11
+      43.86
     ]
   },
   {
@@ -839,10 +839,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2024-10-05"
     ],
     "revenues": [
-      37.43
+      33.05
     ],
     "revsVat": [
-      44.91
+      39.66
     ]
   },
   {
@@ -861,10 +861,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2024-10-10"
     ],
     "revenues": [
-      48.72
+      44.34
     ],
     "revsVat": [
-      58.46
+      53.21
     ]
   },
   {
@@ -875,16 +875,16 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2026-02-16"
     ],
     "revenues": [
-      121.6,
-      60.09,
-      77.28,
-      86.65
+      120.35,
+      58.87,
+      76.02,
+      85.39
     ],
     "revsVat": [
-      145.92,
-      73.91,
-      91.96,
-      103.11
+      144.42,
+      72.41,
+      90.46,
+      101.61
     ]
   },
   {
@@ -903,10 +903,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2024-10-12"
     ],
     "revenues": [
-      57.88
+      53.5
     ],
     "revsVat": [
-      69.45
+      64.2
     ]
   },
   {
@@ -914,10 +914,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2024-10-12"
     ],
     "revenues": [
-      67.83
+      66.58
     ],
     "revsVat": [
-      81.4
+      79.9
     ]
   },
   {
@@ -936,10 +936,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2024-10-13"
     ],
     "revenues": [
-      64.47
+      63.22
     ],
     "revsVat": [
-      77.36
+      75.86
     ]
   },
   {
@@ -947,10 +947,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2024-10-16"
     ],
     "revenues": [
-      30.71
+      26.33
     ],
     "revsVat": [
-      36.85
+      31.6
     ]
   },
   {
@@ -958,10 +958,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2024-10-18"
     ],
     "revenues": [
-      24.19
+      21.06
     ],
     "revsVat": [
-      29.02
+      25.27
     ]
   },
   {
@@ -969,10 +969,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2024-10-18"
     ],
     "revenues": [
-      49.5
+      45.12
     ],
     "revsVat": [
-      59.39
+      54.14
     ]
   },
   {
@@ -980,10 +980,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2024-10-18"
     ],
     "revenues": [
-      49.5
+      45.12
     ],
     "revsVat": [
-      59.4
+      54.15
     ]
   },
   {
@@ -991,10 +991,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2024-10-19"
     ],
     "revenues": [
-      48.25
+      45.12
     ],
     "revsVat": [
-      57.89
+      54.14
     ]
   },
   {
@@ -1002,10 +1002,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2024-10-19"
     ],
     "revenues": [
-      20.11
+      15.73
     ],
     "revsVat": [
-      24.12
+      18.87
     ]
   },
   {
@@ -1037,11 +1037,11 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
     ],
     "revenues": [
       59.07,
-      33.81
+      29.65
     ],
     "revsVat": [
       70.88,
-      40.23
+      35.28
     ]
   },
   {
@@ -1049,10 +1049,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2024-10-28"
     ],
     "revenues": [
-      20.43
+      17.3
     ],
     "revsVat": [
-      24.51
+      20.76
     ]
   },
   {
@@ -1060,10 +1060,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2024-10-30"
     ],
     "revenues": [
-      14.82
+      11.69
     ],
     "revsVat": [
-      17.78
+      14.03
     ]
   },
   {
@@ -1071,10 +1071,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2024-11-01"
     ],
     "revenues": [
-      26.45
+      22.07
     ],
     "revsVat": [
-      31.73
+      26.48
     ]
   },
   {
@@ -1082,10 +1082,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2024-11-07"
     ],
     "revenues": [
-      92.95
+      91.7
     ],
     "revsVat": [
-      111.54
+      110.04
     ]
   },
   {
@@ -1093,10 +1093,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2024-11-09"
     ],
     "revenues": [
-      53.93
+      50.8
     ],
     "revsVat": [
-      64.72
+      60.97
     ]
   },
   {
@@ -1118,10 +1118,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2024-11-12"
     ],
     "revenues": [
-      49.71
+      46.58
     ],
     "revsVat": [
-      59.65
+      55.9
     ]
   },
   {
@@ -1141,12 +1141,12 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2025-11-05"
     ],
     "revenues": [
-      23.13,
-      17.06
+      18.75,
+      11.64
     ],
     "revsVat": [
-      27.76,
-      20.3
+      22.51,
+      13.85
     ]
   },
   {
@@ -1171,10 +1171,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2024-11-15"
     ],
     "revenues": [
-      35.98
+      32.85
     ],
     "revsVat": [
-      43.16
+      39.41
     ]
   },
   {
@@ -1193,10 +1193,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2024-11-19"
     ],
     "revenues": [
-      21.13
+      16.75
     ],
     "revsVat": [
-      25.35
+      20.1
     ]
   },
   {
@@ -1204,10 +1204,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2024-11-21"
     ],
     "revenues": [
-      29.32
+      26.19
     ],
     "revsVat": [
-      35.18
+      31.43
     ]
   },
   {
@@ -1216,12 +1216,12 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2025-06-23"
     ],
     "revenues": [
-      23.92,
-      19.9
+      20.79,
+      15.74
     ],
     "revsVat": [
-      28.7,
-      23.67
+      24.95,
+      18.72
     ]
   },
   {
@@ -1284,10 +1284,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2024-11-27"
     ],
     "revenues": [
-      47.28
+      44.15
     ],
     "revsVat": [
-      56.73
+      52.98
     ]
   },
   {
@@ -1306,10 +1306,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2024-11-28"
     ],
     "revenues": [
-      74.89
+      73.64
     ],
     "revsVat": [
-      89.86
+      88.36
     ]
   },
   {
@@ -1326,9 +1326,9 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
     ],
     "revenues": [
       130.65,
-      182.38,
-      143.97,
-      153.85,
+      181.12,
+      142.71,
+      152.59,
       262.73,
       267.88,
       374.75,
@@ -1337,9 +1337,9 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
     ],
     "revsVat": [
       156.79,
-      217.04,
-      171.33,
-      183.08,
+      215.54,
+      169.83,
+      181.58,
       312.66,
       318.78,
       445.95,
@@ -1352,10 +1352,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2024-12-03"
     ],
     "revenues": [
-      75.92
+      74.67
     ],
     "revsVat": [
-      91.11
+      89.61
     ]
   },
   {
@@ -1363,10 +1363,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2024-12-04"
     ],
     "revenues": [
-      119.82
+      118.57
     ],
     "revsVat": [
-      143.78
+      142.28
     ]
   },
   {
@@ -1375,12 +1375,12 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2025-12-15"
     ],
     "revenues": [
-      56.05,
-      64.48
+      52.92,
+      59.06
     ],
     "revsVat": [
-      67.24,
-      76.72
+      63.49,
+      70.27
     ]
   },
   {
@@ -1402,10 +1402,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2024-12-06"
     ],
     "revenues": [
-      59.79
+      58.54
     ],
     "revsVat": [
-      71.75
+      70.25
     ]
   },
   {
@@ -1413,10 +1413,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2024-12-07"
     ],
     "revenues": [
-      65.59
+      64.34
     ],
     "revsVat": [
-      78.71
+      77.21
     ]
   },
   {
@@ -1424,10 +1424,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2024-12-08"
     ],
     "revenues": [
-      34.09
+      29.71
     ],
     "revsVat": [
-      40.9
+      35.65
     ]
   },
   {
@@ -1446,10 +1446,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2024-12-09"
     ],
     "revenues": [
-      19.45
+      16.32
     ],
     "revsVat": [
-      23.33
+      19.58
     ]
   },
   {
@@ -1479,10 +1479,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2024-12-11"
     ],
     "revenues": [
-      25.9
+      22.77
     ],
     "revsVat": [
-      31.08
+      27.33
     ]
   },
   {
@@ -1490,10 +1490,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2024-12-11"
     ],
     "revenues": [
-      40.64
+      37.51
     ],
     "revsVat": [
-      48.76
+      45.01
     ]
   },
   {
@@ -1512,10 +1512,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2024-12-14"
     ],
     "revenues": [
-      33.68
+      30.55
     ],
     "revsVat": [
-      40.4
+      36.65
     ]
   },
   {
@@ -1523,10 +1523,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2024-12-14"
     ],
     "revenues": [
-      15.08
+      11.95
     ],
     "revsVat": [
-      18.09
+      14.34
     ]
   },
   {
@@ -1573,10 +1573,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2024-12-16"
     ],
     "revenues": [
-      13.56
+      9.18
     ],
     "revsVat": [
-      16.27
+      11.02
     ]
   },
   {
@@ -1598,10 +1598,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2024-12-27"
     ],
     "revenues": [
-      48.25
+      45.12
     ],
     "revsVat": [
-      57.89
+      54.14
     ]
   },
   {
@@ -1620,10 +1620,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2025-01-07"
     ],
     "revenues": [
-      49.15
+      46.1
     ],
     "revsVat": [
-      60.45
+      56.7
     ]
   },
   {
@@ -1635,12 +1635,12 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
     "revenues": [
       87.78,
       108.22,
-      69.2
+      65.04
     ],
     "revsVat": [
       107.99,
       128.77,
-      82.34
+      77.39
     ]
   },
   {
@@ -1660,12 +1660,12 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2025-11-11"
     ],
     "revenues": [
-      29.2,
-      42.9
+      24.93,
+      37.48
     ],
     "revsVat": [
-      35.91,
-      51.05
+      30.66,
+      44.6
     ]
   },
   {
@@ -1673,10 +1673,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2025-01-14"
     ],
     "revenues": [
-      22.11
+      19.06
     ],
     "revsVat": [
-      27.19
+      23.44
     ]
   },
   {
@@ -1685,12 +1685,12 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2025-07-06"
     ],
     "revenues": [
-      30.62,
-      47.54
+      26.35,
+      42.12
     ],
     "revsVat": [
-      37.66,
-      56.56
+      32.41,
+      50.11
     ]
   },
   {
@@ -1698,10 +1698,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2025-01-16"
     ],
     "revenues": [
-      30.92
+      26.65
     ],
     "revsVat": [
-      38.04
+      32.79
     ]
   },
   {
@@ -1710,12 +1710,12 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2026-01-12"
     ],
     "revenues": [
-      70.08,
-      82.47
+      68.86,
+      81.21
     ],
     "revsVat": [
-      86.19,
-      98.14
+      84.69,
+      96.64
     ]
   },
   {
@@ -1723,10 +1723,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2025-01-21"
     ],
     "revenues": [
-      28.47
+      25.42
     ],
     "revsVat": [
-      35.03
+      31.28
     ]
   },
   {
@@ -1734,10 +1734,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2025-01-21"
     ],
     "revenues": [
-      21.21
+      18.16
     ],
     "revsVat": [
-      26.09
+      22.34
     ]
   },
   {
@@ -1749,14 +1749,14 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2025-08-18"
     ],
     "revenues": [
-      46.17,
+      43.12,
       74.6,
       97.63,
       75.68,
       67.5
     ],
     "revsVat": [
-      56.8,
+      53.05,
       88.77,
       116.19,
       90.06,
@@ -1768,10 +1768,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2025-01-22"
     ],
     "revenues": [
-      36.41
+      32.14
     ],
     "revsVat": [
-      44.78
+      39.53
     ]
   },
   {
@@ -1779,10 +1779,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2025-01-23"
     ],
     "revenues": [
-      62.61
+      61.39
     ],
     "revsVat": [
-      77.01
+      75.51
     ]
   },
   {
@@ -1791,12 +1791,12 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2025-12-16"
     ],
     "revenues": [
-      63.58,
-      71.01
+      62.32,
+      69.75
     ],
     "revsVat": [
-      75.67,
-      84.52
+      74.17,
+      83.02
     ]
   },
   {
@@ -1804,10 +1804,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2025-01-25"
     ],
     "revenues": [
-      30.75
+      27.6
     ],
     "revsVat": [
-      36.58
+      32.83
     ]
   },
   {
@@ -1829,10 +1829,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2025-01-27"
     ],
     "revenues": [
-      32.95
+      28.54
     ],
     "revsVat": [
-      39.22
+      33.97
     ]
   },
   {
@@ -1866,12 +1866,12 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2025-09-28"
     ],
     "revenues": [
-      28.8,
-      107.08
+      24.39,
+      105.82
     ],
     "revsVat": [
-      34.26,
-      127.42
+      29.01,
+      125.92
     ]
   },
   {
@@ -1879,10 +1879,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2025-02-03"
     ],
     "revenues": [
-      82.15
+      80.89
     ],
     "revsVat": [
-      97.76
+      96.26
     ]
   },
   {
@@ -1890,10 +1890,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2025-02-04"
     ],
     "revenues": [
-      127.03
+      125.77
     ],
     "revsVat": [
-      151.15
+      149.65
     ]
   },
   {
@@ -1912,10 +1912,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2025-02-05"
     ],
     "revenues": [
-      27.95
+      23.79
     ],
     "revsVat": [
-      33.26
+      28.31
     ]
   },
   {
@@ -1925,13 +1925,13 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2025-07-05"
     ],
     "revenues": [
-      23.54,
-      74.99,
+      18.12,
+      73.73,
       89.51
     ],
     "revsVat": [
-      28.01,
-      89.25,
+      21.56,
+      87.75,
       106.52
     ]
   },
@@ -1940,10 +1940,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2025-02-09"
     ],
     "revenues": [
-      80.5
+      79.24
     ],
     "revsVat": [
-      95.79
+      94.29
     ]
   },
   {
@@ -1951,10 +1951,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2025-02-10"
     ],
     "revenues": [
-      33.01
+      27.59
     ],
     "revsVat": [
-      39.28
+      32.83
     ]
   },
   {
@@ -1962,10 +1962,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2025-02-11"
     ],
     "revenues": [
-      46.57
+      42.16
     ],
     "revsVat": [
-      55.42
+      50.17
     ]
   },
   {
@@ -1973,10 +1973,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2025-02-12"
     ],
     "revenues": [
-      36.87
+      32.71
     ],
     "revsVat": [
-      43.88
+      38.93
     ]
   },
   {
@@ -2018,12 +2018,12 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2025-11-29"
     ],
     "revenues": [
-      59.48,
-      73.22
+      54.06,
+      71.96
     ],
     "revsVat": [
-      70.78,
-      87.14
+      64.33,
+      85.64
     ]
   },
   {
@@ -2031,10 +2031,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2025-02-19"
     ],
     "revenues": [
-      34.89
+      30.73
     ],
     "revsVat": [
-      41.52
+      36.57
     ]
   },
   {
@@ -2043,12 +2043,12 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2025-07-24"
     ],
     "revenues": [
-      101.65,
-      211.48
+      100.39,
+      210.22
     ],
     "revsVat": [
-      120.96,
-      251.67
+      119.46,
+      250.17
     ]
   },
   {
@@ -2067,10 +2067,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2025-02-22"
     ],
     "revenues": [
-      23.68
+      19.52
     ],
     "revsVat": [
-      28.18
+      23.23
     ]
   },
   {
@@ -2078,10 +2078,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2025-02-24"
     ],
     "revenues": [
-      21.3
+      17.14
     ],
     "revsVat": [
-      25.34
+      20.39
     ]
   },
   {
@@ -2089,10 +2089,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2025-02-24"
     ],
     "revenues": [
-      37.31
+      31.89
     ],
     "revsVat": [
-      44.38
+      37.93
     ]
   },
   {
@@ -2103,13 +2103,13 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2025-11-27"
     ],
     "revenues": [
-      31.24,
+      27.08,
       69.97,
       67.71,
       81.34
     ],
     "revsVat": [
-      37.17,
+      32.22,
       83.25,
       80.57,
       96.8
@@ -2121,12 +2121,12 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2026-01-26"
     ],
     "revenues": [
-      73.61,
-      68.85
+      72.35,
+      67.59
     ],
     "revsVat": [
-      87.59,
-      81.94
+      86.09,
+      80.44
     ]
   },
   {
@@ -2134,10 +2134,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2025-03-02"
     ],
     "revenues": [
-      53.51
+      48.09
     ],
     "revsVat": [
-      63.67
+      57.22
     ]
   },
   {
@@ -2168,12 +2168,12 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2025-03-13"
     ],
     "revenues": [
-      37.91,
-      50.92
+      32.49,
+      45.5
     ],
     "revsVat": [
-      45.11,
-      60.59
+      38.66,
+      54.14
     ]
   },
   {
@@ -2207,18 +2207,18 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2026-01-18"
     ],
     "revenues": [
-      35.97,
-      30.57,
+      31.81,
+      26.41,
       88.17,
-      44.25,
-      47.77
+      40.09,
+      43.61
     ],
     "revsVat": [
-      42.8,
-      36.38,
+      37.85,
+      31.43,
       104.92,
-      52.66,
-      56.84
+      47.71,
+      51.89
     ]
   },
   {
@@ -2226,10 +2226,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2025-03-10"
     ],
     "revenues": [
-      32.5
+      27.08
     ],
     "revsVat": [
-      38.67
+      32.22
     ]
   },
   {
@@ -2240,14 +2240,14 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2025-06-20"
     ],
     "revenues": [
-      36.88,
-      45.46,
+      32.72,
+      41.3,
       51.37,
       79.2
     ],
     "revsVat": [
-      43.89,
-      54.1,
+      38.94,
+      49.15,
       61.13,
       94.23
     ]
@@ -2260,16 +2260,16 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2026-01-30"
     ],
     "revenues": [
-      24.27,
-      30.24,
-      35.64,
-      30.73
+      18.85,
+      24.82,
+      31.48,
+      25.31
     ],
     "revsVat": [
-      28.87,
-      35.98,
-      42.4,
-      36.57
+      22.42,
+      29.53,
+      37.45,
+      30.12
     ]
   },
   {
@@ -2277,10 +2277,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2025-03-12"
     ],
     "revenues": [
-      77.2
+      75.94
     ],
     "revsVat": [
-      91.87
+      90.37
     ]
   },
   {
@@ -2288,10 +2288,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2025-03-13"
     ],
     "revenues": [
-      25.13
+      20.97
     ],
     "revsVat": [
-      29.9
+      24.95
     ]
   },
   {
@@ -2299,10 +2299,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2025-03-14"
     ],
     "revenues": [
-      46.23
+      40.81
     ],
     "revsVat": [
-      55.01
+      48.56
     ]
   },
   {
@@ -2310,10 +2310,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2025-03-14"
     ],
     "revenues": [
-      25.71
+      21.55
     ],
     "revsVat": [
-      30.6
+      25.65
     ]
   },
   {
@@ -2346,10 +2346,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2025-03-15"
     ],
     "revenues": [
-      45.18
+      39.76
     ],
     "revsVat": [
-      53.76
+      47.31
     ]
   },
   {
@@ -2357,10 +2357,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2025-03-16"
     ],
     "revenues": [
-      77.58
+      76.32
     ],
     "revsVat": [
-      92.31
+      90.81
     ]
   },
   {
@@ -2368,10 +2368,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2025-03-18"
     ],
     "revenues": [
-      28.07
+      23.91
     ],
     "revsVat": [
-      33.39
+      28.44
     ]
   },
   {
@@ -2379,10 +2379,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2025-03-19"
     ],
     "revenues": [
-      45.93
+      41.77
     ],
     "revsVat": [
-      54.64
+      49.69
     ]
   },
   {
@@ -2391,12 +2391,12 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2025-11-08"
     ],
     "revenues": [
-      73.66,
-      78.42
+      72.4,
+      77.16
     ],
     "revsVat": [
-      87.65,
-      93.33
+      86.15,
+      91.83
     ]
   },
   {
@@ -2404,10 +2404,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2025-03-22"
     ],
     "revenues": [
-      73.84
+      72.58
     ],
     "revsVat": [
-      87.86
+      86.36
     ]
   },
   {
@@ -2417,11 +2417,11 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
     ],
     "revenues": [
       51.71,
-      72.16
+      70.9
     ],
     "revsVat": [
       61.53,
-      85.86
+      84.36
     ]
   },
   {
@@ -2429,10 +2429,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2025-03-24"
     ],
     "revenues": [
-      56.98
+      52.82
     ],
     "revsVat": [
-      67.81
+      62.86
     ]
   },
   {
@@ -2440,10 +2440,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2025-03-25"
     ],
     "revenues": [
-      36.9
+      31.48
     ],
     "revsVat": [
-      43.91
+      37.46
     ]
   },
   {
@@ -2462,10 +2462,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2025-03-26"
     ],
     "revenues": [
-      52.39
+      46.97
     ],
     "revsVat": [
-      62.35
+      55.9
     ]
   },
   {
@@ -2473,10 +2473,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2025-03-27"
     ],
     "revenues": [
-      114.34
+      113.08
     ],
     "revsVat": [
-      136.07
+      134.57
     ]
   },
   {
@@ -2484,10 +2484,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2025-03-27"
     ],
     "revenues": [
-      52.99
+      47.57
     ],
     "revsVat": [
-      63.06
+      56.61
     ]
   },
   {
@@ -2495,10 +2495,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2025-03-27"
     ],
     "revenues": [
-      30.63
+      25.21
     ],
     "revsVat": [
-      36.45
+      30
     ]
   },
   {
@@ -2507,12 +2507,12 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2026-03-10"
     ],
     "revenues": [
-      93.61,
-      41.93
+      92.35,
+      36.51
     ],
     "revsVat": [
-      111.38,
-      49.89
+      109.88,
+      43.44
     ]
   },
   {
@@ -2520,10 +2520,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2025-04-01"
     ],
     "revenues": [
-      71.18
+      69.92
     ],
     "revsVat": [
-      84.7
+      83.2
     ]
   },
   {
@@ -2532,11 +2532,11 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2025-09-08"
     ],
     "revenues": [
-      58.31,
+      54.15,
       88.94
     ],
     "revsVat": [
-      69.39,
+      64.44,
       105.84
     ]
   },
@@ -2545,10 +2545,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2025-04-03"
     ],
     "revenues": [
-      79.36
+      78.1
     ],
     "revsVat": [
-      94.45
+      92.95
     ]
   },
   {
@@ -2556,10 +2556,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2025-04-04"
     ],
     "revenues": [
-      73.68
+      72.42
     ],
     "revsVat": [
-      87.66
+      86.16
     ]
   },
   {
@@ -2592,10 +2592,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2025-04-08"
     ],
     "revenues": [
-      49.66
+      45.5
     ],
     "revsVat": [
-      59.09
+      54.14
     ]
   },
   {
@@ -2604,12 +2604,12 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2026-03-09"
     ],
     "revenues": [
-      103.21,
-      71.72
+      101.95,
+      66.3
     ],
     "revsVat": [
-      122.82,
-      85.35
+      121.32,
+      78.9
     ]
   },
   {
@@ -2617,10 +2617,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2025-04-09"
     ],
     "revenues": [
-      31.24
+      27.08
     ],
     "revsVat": [
-      37.17
+      32.22
     ]
   },
   {
@@ -2628,10 +2628,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2025-04-12"
     ],
     "revenues": [
-      31.24
+      27.08
     ],
     "revsVat": [
-      37.17
+      32.22
     ]
   },
   {
@@ -2651,12 +2651,12 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2025-11-19"
     ],
     "revenues": [
-      28.51,
-      42.91
+      24.35,
+      38.75
     ],
     "revsVat": [
-      33.91,
-      51.06
+      28.96,
+      46.11
     ]
   },
   {
@@ -2665,12 +2665,12 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2025-11-20"
     ],
     "revenues": [
-      26.46,
-      51.32
+      21.04,
+      45.9
     ],
     "revsVat": [
-      31.47,
-      61.06
+      25.02,
+      54.61
     ]
   },
   {
@@ -2678,10 +2678,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2025-04-16"
     ],
     "revenues": [
-      77.33
+      76.07
     ],
     "revsVat": [
-      92.03
+      90.53
     ]
   },
   {
@@ -2690,12 +2690,12 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2025-05-20"
     ],
     "revenues": [
-      111.59,
-      168.41
+      110.33,
+      167.15
     ],
     "revsVat": [
-      132.78,
-      200.39
+      131.28,
+      198.89
     ]
   },
   {
@@ -2714,10 +2714,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2025-04-19"
     ],
     "revenues": [
-      73.6
+      72.34
     ],
     "revsVat": [
-      87.58
+      86.08
     ]
   },
   {
@@ -2725,10 +2725,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2025-04-20"
     ],
     "revenues": [
-      32.5
+      28.34
     ],
     "revsVat": [
-      38.66
+      33.71
     ]
   },
   {
@@ -2758,10 +2758,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2025-04-28"
     ],
     "revenues": [
-      31.2
+      27.04
     ],
     "revsVat": [
-      37.12
+      32.17
     ]
   },
   {
@@ -2769,10 +2769,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2025-04-28"
     ],
     "revenues": [
-      32.5
+      27.08
     ],
     "revsVat": [
-      38.67
+      32.22
     ]
   },
   {
@@ -2780,10 +2780,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2025-04-29"
     ],
     "revenues": [
-      15.68
+      10.26
     ],
     "revsVat": [
-      18.65
+      12.2
     ]
   },
   {
@@ -2793,11 +2793,11 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
     ],
     "revenues": [
       131.7,
-      187.34
+      186.08
     ],
     "revsVat": [
       156.72,
-      222.94
+      221.44
     ]
   },
   {
@@ -2805,10 +2805,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2025-05-05"
     ],
     "revenues": [
-      31.43
+      27.27
     ],
     "revsVat": [
-      37.4
+      32.45
     ]
   },
   {
@@ -2816,10 +2816,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2025-05-05"
     ],
     "revenues": [
-      29.31
+      25.15
     ],
     "revsVat": [
-      34.88
+      29.93
     ]
   },
   {
@@ -2838,10 +2838,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2025-05-07"
     ],
     "revenues": [
-      30.24
+      24.82
     ],
     "revsVat": [
-      35.99
+      29.54
     ]
   },
   {
@@ -2849,10 +2849,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2025-05-09"
     ],
     "revenues": [
-      32.23
+      28.07
     ],
     "revsVat": [
-      38.34
+      33.39
     ]
   },
   {
@@ -2860,10 +2860,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2025-05-12"
     ],
     "revenues": [
-      47.74
+      38.16
     ],
     "revsVat": [
-      56.81
+      45.41
     ]
   },
   {
@@ -2882,10 +2882,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2025-05-13"
     ],
     "revenues": [
-      31.83
+      26.41
     ],
     "revsVat": [
-      37.88
+      31.43
     ]
   },
   {
@@ -2893,10 +2893,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2025-05-18"
     ],
     "revenues": [
-      157.85
+      156.59
     ],
     "revsVat": [
-      187.85
+      186.35
     ]
   },
   {
@@ -2904,10 +2904,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2025-05-18"
     ],
     "revenues": [
-      37.74
+      33.58
     ],
     "revsVat": [
-      44.9
+      39.95
     ]
   },
   {
@@ -2915,10 +2915,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2025-05-18"
     ],
     "revenues": [
-      106.4
+      105.14
     ],
     "revsVat": [
-      126.62
+      125.12
     ]
   },
   {
@@ -2926,10 +2926,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2025-05-20"
     ],
     "revenues": [
-      39.82
+      34.4
     ],
     "revsVat": [
-      47.37
+      40.92
     ]
   },
   {
@@ -2938,12 +2938,12 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2025-08-04"
     ],
     "revenues": [
-      64.57,
-      69.42
+      63.31,
+      68.16
     ],
     "revsVat": [
-      76.83,
-      82.62
+      75.33,
+      81.12
     ]
   },
   {
@@ -2951,10 +2951,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2025-05-21"
     ],
     "revenues": [
-      24.49
+      20.33
     ],
     "revsVat": [
-      29.13
+      24.18
     ]
   },
   {
@@ -2973,10 +2973,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2025-05-21"
     ],
     "revenues": [
-      50.92
+      45.5
     ],
     "revsVat": [
-      60.59
+      54.14
     ]
   },
   {
@@ -2996,12 +2996,12 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2025-11-19"
     ],
     "revenues": [
-      81.84,
-      88.32
+      80.58,
+      87.06
     ],
     "revsVat": [
-      97.38,
-      105.11
+      95.88,
+      103.61
     ]
   },
   {
@@ -3009,10 +3009,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2025-05-26"
     ],
     "revenues": [
-      47.18
+      43.02
     ],
     "revsVat": [
-      56.13
+      51.18
     ]
   },
   {
@@ -3020,10 +3020,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2025-05-27"
     ],
     "revenues": [
-      32.5
+      27.08
     ],
     "revsVat": [
-      38.67
+      32.22
     ]
   },
   {
@@ -3031,10 +3031,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2025-05-27"
     ],
     "revenues": [
-      27.56
+      22.14
     ],
     "revsVat": [
-      32.8
+      26.35
     ]
   },
   {
@@ -3045,16 +3045,16 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2026-03-10"
     ],
     "revenues": [
-      31.65,
-      56.25,
+      27.49,
+      52.09,
       67.62,
-      51.09
+      46.93
     ],
     "revsVat": [
-      37.66,
-      66.93,
+      32.71,
+      61.98,
       80.46,
-      60.79
+      55.84
     ]
   },
   {
@@ -3062,10 +3062,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2025-05-29"
     ],
     "revenues": [
-      33.03
+      28.87
     ],
     "revsVat": [
-      39.3
+      34.35
     ]
   },
   {
@@ -3073,10 +3073,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2025-05-30"
     ],
     "revenues": [
-      34.14
+      29.98
     ],
     "revsVat": [
-      40.62
+      35.67
     ]
   },
   {
@@ -3084,10 +3084,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2025-05-31"
     ],
     "revenues": [
-      43.71
+      38.29
     ],
     "revsVat": [
-      52.01
+      45.56
     ]
   },
   {
@@ -3095,10 +3095,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2025-05-31"
     ],
     "revenues": [
-      93.73
+      92.47
     ],
     "revsVat": [
-      111.54
+      110.04
     ]
   },
   {
@@ -3107,12 +3107,12 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2025-09-23"
     ],
     "revenues": [
-      43.99,
-      36.29
+      39.83,
+      32.13
     ],
     "revsVat": [
-      52.34,
-      43.18
+      47.39,
+      38.23
     ]
   },
   {
@@ -3120,10 +3120,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2025-06-02"
     ],
     "revenues": [
-      40.19
+      34.77
     ],
     "revsVat": [
-      47.82
+      41.37
     ]
   },
   {
@@ -3145,16 +3145,16 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2026-01-28"
     ],
     "revenues": [
-      19.28,
-      40.29,
-      45.99,
-      39.1
+      15.12,
+      36.13,
+      41.83,
+      34.94
     ],
     "revsVat": [
-      22.93,
-      47.94,
-      54.72,
-      46.53
+      17.98,
+      42.99,
+      49.77,
+      41.58
     ]
   },
   {
@@ -3164,14 +3164,14 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2026-01-06"
     ],
     "revenues": [
-      24.27,
-      32.22,
-      31.33
+      18.85,
+      26.8,
+      25.91
     ],
     "revsVat": [
-      28.88,
-      38.34,
-      37.28
+      22.43,
+      31.89,
+      30.83
     ]
   },
   {
@@ -3190,10 +3190,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2025-06-08"
     ],
     "revenues": [
-      25.12
+      20.96
     ],
     "revsVat": [
-      29.88
+      24.93
     ]
   },
   {
@@ -3201,10 +3201,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2025-06-09"
     ],
     "revenues": [
-      18.83
+      14.67
     ],
     "revsVat": [
-      22.41
+      17.46
     ]
   },
   {
@@ -3234,10 +3234,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2025-06-12"
     ],
     "revenues": [
-      54.82
+      49.4
     ],
     "revsVat": [
-      65.24
+      58.79
     ]
   },
   {
@@ -3245,10 +3245,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2025-06-12"
     ],
     "revenues": [
-      41.58
+      37.42
     ],
     "revsVat": [
-      49.48
+      44.53
     ]
   },
   {
@@ -3278,10 +3278,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2025-06-16"
     ],
     "revenues": [
-      103.02
+      101.76
     ],
     "revsVat": [
-      122.59
+      121.09
     ]
   },
   {
@@ -3289,10 +3289,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2025-06-16"
     ],
     "revenues": [
-      20.1
+      15.94
     ],
     "revsVat": [
-      23.92
+      18.97
     ]
   },
   {
@@ -3322,10 +3322,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2025-06-21"
     ],
     "revenues": [
-      67
+      65.74
     ],
     "revsVat": [
-      79.71
+      78.21
     ]
   },
   {
@@ -3333,10 +3333,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2025-06-21"
     ],
     "revenues": [
-      70.54
+      69.28
     ],
     "revsVat": [
-      83.94
+      82.44
     ]
   },
   {
@@ -3344,10 +3344,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2025-06-23"
     ],
     "revenues": [
-      31.83
+      26.41
     ],
     "revsVat": [
-      37.88
+      31.43
     ]
   },
   {
@@ -3379,11 +3379,11 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
     ],
     "revenues": [
       85.87,
-      152.38
+      151.12
     ],
     "revsVat": [
       102.19,
-      181.31
+      179.81
     ]
   },
   {
@@ -3405,15 +3405,15 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2025-09-27"
     ],
     "revenues": [
-      52.93,
+      48.77,
       86.27,
-      87.67,
+      86.41,
       117.59
     ],
     "revsVat": [
-      62.97,
+      58.02,
       102.63,
-      104.3,
+      102.8,
       139.9
     ]
   },
@@ -3433,10 +3433,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2025-07-04"
     ],
     "revenues": [
-      117.77
+      109.37
     ],
     "revsVat": [
-      140.14
+      130.14
     ]
   },
   {
@@ -3444,10 +3444,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2025-07-05"
     ],
     "revenues": [
-      70.61
+      69.35
     ],
     "revsVat": [
-      84.02
+      82.52
     ]
   },
   {
@@ -3455,10 +3455,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2025-07-08"
     ],
     "revenues": [
-      89.57
+      88.31
     ],
     "revsVat": [
-      106.6
+      105.1
     ]
   },
   {
@@ -3501,14 +3501,14 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2026-01-25"
     ],
     "revenues": [
-      30.51,
-      33.16,
-      41.64
+      26.35,
+      29,
+      37.48
     ],
     "revsVat": [
-      36.31,
-      39.45,
-      49.55
+      31.36,
+      34.5,
+      44.6
     ]
   },
   {
@@ -3516,10 +3516,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2025-07-10"
     ],
     "revenues": [
-      34.36
+      30.2
     ],
     "revsVat": [
-      40.9
+      35.95
     ]
   },
   {
@@ -3538,10 +3538,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2025-07-13"
     ],
     "revenues": [
-      74.2
+      72.94
     ],
     "revsVat": [
-      88.29
+      86.79
     ]
   },
   {
@@ -3549,10 +3549,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2025-07-15"
     ],
     "revenues": [
-      102.76
+      101.5
     ],
     "revsVat": [
-      122.29
+      120.79
     ]
   },
   {
@@ -3560,10 +3560,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2025-07-16"
     ],
     "revenues": [
-      69.04
+      67.78
     ],
     "revsVat": [
-      82.16
+      80.66
     ]
   },
   {
@@ -3571,10 +3571,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2025-07-17"
     ],
     "revenues": [
-      33.45
+      28.03
     ],
     "revsVat": [
-      39.8
+      33.35
     ]
   },
   {
@@ -3582,10 +3582,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2025-07-20"
     ],
     "revenues": [
-      72.5
+      71.24
     ],
     "revsVat": [
-      86.28
+      84.78
     ]
   },
   {
@@ -3596,16 +3596,16 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2026-01-24"
     ],
     "revenues": [
-      31.77,
-      28.87,
-      41.79,
-      34.65
+      26.35,
+      24.71,
+      37.63,
+      29.23
     ],
     "revsVat": [
-      37.81,
-      34.35,
-      49.73,
-      41.24
+      31.36,
+      29.4,
+      44.78,
+      34.79
     ]
   },
   {
@@ -3624,10 +3624,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2025-07-21"
     ],
     "revenues": [
-      54.4
+      48.98
     ],
     "revsVat": [
-      64.74
+      58.29
     ]
   },
   {
@@ -3635,10 +3635,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2025-07-21"
     ],
     "revenues": [
-      69.64
+      68.38
     ],
     "revsVat": [
-      82.88
+      81.38
     ]
   },
   {
@@ -3647,11 +3647,11 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2025-08-12"
     ],
     "revenues": [
-      55.72,
+      51.56,
       69.61
     ],
     "revsVat": [
-      66.31,
+      61.36,
       82.83
     ]
   },
@@ -3663,16 +3663,16 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2026-02-17"
     ],
     "revenues": [
-      29.87,
-      37.2,
-      32.19,
-      59.45
+      24.45,
+      31.78,
+      26.77,
+      54.03
     ],
     "revsVat": [
-      35.55,
-      44.27,
-      38.31,
-      70.74
+      29.1,
+      37.82,
+      31.86,
+      64.29
     ]
   },
   {
@@ -3680,10 +3680,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2025-07-27"
     ],
     "revenues": [
-      70.77
+      69.51
     ],
     "revsVat": [
-      84.2
+      82.7
     ]
   },
   {
@@ -3691,10 +3691,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2025-07-31"
     ],
     "revenues": [
-      75.29
+      74.03
     ],
     "revsVat": [
-      89.59
+      88.09
     ]
   },
   {
@@ -3702,10 +3702,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2025-08-02"
     ],
     "revenues": [
-      31.27
+      27.11
     ],
     "revsVat": [
-      37.21
+      32.26
     ]
   },
   {
@@ -3713,10 +3713,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2025-08-03"
     ],
     "revenues": [
-      56.02
+      51.86
     ],
     "revsVat": [
-      66.67
+      61.72
     ]
   },
   {
@@ -3726,14 +3726,14 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2025-10-17"
     ],
     "revenues": [
-      57.96,
-      70.11,
-      46.43
+      52.54,
+      64.69,
+      41.01
     ],
     "revsVat": [
-      68.98,
-      83.42,
-      55.25
+      62.53,
+      76.97,
+      48.8
     ]
   },
   {
@@ -3741,10 +3741,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2025-08-08"
     ],
     "revenues": [
-      55.69
+      50.27
     ],
     "revsVat": [
-      66.27
+      59.82
     ]
   },
   {
@@ -3769,10 +3769,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2025-08-14"
     ],
     "revenues": [
-      100.99
+      99.73
     ],
     "revsVat": [
-      120.19
+      118.69
     ]
   },
   {
@@ -3798,24 +3798,24 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2026-03-01"
     ],
     "revenues": [
-      31.19,
-      32.79,
-      34.28,
-      37.09,
-      30.8,
-      36.82,
-      38,
-      53.6
+      25.77,
+      27.37,
+      28.86,
+      31.67,
+      25.38,
+      32.66,
+      33.84,
+      48.18
     ],
     "revsVat": [
-      37.11,
-      39.02,
-      40.79,
-      44.13,
-      36.65,
-      43.81,
-      45.21,
-      63.78
+      30.66,
+      32.57,
+      34.34,
+      37.68,
+      30.2,
+      38.86,
+      40.26,
+      57.33
     ]
   },
   {
@@ -3834,10 +3834,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2025-08-19"
     ],
     "revenues": [
-      54.82
+      49.4
     ],
     "revsVat": [
-      65.24
+      58.79
     ]
   },
   {
@@ -3868,12 +3868,12 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2025-11-16"
     ],
     "revenues": [
-      36.07,
-      35.16
+      30.65,
+      29.74
     ],
     "revsVat": [
-      42.92,
-      41.84
+      36.47,
+      35.39
     ]
   },
   {
@@ -3881,10 +3881,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2025-08-27"
     ],
     "revenues": [
-      30.51
+      26.35
     ],
     "revsVat": [
-      36.31
+      31.36
     ]
   },
   {
@@ -3925,10 +3925,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2025-09-03"
     ],
     "revenues": [
-      25.46
+      20.04
     ],
     "revsVat": [
-      30.29
+      23.84
     ]
   },
   {
@@ -3947,10 +3947,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2025-09-11"
     ],
     "revenues": [
-      88.39
+      87.13
     ],
     "revsVat": [
-      105.2
+      103.7
     ]
   },
   {
@@ -3971,14 +3971,14 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2026-01-05"
     ],
     "revenues": [
-      38.86,
-      71.1,
-      86.86
+      33.44,
+      66.94,
+      85.6
     ],
     "revsVat": [
-      46.24,
-      84.62,
-      103.37
+      39.79,
+      79.67,
+      101.87
     ]
   },
   {
@@ -3999,14 +3999,14 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2026-02-17"
     ],
     "revenues": [
-      47.42,
-      35.07,
-      33.21
+      42,
+      29.65,
+      27.79
     ],
     "revsVat": [
-      56.43,
-      41.73,
-      39.53
+      49.98,
+      35.28,
+      33.08
     ]
   },
   {
@@ -4025,10 +4025,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2025-09-22"
     ],
     "revenues": [
-      28.26
+      22.84
     ],
     "revsVat": [
-      33.63
+      27.18
     ]
   },
   {
@@ -4036,10 +4036,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2025-09-22"
     ],
     "revenues": [
-      62.89
+      58.73
     ],
     "revsVat": [
-      74.84
+      69.89
     ]
   },
   {
@@ -4047,10 +4047,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2025-09-22"
     ],
     "revenues": [
-      92.93
+      91.67
     ],
     "revsVat": [
-      110.57
+      109.07
     ]
   },
   {
@@ -4058,10 +4058,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2025-09-22"
     ],
     "revenues": [
-      45.9
+      41.74
     ],
     "revsVat": [
-      54.62
+      49.67
     ]
   },
   {
@@ -4069,10 +4069,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2025-09-22"
     ],
     "revenues": [
-      72.32
+      71.06
     ],
     "revsVat": [
-      86.06
+      84.56
     ]
   },
   {
@@ -4080,10 +4080,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2025-09-23"
     ],
     "revenues": [
-      49.9
+      44.48
     ],
     "revsVat": [
-      59.39
+      52.94
     ]
   },
   {
@@ -4091,10 +4091,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2025-09-23"
     ],
     "revenues": [
-      72.72
+      71.46
     ],
     "revsVat": [
-      86.53
+      85.03
     ]
   },
   {
@@ -4104,14 +4104,14 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2026-02-09"
     ],
     "revenues": [
-      70.7,
-      69.8,
-      79.91
+      69.44,
+      68.54,
+      78.65
     ],
     "revsVat": [
-      84.13,
-      83.06,
-      95.09
+      82.63,
+      81.56,
+      93.59
     ]
   },
   {
@@ -4131,12 +4131,12 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2025-11-23"
     ],
     "revenues": [
-      25.22,
-      32.97
+      21.06,
+      28.81
     ],
     "revsVat": [
-      30,
-      39.23
+      25.05,
+      34.28
     ]
   },
   {
@@ -4144,10 +4144,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2025-09-24"
     ],
     "revenues": [
-      76.7
+      75.44
     ],
     "revsVat": [
-      91.26
+      89.76
     ]
   },
   {
@@ -4157,14 +4157,14 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2025-11-08"
     ],
     "revenues": [
-      51.55,
-      38.24,
-      34.56
+      46.13,
+      32.82,
+      29.14
     ],
     "revsVat": [
-      61.33,
-      45.49,
-      41.13
+      54.88,
+      39.04,
+      34.68
     ]
   },
   {
@@ -4183,10 +4183,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2025-09-26"
     ],
     "revenues": [
-      21.72
+      17.56
     ],
     "revsVat": [
-      25.84
+      20.89
     ]
   },
   {
@@ -4194,10 +4194,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2025-09-26"
     ],
     "revenues": [
-      48.26
+      42.84
     ],
     "revsVat": [
-      57.43
+      50.98
     ]
   },
   {
@@ -4206,12 +4206,12 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2025-10-05"
     ],
     "revenues": [
-      58.97,
-      59.8
+      53.55,
+      54.38
     ],
     "revsVat": [
-      70.17,
-      71.16
+      63.72,
+      64.71
     ]
   },
   {
@@ -4219,10 +4219,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2025-09-29"
     ],
     "revenues": [
-      33.21
+      27.79
     ],
     "revsVat": [
-      39.53
+      33.08
     ]
   },
   {
@@ -4230,10 +4230,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2025-09-29"
     ],
     "revenues": [
-      46.87
+      42.71
     ],
     "revsVat": [
-      55.77
+      50.82
     ]
   },
   {
@@ -4241,10 +4241,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2025-09-29"
     ],
     "revenues": [
-      50.88
+      45.46
     ],
     "revsVat": [
-      60.54
+      54.09
     ]
   },
   {
@@ -4253,12 +4253,12 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2025-10-12"
     ],
     "revenues": [
-      75.18,
-      96.84
+      73.92,
+      95.58
     ],
     "revsVat": [
-      89.46,
-      115.23
+      87.96,
+      113.73
     ]
   },
   {
@@ -4266,10 +4266,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2025-10-05"
     ],
     "revenues": [
-      45.36
+      39.94
     ],
     "revsVat": [
-      53.98
+      47.53
     ]
   },
   {
@@ -4277,10 +4277,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2025-10-07"
     ],
     "revenues": [
-      73.46
+      72.2
     ],
     "revsVat": [
-      87.42
+      85.92
     ]
   },
   {
@@ -4303,11 +4303,11 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2026-01-31"
     ],
     "revenues": [
-      87.37,
+      86.11,
       76.18
     ],
     "revsVat": [
-      103.97,
+      102.47,
       90.66
     ]
   },
@@ -4342,12 +4342,12 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2026-02-15"
     ],
     "revenues": [
-      33.81,
-      32.14
+      29.65,
+      27.98
     ],
     "revsVat": [
-      40.23,
-      38.25
+      35.28,
+      33.3
     ]
   },
   {
@@ -4355,10 +4355,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2025-10-13"
     ],
     "revenues": [
-      144.41
+      143.15
     ],
     "revsVat": [
-      171.85
+      170.35
     ]
   },
   {
@@ -4366,10 +4366,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2025-10-14"
     ],
     "revenues": [
-      31.49
+      26.07
     ],
     "revsVat": [
-      37.47
+      31.02
     ]
   },
   {
@@ -4377,10 +4377,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2025-10-14"
     ],
     "revenues": [
-      69.76
+      68.5
     ],
     "revsVat": [
-      83.01
+      81.51
     ]
   },
   {
@@ -4388,10 +4388,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2025-10-14"
     ],
     "revenues": [
-      27.56
+      22.14
     ],
     "revsVat": [
-      32.8
+      26.35
     ]
   },
   {
@@ -4399,10 +4399,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2025-10-14"
     ],
     "revenues": [
-      29.42
+      25.26
     ],
     "revsVat": [
-      35
+      30.05
     ]
   },
   {
@@ -4410,10 +4410,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2025-10-15"
     ],
     "revenues": [
-      38.92
+      34.76
     ],
     "revsVat": [
-      46.31
+      41.36
     ]
   },
   {
@@ -4421,10 +4421,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2025-10-15"
     ],
     "revenues": [
-      32.08
+      26.66
     ],
     "revsVat": [
-      38.17
+      31.72
     ]
   },
   {
@@ -4443,10 +4443,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2025-10-16"
     ],
     "revenues": [
-      23.27
+      17.85
     ],
     "revsVat": [
-      27.69
+      21.24
     ]
   },
   {
@@ -4454,10 +4454,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2025-10-16"
     ],
     "revenues": [
-      37.91
+      33.75
     ],
     "revsVat": [
-      45.11
+      40.16
     ]
   },
   {
@@ -4466,12 +4466,12 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2026-01-10"
     ],
     "revenues": [
-      44.52,
-      63.06
+      40.36,
+      58.9
     ],
     "revsVat": [
-      52.98,
-      75.04
+      48.03,
+      70.09
     ]
   },
   {
@@ -4479,10 +4479,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2025-10-16"
     ],
     "revenues": [
-      74.18
+      72.92
     ],
     "revsVat": [
-      88.27
+      86.77
     ]
   },
   {
@@ -4501,10 +4501,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2025-10-18"
     ],
     "revenues": [
-      64.52
+      59.1
     ],
     "revsVat": [
-      76.78
+      70.33
     ]
   },
   {
@@ -4512,10 +4512,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2025-10-18"
     ],
     "revenues": [
-      68.59
+      67.33
     ],
     "revsVat": [
-      81.63
+      80.13
     ]
   },
   {
@@ -4523,10 +4523,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2025-10-18"
     ],
     "revenues": [
-      30.93
+      26.77
     ],
     "revsVat": [
-      36.81
+      31.86
     ]
   },
   {
@@ -4534,10 +4534,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2025-10-19"
     ],
     "revenues": [
-      71.88
+      70.62
     ],
     "revsVat": [
-      85.54
+      84.04
     ]
   },
   {
@@ -4545,10 +4545,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2025-10-19"
     ],
     "revenues": [
-      32.19
+      26.77
     ],
     "revsVat": [
-      38.31
+      31.86
     ]
   },
   {
@@ -4556,10 +4556,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2025-10-20"
     ],
     "revenues": [
-      82.17
+      80.91
     ],
     "revsVat": [
-      97.78
+      96.28
     ]
   },
   {
@@ -4567,10 +4567,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2025-10-20"
     ],
     "revenues": [
-      129.23
+      127.97
     ],
     "revsVat": [
-      153.75
+      152.25
     ]
   },
   {
@@ -4592,10 +4592,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2025-10-25"
     ],
     "revenues": [
-      33.38
+      29.22
     ],
     "revsVat": [
-      39.71
+      34.76
     ]
   },
   {
@@ -4604,12 +4604,12 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2025-10-28"
     ],
     "revenues": [
-      42.9,
-      34.65
+      37.48,
+      29.23
     ],
     "revsVat": [
-      51.05,
-      41.24
+      44.6,
+      34.79
     ]
   },
   {
@@ -4617,10 +4617,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2025-11-01"
     ],
     "revenues": [
-      44.85
+      39.43
     ],
     "revsVat": [
-      53.36
+      46.91
     ]
   },
   {
@@ -4628,10 +4628,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2025-11-02"
     ],
     "revenues": [
-      18.67
+      13.25
     ],
     "revsVat": [
-      22.22
+      15.77
     ]
   },
   {
@@ -4639,10 +4639,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2025-11-04"
     ],
     "revenues": [
-      68.78
+      67.52
     ],
     "revsVat": [
-      81.86
+      80.36
     ]
   },
   {
@@ -4651,12 +4651,12 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2026-03-04"
     ],
     "revenues": [
-      36.65,
-      42.93
+      32.49,
+      38.77
     ],
     "revsVat": [
-      43.62,
-      51.08
+      38.67,
+      46.13
     ]
   },
   {
@@ -4675,10 +4675,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2025-11-08"
     ],
     "revenues": [
-      30.93
+      26.77
     ],
     "revsVat": [
-      36.81
+      31.86
     ]
   },
   {
@@ -4697,10 +4697,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2025-11-09"
     ],
     "revenues": [
-      75.75
+      74.49
     ],
     "revsVat": [
-      90.15
+      88.65
     ]
   },
   {
@@ -4708,10 +4708,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2025-11-09"
     ],
     "revenues": [
-      32.19
+      26.77
     ],
     "revsVat": [
-      38.31
+      31.86
     ]
   },
   {
@@ -4720,12 +4720,12 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2025-12-08"
     ],
     "revenues": [
-      34.4,
-      32.85
+      30.24,
+      27.43
     ],
     "revsVat": [
-      40.92,
-      39.09
+      35.97,
+      32.64
     ]
   },
   {
@@ -4733,10 +4733,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2025-11-10"
     ],
     "revenues": [
-      32.19
+      26.77
     ],
     "revsVat": [
-      38.31
+      31.86
     ]
   },
   {
@@ -4755,10 +4755,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2025-11-11"
     ],
     "revenues": [
-      25.66
+      21.5
     ],
     "revsVat": [
-      30.54
+      25.59
     ]
   },
   {
@@ -4766,10 +4766,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2025-11-11"
     ],
     "revenues": [
-      47.13
+      42.97
     ],
     "revsVat": [
-      56.08
+      51.13
     ]
   },
   {
@@ -4788,10 +4788,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2025-11-11"
     ],
     "revenues": [
-      32.37
+      28.21
     ],
     "revsVat": [
-      38.52
+      33.57
     ]
   },
   {
@@ -4799,10 +4799,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2025-11-12"
     ],
     "revenues": [
-      60.17
+      54.75
     ],
     "revsVat": [
-      71.61
+      65.16
     ]
   },
   {
@@ -4812,11 +4812,11 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
     ],
     "revenues": [
       76.39,
-      53.05
+      48.89
     ],
     "revsVat": [
       90.92,
-      63.12
+      58.17
     ]
   },
   {
@@ -4825,12 +4825,12 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2026-02-14"
     ],
     "revenues": [
-      32.19,
-      69.54
+      26.77,
+      68.28
     ],
     "revsVat": [
-      38.31,
-      82.74
+      31.86,
+      81.24
     ]
   },
   {
@@ -4838,10 +4838,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2025-11-12"
     ],
     "revenues": [
-      42.38
+      38.22
     ],
     "revsVat": [
-      50.43
+      45.48
     ]
   },
   {
@@ -4849,10 +4849,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2025-11-13"
     ],
     "revenues": [
-      27.7
+      23.54
     ],
     "revsVat": [
-      32.96
+      28.01
     ]
   },
   {
@@ -4862,13 +4862,13 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2025-11-24"
     ],
     "revenues": [
-      27.96,
-      34.82,
+      23.8,
+      30.66,
       135.73
     ],
     "revsVat": [
-      33.27,
-      41.43,
+      28.32,
+      36.48,
       161.5
     ]
   },
@@ -4877,10 +4877,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2025-11-15"
     ],
     "revenues": [
-      30.93
+      26.77
     ],
     "revsVat": [
-      36.81
+      31.86
     ]
   },
   {
@@ -4888,10 +4888,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2025-11-15"
     ],
     "revenues": [
-      53.07
+      48.91
     ],
     "revsVat": [
-      63.16
+      58.21
     ]
   },
   {
@@ -4899,10 +4899,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2025-11-16"
     ],
     "revenues": [
-      50.6
+      45.18
     ],
     "revsVat": [
-      60.21
+      53.76
     ]
   },
   {
@@ -4932,10 +4932,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2025-11-17"
     ],
     "revenues": [
-      32.19
+      26.77
     ],
     "revsVat": [
-      38.31
+      31.86
     ]
   },
   {
@@ -4943,10 +4943,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2025-11-17"
     ],
     "revenues": [
-      32
+      26.58
     ],
     "revsVat": [
-      38.07
+      31.62
     ]
   },
   {
@@ -4968,10 +4968,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2025-11-18"
     ],
     "revenues": [
-      37.69
+      32.27
     ],
     "revsVat": [
-      44.85
+      38.4
     ]
   },
   {
@@ -4979,10 +4979,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2025-11-18"
     ],
     "revenues": [
-      22.01
+      17.85
     ],
     "revsVat": [
-      26.19
+      21.24
     ]
   },
   {
@@ -4992,12 +4992,12 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2026-02-11"
     ],
     "revenues": [
-      36.29,
+      32.13,
       78.03,
       70.83
     ],
     "revsVat": [
-      43.18,
+      38.23,
       92.84,
       84.29
     ]
@@ -5007,10 +5007,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2025-11-19"
     ],
     "revenues": [
-      58.97
+      53.55
     ],
     "revsVat": [
-      70.17
+      63.72
     ]
   },
   {
@@ -5019,12 +5019,12 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2025-11-25"
     ],
     "revenues": [
-      50.47,
-      53.56
+      46.31,
+      49.4
     ],
     "revsVat": [
-      60.06,
-      63.74
+      55.11,
+      58.79
     ]
   },
   {
@@ -5032,10 +5032,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2025-11-19"
     ],
     "revenues": [
-      73.42
+      72.16
     ],
     "revsVat": [
-      87.37
+      85.87
     ]
   },
   {
@@ -5043,10 +5043,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2025-11-20"
     ],
     "revenues": [
-      25.6
+      21.44
     ],
     "revsVat": [
-      30.46
+      25.51
     ]
   },
   {
@@ -5054,10 +5054,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2025-11-20"
     ],
     "revenues": [
-      22.79
+      18.63
     ],
     "revsVat": [
-      27.12
+      22.17
     ]
   },
   {
@@ -5065,10 +5065,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2025-11-21"
     ],
     "revenues": [
-      27.84
+      22.42
     ],
     "revsVat": [
-      33.13
+      26.68
     ]
   },
   {
@@ -5078,14 +5078,14 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2025-12-14"
     ],
     "revenues": [
-      40.39,
-      65.11,
-      68.49
+      36.23,
+      60.95,
+      64.33
     ],
     "revsVat": [
-      48.06,
-      77.48,
-      81.51
+      43.11,
+      72.53,
+      76.56
     ]
   },
   {
@@ -5093,10 +5093,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2025-11-22"
     ],
     "revenues": [
-      48.26
+      42.84
     ],
     "revsVat": [
-      57.43
+      50.98
     ]
   },
   {
@@ -5115,10 +5115,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2025-11-23"
     ],
     "revenues": [
-      38.77
+      34.61
     ],
     "revsVat": [
-      46.14
+      41.19
     ]
   },
   {
@@ -5126,10 +5126,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2025-11-23"
     ],
     "revenues": [
-      45.31
+      41.15
     ],
     "revsVat": [
-      53.92
+      48.97
     ]
   },
   {
@@ -5137,10 +5137,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2025-11-23"
     ],
     "revenues": [
-      68.6
+      67.34
     ],
     "revsVat": [
-      81.63
+      80.13
     ]
   },
   {
@@ -5148,10 +5148,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2025-11-23"
     ],
     "revenues": [
-      21.79
+      17.63
     ],
     "revsVat": [
-      25.92
+      20.97
     ]
   },
   {
@@ -5159,10 +5159,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2025-11-23"
     ],
     "revenues": [
-      58.97
+      53.55
     ],
     "revsVat": [
-      70.17
+      63.72
     ]
   },
   {
@@ -5193,12 +5193,12 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2026-02-07"
     ],
     "revenues": [
-      69.53,
-      109.29
+      68.27,
+      108.03
     ],
     "revsVat": [
-      82.74,
-      130.07
+      81.24,
+      128.57
     ]
   },
   {
@@ -5231,10 +5231,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2025-11-24"
     ],
     "revenues": [
-      73.82
+      72.56
     ],
     "revsVat": [
-      87.84
+      86.34
     ]
   },
   {
@@ -5242,10 +5242,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2025-11-25"
     ],
     "revenues": [
-      40.14
+      34.72
     ],
     "revsVat": [
-      47.77
+      41.32
     ]
   },
   {
@@ -5253,10 +5253,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2025-11-25"
     ],
     "revenues": [
-      27.89
+      22.47
     ],
     "revsVat": [
-      33.19
+      26.74
     ]
   },
   {
@@ -5264,10 +5264,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2025-11-25"
     ],
     "revenues": [
-      27.17
+      21.75
     ],
     "revsVat": [
-      32.33
+      25.88
     ]
   },
   {
@@ -5275,10 +5275,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2025-11-26"
     ],
     "revenues": [
-      32.19
+      26.77
     ],
     "revsVat": [
-      38.31
+      31.86
     ]
   },
   {
@@ -5286,10 +5286,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2025-11-26"
     ],
     "revenues": [
-      71.41
+      70.15
     ],
     "revsVat": [
-      84.98
+      83.48
     ]
   },
   {
@@ -5297,10 +5297,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2025-11-26"
     ],
     "revenues": [
-      32.19
+      26.77
     ],
     "revsVat": [
-      38.31
+      31.86
     ]
   },
   {
@@ -5309,12 +5309,12 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2025-12-09"
     ],
     "revenues": [
-      22.89,
-      25.77
+      18.73,
+      20.35
     ],
     "revsVat": [
-      27.24,
-      30.66
+      22.29,
+      24.21
     ]
   },
   {
@@ -5322,10 +5322,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2025-11-27"
     ],
     "revenues": [
-      42.77
+      38.61
     ],
     "revsVat": [
-      50.89
+      45.94
     ]
   },
   {
@@ -5333,10 +5333,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2025-11-28"
     ],
     "revenues": [
-      78.91
+      77.65
     ],
     "revsVat": [
-      93.9
+      92.4
     ]
   },
   {
@@ -5344,10 +5344,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2025-11-30"
     ],
     "revenues": [
-      20.74
+      16.58
     ],
     "revsVat": [
-      24.68
+      19.73
     ]
   },
   {
@@ -5355,10 +5355,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2025-12-01"
     ],
     "revenues": [
-      29.18
+      23.76
     ],
     "revsVat": [
-      34.72
+      28.27
     ]
   },
   {
@@ -5377,10 +5377,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2025-12-02"
     ],
     "revenues": [
-      17.77
+      12.35
     ],
     "revsVat": [
-      21.15
+      14.7
     ]
   },
   {
@@ -5388,10 +5388,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2025-12-02"
     ],
     "revenues": [
-      32.57
+      27.15
     ],
     "revsVat": [
-      38.76
+      32.31
     ]
   },
   {
@@ -5399,10 +5399,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2025-12-02"
     ],
     "revenues": [
-      103.11
+      101.85
     ],
     "revsVat": [
-      122.7
+      121.2
     ]
   },
   {
@@ -5422,11 +5422,11 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2026-01-31"
     ],
     "revenues": [
-      38.72,
+      34.56,
       67.74
     ],
     "revsVat": [
-      46.07,
+      41.12,
       80.61
     ]
   },
@@ -5435,10 +5435,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2025-12-05"
     ],
     "revenues": [
-      33.21
+      27.79
     ],
     "revsVat": [
-      39.53
+      33.08
     ]
   },
   {
@@ -5446,10 +5446,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2025-12-07"
     ],
     "revenues": [
-      16.06
+      11.9
     ],
     "revsVat": [
-      19.11
+      14.16
     ]
   },
   {
@@ -5457,10 +5457,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2025-12-07"
     ],
     "revenues": [
-      32.19
+      26.77
     ],
     "revsVat": [
-      38.31
+      31.86
     ]
   },
   {
@@ -5468,10 +5468,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2025-12-07"
     ],
     "revenues": [
-      152.67
+      151.41
     ],
     "revsVat": [
-      181.69
+      180.19
     ]
   },
   {
@@ -5479,10 +5479,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2025-12-08"
     ],
     "revenues": [
-      29.22
+      23.8
     ],
     "revsVat": [
-      34.77
+      28.32
     ]
   },
   {
@@ -5491,12 +5491,12 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2026-02-22"
     ],
     "revenues": [
-      46.86,
-      68.48
+      42.7,
+      64.32
     ],
     "revsVat": [
-      55.76,
-      81.49
+      50.81,
+      76.54
     ]
   },
   {
@@ -5504,10 +5504,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2025-12-08"
     ],
     "revenues": [
-      74.2
+      72.94
     ],
     "revsVat": [
-      88.29
+      86.79
     ]
   },
   {
@@ -5515,10 +5515,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2025-12-09"
     ],
     "revenues": [
-      36.35
+      32.19
     ],
     "revsVat": [
-      43.25
+      38.3
     ]
   },
   {
@@ -5559,10 +5559,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2025-12-10"
     ],
     "revenues": [
-      24.8
+      19.38
     ],
     "revsVat": [
-      29.51
+      23.06
     ]
   },
   {
@@ -5584,10 +5584,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2025-12-11"
     ],
     "revenues": [
-      30.93
+      26.77
     ],
     "revsVat": [
-      36.81
+      31.86
     ]
   },
   {
@@ -5595,10 +5595,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2025-12-12"
     ],
     "revenues": [
-      22.01
+      17.85
     ],
     "revsVat": [
-      26.19
+      21.24
     ]
   },
   {
@@ -5617,10 +5617,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2025-12-13"
     ],
     "revenues": [
-      116.55
+      115.29
     ],
     "revsVat": [
-      138.69
+      137.19
     ]
   },
   {
@@ -5628,10 +5628,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2025-12-13"
     ],
     "revenues": [
-      44.25
+      40.09
     ],
     "revsVat": [
-      52.66
+      47.71
     ]
   },
   {
@@ -5639,10 +5639,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2025-12-13"
     ],
     "revenues": [
-      30.93
+      26.77
     ],
     "revsVat": [
-      36.81
+      31.86
     ]
   },
   {
@@ -5650,10 +5650,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2025-12-14"
     ],
     "revenues": [
-      70.87
+      69.61
     ],
     "revsVat": [
-      84.34
+      82.84
     ]
   },
   {
@@ -5661,10 +5661,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2025-12-14"
     ],
     "revenues": [
-      30.04
+      24.62
     ],
     "revsVat": [
-      35.75
+      29.3
     ]
   },
   {
@@ -5683,10 +5683,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2025-12-15"
     ],
     "revenues": [
-      70.87
+      69.61
     ],
     "revsVat": [
-      84.34
+      82.84
     ]
   },
   {
@@ -5694,10 +5694,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2025-12-15"
     ],
     "revenues": [
-      54.82
+      49.4
     ],
     "revsVat": [
-      65.24
+      58.79
     ]
   },
   {
@@ -5705,10 +5705,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2025-12-15"
     ],
     "revenues": [
-      22.01
+      17.85
     ],
     "revsVat": [
-      26.19
+      21.24
     ]
   },
   {
@@ -5716,10 +5716,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2025-12-16"
     ],
     "revenues": [
-      42.9
+      37.48
     ],
     "revsVat": [
-      51.05
+      44.6
     ]
   },
   {
@@ -5727,10 +5727,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2025-12-16"
     ],
     "revenues": [
-      48.33
+      42.91
     ],
     "revsVat": [
-      57.51
+      51.06
     ]
   },
   {
@@ -5738,10 +5738,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2025-12-16"
     ],
     "revenues": [
-      33.54
+      29.38
     ],
     "revsVat": [
-      39.9
+      34.95
     ]
   },
   {
@@ -5760,84 +5760,7 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2025-12-17"
     ],
     "revenues": [
-      53.56
-    ],
-    "revsVat": [
-      63.74
-    ]
-  },
-  {
-    "dates": [
-      "2025-12-29"
-    ],
-    "revenues": [
-      43.18
-    ],
-    "revsVat": [
-      51.39
-    ]
-  },
-  {
-    "dates": [
-      "2025-12-30"
-    ],
-    "revenues": [
-      30.24
-    ],
-    "revsVat": [
-      35.99
-    ]
-  },
-  {
-    "dates": [
-      "2025-12-31"
-    ],
-    "revenues": [
-      16.87
-    ],
-    "revsVat": [
-      20.07
-    ]
-  },
-  {
-    "dates": [
-      "2025-12-31"
-    ],
-    "revenues": [
-      16.06
-    ],
-    "revsVat": [
-      19.11
-    ]
-  },
-  {
-    "dates": [
-      "2025-12-31"
-    ],
-    "revenues": [
-      58.97
-    ],
-    "revsVat": [
-      70.17
-    ]
-  },
-  {
-    "dates": [
-      "2026-01-01"
-    ],
-    "revenues": [
-      40.07
-    ],
-    "revsVat": [
-      47.68
-    ]
-  },
-  {
-    "dates": [
-      "2026-01-03"
-    ],
-    "revenues": [
-      49.41
+      49.4
     ],
     "revsVat": [
       58.79
@@ -5845,13 +5768,79 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
   },
   {
     "dates": [
-      "2026-01-04"
+      "2025-12-29"
     ],
     "revenues": [
-      46.94
+      37.76
     ],
     "revsVat": [
-      55.86
+      44.94
+    ]
+  },
+  {
+    "dates": [
+      "2025-12-30"
+    ],
+    "revenues": [
+      24.82
+    ],
+    "revsVat": [
+      29.54
+    ]
+  },
+  {
+    "dates": [
+      "2025-12-31"
+    ],
+    "revenues": [
+      11.45
+    ],
+    "revsVat": [
+      13.62
+    ]
+  },
+  {
+    "dates": [
+      "2025-12-31"
+    ],
+    "revenues": [
+      11.9
+    ],
+    "revsVat": [
+      14.16
+    ]
+  },
+  {
+    "dates": [
+      "2025-12-31"
+    ],
+    "revenues": [
+      53.55
+    ],
+    "revsVat": [
+      63.72
+    ]
+  },
+  {
+    "dates": [
+      "2026-01-01"
+    ],
+    "revenues": [
+      34.65
+    ],
+    "revsVat": [
+      41.23
+    ]
+  },
+  {
+    "dates": [
+      "2026-01-03"
+    ],
+    "revenues": [
+      45.25
+    ],
+    "revsVat": [
+      53.84
     ]
   },
   {
@@ -5859,10 +5848,21 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2026-01-04"
     ],
     "revenues": [
-      16.06
+      42.78
     ],
     "revsVat": [
-      19.11
+      50.91
+    ]
+  },
+  {
+    "dates": [
+      "2026-01-04"
+    ],
+    "revenues": [
+      11.9
+    ],
+    "revsVat": [
+      14.16
     ]
   },
   {
@@ -5873,16 +5873,16 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2026-01-24"
     ],
     "revenues": [
-      32.19,
-      57.19,
-      34.65,
-      32.19
+      26.77,
+      51.77,
+      29.23,
+      26.77
     ],
     "revsVat": [
-      38.31,
-      68.06,
-      41.24,
-      38.31
+      31.86,
+      61.61,
+      34.79,
+      31.86
     ]
   },
   {
@@ -5890,10 +5890,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2026-01-04"
     ],
     "revenues": [
-      41.66
+      36.24
     ],
     "revsVat": [
-      49.57
+      43.12
     ]
   },
   {
@@ -5912,10 +5912,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2026-01-05"
     ],
     "revenues": [
-      23.91
+      18.49
     ],
     "revsVat": [
-      28.45
+      22
     ]
   },
   {
@@ -5923,10 +5923,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2026-01-05"
     ],
     "revenues": [
-      28.07
+      22.65
     ],
     "revsVat": [
-      33.41
+      26.96
     ]
   },
   {
@@ -5934,10 +5934,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2026-01-06"
     ],
     "revenues": [
-      27.27
+      23.11
     ],
     "revsVat": [
-      32.45
+      27.5
     ]
   },
   {
@@ -5945,10 +5945,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2026-01-06"
     ],
     "revenues": [
-      74.53
+      73.27
     ],
     "revsVat": [
-      88.68
+      87.18
     ]
   },
   {
@@ -5956,10 +5956,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2026-01-06"
     ],
     "revenues": [
-      72.84
+      71.58
     ],
     "revsVat": [
-      86.68
+      85.18
     ]
   },
   {
@@ -5989,10 +5989,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2026-01-09"
     ],
     "revenues": [
-      146.88
+      145.62
     ],
     "revsVat": [
-      174.78
+      173.28
     ]
   },
   {
@@ -6000,10 +6000,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2026-01-09"
     ],
     "revenues": [
-      53.04
+      48.88
     ],
     "revsVat": [
-      63.12
+      58.17
     ]
   },
   {
@@ -6011,10 +6011,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2026-01-09"
     ],
     "revenues": [
-      42.47
+      37.05
     ],
     "revsVat": [
-      50.54
+      44.09
     ]
   },
   {
@@ -6022,10 +6022,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2026-01-10"
     ],
     "revenues": [
-      120.71
+      119.45
     ],
     "revsVat": [
-      143.65
+      142.15
     ]
   },
   {
@@ -6034,11 +6034,11 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2026-01-18"
     ],
     "revenues": [
-      29.52,
+      24.1,
       86.11
     ],
     "revsVat": [
-      35.13,
+      28.68,
       102.48
     ]
   },
@@ -6047,10 +6047,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2026-01-11"
     ],
     "revenues": [
-      37.06
+      31.64
     ],
     "revsVat": [
-      44.1
+      37.65
     ]
   },
   {
@@ -6058,10 +6058,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2026-01-12"
     ],
     "revenues": [
-      31.04
+      26.88
     ],
     "revsVat": [
-      36.93
+      31.98
     ]
   },
   {
@@ -6069,10 +6069,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2026-01-13"
     ],
     "revenues": [
-      15.67
+      11.51
     ],
     "revsVat": [
-      18.64
+      13.69
     ]
   },
   {
@@ -6091,10 +6091,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2026-01-14"
     ],
     "revenues": [
-      53.92
+      49.76
     ],
     "revsVat": [
-      64.15
+      59.2
     ]
   },
   {
@@ -6102,10 +6102,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2026-01-14"
     ],
     "revenues": [
-      33.68
+      28.26
     ],
     "revsVat": [
-      40.09
+      33.64
     ]
   },
   {
@@ -6113,10 +6113,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2026-01-16"
     ],
     "revenues": [
-      71.15
+      69.89
     ],
     "revsVat": [
-      84.67
+      83.17
     ]
   },
   {
@@ -6124,10 +6124,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2026-01-20"
     ],
     "revenues": [
-      31.71
+      27.55
     ],
     "revsVat": [
-      37.72
+      32.77
     ]
   },
   {
@@ -6157,10 +6157,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2026-01-23"
     ],
     "revenues": [
-      43.82
+      38.4
     ],
     "revsVat": [
-      52.15
+      45.7
     ]
   },
   {
@@ -6169,12 +6169,12 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2026-03-02"
     ],
     "revenues": [
-      38.65,
-      51.47
+      34.49,
+      47.31
     ],
     "revsVat": [
-      46,
-      61.25
+      41.05,
+      56.3
     ]
   },
   {
@@ -6182,10 +6182,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2026-01-24"
     ],
     "revenues": [
-      46.16
+      42
     ],
     "revsVat": [
-      54.92
+      49.97
     ]
   },
   {
@@ -6204,10 +6204,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2026-01-24"
     ],
     "revenues": [
-      17.32
+      11.9
     ],
     "revsVat": [
-      20.61
+      14.16
     ]
   },
   {
@@ -6215,10 +6215,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2026-01-25"
     ],
     "revenues": [
-      34.93
+      29.51
     ],
     "revsVat": [
-      41.55
+      35.1
     ]
   },
   {
@@ -6237,10 +6237,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2026-01-25"
     ],
     "revenues": [
-      60.81
+      55.39
     ],
     "revsVat": [
-      72.37
+      65.92
     ]
   },
   {
@@ -6281,10 +6281,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2026-01-26"
     ],
     "revenues": [
-      53.56
+      49.4
     ],
     "revsVat": [
-      63.74
+      58.79
     ]
   },
   {
@@ -6292,10 +6292,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2026-01-26"
     ],
     "revenues": [
-      109.99
+      108.73
     ],
     "revsVat": [
-      130.86
+      129.36
     ]
   },
   {
@@ -6303,10 +6303,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2026-01-27"
     ],
     "revenues": [
-      57.71
+      53.55
     ],
     "revsVat": [
-      68.67
+      63.72
     ]
   },
   {
@@ -6326,12 +6326,12 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2026-02-16"
     ],
     "revenues": [
-      73.51,
-      59.72
+      72.25,
+      54.3
     ],
     "revsVat": [
-      87.47,
-      71.07
+      85.97,
+      64.62
     ]
   },
   {
@@ -6339,10 +6339,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2026-01-30"
     ],
     "revenues": [
-      30.93
+      26.77
     ],
     "revsVat": [
-      36.81
+      31.86
     ]
   },
   {
@@ -6351,12 +6351,12 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2026-02-21"
     ],
     "revenues": [
-      48.68,
-      41.93
+      43.26,
+      36.51
     ],
     "revsVat": [
-      57.93,
-      49.89
+      51.48,
+      43.44
     ]
   },
   {
@@ -6397,10 +6397,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2026-02-01"
     ],
     "revenues": [
-      70.16
+      68.9
     ],
     "revsVat": [
-      83.49
+      81.99
     ]
   },
   {
@@ -6408,10 +6408,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2026-02-02"
     ],
     "revenues": [
-      30.93
+      26.77
     ],
     "revsVat": [
-      36.81
+      31.86
     ]
   },
   {
@@ -6419,10 +6419,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2026-02-02"
     ],
     "revenues": [
-      29.72
+      24.3
     ],
     "revsVat": [
-      35.36
+      28.91
     ]
   },
   {
@@ -6430,10 +6430,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2026-02-02"
     ],
     "revenues": [
-      18.6
+      13.18
     ],
     "revsVat": [
-      22.13
+      15.68
     ]
   },
   {
@@ -6441,10 +6441,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2026-02-03"
     ],
     "revenues": [
-      72.38
+      71.12
     ],
     "revsVat": [
-      86.14
+      84.64
     ]
   },
   {
@@ -6463,10 +6463,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2026-02-03"
     ],
     "revenues": [
-      83.89
+      82.63
     ],
     "revsVat": [
-      99.83
+      98.33
     ]
   },
   {
@@ -6474,10 +6474,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2026-02-03"
     ],
     "revenues": [
-      69.76
+      68.5
     ],
     "revsVat": [
-      83.01
+      81.51
     ]
   },
   {
@@ -6485,76 +6485,76 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2026-02-03"
     ],
     "revenues": [
+      24.7
+    ],
+    "revsVat": [
+      29.39
+    ]
+  },
+  {
+    "dates": [
+      "2026-02-04"
+    ],
+    "revenues": [
+      22.82
+    ],
+    "revsVat": [
+      27.15
+    ]
+  },
+  {
+    "dates": [
+      "2026-02-04"
+    ],
+    "revenues": [
+      33.71
+    ],
+    "revsVat": [
+      40.12
+    ]
+  },
+  {
+    "dates": [
+      "2026-02-04"
+    ],
+    "revenues": [
+      43.1
+    ],
+    "revsVat": [
+      51.28
+    ]
+  },
+  {
+    "dates": [
+      "2026-02-04"
+    ],
+    "revenues": [
+      37.4
+    ],
+    "revsVat": [
+      44.51
+    ]
+  },
+  {
+    "dates": [
+      "2026-02-05"
+    ],
+    "revenues": [
+      39.21
+    ],
+    "revsVat": [
+      46.66
+    ]
+  },
+  {
+    "dates": [
+      "2026-02-05"
+    ],
+    "revenues": [
+      24.25
+    ],
+    "revsVat": [
       28.86
-    ],
-    "revsVat": [
-      34.34
-    ]
-  },
-  {
-    "dates": [
-      "2026-02-04"
-    ],
-    "revenues": [
-      28.24
-    ],
-    "revsVat": [
-      33.6
-    ]
-  },
-  {
-    "dates": [
-      "2026-02-04"
-    ],
-    "revenues": [
-      39.13
-    ],
-    "revsVat": [
-      46.57
-    ]
-  },
-  {
-    "dates": [
-      "2026-02-04"
-    ],
-    "revenues": [
-      48.52
-    ],
-    "revsVat": [
-      57.73
-    ]
-  },
-  {
-    "dates": [
-      "2026-02-04"
-    ],
-    "revenues": [
-      41.56
-    ],
-    "revsVat": [
-      49.46
-    ]
-  },
-  {
-    "dates": [
-      "2026-02-05"
-    ],
-    "revenues": [
-      43.37
-    ],
-    "revsVat": [
-      51.61
-    ]
-  },
-  {
-    "dates": [
-      "2026-02-05"
-    ],
-    "revenues": [
-      29.67
-    ],
-    "revsVat": [
-      35.31
     ]
   },
   {
@@ -6562,10 +6562,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2026-02-06"
     ],
     "revenues": [
-      71.62
+      70.36
     ],
     "revsVat": [
-      85.23
+      83.73
     ]
   },
   {
@@ -6573,10 +6573,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2026-02-06"
     ],
     "revenues": [
-      46.37
+      40.95
     ],
     "revsVat": [
-      55.17
+      48.72
     ]
   },
   {
@@ -6584,10 +6584,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2026-02-06"
     ],
     "revenues": [
-      41.8
+      36.38
     ],
     "revsVat": [
-      49.74
+      43.29
     ]
   },
   {
@@ -6595,10 +6595,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2026-02-06"
     ],
     "revenues": [
-      59.98
+      54.56
     ],
     "revsVat": [
-      71.39
+      64.94
     ]
   },
   {
@@ -6606,10 +6606,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2026-02-07"
     ],
     "revenues": [
-      36.26
+      30.84
     ],
     "revsVat": [
-      43.15
+      36.7
     ]
   },
   {
@@ -6617,10 +6617,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2026-02-07"
     ],
     "revenues": [
-      57.71
+      53.55
     ],
     "revsVat": [
-      68.67
+      63.72
     ]
   },
   {
@@ -6639,10 +6639,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2026-02-08"
     ],
     "revenues": [
-      51.14
+      45.72
     ],
     "revsVat": [
-      60.86
+      54.41
     ]
   },
   {
@@ -6650,10 +6650,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2026-02-08"
     ],
     "revenues": [
-      23.27
+      17.85
     ],
     "revsVat": [
-      27.69
+      21.24
     ]
   },
   {
@@ -6661,10 +6661,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2026-02-09"
     ],
     "revenues": [
-      32.19
+      26.77
     ],
     "revsVat": [
-      38.31
+      31.86
     ]
   },
   {
@@ -6672,10 +6672,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2026-02-09"
     ],
     "revenues": [
-      58.97
+      53.55
     ],
     "revsVat": [
-      70.17
+      63.72
     ]
   },
   {
@@ -6683,10 +6683,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2026-02-09"
     ],
     "revenues": [
-      71.11
+      69.85
     ],
     "revsVat": [
-      84.63
+      83.13
     ]
   },
   {
@@ -6694,10 +6694,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2026-02-09"
     ],
     "revenues": [
-      72.86
+      71.6
     ],
     "revsVat": [
-      86.71
+      85.21
     ]
   },
   {
@@ -6705,10 +6705,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2026-02-09"
     ],
     "revenues": [
-      30.93
+      26.77
     ],
     "revsVat": [
-      36.81
+      31.86
     ]
   },
   {
@@ -6716,10 +6716,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2026-02-09"
     ],
     "revenues": [
-      30.09
+      24.67
     ],
     "revsVat": [
-      35.8
+      29.35
     ]
   },
   {
@@ -6738,10 +6738,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2026-02-09"
     ],
     "revenues": [
-      52.67
+      48.51
     ],
     "revsVat": [
-      62.67
+      57.72
     ]
   },
   {
@@ -6749,10 +6749,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2026-02-10"
     ],
     "revenues": [
-      35.92
+      31.76
     ],
     "revsVat": [
-      42.74
+      37.79
     ]
   },
   {
@@ -6760,10 +6760,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2026-02-10"
     ],
     "revenues": [
-      32.19
+      26.77
     ],
     "revsVat": [
-      38.31
+      31.86
     ]
   },
   {
@@ -6771,10 +6771,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2026-02-10"
     ],
     "revenues": [
-      23.27
+      17.85
     ],
     "revsVat": [
-      27.69
+      21.24
     ]
   },
   {
@@ -6782,10 +6782,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2026-02-10"
     ],
     "revenues": [
-      47.75
+      42.33
     ],
     "revsVat": [
-      56.82
+      50.37
     ]
   },
   {
@@ -6793,10 +6793,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2026-02-10"
     ],
     "revenues": [
-      49.89
+      44.47
     ],
     "revsVat": [
-      59.37
+      52.92
     ]
   },
   {
@@ -6815,10 +6815,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2026-02-10"
     ],
     "revenues": [
-      26.45
+      22.29
     ],
     "revsVat": [
-      31.47
+      26.52
     ]
   },
   {
@@ -6826,10 +6826,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2026-02-11"
     ],
     "revenues": [
-      41.4
+      35.98
     ],
     "revsVat": [
-      49.25
+      42.8
     ]
   },
   {
@@ -6837,10 +6837,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2026-02-11"
     ],
     "revenues": [
-      27.24
+      23.08
     ],
     "revsVat": [
-      32.42
+      27.47
     ]
   },
   {
@@ -6848,10 +6848,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2026-02-12"
     ],
     "revenues": [
-      18.31
+      12.89
     ],
     "revsVat": [
-      21.79
+      15.34
     ]
   },
   {
@@ -6859,10 +6859,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2026-02-13"
     ],
     "revenues": [
-      29.22
+      23.8
     ],
     "revsVat": [
-      34.77
+      28.32
     ]
   },
   {
@@ -6870,10 +6870,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2026-02-13"
     ],
     "revenues": [
-      51.22
+      47.06
     ],
     "revsVat": [
-      60.95
+      56
     ]
   },
   {
@@ -6881,10 +6881,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2026-02-13"
     ],
     "revenues": [
-      32.19
+      26.77
     ],
     "revsVat": [
-      38.31
+      31.86
     ]
   },
   {
@@ -6892,10 +6892,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2026-02-13"
     ],
     "revenues": [
-      59.19
+      55.03
     ],
     "revsVat": [
-      70.44
+      65.49
     ]
   },
   {
@@ -6903,10 +6903,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2026-02-13"
     ],
     "revenues": [
-      42.4
+      36.98
     ],
     "revsVat": [
-      50.45
+      44
     ]
   },
   {
@@ -6958,10 +6958,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2026-02-15"
     ],
     "revenues": [
-      51.93
+      47.77
     ],
     "revsVat": [
-      61.8
+      56.85
     ]
   },
   {
@@ -6969,10 +6969,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2026-02-15"
     ],
     "revenues": [
-      46.65
+      41.23
     ],
     "revsVat": [
-      55.52
+      49.07
     ]
   },
   {
@@ -6991,10 +6991,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2026-02-15"
     ],
     "revenues": [
-      60.03
+      54.61
     ],
     "revsVat": [
-      71.44
+      64.99
     ]
   },
   {
@@ -7002,10 +7002,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2026-02-15"
     ],
     "revenues": [
-      115.39
+      114.13
     ],
     "revsVat": [
-      137.31
+      135.81
     ]
   },
   {
@@ -7013,10 +7013,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2026-02-16"
     ],
     "revenues": [
-      40.92
+      35.5
     ],
     "revsVat": [
-      48.68
+      42.23
     ]
   },
   {
@@ -7035,10 +7035,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2026-02-16"
     ],
     "revenues": [
-      23.27
+      17.85
     ],
     "revsVat": [
-      27.69
+      21.24
     ]
   },
   {
@@ -7046,10 +7046,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2026-02-16"
     ],
     "revenues": [
-      17.32
+      11.9
     ],
     "revsVat": [
-      20.61
+      14.16
     ]
   },
   {
@@ -7068,10 +7068,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2026-02-17"
     ],
     "revenues": [
-      37.55
+      32.13
     ],
     "revsVat": [
-      44.68
+      38.23
     ]
   },
   {
@@ -7079,10 +7079,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2026-02-17"
     ],
     "revenues": [
-      40.34
+      36.18
     ],
     "revsVat": [
-      48
+      43.05
     ]
   },
   {
@@ -7090,10 +7090,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2026-02-17"
     ],
     "revenues": [
-      77.51
+      76.25
     ],
     "revsVat": [
-      92.23
+      90.73
     ]
   },
   {
@@ -7101,10 +7101,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2026-02-17"
     ],
     "revenues": [
-      41.89
+      36.47
     ],
     "revsVat": [
-      49.84
+      43.39
     ]
   },
   {
@@ -7112,10 +7112,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2026-02-17"
     ],
     "revenues": [
-      30.93
+      26.77
     ],
     "revsVat": [
-      36.81
+      31.86
     ]
   },
   {
@@ -7123,10 +7123,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2026-02-18"
     ],
     "revenues": [
-      28.41
+      24.25
     ],
     "revsVat": [
-      33.81
+      28.86
     ]
   },
   {
@@ -7134,10 +7134,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2026-02-18"
     ],
     "revenues": [
-      29.1
+      24.94
     ],
     "revsVat": [
-      34.62
+      29.67
     ]
   },
   {
@@ -7156,10 +7156,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2026-02-19"
     ],
     "revenues": [
-      30.16
+      26
     ],
     "revsVat": [
-      35.88
+      30.93
     ]
   },
   {
@@ -7167,10 +7167,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2026-02-19"
     ],
     "revenues": [
-      54.82
+      49.4
     ],
     "revsVat": [
-      65.24
+      58.79
     ]
   },
   {
@@ -7189,10 +7189,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2026-02-19"
     ],
     "revenues": [
-      58.96
+      54.8
     ],
     "revsVat": [
-      70.16
+      65.21
     ]
   },
   {
@@ -7211,10 +7211,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2026-02-20"
     ],
     "revenues": [
-      61.08
+      56.92
     ],
     "revsVat": [
-      72.68
+      67.73
     ]
   },
   {
@@ -7223,11 +7223,11 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2026-03-03"
     ],
     "revenues": [
-      45.19,
+      41.03,
       67.74
     ],
     "revsVat": [
-      53.78,
+      48.83,
       80.62
     ]
   },
@@ -7236,10 +7236,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2026-02-20"
     ],
     "revenues": [
-      39.91
+      34.49
     ],
     "revsVat": [
-      47.5
+      41.05
     ]
   },
   {
@@ -7258,10 +7258,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2026-02-22"
     ],
     "revenues": [
-      53.1
+      47.68
     ],
     "revsVat": [
-      63.19
+      56.74
     ]
   },
   {
@@ -7269,10 +7269,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2026-02-22"
     ],
     "revenues": [
-      37.66
+      32.24
     ],
     "revsVat": [
-      44.82
+      38.37
     ]
   },
   {
@@ -7280,10 +7280,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2026-02-22"
     ],
     "revenues": [
-      32.19
+      26.77
     ],
     "revsVat": [
-      38.31
+      31.86
     ]
   },
   {
@@ -7291,10 +7291,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2026-02-22"
     ],
     "revenues": [
-      36.53
+      32.37
     ],
     "revsVat": [
-      43.47
+      38.52
     ]
   },
   {
@@ -7302,10 +7302,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2026-02-22"
     ],
     "revenues": [
-      54.67
+      50.51
     ],
     "revsVat": [
-      65.04
+      60.09
     ]
   },
   {
@@ -7313,10 +7313,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2026-02-22"
     ],
     "revenues": [
-      75.56
+      74.3
     ],
     "revsVat": [
-      89.92
+      88.42
     ]
   },
   {
@@ -7324,10 +7324,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2026-02-22"
     ],
     "revenues": [
-      32.19
+      26.77
     ],
     "revsVat": [
-      38.31
+      31.86
     ]
   },
   {
@@ -7335,10 +7335,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2026-02-23"
     ],
     "revenues": [
-      48.64
+      44.48
     ],
     "revsVat": [
-      57.88
+      52.93
     ]
   },
   {
@@ -7357,10 +7357,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2026-02-23"
     ],
     "revenues": [
-      30.93
+      26.77
     ],
     "revsVat": [
-      36.81
+      31.86
     ]
   },
   {
@@ -7379,10 +7379,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2026-02-24"
     ],
     "revenues": [
-      51.43
+      46.01
     ],
     "revsVat": [
-      61.2
+      54.75
     ]
   },
   {
@@ -7390,10 +7390,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2026-02-24"
     ],
     "revenues": [
-      69.31
+      68.05
     ],
     "revsVat": [
-      82.48
+      80.98
     ]
   },
   {
@@ -7401,10 +7401,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2026-02-24"
     ],
     "revenues": [
-      44.49
+      39.07
     ],
     "revsVat": [
-      52.94
+      46.49
     ]
   },
   {
@@ -7412,10 +7412,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2026-02-25"
     ],
     "revenues": [
-      36.29
+      32.13
     ],
     "revsVat": [
-      43.18
+      38.23
     ]
   },
   {
@@ -7423,10 +7423,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2026-02-25"
     ],
     "revenues": [
-      175.4
+      174.14
     ],
     "revsVat": [
-      208.72
+      207.22
     ]
   },
   {
@@ -7478,10 +7478,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2026-02-27"
     ],
     "revenues": [
-      72.62
+      71.36
     ],
     "revsVat": [
-      86.43
+      84.93
     ]
   },
   {
@@ -7500,10 +7500,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2026-03-01"
     ],
     "revenues": [
-      60.86
+      56.7
     ],
     "revsVat": [
-      72.43
+      67.48
     ]
   },
   {
@@ -7511,10 +7511,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2026-03-02"
     ],
     "revenues": [
-      58.78
+      54.62
     ],
     "revsVat": [
-      69.94
+      64.99
     ]
   },
   {
@@ -7533,10 +7533,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2026-03-03"
     ],
     "revenues": [
-      41.89
+      36.47
     ],
     "revsVat": [
-      49.84
+      43.39
     ]
   },
   {
@@ -7544,10 +7544,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2026-03-03"
     ],
     "revenues": [
-      18.15
+      13.99
     ],
     "revsVat": [
-      21.6
+      16.65
     ]
   },
   {
@@ -7555,10 +7555,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2026-03-03"
     ],
     "revenues": [
-      47.4
+      41.98
     ],
     "revsVat": [
-      56.39
+      49.94
     ]
   },
   {
@@ -7577,10 +7577,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2026-03-03"
     ],
     "revenues": [
-      71.7
+      70.44
     ],
     "revsVat": [
-      85.31
+      83.81
     ]
   },
   {
@@ -7588,10 +7588,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2026-03-04"
     ],
     "revenues": [
-      30.93
+      26.77
     ],
     "revsVat": [
-      36.81
+      31.86
     ]
   },
   {
@@ -7599,10 +7599,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2026-03-04"
     ],
     "revenues": [
-      48.55
+      44.39
     ],
     "revsVat": [
-      57.77
+      52.82
     ]
   },
   {
@@ -7610,10 +7610,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2026-03-04"
     ],
     "revenues": [
-      70.87
+      69.61
     ],
     "revsVat": [
-      84.34
+      82.84
     ]
   },
   {
@@ -7621,10 +7621,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2026-03-05"
     ],
     "revenues": [
-      47.79
+      43.63
     ],
     "revsVat": [
-      56.87
+      51.92
     ]
   },
   {
@@ -7632,10 +7632,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2026-03-05"
     ],
     "revenues": [
-      62.52
+      58.36
     ],
     "revsVat": [
-      74.4
+      69.45
     ]
   },
   {
@@ -7643,10 +7643,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2026-03-06"
     ],
     "revenues": [
-      38.27
+      32.85
     ],
     "revsVat": [
-      45.53
+      39.08
     ]
   },
   {
@@ -7654,10 +7654,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2026-03-06"
     ],
     "revenues": [
-      31.3
+      25.88
     ],
     "revsVat": [
-      37.25
+      30.8
     ]
   },
   {
@@ -7687,10 +7687,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2026-03-07"
     ],
     "revenues": [
-      17.32
+      11.9
     ],
     "revsVat": [
-      20.61
+      14.16
     ]
   },
   {
@@ -7698,10 +7698,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2026-03-07"
     ],
     "revenues": [
-      23.5
+      18.08
     ],
     "revsVat": [
-      27.96
+      21.51
     ]
   },
   {
@@ -7709,10 +7709,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2026-03-08"
     ],
     "revenues": [
-      32.19
+      26.77
     ],
     "revsVat": [
-      38.31
+      31.86
     ]
   },
   {
@@ -7731,10 +7731,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2026-03-08"
     ],
     "revenues": [
-      43.85
+      39.69
     ],
     "revsVat": [
-      52.19
+      47.24
     ]
   },
   {
@@ -7742,10 +7742,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2026-03-08"
     ],
     "revenues": [
-      42.39
+      36.97
     ],
     "revsVat": [
-      50.44
+      43.99
     ]
   },
   {
@@ -7764,10 +7764,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2026-03-09"
     ],
     "revenues": [
-      54.85
+      50.69
     ],
     "revsVat": [
-      65.27
+      60.32
     ]
   },
   {
@@ -7775,10 +7775,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2026-03-10"
     ],
     "revenues": [
-      28.41
+      24.25
     ],
     "revsVat": [
-      33.81
+      28.86
     ]
   },
   {
@@ -7797,10 +7797,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2026-03-10"
     ],
     "revenues": [
-      50.92
+      45.5
     ],
     "revsVat": [
-      60.6
+      54.15
     ]
   },
   {
@@ -7808,10 +7808,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2026-03-10"
     ],
     "revenues": [
-      23.64
+      19.48
     ],
     "revsVat": [
-      28.13
+      23.18
     ]
   },
   {
@@ -7830,10 +7830,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2026-03-12"
     ],
     "revenues": [
-      17.05
+      12.89
     ],
     "revsVat": [
-      20.29
+      15.34
     ]
   },
   {
@@ -7863,10 +7863,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2026-03-12"
     ],
     "revenues": [
-      40.09
+      35.93
     ],
     "revsVat": [
-      47.71
+      42.76
     ]
   },
   {
@@ -7875,11 +7875,11 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2026-03-17"
     ],
     "revenues": [
-      89.33,
+      88.07,
       136.15
     ],
     "revsVat": [
-      106.3,
+      104.8,
       162.01
     ]
   },
@@ -7910,10 +7910,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2026-03-14"
     ],
     "revenues": [
-      35.76
+      31.6
     ],
     "revsVat": [
-      42.55
+      37.6
     ]
   },
   {
@@ -7921,10 +7921,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2026-03-15"
     ],
     "revenues": [
-      67.39
+      61.97
     ],
     "revsVat": [
-      80.19
+      73.74
     ]
   },
   {
@@ -7932,10 +7932,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2026-03-16"
     ],
     "revenues": [
-      45.65
+      41.49
     ],
     "revsVat": [
-      54.32
+      49.37
     ]
   },
   {
@@ -7943,10 +7943,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2026-03-16"
     ],
     "revenues": [
-      70.98
+      69.72
     ],
     "revsVat": [
-      84.46
+      82.96
     ]
   },
   {
@@ -7954,10 +7954,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2026-03-17"
     ],
     "revenues": [
-      36.42
+      31
     ],
     "revsVat": [
-      43.34
+      36.89
     ]
   },
   {
@@ -7965,10 +7965,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2026-03-18"
     ],
     "revenues": [
-      29.53
+      25.37
     ],
     "revsVat": [
-      35.14
+      30.19
     ]
   },
   {
@@ -7976,10 +7976,10 @@ export const retentionDataSK: { dates: string[]; revenues: number[]; revsVat: nu
       "2026-03-18"
     ],
     "revenues": [
-      11.37
+      5.95
     ],
     "revsVat": [
-      13.53
+      7.08
     ]
   }
 ];
