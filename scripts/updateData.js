@@ -150,27 +150,34 @@ const EXCLUDED_STATUSES = new Set([
 
 function aggregateOrders(csv, eurMultiplier = 1) {
   const rows = parseCSV(csv);
-  const seen = new Map();
+  const seenCodes = new Set();
   const byDay = {};
 
   for (const cols of rows) {
-    if (cols.length < 38) continue;
+    if (cols.length < 57) continue;
     const code   = cols[0];
     const status = cols[2];
-    if (seen.has(code)) continue;
-    seen.set(code, true);
+    const date   = cols[1].substring(0, 10);
 
-    const date = cols[1].substring(0, 10);
     if (!byDay[date]) byDay[date] = { orders: 0, orders_cancelled: 0, revenue_vat: 0, revenue: 0 };
 
     if (EXCLUDED_STATUSES.has(status)) {
-      byDay[date].orders_cancelled++;
+      if (!seenCodes.has(code)) {
+        byDay[date].orders_cancelled++;
+        seenCodes.add(code);
+      }
       continue;
     }
 
-    byDay[date].orders++;
-    byDay[date].revenue_vat += parseNum(cols[36]) * eurMultiplier;
-    byDay[date].revenue     += parseNum(cols[37]) * eurMultiplier;
+    // Count each order once
+    if (!seenCodes.has(code)) {
+      byDay[date].orders++;
+      seenCodes.add(code);
+    }
+
+    // Sum itemTotalPriceWithVat (col 55) and itemTotalPriceWithoutVat (col 56)
+    byDay[date].revenue_vat += parseNum(cols[55]) * eurMultiplier;
+    byDay[date].revenue     += parseNum(cols[56]) * eurMultiplier;
   }
   return byDay;
 }
@@ -403,18 +410,12 @@ function aggregateHourly(csv) {
     dayDateSets[dow].add(date);
   }
 
-  // Aggregate revenue + orders by (dayOfWeek, hour)
-  const grid = Array.from({ length: 7 }, () =>
-    Array.from({ length: 24 }, () => ({ revenue: 0, orders: 0 }))
-  );
-
-  const seenCodes = new Set();
+  // Pre-aggregate itemTotalPriceWithoutVat (col 56) per order
+  const orderMeta = new Map(); // code -> { date, hour, rev }
   for (const cols of rows) {
-    if (cols.length < 38) continue;
+    if (cols.length < 57) continue;
     const code = cols[0];
     if (cancelledCodes.has(code)) continue;
-    if (seenCodes.has(code)) continue;
-    seenCodes.add(code);
 
     const dateStr = cols[1] || '';
     const date    = dateStr.substring(0, 10);
@@ -423,9 +424,19 @@ function aggregateHourly(csv) {
 
     if (!date || date.length < 10 || isNaN(hour) || hour < 0 || hour > 23) continue;
 
-    const dow = new Date(date + 'T12:00:00').getDay();
-    const rev = parseNum(cols[37]); // revenue without VAT
+    if (!orderMeta.has(code)) {
+      orderMeta.set(code, { date, hour, rev: 0 });
+    }
+    orderMeta.get(code).rev += parseNum(cols[56]); // itemTotalPriceWithoutVat
+  }
 
+  // Aggregate revenue + orders by (dayOfWeek, hour)
+  const grid = Array.from({ length: 7 }, () =>
+    Array.from({ length: 24 }, () => ({ revenue: 0, orders: 0 }))
+  );
+
+  for (const { date, hour, rev } of orderMeta.values()) {
+    const dow = new Date(date + 'T12:00:00').getDay();
     grid[dow][hour].revenue += rev;
     grid[dow][hour].orders++;
   }
@@ -564,29 +575,33 @@ const EMAIL_COL = 5; // sloupec "email" v Shoptet exportu
 
 function aggregateRetention(csv) {
   const rows = parseCSV(csv);
-  const byCustomer = new Map();
-  const seenOrderCodes = new Set();
 
+  // Pass 1: sum itemTotalPriceWithVat (55) + itemTotalPriceWithoutVat (56) per order
+  const orderTotals = new Map(); // code -> { email, date, revVat, rev }
   for (const cols of rows) {
-    if (cols.length < 38) continue;
+    if (cols.length < 57) continue;
     const code   = cols[0];
     const status = cols[2];
     const email  = (cols[EMAIL_COL] || '').trim().toLowerCase();
 
     if (!email) continue;
-
-    // Skip cancelled orders
     if (EXCLUDED_STATUSES.has(status)) continue;
 
-    // Each order code may appear multiple times (one row per product)
-    // Only process financial data from first occurrence
-    if (seenOrderCodes.has(code)) continue;
-    seenOrderCodes.add(code);
-
     const date   = cols[1].substring(0, 10);
-    const revVat = parseNum(cols[36]);
-    const rev    = parseNum(cols[37]);
+    const revVat = parseNum(cols[55]); // itemTotalPriceWithVat
+    const rev    = parseNum(cols[56]); // itemTotalPriceWithoutVat
 
+    if (!orderTotals.has(code)) {
+      orderTotals.set(code, { email, date, revVat: 0, rev: 0 });
+    }
+    const o = orderTotals.get(code);
+    o.revVat += revVat;
+    o.rev    += rev;
+  }
+
+  // Pass 2: group by customer
+  const byCustomer = new Map();
+  for (const { email, date, revVat, rev } of orderTotals.values()) {
     if (revVat <= 0) continue; // skip zero-value orders
 
     if (!byCustomer.has(email)) {
