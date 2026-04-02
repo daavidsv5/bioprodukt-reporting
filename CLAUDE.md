@@ -98,7 +98,7 @@ Dva typy KPI karet — **neměnit vzájemně**:
 
 ### `/dashboard` — Klíčové ukazatele (KPI)
 
-KPI boxy (13 celkem): Tržby s/bez DPH, Počet obj., AOV, Marketing. investice, PNO, CPA, Storna, Podíl storen, **Marže, Marže %, Hrubý zisk, Hrubý zisk %**.
+KPI boxy (13 celkem) v tomto pořadí: Tržby s DPH, Tržby bez DPH, Počet obj., AOV, Marketingové investice, PNO, Cena za objednávku, Marže, Marže %, Cena za nového zákazníka, Hrubý zisk na objednávku, **Hrubý zisk, Hrubý zisk %**.
 
 Marže a Hrubý zisk se počítají z `marginDataCZ` / `marginDataSK`:
 - `margin = marginRev - purchaseCost`
@@ -196,6 +196,8 @@ Nákupní ceny pro SK nejsou dostupné — `marginDataSK` obsahuje nuly v `costP
 
 GA4 je napojeno pouze pro **CZ**. SK bude řešeno samostatně v budoucnu.
 
+Na stránce `/analytics` jsou v TopBaru skryty selektory **Vše** a **SK** — zobrazuje se pouze CZ (viz `components/layout/TopBar.tsx`, podmínka `isAnalytics`).
+
 **`app/api/analytics/route.ts`** — vrací:
 - `daily`, `dailyPrev` — denní sessions/users/conversions/bounceRate/avgDuration
 - `totals` — agregáty za aktuální + předchozí rok (dva dateRanges v jednom requestu)
@@ -218,4 +220,20 @@ GA4 je napojeno pouze pro **CZ**. SK bude řešeno samostatně v budoucnu.
 
 ### Autentizace
 
-NextAuth 5 (beta). Uživatelé jsou uloženi v `data/users.json` (bcrypt hesla). Admin stránka `/admin/users` vyžaduje `role: 'admin'`.
+NextAuth 5 (beta). Uživatelé jsou uloženi v **Neon PostgreSQL** (tabulka `users`, bcrypt hesla). Admin stránka `/admin/users` vyžaduje `role: 'admin'`.
+
+- `lib/db.ts` — singleton `pg.Pool`, připojuje se přes `DATABASE_URL`
+- `lib/users.ts` — CRUD funkce přes SQL dotazy (nahrazuje původní `fs.readFileSync` z `users.json`)
+- Migrace: `scripts/migrateUsers.js` (jednorázový skript)
+
+### Automatická aktualizace dat
+
+`.github/workflows/update-data.yml` — GitHub Actions spouští `node scripts/updateData.js` každý den v **6:00 SEČ** (5:00 UTC), commituje změněné soubory v `data/` a pushuje do `main`. Vercel pak automaticky nasadí nový build.
+
+Ruční spuštění: GitHub → Actions → "Aktualizace dat" → Run workflow.
+
+### Timezone fix
+
+`hooks/useFilters.ts` — `getDateRange()` používá `Date.UTC()` pro všechny datumy (UTC půlnoc). Zabraňuje posunu o 1 den při `.toISOString().split('T')[0]` v časovém pásmu CET/CEST (+1/+2).
+
+Exportovaný helper `localIsoDate(d: Date)` pro případ, kde je potřeba lokální datum jako string.
