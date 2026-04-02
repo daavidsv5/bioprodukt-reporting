@@ -18,60 +18,77 @@ interface FiltersContextValue {
   eurToCzk: number;
 }
 
-const TODAY = new Date();
+// Dnešní datum jako UTC půlnoc — zabraňuje posunu dne při .toISOString() v CET/CEST
+const _now = new Date();
+const TODAY = new Date(Date.UTC(_now.getFullYear(), _now.getMonth(), _now.getDate()));
+
+/** Formátuje Date jako YYYY-MM-DD v lokálním čase (ne UTC). */
+export function localIsoDate(d: Date): string {
+  const y   = d.getFullYear();
+  const m   = String(d.getMonth() + 1).padStart(2, '0');
+  const day = String(d.getDate()).padStart(2, '0');
+  return `${y}-${m}-${day}`;
+}
+
+/** Vytvoří Date na UTC půlnoc pro zadaný rok/měsíc/den. */
+function utcDay(year: number, month: number, day: number): Date {
+  return new Date(Date.UTC(year, month, day));
+}
 
 export function getDateRange(filters: FilterState): DateRange {
+  const y = TODAY.getUTCFullYear();
+  const mo = TODAY.getUTCMonth();
+  const d = TODAY.getUTCDate();
+
   let start: Date;
   let end: Date;
 
   switch (filters.timePeriod) {
     case 'current_year': {
-      start = new Date(TODAY.getFullYear(), 0, 1);
-      end = new Date(TODAY);
+      start = utcDay(y, 0, 1);
+      end   = utcDay(y, mo, d);
       break;
     }
     case 'current_month': {
-      start = new Date(TODAY.getFullYear(), TODAY.getMonth(), 1);
-      end = new Date(TODAY);
+      start = utcDay(y, mo, 1);
+      end   = utcDay(y, mo, d);
       break;
     }
     case 'last_month': {
-      start = new Date(TODAY.getFullYear(), TODAY.getMonth() - 1, 1);
-      end   = new Date(TODAY.getFullYear(), TODAY.getMonth(), 0);
+      start = utcDay(y, mo - 1, 1);
+      end   = utcDay(y, mo, 0);
       break;
     }
     case 'last_14_days': {
-      end = new Date(TODAY);
-      start = new Date(TODAY);
-      start.setDate(start.getDate() - 13);
+      end   = utcDay(y, mo, d);
+      start = utcDay(y, mo, d - 13);
       break;
     }
     case 'all_time': {
-      start = new Date(2024, 0, 1);
-      end   = new Date(TODAY);
+      start = utcDay(2024, 0, 1);
+      end   = utcDay(y, mo, d);
       break;
     }
     case 'last_year': {
-      const ly = TODAY.getFullYear() - 1;
-      start = new Date(ly, 0, 1);
-      end   = new Date(ly, 11, 31);
+      start = utcDay(y - 1, 0, 1);
+      end   = utcDay(y - 1, 11, 31);
       break;
     }
     case 'custom': {
-      start = filters.customStart ? new Date(filters.customStart) : new Date(TODAY.getFullYear(), TODAY.getMonth(), 1);
-      end = filters.customEnd ? new Date(filters.customEnd) : new Date(TODAY);
+      const cs = filters.customStart ? new Date(filters.customStart) : null;
+      const ce = filters.customEnd   ? new Date(filters.customEnd)   : null;
+      start = cs ? utcDay(cs.getFullYear(), cs.getMonth(), cs.getDate()) : utcDay(y, mo, 1);
+      end   = ce ? utcDay(ce.getFullYear(), ce.getMonth(), ce.getDate()) : utcDay(y, mo, d);
       break;
     }
     default: {
-      start = new Date(TODAY.getFullYear(), TODAY.getMonth(), 1);
-      end = new Date(TODAY);
+      start = utcDay(y, mo, 1);
+      end   = utcDay(y, mo, d);
     }
   }
 
-  const prevStart = new Date(start);
-  prevStart.setFullYear(prevStart.getFullYear() - 1);
-  const prevEnd = new Date(end);
-  prevEnd.setFullYear(prevEnd.getFullYear() - 1);
+  const prevStart = utcDay(start.getUTCFullYear() - 1, start.getUTCMonth(), start.getUTCDate());
+  const prevEnd   = utcDay(end.getUTCFullYear()   - 1, end.getUTCMonth(),   end.getUTCDate());
 
   return { start, end, prevStart, prevEnd };
 }

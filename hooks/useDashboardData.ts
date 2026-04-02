@@ -3,7 +3,7 @@
 import { useMemo } from 'react';
 import { DailyRecord, FilterState, KpiData, EUR_TO_CZK, getDisplayCurrency, Currency } from '@/data/types';
 // EUR_TO_CZK is used as default fallback only
-import { getDateRange } from './useFilters';
+import { getDateRange, localIsoDate } from './useFilters';
 
 export interface ChartDataPoint {
   date: string;
@@ -29,9 +29,7 @@ export interface DashboardData {
   hasPrevData: boolean;
 }
 
-function isoDate(d: Date): string {
-  return d.toISOString().split('T')[0];
-}
+const isoDate = localIsoDate;
 
 /** Normalize a record's monetary values to the display currency.
  *  - displayCurrency = 'EUR'  → keep EUR as-is, ignore CZK records (shouldn't exist)
