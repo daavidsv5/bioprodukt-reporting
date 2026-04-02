@@ -13,6 +13,7 @@ import {
   computePurchaseDistribution,
   computeDaysBetweenHistogram,
   computeRfmSegments,
+  computeMonthlyNewVsReturning,
 } from '@/lib/retentionUtils';
 import { formatCurrency, formatPercent, formatNumber, formatShortDate } from '@/lib/formatters';
 import {
@@ -71,6 +72,7 @@ export default function RetentionPage() {
   const monthly      = useMemo(() => computeMonthlyChartData(data), [data]);
   const purchaseDist = useMemo(() => computePurchaseDistribution(data), [data]);
   const daysBins     = useMemo(() => computeDaysBetweenHistogram(data), [data]);
+  const monthlyNewVsReturning = useMemo(() => computeMonthlyNewVsReturning(data), [data]);
 
   const totalOrders      = yearCustomer.reduce((s, r) => s + r.orders, 0);
   const totalNewCustomers= yearCustomer.reduce((s, r) => s + r.newCustomers, 0);
@@ -123,6 +125,26 @@ export default function RetentionPage() {
         <StatCard title="Ø dní mezi nákupy"   value={`${Math.round(kpis.avgDaysBetween)} dní`}      icon={<Calendar size={18} />} />
         <StatCard title="LTV / zákazník"      value={fc(kpis.ltvPerCustomer)}                       icon={<TrendingUp size={18} />} />
       </div>
+
+      {/* Noví vs. stávající zákazníci — vývoj po měsících */}
+      <ChartCard title="Noví vs. stávající zákazníci — vývoj po měsících">
+        <ResponsiveContainer width="100%" height={280}>
+          <BarChart data={monthlyNewVsReturning} margin={{ top: 4, right: 16, left: 4, bottom: 4 }}>
+            <CartesianGrid strokeDasharray="0" stroke="#f1f5f9" vertical={false} />
+            <XAxis dataKey="label" tick={{ fontSize: 10, fill: '#94a3b8' }} axisLine={false} tickLine={false} />
+            <YAxis tickFormatter={v => `${Math.round(v)} %`} domain={[0, 100]} tick={{ fontSize: 11, fill: '#94a3b8' }} axisLine={false} tickLine={false} width={44} />
+            <Tooltip
+              formatter={(v: any, name: any, props: any) => {
+                const count = name === 'Noví zákazníci' ? props.payload.newCount : props.payload.returningCount;
+                return [`${(v as number).toFixed(1)} % (${count})`, name];
+              }}
+            />
+            <Legend wrapperStyle={{ fontSize: 11, color: '#64748b' }} iconType="square" iconSize={9} />
+            <Bar dataKey="newPct"       name="Noví zákazníci"      stackId="a" fill="#22c55e" />
+            <Bar dataKey="returningPct" name="Stávající zákazníci" stackId="a" fill={C.primary} radius={[3, 3, 0, 0]} />
+          </BarChart>
+        </ResponsiveContainer>
+      </ChartCard>
 
       {/* RFM Segmentace */}
       <div className="bg-white rounded-2xl border border-slate-100 shadow-sm p-5 space-y-5">

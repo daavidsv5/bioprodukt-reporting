@@ -5,8 +5,9 @@ import { usePathname } from 'next/navigation';
 import { FilterState, Country, TimePeriod } from '@/data/types';
 import { getDateRange } from '@/hooks/useFilters';
 import { formatDate } from '@/lib/formatters';
-import { RefreshCw, Menu } from 'lucide-react';
+import { RefreshCw, Menu, Clock } from 'lucide-react';
 import { useSidebar } from './ConditionalLayout';
+import { LAST_UPDATE } from '@/data/lastUpdate';
 
 interface TopBarProps {
   filters: FilterState;
@@ -16,8 +17,10 @@ interface TopBarProps {
 const periodLabels: Record<TimePeriod, string> = {
   current_year:  'Aktuální rok',
   current_month: 'Aktuální měsíc',
+  last_month:    'Minulý měsíc',
   last_14_days:  'Posledních 14 dní',
   last_year:     'Minulý rok',
+  all_time:      'Celé období',
   custom:        'Vlastní období',
 };
 
@@ -28,6 +31,7 @@ export default function TopBar({ filters, onChange }: TopBarProps) {
   const { toggle } = useSidebar();
   const pathname = usePathname();
   const isRetention = pathname === '/retention' || pathname === '/crosssell';
+  const isAnalytics = pathname === '/analytics';
 
   const handleUpdate = async () => {
     setUpdating(true);
@@ -79,7 +83,9 @@ export default function TopBar({ filters, onChange }: TopBarProps) {
                 { label: 'Vše', value: 'all' },
                 { label: '🇨🇿', value: 'cz' },
                 { label: '🇸🇰', value: 'sk' },
-              ] as { label: string; value: 'all' | Country }[]).map(({ label, value }, idx) => {
+              ] as { label: string; value: 'all' | Country }[])
+              .filter(({ value }) => !isAnalytics || value === 'cz')
+              .map(({ label, value }, idx) => {
                 const isActive =
                   value === 'all'
                     ? filters.countries.length === 2
@@ -100,7 +106,6 @@ export default function TopBar({ filters, onChange }: TopBarProps) {
                         : 'text-slate-600 hover:bg-slate-50'
                     }`}
                   >
-                    {/* Show CZ/SK text only on sm+ */}
                     <span className="sm:hidden">{label}</span>
                     <span className="hidden sm:inline">
                       {value === 'all' ? 'Vše' : value === 'cz' ? '🇨🇿 CZ' : '🇸🇰 SK'}
@@ -157,6 +162,12 @@ export default function TopBar({ filters, onChange }: TopBarProps) {
 
         {/* Spacer */}
         <div className="flex-1 min-w-0" />
+
+        {/* Last update timestamp */}
+        <div className="hidden md:flex items-center gap-1.5 text-xs text-slate-400 flex-shrink-0">
+          <Clock size={12} />
+          <span>Aktualizováno: <span className="text-slate-600 font-medium">{new Date(LAST_UPDATE).toLocaleString('cs-CZ', { day: '2-digit', month: '2-digit', year: 'numeric', hour: '2-digit', minute: '2-digit' })}</span></span>
+        </div>
 
         {/* Update button */}
         <div className="flex items-center gap-2 flex-shrink-0">

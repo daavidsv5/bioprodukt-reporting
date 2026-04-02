@@ -35,10 +35,20 @@ export function getDateRange(filters: FilterState): DateRange {
       end = new Date(TODAY);
       break;
     }
+    case 'last_month': {
+      start = new Date(TODAY.getFullYear(), TODAY.getMonth() - 1, 1);
+      end   = new Date(TODAY.getFullYear(), TODAY.getMonth(), 0);
+      break;
+    }
     case 'last_14_days': {
       end = new Date(TODAY);
       start = new Date(TODAY);
       start.setDate(start.getDate() - 13);
+      break;
+    }
+    case 'all_time': {
+      start = new Date(2024, 0, 1);
+      end   = new Date(TODAY);
       break;
     }
     case 'last_year': {

@@ -283,6 +283,47 @@ export function computePurchaseDistribution(data: CustomerRetentionRecord[]): Pu
   }));
 }
 
+export interface MonthlyNewVsReturningPoint {
+  month: string;   // "2025-05"
+  label: string;   // "Kvě 2025"
+  newPct: number;
+  returningPct: number;
+  newCount: number;
+  returningCount: number;
+}
+
+const CZ_MONTHS = ['Led', 'Úno', 'Bře', 'Dub', 'Kvě', 'Čvn', 'Čvc', 'Srp', 'Zář', 'Říj', 'Lis', 'Pro'];
+
+export function computeMonthlyNewVsReturning(data: CustomerRetentionRecord[]): MonthlyNewVsReturningPoint[] {
+  const monthsSet = new Set<string>();
+  for (const c of data) {
+    for (const d of c.dates) monthsSet.add(d.substring(0, 7));
+  }
+  const months = [...monthsSet].sort();
+
+  return months.map(month => {
+    let newCount = 0, returningCount = 0;
+    for (const c of data) {
+      const hasInMonth = c.dates.some(d => d.startsWith(month));
+      if (!hasInMonth) continue;
+      const isNew = c.dates[0].startsWith(month);
+      if (isNew) newCount++;
+      else returningCount++;
+    }
+    const total = newCount + returningCount;
+    const [yearStr, monthStr] = month.split('-');
+    const label = `${CZ_MONTHS[parseInt(monthStr) - 1]} ${yearStr}`;
+    return {
+      month,
+      label,
+      newPct:       total > 0 ? (newCount / total) * 100 : 0,
+      returningPct: total > 0 ? (returningCount / total) * 100 : 0,
+      newCount,
+      returningCount,
+    };
+  });
+}
+
 // ── RFM Segmentation ─────────────────────────────────────────────────────────
 
 export type RfmSegment = 'champions' | 'loyal' | 'at_risk' | 'new' | 'one_time' | 'lost';

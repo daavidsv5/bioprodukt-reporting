@@ -146,7 +146,7 @@ export default function AnalyticsPage() {
   const [data, setData]             = useState<GA4Data | null>(null);
   const [loading, setLoading]       = useState(true);
   const [error, setError]           = useState<string | null>(null);
-  const [funnelDevice, setFunnelDevice] = useState<FunnelDevice>('all');
+  const [funnelDevice, setFunnelDevice] = useState<FunnelDevice>('desktop');
 
   useEffect(() => {
     setLoading(true);
@@ -360,7 +360,7 @@ export default function AnalyticsPage() {
                   <p className="text-xs text-slate-400 mt-0.5">% dokončení každého kroku z celkového počtu zahájení objednávky</p>
                 </div>
                 <div className="flex gap-1 bg-slate-100 p-1 rounded-lg">
-                  {(['all', 'desktop', 'mobile', 'tablet'] as FunnelDevice[]).map(d => (
+                  {(['desktop', 'mobile', 'tablet'] as FunnelDevice[]).map(d => (
                     <button
                       key={d}
                       onClick={() => setFunnelDevice(d)}

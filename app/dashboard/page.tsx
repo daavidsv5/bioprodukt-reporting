@@ -14,7 +14,7 @@ import CostPnoChart from '@/components/charts/CostPnoChart';
 import DailyTable from '@/components/tables/DailyTable';
 import CountryDistribution from '@/components/tables/CountryDistribution';
 import { formatCurrency, formatPercent, formatNumber, formatDate } from '@/lib/formatters';
-import { Wallet, Banknote, ShoppingCart, BarChart2, TrendingUp, Percent, Tag, XCircle, AlertTriangle, Users } from 'lucide-react';
+import { Wallet, Banknote, ShoppingCart, BarChart2, TrendingUp, Percent, Tag, Users } from 'lucide-react';
 
 const periodTitles: Record<string, string> = {
   current_year: 'tento rok',
@@ -124,15 +124,12 @@ export default function DashboardPage() {
     { title: 'Marketingové investice',  value: fc(kpi.cost),       yoy: yoy.cost,       icon: <TrendingUp size={16} />,  invertColors: true },
     { title: 'PNO (%)',                 value: formatPercent(kpi.pno), yoy: yoy.pno,    icon: <Percent size={16} />,     invertColors: true },
     { title: 'Cena za objednávku',      value: fc(kpi.cpa),        yoy: yoy.cpa,        icon: <Tag size={16} />,         invertColors: true },
-    { title: 'Storna',                  value: formatNumber(kpi.ordersCancelled), yoy: yoy.ordersCancelled, icon: <XCircle size={16} />,       invertColors: true },
-    { title: 'Podíl storen',            value: formatPercent(kpi.cancelRate),     yoy: yoy.cancelRate,      icon: <AlertTriangle size={16} />, invertColors: true },
-    { title: 'Marže',                   value: fc(margin),            yoy: yoyMargin,      icon: <Banknote size={16} /> },
+    { title: 'Marže',                   value: fc(margin),          yoy: yoyMargin,      icon: <Banknote size={16} /> },
     { title: 'Marže %',                 value: formatPercent(marginPct),       yoy: yoyMarginPct,   icon: <Percent size={16} /> },
+    { title: 'Cena za nového zákazníka', value: newCustomerCounts.cur > 0 ? fc(costPerNewCustomer) : '–', yoy: yoyCostPerNewCustomer, icon: <Users size={16} />, invertColors: true },
+    { title: 'Hrubý zisk na objednávku', value: kpi.orders > 0 ? fc(grossPerOrder) : '–', yoy: yoyGrossPerOrder, icon: <Banknote size={16} /> },
     { title: 'Hrubý zisk',             value: fc(grossProfit),         yoy: yoyGrossProfit, icon: <TrendingUp size={16} />, variant: 'green' as const },
     { title: 'Hrubý zisk %',           value: formatPercent(grossPct), yoy: yoyGrossPct,    icon: <BarChart2 size={16} />, variant: 'green' as const },
-    { title: 'Cena za nového zákazníka', value: newCustomerCounts.cur > 0 ? fc(costPerNewCustomer) : '–', yoy: yoyCostPerNewCustomer, icon: <Users size={16} />, invertColors: true },
-    { title: 'Hrubý zisk na objednávku', value: kpi.orders > 0 ? fc(grossPerOrder) : '–', yoy: yoyGrossPerOrder, icon: <Banknote size={16} />, variant: 'green' as const },
-    { title: 'Hrubý zisk na nového zákazníka', value: newCustomerCounts.cur > 0 ? fc(grossPerNewCustomer) : '–', yoy: yoyGrossPerNewCustomer, icon: <Banknote size={16} />, variant: 'green' as const },
   ].map(c => ({ ...c, hasPrevData }));
 
   return (
