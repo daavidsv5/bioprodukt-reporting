@@ -184,7 +184,7 @@ export default function DashboardPage() {
               />
               <Tooltip
                 formatter={(v: unknown) => [fc(Number(v)), '']}
-                labelFormatter={(l: string) => formatShortDate(l)}
+                labelFormatter={(l: unknown) => formatShortDate(String(l))}
                 contentStyle={{ fontSize: 12, borderRadius: 8, border: '1px solid #e2e8f0' }}
               />
               <Legend iconType="plainline" wrapperStyle={{ fontSize: 12 }} />
@@ -216,7 +216,7 @@ export default function DashboardPage() {
               />
               <Tooltip
                 formatter={(v: unknown) => [fc(Number(v)), '']}
-                labelFormatter={(l: string) => formatShortDate(l)}
+                labelFormatter={(l: unknown) => formatShortDate(String(l))}
                 contentStyle={{ fontSize: 12, borderRadius: 8, border: '1px solid #e2e8f0' }}
               />
               <Legend iconType="plainline" wrapperStyle={{ fontSize: 12 }} />
