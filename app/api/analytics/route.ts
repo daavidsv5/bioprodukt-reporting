@@ -67,7 +67,7 @@ export async function GET(req: NextRequest) {
       property: `properties/${propertyId}`,
       dateRanges: [{ startDate, endDate }],
       dimensions: [{ name: 'sessionSource' }, { name: 'sessionMedium' }],
-      metrics: [{ name: 'sessions' }, { name: 'conversions' }, { name: 'activeUsers' }],
+      metrics: [{ name: 'sessions' }, { name: 'conversions' }, { name: 'activeUsers' }, { name: 'purchaseRevenue' }],
       orderBys: [{ metric: { metricName: 'sessions' }, desc: true }],
       limit: 20,
     });
@@ -100,7 +100,7 @@ export async function GET(req: NextRequest) {
       property: `properties/${propertyId}`,
       dateRanges: [{ startDate: prevStart, endDate: prevEnd }],
       dimensions: [{ name: 'sessionSource' }, { name: 'sessionMedium' }],
-      metrics: [{ name: 'sessions' }, { name: 'conversions' }, { name: 'activeUsers' }],
+      metrics: [{ name: 'sessions' }, { name: 'conversions' }, { name: 'activeUsers' }, { name: 'purchaseRevenue' }],
       orderBys: [{ metric: { metricName: 'sessions' }, desc: true }],
       limit: 20,
     });
@@ -180,13 +180,19 @@ export async function GET(req: NextRequest) {
       previous: parseAgg(rows[1]),
     };
 
-    const parseSourceRows = (res: typeof sourceRes) => res.rows?.map(row => ({
-      source:      row.dimensionValues?.[0].value ?? '',
-      medium:      row.dimensionValues?.[1].value ?? '',
-      sessions:    Number(row.metricValues?.[0].value ?? 0),
-      conversions: Number(row.metricValues?.[1].value ?? 0),
-      users:       Number(row.metricValues?.[2].value ?? 0),
-    })) ?? [];
+    const parseSourceRows = (res: typeof sourceRes) => res.rows?.map(row => {
+      const sessions    = Number(row.metricValues?.[0].value ?? 0);
+      const conversions = Number(row.metricValues?.[1].value ?? 0);
+      return {
+        source:      row.dimensionValues?.[0].value ?? '',
+        medium:      row.dimensionValues?.[1].value ?? '',
+        sessions,
+        conversions,
+        users:       Number(row.metricValues?.[2].value ?? 0),
+        revenue:     Number(row.metricValues?.[3].value ?? 0),
+        cvr:         sessions > 0 ? (conversions / sessions) * 100 : 0,
+      };
+    }) ?? [];
 
     const parseDeviceRows = (res: typeof deviceRes) => res.rows?.map(row => ({
       device:   row.dimensionValues?.[0].value ?? '',

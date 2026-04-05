@@ -583,16 +583,15 @@ export default function ShippingPage() {
       </div>
 
 
-      {/* Donut + table grid */}
+      {/* Donut charts */}
       <div className="grid grid-cols-1 xl:grid-cols-2 gap-6">
 
-        {/* Shipping breakdown */}
+        {/* Shipping pie */}
         <div className="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
           <div className="px-5 py-4 border-b border-slate-100">
             <h2 className="text-sm font-semibold text-slate-700">Způsoby doručení — rozložení</h2>
             <p className="text-xs text-slate-400 mt-0.5">% podíl objednávek dle dopravce</p>
           </div>
-
           {shipPieData.length > 0 && (
             <>
               <div className="px-2 pt-4 pb-1">
@@ -620,7 +619,50 @@ export default function ShippingPage() {
               <PieLegend rows={shippingRows} palette={SHIP_PALETTE} total={totalShipCount} />
             </>
           )}
+        </div>
 
+        {/* Payment pie */}
+        <div className="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
+          <div className="px-5 py-4 border-b border-slate-100">
+            <h2 className="text-sm font-semibold text-slate-700">Způsoby platby — rozložení</h2>
+            <p className="text-xs text-slate-400 mt-0.5">% podíl objednávek dle způsobu platby</p>
+          </div>
+          {payPieData.length > 0 && (
+            <>
+              <div className="px-2 pt-4 pb-1">
+                <ResponsiveContainer width="100%" height={280}>
+                  <PieChart margin={{ top: 20, right: 60, bottom: 20, left: 60 }}>
+                    <Pie
+                      data={payPieData}
+                      cx="50%"
+                      cy="50%"
+                      innerRadius={64}
+                      outerRadius={100}
+                      dataKey="value"
+                      paddingAngle={3}
+                      labelLine={false}
+                      label={renderPieLabel}
+                    >
+                      {payPieData.map((_, i) => (
+                        <Cell key={i} fill={PAY_PALETTE[i % PAY_PALETTE.length]} stroke="#fff" strokeWidth={2} />
+                      ))}
+                    </Pie>
+                    <Tooltip formatter={(v: unknown) => [formatNumber(Number(v)), 'Počet objednávek']} contentStyle={{ fontSize: 12, borderRadius: 8 }} />
+                  </PieChart>
+                </ResponsiveContainer>
+              </div>
+              <PieLegend rows={paymentRows} palette={PAY_PALETTE} total={totalPayCount} />
+            </>
+          )}
+        </div>
+
+      </div>
+
+      {/* Tables side by side */}
+      <div className="grid grid-cols-1 xl:grid-cols-2 gap-6">
+
+        {/* Shipping table */}
+        <div className="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
           <div className="overflow-x-auto">
             <table className="w-full text-sm">
               <thead>
@@ -664,41 +706,8 @@ export default function ShippingPage() {
           </div>
         </div>
 
-        {/* Payment breakdown */}
+        {/* Payment table */}
         <div className="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
-          <div className="px-5 py-4 border-b border-slate-100">
-            <h2 className="text-sm font-semibold text-slate-700">Způsoby platby — rozložení</h2>
-            <p className="text-xs text-slate-400 mt-0.5">% podíl objednávek dle způsobu platby</p>
-          </div>
-
-          {payPieData.length > 0 && (
-            <>
-              <div className="px-2 pt-4 pb-1">
-                <ResponsiveContainer width="100%" height={280}>
-                  <PieChart margin={{ top: 20, right: 60, bottom: 20, left: 60 }}>
-                    <Pie
-                      data={payPieData}
-                      cx="50%"
-                      cy="50%"
-                      innerRadius={64}
-                      outerRadius={100}
-                      dataKey="value"
-                      paddingAngle={3}
-                      labelLine={false}
-                      label={renderPieLabel}
-                    >
-                      {payPieData.map((_, i) => (
-                        <Cell key={i} fill={PAY_PALETTE[i % PAY_PALETTE.length]} stroke="#fff" strokeWidth={2} />
-                      ))}
-                    </Pie>
-                    <Tooltip formatter={(v: unknown) => [formatNumber(Number(v)), 'Počet objednávek']} contentStyle={{ fontSize: 12, borderRadius: 8 }} />
-                  </PieChart>
-                </ResponsiveContainer>
-              </div>
-              <PieLegend rows={paymentRows} palette={PAY_PALETTE} total={totalPayCount} />
-            </>
-          )}
-
           <div className="overflow-x-auto">
             <table className="w-full text-sm">
               <thead>

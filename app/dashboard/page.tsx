@@ -13,8 +13,12 @@ import RevenueOrdersChart from '@/components/charts/RevenueOrdersChart';
 import CostPnoChart from '@/components/charts/CostPnoChart';
 import DailyTable from '@/components/tables/DailyTable';
 import CountryDistribution from '@/components/tables/CountryDistribution';
-import { formatCurrency, formatPercent, formatNumber, formatDate } from '@/lib/formatters';
+import { formatCurrency, formatPercent, formatNumber, formatDate, formatShortDate } from '@/lib/formatters';
 import { Wallet, Banknote, ShoppingCart, BarChart2, TrendingUp, Percent, Tag, Users } from 'lucide-react';
+import {
+  LineChart, Line, XAxis, YAxis, Tooltip, ResponsiveContainer, CartesianGrid, Legend,
+} from 'recharts';
+import { C } from '@/lib/chartColors';
 
 const periodTitles: Record<string, string> = {
   current_year: 'tento rok',
@@ -156,6 +160,73 @@ export default function DashboardPage() {
       <div className="grid grid-cols-1 xl:grid-cols-2 gap-6">
         <RevenueOrdersChart data={chartData} currency={currency} hasPrevData={hasPrevData} />
         <CostPnoChart data={chartData} currency={currency} hasPrevData={hasPrevData} />
+      </div>
+
+      {/* AOV + CPA charts */}
+      <div className="grid grid-cols-1 xl:grid-cols-2 gap-6">
+        <div className="bg-white rounded-2xl p-5 shadow-sm border border-slate-100">
+          <h3 className="text-sm font-semibold text-slate-700 mb-4">{hasPrevData ? 'AOV – Průměrná hodnota objednávky (YoY)' : 'AOV – Průměrná hodnota objednávky'}</h3>
+          <ResponsiveContainer width="100%" height={220}>
+            <LineChart data={chartData} margin={{ top: 4, right: 8, bottom: 0, left: 0 }}>
+              <CartesianGrid strokeDasharray="3 3" stroke="#f1f5f9" vertical={false} />
+              <XAxis
+                dataKey="date"
+                tickFormatter={(v: string) => formatShortDate(v)}
+                tick={{ fontSize: 11, fill: '#94a3b8' }}
+                axisLine={false} tickLine={false}
+                interval="preserveStartEnd"
+              />
+              <YAxis
+                tickFormatter={(v: number) => fc(v)}
+                tick={{ fontSize: 11, fill: '#94a3b8' }}
+                axisLine={false} tickLine={false}
+                width={70}
+              />
+              <Tooltip
+                formatter={(v: number) => [fc(v), '']}
+                labelFormatter={(l: string) => formatShortDate(l)}
+                contentStyle={{ fontSize: 12, borderRadius: 8, border: '1px solid #e2e8f0' }}
+              />
+              <Legend iconType="plainline" wrapperStyle={{ fontSize: 12 }} />
+              <Line type="monotone" dataKey={(d) => d.orders > 0 ? d.revenue / d.orders : null} name="AOV (aktuální)" stroke={C.aov} strokeWidth={2} dot={false} activeDot={{ r: 4 }} />
+              {hasPrevData && (
+                <Line type="monotone" dataKey={(d) => d.orders_prev > 0 ? d.revenue_prev / d.orders_prev : null} name="AOV (loňský rok)" stroke={C.aov} strokeWidth={1.5} strokeDasharray="4 3" dot={false} opacity={0.5} />
+              )}
+            </LineChart>
+          </ResponsiveContainer>
+        </div>
+
+        <div className="bg-white rounded-2xl p-5 shadow-sm border border-slate-100">
+          <h3 className="text-sm font-semibold text-slate-700 mb-4">{hasPrevData ? 'Cena za objednávku (YoY)' : 'Cena za objednávku'}</h3>
+          <ResponsiveContainer width="100%" height={220}>
+            <LineChart data={chartData} margin={{ top: 4, right: 8, bottom: 0, left: 0 }}>
+              <CartesianGrid strokeDasharray="3 3" stroke="#f1f5f9" vertical={false} />
+              <XAxis
+                dataKey="date"
+                tickFormatter={(v: string) => formatShortDate(v)}
+                tick={{ fontSize: 11, fill: '#94a3b8' }}
+                axisLine={false} tickLine={false}
+                interval="preserveStartEnd"
+              />
+              <YAxis
+                tickFormatter={(v: number) => fc(v)}
+                tick={{ fontSize: 11, fill: '#94a3b8' }}
+                axisLine={false} tickLine={false}
+                width={70}
+              />
+              <Tooltip
+                formatter={(v: number) => [fc(v), '']}
+                labelFormatter={(l: string) => formatShortDate(l)}
+                contentStyle={{ fontSize: 12, borderRadius: 8, border: '1px solid #e2e8f0' }}
+              />
+              <Legend iconType="plainline" wrapperStyle={{ fontSize: 12 }} />
+              <Line type="monotone" dataKey={(d) => d.orders > 0 ? d.cost / d.orders : null} name="CPA (aktuální)" stroke={C.cost} strokeWidth={2} dot={false} activeDot={{ r: 4 }} />
+              {hasPrevData && (
+                <Line type="monotone" dataKey={(d) => d.orders_prev > 0 ? d.cost_prev / d.orders_prev : null} name="CPA (loňský rok)" stroke={C.cost} strokeWidth={1.5} strokeDasharray="4 3" dot={false} opacity={0.5} />
+              )}
+            </LineChart>
+          </ResponsiveContainer>
+        </div>
       </div>
 
       {/* Table */}

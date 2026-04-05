@@ -39,16 +39,17 @@ app/(dashboard|orders|marketing|products|margin|analytics|behavior|crosssell|ret
 
 | Stránka | Popis |
 |---------|-------|
-| `/dashboard` | **Klíčové ukazatele (KPI)** — 13 metrik vč. marže a hrubého zisku, RevenueOrdersChart, CostPnoChart, DailyTable |
+| `/dashboard` | **Klíčové ukazatele (KPI)** — 13 metrik vč. marže a hrubého zisku; grafy: Tržby bez DPH, Náklady/PNO, AOV (YoY), Cena za objednávku (YoY); DailyTable |
 | `/orders` | Objednávky — tržby vs počet, distribuce hodnot košíku (histogram), rozložení CZ/SK |
-| `/marketing` | Marketingové investice — CPC per channel (FB/Google), trend kliky+CPC (ROAS odstraněn) |
+| `/marketing` | Marketingové investice — CPC per channel (FB/Google), trend kliky+CPC |
 | `/products` | Prodejnost produktů — ABC analýza (A/B/C segmenty), sortovatelná tabulka, YoY, CSV export |
 | `/margin` | Maržový report — marže %, hrubý zisk, grafy |
-| `/analytics` | GA4 integrace — sessions, CVR, sources+devices (YoY), vstupní stránky; zatím jen CZ |
+| `/analytics` | GA4 integrace — sessions, CVR, sources tabulka (Sessions/Nákupy/CVR/Tržby bez DPH + YoY), devices, vstupní stránky; zatím jen CZ |
 | `/behavior` | Nákupní chování — týdenní srovnání, hourly grid (all-time agregace) |
-| `/crosssell` | Cross-sell potenciál — top 100 produktových párů |
-| `/retention` | Retenční analýza — RFM segmentace, LTV, AOV, repeat purchase rate |
-| `/shipping` | Doprava a platby — KPI vč. zisku/ztráty dopravy, ceník dopravců (CZ/SK), P&L tabulka per dopravce |
+| `/crosssell` | Cross-sell potenciál — top 100 produktových párů (platební/dopravní metody vyloučeny) |
+| `/retention` | Retenční analýza — RFM segmentace, LTV, AOV, repeat purchase rate; tabulky s dopočítanými součty Celkem |
+| `/shipping` | Doprava a platby — KPI vč. zisku/ztráty dopravy, pie charty (doručení/platby), tabulky vedle sebe, ceník dopravců |
+| `/meta` | Meta Ads — KPI boxy s barevným pozadím + YoY, grafy CPC/CPA/Nákupy/ROAS, tabulka kreativ s color-coded CPA/ROAS |
 | `/login` | Přihlášení (NextAuth) |
 | `/admin/users` | Správa uživatelů (admin only) |
 
@@ -190,7 +191,7 @@ Hourly grid na stránce `/behavior` je **all-time agregace** — nezohledňuje v
 
 ### SK marže
 
-Nákupní ceny pro SK nejsou dostupné — `marginDataSK` obsahuje nuly v `costPrice`. Maržový report pro SK je nepřesný.
+SK marže se dopočítávají spojením margin sheetu (`margin_cz`) s orders exportem přes kód objednávky — SK objednávky jsou identifikované měnou `EUR` v orders exportu. `marginDataSK` obsahuje hodnoty v EUR stejně jako ostatní SK data.
 
 ### GA4
 
@@ -214,6 +215,32 @@ Na stránce `/analytics` jsou v TopBaru skryty selektory **Vše** a **SK** — z
 - **Graf CVR trychtýře v čase** (`funnelTrendPct`): zobrazuje jedinou křivku — `purchase / begin_checkout × 100 %` — jak se vyvíjí CVR celého trychtýře v čase; selektor zařízení (Vše / Desktop / Mobil / Tablet); Y-osa 0–100 %, každý bod počítán relativně k `begin_checkout_${device}` daného dne
 - **Trychtýř průchodnosti košíkem** (statický): stacked bar per krok, % z 1. kroku, odpad mezi kroky, rozpad desktop/mobile/tablet
 
+### `/dashboard` — AOV a CPA grafy
+
+Pod stávajícími grafy (Tržby bez DPH + Náklady/PNO) jsou dva nové grafy:
+- **AOV – Průměrná hodnota objednávky** — `revenue / orders` per den, indigo čára, YoY přerušovaná
+- **Cena za objednávku** — `cost / orders` per den, červená čára, YoY přerušovaná
+- YoY série se zobrazí pouze pokud `hasPrevData === true`
+
+### `/analytics` — Zdroje návštěvnosti
+
+Tabulka (full-width, tmavě modrá hlavička) s 9 sloupci: Zdroj/Médium, Sessions, YoY sessions, Nákupy, YoY nákupy, CVR (%), YoY CVR, Tržby bez DPH, YoY tržby.
+- API (`app/api/analytics/route.ts`) vrací `purchaseRevenue` a `cvr` v každém source řádku
+- YoY badge: zelená/červená, `–` pokud předchozí rok nemá data
+
+### `/meta` — Meta Ads
+
+- **KPI boxy** (`MetaKpiBox`): barevné pozadí (rose/blue/slate/emerald/amber) + rámeček + YoY badge (▲/▼ %)
+- **Tabulka kreativ**: tmavě modrá hlavička, bez sloupce "Tržby z reklam", CPA color-coded (zelená < 200 Kč, oranžová 200–400 Kč, červená > 400 Kč), ROAS color-coded (zelená ≥ 3×, oranžová 1–3×, červená < 1×)
+
+### `/shipping` — rozložení
+
+Pie charty (doručení + platby) jsou v samostatném řádku nad tabulkami. Tabulky jsou v dalším řádku vedle sebe — vždy na stejné výšce.
+
+### Cross-sell — vyloučení platebních metod
+
+`isPaymentName()` v `scripts/updateData.js` nově vylučuje i **Převodem** (dříve se mohlo objevit jako produkt v párech).
+
 ### Pre-existing TS chyby
 
 `app/shipping/page.tsx` má ~8 TS chyb (Recharts PieLabel + Tooltip typy). Jsou **pre-existující**, nezpůsobené nedávnými změnami — neřešit, pokud se nerefaktoruje shipping stránka.
@@ -231,6 +258,11 @@ NextAuth 5 (beta). Uživatelé jsou uloženi v **Neon PostgreSQL** (tabulka `use
 `.github/workflows/update-data.yml` — GitHub Actions spouští `node scripts/updateData.js` každý den v **6:00 SEČ** (5:00 UTC), commituje změněné soubory v `data/` a pushuje do `main`. Vercel pak automaticky nasadí nový build.
 
 Ruční spuštění: GitHub → Actions → "Aktualizace dat" → Run workflow.
+
+Script při každém spuštění:
+1. Fetchuje live **EUR→CZK kurz** z `frankfurter.app` (fallback 25)
+2. Stahuje Google Sheets (orders, cost, margin, stock)
+3. SK marže dopočítává spojením margin sheetu s orders exportem přes kód objednávky (SK = měna EUR)
 
 ### Timezone fix
 

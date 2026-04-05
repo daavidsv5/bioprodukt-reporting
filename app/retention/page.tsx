@@ -79,6 +79,38 @@ export default function RetentionPage() {
   const totalReturning   = yearCustomer.reduce((s, r) => s + r.returningCustomers, 0);
   const totalRevAll      = yearRevenue.reduce((s, r) => s + r.totalRevenue, 0);
 
+  // Ø 1. nákup celkem — vážený průměr (váha = počet nových zákazníků)
+  const totalAvgFirst = (() => {
+    const weightedSum = yearCustomer.reduce((s, r) => s + r.avgFirstPurchase * r.newCustomers, 0);
+    const totalWeight = yearCustomer.reduce((s, r) => s + (r.avgFirstPurchase > 0 ? r.newCustomers : 0), 0);
+    return totalWeight > 0 ? weightedSum / totalWeight : 0;
+  })();
+
+  // Ø Opakovaný nákup celkem — vážený průměr (váha = počet stávajících zákazníků)
+  const totalAvgRepeat = (() => {
+    const weightedSum = yearCustomer.reduce((s, r) => s + r.avgRepeatPurchase * r.returningCustomers, 0);
+    const totalWeight = yearCustomer.reduce((s, r) => s + (r.avgRepeatPurchase > 0 ? r.returningCustomers : 0), 0);
+    return totalWeight > 0 ? weightedSum / totalWeight : 0;
+  })();
+
+  // Retenční sazby celkem — zpětný výpočet absolutních počtů
+  const totalRate2Plus = (() => {
+    const count = yearRetention.reduce((s, r) => s + (r.rate2Plus / 100) * r.customers, 0);
+    return kpis.totalCustomers > 0 ? (count / kpis.totalCustomers) * 100 : 0;
+  })();
+  const totalRate3Plus = (() => {
+    const count = yearRetention.reduce((s, r) => s + (r.rate3Plus / 100) * r.customers, 0);
+    return kpis.totalCustomers > 0 ? (count / kpis.totalCustomers) * 100 : 0;
+  })();
+
+  // Obratové podíly celkem — zpětný výpočet absolutních obratů
+  const totalRevShare1Plus = totalRevAll > 0
+    ? (yearRevenue.reduce((s, r) => s + (r.revShare1Plus / 100) * r.totalRevenue, 0) / totalRevAll) * 100 : 0;
+  const totalRevShare2Plus = totalRevAll > 0
+    ? (yearRevenue.reduce((s, r) => s + (r.revShare2Plus / 100) * r.totalRevenue, 0) / totalRevAll) * 100 : 0;
+  const totalRevShare3Plus = totalRevAll > 0
+    ? (yearRevenue.reduce((s, r) => s + (r.revShare3Plus / 100) * r.totalRevenue, 0) / totalRevAll) * 100 : 0;
+
   // Yearly revenue for area chart
   const yearRevenueChart = yearRevenue.map(r => ({ year: r.year.toString(), obrat: Math.round(r.totalRevenue) }));
 
@@ -379,8 +411,8 @@ export default function RetentionPage() {
               <td className={`${tdClass} text-right text-blue-700`}>{formatNumber(totalReturning)}</td>
               <td className={`${tdClass} text-right text-slate-800`}>{formatNumber(totalOrders)}</td>
               <td className={`${tdClass} text-right text-slate-800`}>{fc(kpis.avgOrderValue)}</td>
-              <td className={`${tdClass} text-right text-slate-600`}>—</td>
-              <td className={`${tdClass} text-right text-slate-600`}>—</td>
+              <td className={`${tdClass} text-right text-slate-600`}>{totalAvgFirst > 0 ? fc(totalAvgFirst) : '—'}</td>
+              <td className={`${tdClass} text-right text-slate-600`}>{totalAvgRepeat > 0 ? fc(totalAvgRepeat) : '—'}</td>
               <td className={`${tdClass} text-right text-slate-800`}>{kpis.avgDaysBetween > 0 ? `${Math.round(kpis.avgDaysBetween)} dní` : '—'}</td>
             </tr>
           </tfoot>
@@ -415,8 +447,8 @@ export default function RetentionPage() {
               <td className={`${tdClass} text-blue-600 text-xs`}>Celkem</td>
               <td className={`${tdClass} text-right text-slate-800`}>{formatNumber(kpis.totalCustomers)}</td>
               <td className={`${tdClass} text-right`}><span className="inline-block bg-blue-200 text-blue-900 text-xs font-bold px-2 py-0.5 rounded-full">{fp(kpis.repeatPurchaseRate)}</span></td>
-              <td className={`${tdClass} text-right text-slate-600`}>—</td>
-              <td className={`${tdClass} text-right text-slate-600`}>—</td>
+              <td className={`${tdClass} text-right`}><span className="inline-block bg-indigo-200 text-indigo-900 text-xs font-bold px-2 py-0.5 rounded-full">{fp(totalRate2Plus)}</span></td>
+              <td className={`${tdClass} text-right`}><span className="inline-block bg-purple-200 text-purple-900 text-xs font-bold px-2 py-0.5 rounded-full">{fp(totalRate3Plus)}</span></td>
             </tr>
           </tfoot>
         </table>
@@ -449,9 +481,9 @@ export default function RetentionPage() {
             <tr className="bg-blue-50/60 border-t-2 border-blue-100 font-semibold">
               <td className={`${tdClass} text-blue-600 text-xs`}>Celkem</td>
               <td className={`${tdClass} text-right text-slate-800`}>{fc(totalRevAll)}</td>
-              <td className={`${tdClass} text-right text-slate-600`}>—</td>
-              <td className={`${tdClass} text-right text-slate-600`}>—</td>
-              <td className={`${tdClass} text-right text-slate-600`}>—</td>
+              <td className={`${tdClass} text-right`}><span className="inline-block bg-blue-200 text-blue-900 text-xs font-bold px-2 py-0.5 rounded-full">{fp(totalRevShare1Plus)}</span></td>
+              <td className={`${tdClass} text-right`}><span className="inline-block bg-indigo-200 text-indigo-900 text-xs font-bold px-2 py-0.5 rounded-full">{fp(totalRevShare2Plus)}</span></td>
+              <td className={`${tdClass} text-right`}><span className="inline-block bg-purple-200 text-purple-900 text-xs font-bold px-2 py-0.5 rounded-full">{fp(totalRevShare3Plus)}</span></td>
             </tr>
           </tfoot>
         </table>

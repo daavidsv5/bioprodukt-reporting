@@ -1,7 +1,7 @@
 'use client';
 
 import {
-  ComposedChart, Bar, Line, XAxis, YAxis,
+  ComposedChart, Bar, XAxis, YAxis,
   CartesianGrid, Tooltip, Legend, ResponsiveContainer,
 } from 'recharts';
 import { ChartDataPoint } from '@/hooks/useDashboardData';
@@ -22,35 +22,8 @@ function formatYAxis(v: number, currency: Currency) {
   return `${v} ${suffix}`;
 }
 
-const makeTooltip = (currency: Currency) => {
-  const CustomTooltip = ({ active, payload, label }: any) => {
-    if (!active || !payload?.length) return null;
-    return (
-      <div className="bg-white border border-slate-200 rounded-xl shadow-lg p-3 text-xs min-w-[180px]">
-        <p className="font-semibold text-slate-600 mb-2 pb-1.5 border-b border-slate-100">
-          {formatShortDate(label)}
-        </p>
-        {payload.map((p: any) => (
-          <div key={p.name} className="flex items-center justify-between gap-4 py-0.5">
-            <div className="flex items-center gap-1.5">
-              <span className="w-2.5 h-2.5 rounded-sm flex-shrink-0" style={{ background: p.color }} />
-              <span className="text-slate-500">{p.name}</span>
-            </div>
-            <span className="font-semibold text-slate-700">
-              {p.name.includes('Objednávky') ? p.value : formatCurrency(p.value, currency)}
-            </span>
-          </div>
-        ))}
-      </div>
-    );
-  };
-  CustomTooltip.displayName = 'RevenueTooltip';
-  return CustomTooltip;
-};
-
 export default function RevenueOrdersChart({ data, currency = 'CZK', hasPrevData = true }: Props) {
-  const CustomTooltip = makeTooltip(currency);
-  const title = hasPrevData ? 'Tržby a objednávky (YoY)' : 'Tržby a objednávky';
+  const title = hasPrevData ? 'Tržby bez DPH (YoY)' : 'Tržby bez DPH';
 
   return (
     <div className="bg-white rounded-2xl border border-slate-100 shadow-sm p-5">
@@ -67,34 +40,26 @@ export default function RevenueOrdersChart({ data, currency = 'CZK', hasPrevData
             interval="preserveStartEnd"
           />
           <YAxis
-            yAxisId="left"
             tickFormatter={(v) => formatYAxis(v, currency)}
             tick={{ fontSize: 11, fill: '#94a3b8' }}
             axisLine={false}
             tickLine={false}
             width={52}
           />
-          <YAxis
-            yAxisId="right"
-            orientation="right"
-            tick={{ fontSize: 11, fill: '#94a3b8' }}
-            axisLine={false}
-            tickLine={false}
-            width={32}
+          <Tooltip
+            formatter={(v: number) => [formatCurrency(v, currency), '']}
+            labelFormatter={formatShortDate}
+            contentStyle={{ fontSize: 12, borderRadius: 8, border: '1px solid #e2e8f0' }}
+            cursor={{ fill: '#f8fafc' }}
           />
-          <Tooltip content={<CustomTooltip />} cursor={{ fill: '#f8fafc' }} />
           <Legend
             wrapperStyle={{ fontSize: 11, paddingTop: 16, color: '#64748b' }}
             iconType="square"
             iconSize={9}
           />
-          <Bar yAxisId="left" dataKey="revenue" name="Tržby (aktuální)" fill={C.primary} barSize={hasPrevData ? 5 : 8} radius={[3, 3, 0, 0]} />
+          <Bar dataKey="revenue" name="Tržby bez DPH (aktuální)" fill={C.primary} barSize={hasPrevData ? 5 : 8} radius={[3, 3, 0, 0]} />
           {hasPrevData && (
-            <Bar yAxisId="left" dataKey="revenue_prev" name="Tržby (loňský rok)" fill={C.primaryLight} barSize={5} radius={[3, 3, 0, 0]} />
-          )}
-          <Line yAxisId="right" type="monotone" dataKey="orders" name="Objednávky (aktuální)" stroke={C.secondary} strokeWidth={2} dot={false} />
-          {hasPrevData && (
-            <Line yAxisId="right" type="monotone" dataKey="orders_prev" name="Objednávky (loňský rok)" stroke={C.secondaryLight} strokeWidth={1.5} dot={false} strokeDasharray="4 3" />
+            <Bar dataKey="revenue_prev" name="Tržby bez DPH (loňský rok)" fill={C.primaryLight} barSize={5} radius={[3, 3, 0, 0]} />
           )}
         </ComposedChart>
       </ResponsiveContainer>

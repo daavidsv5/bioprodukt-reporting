@@ -231,8 +231,8 @@ export default function AnalyticsPage() {
                 <YAxis tick={{ fontSize: 11, fill: '#94a3b8' }} />
                 <Tooltip />
                 <Legend />
-                <Line type="monotone" dataKey="sessions"      name="Sessions"        stroke={C.primary}      strokeWidth={2}   dot={false} />
-                <Line type="monotone" dataKey="sessions_prev" name="Sessions (loni)"  stroke={C.primaryLight} strokeWidth={1.5} strokeDasharray="4 3" dot={false} />
+                <Line type="monotone" dataKey="sessions"      name="Sessions"        stroke={C.facebookDark} strokeWidth={2}   dot={false} />
+                <Line type="monotone" dataKey="sessions_prev" name="Sessions (loni)"  stroke={C.facebookDark} strokeWidth={1.5} strokeDasharray="4 3" dot={false} opacity={0.4} />
               </LineChart>
             </ResponsiveContainer>
           </div>
@@ -248,8 +248,8 @@ export default function AnalyticsPage() {
                 <YAxis tick={{ fontSize: 11, fill: '#94a3b8' }} unit="%" />
                 <Tooltip formatter={(v: unknown, name: unknown) => [`${Number(v).toFixed(2)} %`, String(name)]} />
                 <Legend />
-                <Line type="monotone" dataKey="cvr"      name="Konverzní poměr"        stroke={C.cvr} strokeWidth={2}   dot={false} />
-                <Line type="monotone" dataKey="cvr_prev" name="Konverzní poměr (loni)"  stroke={C.cvr} strokeWidth={1.5} strokeDasharray="4 3" dot={false} opacity={0.5} />
+                <Line type="monotone" dataKey="cvr"      name="Konverzní poměr"        stroke={C.facebookDark} strokeWidth={2}   dot={false} />
+                <Line type="monotone" dataKey="cvr_prev" name="Konverzní poměr (loni)"  stroke={C.facebookDark} strokeWidth={1.5} strokeDasharray="4 3" dot={false} opacity={0.4} />
               </LineChart>
             </ResponsiveContainer>
           </div>
@@ -266,8 +266,8 @@ export default function AnalyticsPage() {
                   <YAxis tick={{ fontSize: 11, fill: '#94a3b8' }} unit="%" domain={[0, 100]} />
                   <Tooltip formatter={(v: unknown, name: unknown) => [`${v} %`, String(name)]} />
                   <Legend />
-                  <Line type="monotone" dataKey="bounceRate"      name="Bounce rate"       stroke={C.cvr} strokeWidth={2}   dot={false} />
-                  <Line type="monotone" dataKey="bounceRate_prev" name="Bounce rate (loni)" stroke={C.cvr} strokeWidth={1.5} strokeDasharray="4 3" dot={false} opacity={0.5} />
+                  <Line type="monotone" dataKey="bounceRate"      name="Bounce rate"       stroke={C.facebookDark} strokeWidth={2}   dot={false} />
+                  <Line type="monotone" dataKey="bounceRate_prev" name="Bounce rate (loni)" stroke={C.facebookDark} strokeWidth={1.5} strokeDasharray="4 3" dot={false} opacity={0.4} />
                 </LineChart>
               </ResponsiveContainer>
             </div>
@@ -282,41 +282,61 @@ export default function AnalyticsPage() {
                   <YAxis tick={{ fontSize: 11, fill: '#94a3b8' }} />
                   <Tooltip formatter={(v: unknown, name: unknown) => [`${v} s`, String(name)]} />
                   <Legend />
-                  <Line type="monotone" dataKey="avgDuration"      name="Délka návštěvy"       stroke={C.duration} strokeWidth={2}   dot={false} />
-                  <Line type="monotone" dataKey="avgDuration_prev" name="Délka návštěvy (loni)" stroke={C.duration} strokeWidth={1.5} strokeDasharray="4 3" dot={false} opacity={0.5} />
+                  <Line type="monotone" dataKey="avgDuration"      name="Délka návštěvy"       stroke={C.facebookDark} strokeWidth={2}   dot={false} />
+                  <Line type="monotone" dataKey="avgDuration_prev" name="Délka návštěvy (loni)" stroke={C.facebookDark} strokeWidth={1.5} strokeDasharray="4 3" dot={false} opacity={0.4} />
                 </LineChart>
               </ResponsiveContainer>
             </div>
           </div>
 
-          {/* Sources + Devices */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
-            <div className="bg-white rounded-2xl shadow-sm border border-slate-100 p-5">
-              <h2 className="text-sm font-semibold text-slate-700 mb-4">Zdroje návštěvnosti</h2>
-              <div className="space-y-2.5">
-                {data.sources.slice(0, 10).map((s, i) => {
-                  const total     = data.sources.reduce((acc, x) => acc + x.sessions, 0) || 1;
-                  const pct       = Math.round((s.sessions / total) * 100);
-                  const prevSrc   = data.sourcesPrev.find(p => p.source === s.source && p.medium === s.medium);
-                  return (
-                    <div key={i}>
-                      <div className="flex items-center justify-between text-xs text-slate-600 mb-0.5">
-                        <span className="truncate max-w-[180px]">{s.source} / {s.medium}</span>
-                        <span className="flex items-center gap-1.5 font-medium ml-2">
-                          {s.sessions.toLocaleString('cs-CZ')} ({pct} %)
-                          {prevSrc && yoyBadge(s.sessions, prevSrc.sessions)}
-                        </span>
-                      </div>
-                      <div className="h-1.5 bg-slate-100 rounded-full">
-                        <div className="h-1.5 bg-blue-500 rounded-full" style={{ width: `${pct}%` }} />
-                      </div>
-                    </div>
-                  );
-                })}
-              </div>
+          {/* Sources table — full width */}
+          <div className="bg-white rounded-2xl shadow-sm border border-slate-100 overflow-hidden">
+            <div className="px-5 py-4 border-b border-slate-100">
+              <h2 className="text-sm font-semibold text-slate-700">Zdroje návštěvnosti</h2>
+              <p className="text-xs text-slate-400 mt-0.5">Top 10 zdrojů · meziroční srovnání</p>
             </div>
+            <div className="overflow-x-auto">
+              <table className="w-full text-sm">
+                <thead>
+                  <tr className="bg-blue-900 text-white">
+                    <th className="px-4 py-2.5 text-left text-[11px] font-semibold uppercase tracking-wider">Zdroj / Médium</th>
+                    <th className="px-4 py-2.5 text-right text-[11px] font-semibold uppercase tracking-wider">Sessions</th>
+                    <th className="px-4 py-2.5 text-right text-[11px] font-semibold uppercase tracking-wider">YoY sessions</th>
+                    <th className="px-4 py-2.5 text-right text-[11px] font-semibold uppercase tracking-wider">Nákupy</th>
+                    <th className="px-4 py-2.5 text-right text-[11px] font-semibold uppercase tracking-wider">YoY nákupy</th>
+                    <th className="px-4 py-2.5 text-right text-[11px] font-semibold uppercase tracking-wider">CVR (%)</th>
+                    <th className="px-4 py-2.5 text-right text-[11px] font-semibold uppercase tracking-wider">YoY CVR</th>
+                    <th className="px-4 py-2.5 text-right text-[11px] font-semibold uppercase tracking-wider">Tržby bez DPH</th>
+                    <th className="px-4 py-2.5 text-right text-[11px] font-semibold uppercase tracking-wider">YoY tržby</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {data.sources.slice(0, 10).map((s, i) => {
+                    const prev = data.sourcesPrev.find(p => p.source === s.source && p.medium === s.medium);
+                    return (
+                      <tr key={i} className={`border-b border-slate-50 hover:bg-slate-50 ${i % 2 === 0 ? 'bg-white' : 'bg-slate-50/30'}`}>
+                        <td className="px-4 py-2.5 text-slate-700 font-medium text-xs">{s.source} / {s.medium}</td>
+                        <td className="px-4 py-2.5 text-right text-slate-600">{s.sessions.toLocaleString('cs-CZ')}</td>
+                        <td className="px-4 py-2.5 text-right">{prev ? yoyBadge(s.sessions, prev.sessions) : <span className="text-slate-300 text-xs">–</span>}</td>
+                        <td className="px-4 py-2.5 text-right text-slate-600">{s.conversions.toLocaleString('cs-CZ')}</td>
+                        <td className="px-4 py-2.5 text-right">{prev ? yoyBadge(s.conversions, prev.conversions) : <span className="text-slate-300 text-xs">–</span>}</td>
+                        <td className="px-4 py-2.5 text-right text-slate-600">{s.cvr.toFixed(2)} %</td>
+                        <td className="px-4 py-2.5 text-right">{prev && prev.cvr > 0 ? yoyBadge(s.cvr, prev.cvr) : <span className="text-slate-300 text-xs">–</span>}</td>
+                        <td className="px-4 py-2.5 text-right font-semibold text-slate-800">{Math.round(s.revenue).toLocaleString('cs-CZ')} Kč</td>
+                        <td className="px-4 py-2.5 text-right">{prev && prev.revenue > 0 ? yoyBadge(s.revenue, prev.revenue) : <span className="text-slate-300 text-xs">–</span>}</td>
+                      </tr>
+                    );
+                  })}
+                  {data.sources.length === 0 && (
+                    <tr><td colSpan={9} className="px-4 py-6 text-center text-slate-400 text-sm">Žádná data</td></tr>
+                  )}
+                </tbody>
+              </table>
+            </div>
+          </div>
 
-            <div className="bg-white rounded-2xl shadow-sm border border-slate-100 p-5">
+          {/* Devices */}
+          <div className="bg-white rounded-2xl shadow-sm border border-slate-100 p-5">
               <h2 className="text-sm font-semibold text-slate-700 mb-4">Zařízení</h2>
               <div className="flex items-center gap-6">
                 <ResponsiveContainer width={160} height={160}>
@@ -348,7 +368,6 @@ export default function AnalyticsPage() {
                   })}
                 </div>
               </div>
-            </div>
           </div>
 
           {/* Funnel trend chart */}
@@ -390,7 +409,7 @@ export default function AnalyticsPage() {
                     type="monotone"
                     dataKey={`purchase_${funnelDevice}`}
                     name="CVR trychtýře"
-                    stroke={C.margin}
+                    stroke={C.facebookDark}
                     strokeWidth={2.5}
                     dot={false}
                     activeDot={{ r: 4 }}
