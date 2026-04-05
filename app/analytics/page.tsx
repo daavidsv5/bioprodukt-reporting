@@ -36,6 +36,8 @@ interface SourceRow {
   sessions: number;
   conversions: number;
   users: number;
+  revenue: number;
+  cvr: number;
 }
 
 interface DeviceRow {
