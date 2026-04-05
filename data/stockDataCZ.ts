@@ -457,10 +457,5 @@ export const stockDataCZ: StockRecord[] = [
     "code": "387",
     "name": "Sušený ananas premium 500g",
     "stock": 11
-  },
-  {
-    "code": "GOODYDO0001",
-    "name": "Znesnáze pro e-shopy - dar",
-    "stock": -3420
   }
 ];

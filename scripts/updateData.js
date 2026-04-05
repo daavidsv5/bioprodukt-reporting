@@ -816,6 +816,10 @@ export const ${varName}: { dates: string[]; revenues: number[]; revsVat: number[
 // ── Stock processing ──────────────────────────────────────────────────────────
 // CSV columns: code, pairCode, name, stock
 
+const STOCK_EXCLUDED_NAMES = new Set([
+  'Znesnáze pro e-shopy - dar',
+]);
+
 function aggregateStock(csv) {
   const rows = parseCSV(csv);
   const result = [];
@@ -825,6 +829,7 @@ function aggregateStock(csv) {
     const name  = (cols[2] || '').trim();
     const stock = Math.round(parseNum(cols[3]));
     if (!code || !name) continue;
+    if (STOCK_EXCLUDED_NAMES.has(name)) continue;
     result.push({ code, name, stock });
   }
   return result.sort((a, b) => a.name.localeCompare(b.name, 'cs'));
