@@ -47,8 +47,8 @@ export default function RevenueOrdersChart({ data, currency = 'CZK', hasPrevData
             width={52}
           />
           <Tooltip
-            formatter={(v: number) => [formatCurrency(v, currency), '']}
-            labelFormatter={formatShortDate}
+            formatter={(v: unknown) => [formatCurrency(Number(v), currency), '']}
+            labelFormatter={(l: unknown) => formatShortDate(String(l))}
             contentStyle={{ fontSize: 12, borderRadius: 8, border: '1px solid #e2e8f0' }}
             cursor={{ fill: '#f8fafc' }}
           />

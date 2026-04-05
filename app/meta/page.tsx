@@ -130,8 +130,8 @@ function SmallChart({
           width={60}
         />
         <Tooltip
-          formatter={(v: number) => [yFormatter(v), '']}
-          labelFormatter={(l: string) => formatShortDate(l)}
+          formatter={(v: unknown) => [yFormatter(Number(v)), '']}
+          labelFormatter={(l: unknown) => formatShortDate(String(l))}
           contentStyle={{ fontSize: 12, borderRadius: 8, border: '1px solid #e2e8f0' }}
         />
         <Line
