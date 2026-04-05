@@ -183,7 +183,7 @@ export default function DashboardPage() {
                 width={70}
               />
               <Tooltip
-                formatter={(v: number) => [fc(v), '']}
+                formatter={(v: unknown) => [fc(Number(v)), '']}
                 labelFormatter={(l: string) => formatShortDate(l)}
                 contentStyle={{ fontSize: 12, borderRadius: 8, border: '1px solid #e2e8f0' }}
               />
@@ -215,7 +215,7 @@ export default function DashboardPage() {
                 width={70}
               />
               <Tooltip
-                formatter={(v: number) => [fc(v), '']}
+                formatter={(v: unknown) => [fc(Number(v)), '']}
                 labelFormatter={(l: string) => formatShortDate(l)}
                 contentStyle={{ fontSize: 12, borderRadius: 8, border: '1px solid #e2e8f0' }}
               />
