@@ -49,7 +49,7 @@ app/(dashboard|orders|marketing|products|margin|analytics|behavior|crosssell|ret
 | `/crosssell` | Cross-sell potenciál — top 100 produktových párů (platební/dopravní metody vyloučeny) |
 | `/retention` | Retenční analýza — RFM segmentace, LTV, AOV, repeat purchase rate; tabulky s dopočítanými součty Celkem |
 | `/shipping` | Doprava a platby — KPI vč. zisku/ztráty dopravy, pie charty (doručení/platby), tabulky vedle sebe, ceník dopravců |
-| `/main` | **Hlavní Dashboard** — 7 měsíčních sloupcových grafů YoY (Tržby, Hrubý zisk, Investice, PNO%, AOV, Marže%, CPA); grid 2 sloupce; selektory Vše/CZ/SK a rok v TopBaru |
+| `/main` | **Hlavní Dashboard** — 8 měsíčních sloupcových grafů YoY (Tržby, Hrubý zisk, Počet obj., Investice, PNO%, AOV, Marže%, CPA); grid 2 sloupce; selektory Vše/CZ/SK a rok v TopBaru; default Vše |
 | `/meta` | Meta Ads — KPI boxy s barevným pozadím + YoY, grafy CPC/CPA/Nákupy/ROAS, tabulka kreativ s color-coded CPA/ROAS; filtrace dle kampaně a sady reklam |
 | `/login` | Přihlášení (NextAuth) |
 | `/admin/users` | Správa uživatelů (admin only) |
@@ -233,10 +233,11 @@ Tabulka (full-width, tmavě modrá hlavička) s 9 sloupci: Zdroj/Médium, Sessio
 
 - Hook: `hooks/useMainDashboard.ts` → `useMainDashboard(country, year): MonthlyPoint[]`
 - Komponenta: `components/charts/YearCompareBarChart.tsx` — generický seskupený BarChart (aktuální rok + předchozí rok)
-- **Selektory Vše/CZ/SK a rok** jsou v TopBaru, předávají se přes URL search params (`?country=cz&year=2025`)
-- Stránka čte `useSearchParams()` — žádný lokální state
+- **Selektory Vše/CZ/SK a rok** jsou v TopBaru, předávají se přes URL search params (`?country=all&year=2025`)
+- Stránka čte `useSearchParams()` — žádný lokální state; `TopBarInner` a `MainDashboardContent` obaleny `<Suspense>` (nutné pro Next.js prerender)
 - **`MainCountry = 'cz' | 'sk' | 'all'`** — při `'all'` se CZ a SK data mergují (SK EUR → CZK přes `EUR_TO_CZK`)
-- **7 grafů** (grid `md:grid-cols-2`): Tržby bez DPH, Hrubý zisk, Marketingové investice, PNO (%), AOV, Marže (%), CPA
+- **Default: `'all'`** — při první návštěvě bez URL params se zobrazí CZ + SK kombinovaně
+- **8 grafů** (grid `md:grid-cols-2`): Tržby bez DPH, Hrubý zisk, Počet objednávek, Marketingové investice, PNO (%), AOV, Marže (%), CPA
 - **Hrubý zisk** = (marginRev − purchaseCost) − marketingové náklady; zelená barva (#16a34a)
 - Při `'all'` nebo `'cz'` se zobrazuje CZK, při `'sk'` EUR
 
