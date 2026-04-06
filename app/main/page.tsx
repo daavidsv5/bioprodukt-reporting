@@ -44,6 +44,17 @@ function MainDashboardContent() {
       />
 
       <YearCompareBarChart
+        title="Počet objednávek"
+        data={data}
+        dataKey="orders"
+        prevKey="orders_prev"
+        color={C.primary}
+        colorPrev={C.primaryLight}
+        formatter={(v) => Math.round(v).toLocaleString('cs-CZ')}
+        currentYear={year}
+      />
+
+      <YearCompareBarChart
         title="Marketingové investice"
         data={data}
         dataKey="cost"
