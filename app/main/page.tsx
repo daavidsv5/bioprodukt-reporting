@@ -1,20 +1,17 @@
 'use client';
 
-import { useState } from 'react';
+import { useSearchParams } from 'next/navigation';
 import { useMainDashboard, MainCountry } from '@/hooks/useMainDashboard';
 import YearCompareBarChart from '@/components/charts/YearCompareBarChart';
 import { C } from '@/lib/chartColors';
 import { formatCurrency } from '@/lib/formatters';
 
 const CURRENT_YEAR = new Date().getFullYear();
-const AVAILABLE_YEARS = Array.from(
-  { length: CURRENT_YEAR - 2023 },
-  (_, i) => 2024 + i,
-).reverse();
 
 export default function MainDashboardPage() {
-  const [country, setCountry] = useState<MainCountry>('cz');
-  const [year, setYear] = useState<number>(CURRENT_YEAR);
+  const searchParams = useSearchParams();
+  const country = (searchParams.get('country') ?? 'cz') as MainCountry;
+  const year = Number(searchParams.get('year') ?? CURRENT_YEAR);
 
   const data = useMainDashboard(country, year);
   const currency = country === 'cz' ? 'CZK' : 'EUR';
@@ -22,42 +19,12 @@ export default function MainDashboardPage() {
 
   return (
     <div className="space-y-6">
-      {/* Header + controls */}
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-        <div>
-          <h1 className="text-xl font-bold text-slate-900">Hlavní Dashboard</h1>
-          <p className="text-sm text-slate-500 mt-0.5">
-            Měsíční přehled klíčových metrik · srovnání s předchozím rokem
-          </p>
-        </div>
-
-        <div className="flex items-center gap-3 flex-wrap">
-          {/* CZ / SK toggle */}
-          <div className="flex rounded-lg border border-slate-200 overflow-hidden bg-white">
-            {(['cz', 'sk'] as MainCountry[]).map((c, idx) => (
-              <button
-                key={c}
-                onClick={() => setCountry(c)}
-                className={`px-4 py-1.5 text-sm font-medium transition-colors focus:outline-none ${
-                  idx > 0 ? 'border-l border-slate-200' : ''
-                } ${country === c ? 'bg-blue-600 text-white' : 'text-slate-600 hover:bg-slate-50'}`}
-              >
-                {c === 'cz' ? '🇨🇿 CZ' : '🇸🇰 SK'}
-              </button>
-            ))}
-          </div>
-
-          {/* Rok selector */}
-          <select
-            value={year}
-            onChange={e => setYear(Number(e.target.value))}
-            className="border border-slate-200 rounded-lg px-3 py-1.5 text-sm text-slate-700 bg-white focus:outline-none focus:ring-2 focus:ring-blue-500"
-          >
-            {AVAILABLE_YEARS.map(y => (
-              <option key={y} value={y}>{y} vs. {y - 1}</option>
-            ))}
-          </select>
-        </div>
+      {/* Header */}
+      <div>
+        <h1 className="text-xl font-bold text-slate-900">Hlavní Dashboard</h1>
+        <p className="text-sm text-slate-500 mt-0.5">
+          Měsíční přehled klíčových metrik · srovnání s předchozím rokem
+        </p>
       </div>
 
       {/* 6 grafů — 3 sloupce na xl, 2 na md */}

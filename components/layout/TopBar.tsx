@@ -1,13 +1,16 @@
 'use client';
 
 import { useState } from 'react';
-import { usePathname } from 'next/navigation';
+import { usePathname, useSearchParams, useRouter } from 'next/navigation';
 import { FilterState, Country, TimePeriod } from '@/data/types';
 import { getDateRange } from '@/hooks/useFilters';
 import { formatDate } from '@/lib/formatters';
 import { RefreshCw, Menu, Clock } from 'lucide-react';
 import { useSidebar } from './ConditionalLayout';
 import { LAST_UPDATE } from '@/data/lastUpdate';
+
+const CURRENT_YEAR = new Date().getFullYear();
+const AVAILABLE_YEARS = Array.from({ length: CURRENT_YEAR - 2023 }, (_, i) => 2024 + i).reverse();
 
 interface TopBarProps {
   filters: FilterState;
@@ -30,9 +33,21 @@ export default function TopBar({ filters, onChange }: TopBarProps) {
   const [updateMsg, setUpdateMsg] = useState<string | null>(null);
   const { toggle } = useSidebar();
   const pathname = usePathname();
+  const searchParams = useSearchParams();
+  const router = useRouter();
   const isRetention = pathname === '/retention' || pathname === '/crosssell';
   const isAnalytics = pathname === '/analytics';
   const isMainDashboard = pathname === '/main';
+
+  // Main dashboard local controls (via URL params)
+  const mainCountry = (searchParams.get('country') ?? 'cz') as 'cz' | 'sk';
+  const mainYear = Number(searchParams.get('year') ?? CURRENT_YEAR);
+
+  const setMainParam = (key: string, value: string) => {
+    const params = new URLSearchParams(searchParams.toString());
+    params.set(key, value);
+    router.replace(`/main?${params.toString()}`, { scroll: false });
+  };
 
   const handleUpdate = async () => {
     setUpdating(true);
@@ -74,6 +89,38 @@ export default function TopBar({ filters, onChange }: TopBarProps) {
         >
           <Menu size={20} />
         </button>
+
+        {/* Main dashboard controls — CZ/SK + rok */}
+        {isMainDashboard && (
+          <>
+            <div className="flex rounded-lg border border-slate-200 overflow-hidden bg-white flex-shrink-0">
+              {(['cz', 'sk'] as const).map((c, idx) => (
+                <button
+                  key={c}
+                  onClick={() => setMainParam('country', c)}
+                  className={`px-3 md:px-4 py-1.5 text-sm font-medium transition-colors focus:outline-none ${
+                    idx > 0 ? 'border-l border-slate-200' : ''
+                  } ${mainCountry === c ? 'bg-blue-600 text-white' : 'text-slate-600 hover:bg-slate-50'}`}
+                >
+                  {c === 'cz' ? '🇨🇿 CZ' : '🇸🇰 SK'}
+                </button>
+              ))}
+            </div>
+            <div className="h-6 w-px bg-slate-100 hidden md:block flex-shrink-0" />
+            <div className="flex items-center gap-1.5 flex-shrink-0">
+              <span className="text-xs text-slate-400 font-medium hidden sm:inline">Rok:</span>
+              <select
+                value={mainYear}
+                onChange={e => setMainParam('year', e.target.value)}
+                className="border border-slate-200 rounded-lg px-2 md:px-3 py-1.5 text-sm text-slate-700 bg-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+              >
+                {AVAILABLE_YEARS.map(y => (
+                  <option key={y} value={y}>{y} vs. {y - 1}</option>
+                ))}
+              </select>
+            </div>
+          </>
+        )}
 
         {/* Country segmented control — hidden on retention + main dashboard page */}
         {!isRetention && !isMainDashboard && (
@@ -121,22 +168,24 @@ export default function TopBar({ filters, onChange }: TopBarProps) {
         {/* Divider — desktop only */}
         {!isRetention && !isMainDashboard && <div className="h-6 w-px bg-slate-100 hidden md:block flex-shrink-0" />}
 
-        {/* Time period */}
-        <div className="flex items-center gap-1.5 flex-shrink-0">
-          <span className="text-xs text-slate-400 font-medium hidden sm:inline">Období:</span>
-          <select
-            value={filters.timePeriod}
-            onChange={(e) => handlePeriodChange(e.target.value as TimePeriod)}
-            className="border border-slate-200 rounded-lg px-2 md:px-3 py-1.5 text-sm text-slate-700 bg-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-          >
-            {(Object.keys(periodLabels) as TimePeriod[]).map((p) => (
-              <option key={p} value={p}>{periodLabels[p]}</option>
-            ))}
-          </select>
-        </div>
+        {/* Time period — hidden on main dashboard */}
+        {!isMainDashboard && (
+          <div className="flex items-center gap-1.5 flex-shrink-0">
+            <span className="text-xs text-slate-400 font-medium hidden sm:inline">Období:</span>
+            <select
+              value={filters.timePeriod}
+              onChange={(e) => handlePeriodChange(e.target.value as TimePeriod)}
+              className="border border-slate-200 rounded-lg px-2 md:px-3 py-1.5 text-sm text-slate-700 bg-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+            >
+              {(Object.keys(periodLabels) as TimePeriod[]).map((p) => (
+                <option key={p} value={p}>{periodLabels[p]}</option>
+              ))}
+            </select>
+          </div>
+        )}
 
         {/* Custom date range */}
-        {filters.timePeriod === 'custom' && (
+        {!isMainDashboard && filters.timePeriod === 'custom' && (
           <div className="flex items-center gap-1.5 flex-wrap flex-shrink-0">
             <input
               type="date"
@@ -154,12 +203,14 @@ export default function TopBar({ filters, onChange }: TopBarProps) {
           </div>
         )}
 
-        {/* Date range label — hidden on small mobile */}
-        <div className="text-xs md:text-sm text-slate-500 hidden sm:block flex-shrink-0">
-          <span className="font-medium text-slate-700">{formatDate(start)}</span>
-          <span className="mx-1.5 text-slate-300">–</span>
-          <span className="font-medium text-slate-700">{formatDate(end)}</span>
-        </div>
+        {/* Date range label — hidden on main dashboard */}
+        {!isMainDashboard && (
+          <div className="text-xs md:text-sm text-slate-500 hidden sm:block flex-shrink-0">
+            <span className="font-medium text-slate-700">{formatDate(start)}</span>
+            <span className="mx-1.5 text-slate-300">–</span>
+            <span className="font-medium text-slate-700">{formatDate(end)}</span>
+          </div>
+        )}
 
         {/* Spacer */}
         <div className="flex-1 min-w-0" />
