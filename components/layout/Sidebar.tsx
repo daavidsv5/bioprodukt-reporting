@@ -2,11 +2,12 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { BarChart2, LayoutDashboard, ShoppingCart, TrendingUp, Package, Brain, PieChart, Users, ShieldCheck, LogOut, X, GitMerge, KeyRound, Activity, Truck, Archive, Facebook, Search } from 'lucide-react';
+import { BarChart2, LayoutDashboard, LayoutGrid, ShoppingCart, TrendingUp, Package, Brain, PieChart, Users, ShieldCheck, LogOut, X, GitMerge, KeyRound, Activity, Truck, Archive, Facebook } from 'lucide-react';
 import { useSession, signOut } from 'next-auth/react';
 import { useSidebar } from './ConditionalLayout';
 
 const navItems = [
+  { icon: LayoutGrid,      label: 'Hlavní Dashboard',        href: '/main' },
   { icon: LayoutDashboard, label: 'Klíčové ukazatele (KPI)', href: '/dashboard' },
   { icon: ShoppingCart,    label: 'Objednávky',               href: '/orders' },
   { icon: TrendingUp,      label: 'Marketingové investice',   href: '/marketing' },

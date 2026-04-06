@@ -32,6 +32,7 @@ export default function TopBar({ filters, onChange }: TopBarProps) {
   const pathname = usePathname();
   const isRetention = pathname === '/retention' || pathname === '/crosssell';
   const isAnalytics = pathname === '/analytics';
+  const isMainDashboard = pathname === '/main';
 
   const handleUpdate = async () => {
     setUpdating(true);
@@ -74,8 +75,8 @@ export default function TopBar({ filters, onChange }: TopBarProps) {
           <Menu size={20} />
         </button>
 
-        {/* Country segmented control — hidden on retention page */}
-        {!isRetention && (
+        {/* Country segmented control — hidden on retention + main dashboard page */}
+        {!isRetention && !isMainDashboard && (
           <div className="flex items-center gap-1.5 flex-shrink-0">
             <span className="text-xs text-slate-400 font-medium hidden sm:inline">Trh:</span>
             <div className="flex rounded-lg border border-slate-200 overflow-hidden bg-white">
@@ -118,7 +119,7 @@ export default function TopBar({ filters, onChange }: TopBarProps) {
         )}
 
         {/* Divider — desktop only */}
-        {!isRetention && <div className="h-6 w-px bg-slate-100 hidden md:block flex-shrink-0" />}
+        {!isRetention && !isMainDashboard && <div className="h-6 w-px bg-slate-100 hidden md:block flex-shrink-0" />}
 
         {/* Time period */}
         <div className="flex items-center gap-1.5 flex-shrink-0">
