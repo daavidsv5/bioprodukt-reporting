@@ -240,6 +240,8 @@ export default function MetaAdsPage() {
 
   const [sortKey, setSortKey] = useState<SortKey>('spend');
   const [sortDir, setSortDir] = useState<'asc' | 'desc'>('desc');
+  const [campaignFilter, setCampaignFilter] = useState<string>('');
+  const [adsetFilter, setAdsetFilter] = useState<string>('');
 
   const country =
     filters.countries.length === 1 ? filters.countries[0] : 'all';
@@ -263,17 +265,36 @@ export default function MetaAdsPage() {
       });
   }, [fromStr, toStr, country]);
 
+  const campaigns = useMemo(() => {
+    if (!data?.ads) return [];
+    return Array.from(new Set(data.ads.map(a => a.campaignName))).sort();
+  }, [data?.ads]);
+
+  const adsets = useMemo(() => {
+    if (!data?.ads) return [];
+    const base = campaignFilter ? data.ads.filter(a => a.campaignName === campaignFilter) : data.ads;
+    return Array.from(new Set(base.map(a => a.adsetName))).sort();
+  }, [data?.ads, campaignFilter]);
+
   const sortedAds = useMemo(() => {
     if (!data?.ads) return [];
-    return [...data.ads].sort((a, b) => {
+    let ads = data.ads;
+    if (campaignFilter) ads = ads.filter(a => a.campaignName === campaignFilter);
+    if (adsetFilter)   ads = ads.filter(a => a.adsetName   === adsetFilter);
+    return [...ads].sort((a, b) => {
       const diff = (a[sortKey] as number) - (b[sortKey] as number);
       return sortDir === 'desc' ? -diff : diff;
     });
-  }, [data?.ads, sortKey, sortDir]);
+  }, [data?.ads, sortKey, sortDir, campaignFilter, adsetFilter]);
 
   function handleSort(field: SortKey) {
     if (field === sortKey) setSortDir(d => d === 'desc' ? 'asc' : 'desc');
     else { setSortKey(field); setSortDir('desc'); }
+  }
+
+  function handleCampaignChange(val: string) {
+    setCampaignFilter(val);
+    setAdsetFilter('');
   }
 
   const countryLabel = country === 'cz' ? 'CZ' : country === 'sk' ? 'SK' : null;
@@ -358,6 +379,49 @@ export default function MetaAdsPage() {
 
         {/* Ad table */}
         <div className="bg-white rounded-2xl shadow-sm border border-slate-100 overflow-hidden">
+          {/* Filter bar */}
+          <div className="px-4 py-3 border-b border-slate-100 flex flex-wrap gap-3 items-center">
+            <div className="flex items-center gap-2">
+              <span className="text-xs text-slate-400 font-medium whitespace-nowrap">Kampaň:</span>
+              <select
+                value={campaignFilter}
+                onChange={e => handleCampaignChange(e.target.value)}
+                className="border border-slate-200 rounded-lg px-2 py-1.5 text-xs text-slate-700 bg-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent max-w-[240px]"
+              >
+                <option value="">Vše ({data.ads.length})</option>
+                {campaigns.map(c => {
+                  const count = data.ads.filter(a => a.campaignName === c).length;
+                  return <option key={c} value={c}>{c} ({count})</option>;
+                })}
+              </select>
+            </div>
+            <div className="flex items-center gap-2">
+              <span className="text-xs text-slate-400 font-medium whitespace-nowrap">Sada reklam:</span>
+              <select
+                value={adsetFilter}
+                onChange={e => setAdsetFilter(e.target.value)}
+                disabled={adsets.length === 0}
+                className="border border-slate-200 rounded-lg px-2 py-1.5 text-xs text-slate-700 bg-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent max-w-[240px] disabled:opacity-40"
+              >
+                <option value="">Vše ({adsets.length})</option>
+                {adsets.map(s => {
+                  const base = campaignFilter ? data.ads.filter(a => a.campaignName === campaignFilter) : data.ads;
+                  const count = base.filter(a => a.adsetName === s).length;
+                  return <option key={s} value={s}>{s} ({count})</option>;
+                })}
+              </select>
+            </div>
+            {(campaignFilter || adsetFilter) && (
+              <button
+                onClick={() => { setCampaignFilter(''); setAdsetFilter(''); }}
+                className="text-xs text-blue-600 hover:text-blue-800 font-medium"
+              >
+                Zrušit filtry
+              </button>
+            )}
+            <span className="ml-auto text-xs text-slate-400">{sortedAds.length} reklam</span>
+          </div>
+
           {/* Sort bar */}
           <div className="px-4 py-3 border-b border-slate-100 flex flex-wrap gap-2 items-center">
             <span className="text-xs text-slate-400 font-medium mr-1">Řadit dle:</span>
