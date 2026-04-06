@@ -40,7 +40,7 @@ function TopBarInner({ filters, onChange }: TopBarProps) {
   const isMainDashboard = pathname === '/main';
 
   // Main dashboard local controls (via URL params)
-  const mainCountry = (searchParams.get('country') ?? 'cz') as 'cz' | 'sk' | 'all';
+  const mainCountry = (searchParams.get('country') ?? 'all') as 'cz' | 'sk' | 'all';
   const mainYear = Number(searchParams.get('year') ?? CURRENT_YEAR);
 
   const setMainParam = (key: string, value: string) => {

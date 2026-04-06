@@ -11,7 +11,7 @@ const CURRENT_YEAR = new Date().getFullYear();
 
 function MainDashboardContent() {
   const searchParams = useSearchParams();
-  const country = (searchParams.get('country') ?? 'cz') as MainCountry;
+  const country = (searchParams.get('country') ?? 'all') as MainCountry;
   const year = Number(searchParams.get('year') ?? CURRENT_YEAR);
 
   const data = useMainDashboard(country, year);
