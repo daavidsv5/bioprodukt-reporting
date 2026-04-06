@@ -14,7 +14,7 @@ export default function MainDashboardPage() {
   const year = Number(searchParams.get('year') ?? CURRENT_YEAR);
 
   const data = useMainDashboard(country, year);
-  const currency = country === 'cz' ? 'CZK' : 'EUR';
+  const currency = country === 'sk' ? 'EUR' : 'CZK';
   const fc = (v: number) => formatCurrency(v, currency);
 
   return (
@@ -27,8 +27,8 @@ export default function MainDashboardPage() {
         </p>
       </div>
 
-      {/* 6 grafů — 3 sloupce na xl, 2 na md */}
-      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5">
+      {/* 7 grafů — vždy 2 vedle sebe */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
 
         <YearCompareBarChart
           title="Tržby bez DPH"
@@ -37,6 +37,17 @@ export default function MainDashboardPage() {
           prevKey="revenue_prev"
           color={C.primary}
           colorPrev={C.primaryLight}
+          formatter={fc}
+          currentYear={year}
+        />
+
+        <YearCompareBarChart
+          title="Hrubý zisk"
+          data={data}
+          dataKey="grossProfit"
+          prevKey="grossProfit_prev"
+          color="#16a34a"
+          colorPrev="#86efac"
           formatter={fc}
           currentYear={year}
         />

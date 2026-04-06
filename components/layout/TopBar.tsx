@@ -40,7 +40,7 @@ export default function TopBar({ filters, onChange }: TopBarProps) {
   const isMainDashboard = pathname === '/main';
 
   // Main dashboard local controls (via URL params)
-  const mainCountry = (searchParams.get('country') ?? 'cz') as 'cz' | 'sk';
+  const mainCountry = (searchParams.get('country') ?? 'cz') as 'cz' | 'sk' | 'all';
   const mainYear = Number(searchParams.get('year') ?? CURRENT_YEAR);
 
   const setMainParam = (key: string, value: string) => {
@@ -94,15 +94,19 @@ export default function TopBar({ filters, onChange }: TopBarProps) {
         {isMainDashboard && (
           <>
             <div className="flex rounded-lg border border-slate-200 overflow-hidden bg-white flex-shrink-0">
-              {(['cz', 'sk'] as const).map((c, idx) => (
+              {([
+                { value: 'all', label: 'Vše' },
+                { value: 'cz',  label: '🇨🇿 CZ' },
+                { value: 'sk',  label: '🇸🇰 SK' },
+              ] as const).map(({ value, label }, idx) => (
                 <button
-                  key={c}
-                  onClick={() => setMainParam('country', c)}
+                  key={value}
+                  onClick={() => setMainParam('country', value)}
                   className={`px-3 md:px-4 py-1.5 text-sm font-medium transition-colors focus:outline-none ${
                     idx > 0 ? 'border-l border-slate-200' : ''
-                  } ${mainCountry === c ? 'bg-blue-600 text-white' : 'text-slate-600 hover:bg-slate-50'}`}
+                  } ${mainCountry === value ? 'bg-blue-600 text-white' : 'text-slate-600 hover:bg-slate-50'}`}
                 >
-                  {c === 'cz' ? '🇨🇿 CZ' : '🇸🇰 SK'}
+                  {label}
                 </button>
               ))}
             </div>
