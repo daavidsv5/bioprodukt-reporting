@@ -243,7 +243,7 @@ Tabulka (full-width, tmavě modrá hlavička) s 9 sloupci: Zdroj/Médium, Sessio
 
 ### `/meta` — Meta Ads
 
-- **KPI boxy** (`MetaKpiBox`): barevné pozadí (rose/blue/slate/emerald/amber) + rámeček + YoY badge (▲/▼ %)
+- **KPI boxy** (`MetaKpiBox`): barevné pozadí (rose/blue/slate/emerald/amber) + rámeček + YoY badge (▲/▼ %); **CPC je formátováno na 2 desetinná místa** (`fmt(val, 2)` + ` Kč`, ne `fmtCzk`)
 - **Tabulka kreativ**: tmavě modrá hlavička, bez sloupce "Tržby z reklam", CPA color-coded (zelená < 200 Kč, oranžová 200–400 Kč, červená > 400 Kč), ROAS color-coded (zelená ≥ 3×, oranžová 1–3×, červená < 1×)
 - **Filtrace nad tabulkou**: dropdown "Kampaň" + dropdown "Sada reklam" (filtruje se na základě vybrané kampaně); tlačítko "Zrušit filtry"; počet zobrazených reklam vpravo
 
@@ -266,6 +266,17 @@ NextAuth 5 (beta). Uživatelé jsou uloženi v **Neon PostgreSQL** (tabulka `use
 - `lib/db.ts` — singleton `pg.Pool`, připojuje se přes `DATABASE_URL`
 - `lib/users.ts` — CRUD funkce přes SQL dotazy (nahrazuje původní `fs.readFileSync` z `users.json`)
 - Migrace: `scripts/migrateUsers.js` (jednorázový skript)
+
+### Rate limiting přihlášení
+
+Max **5 neúspěšných pokusů za 30 minut** per email. Implementováno přes Neon PostgreSQL (tabulka `login_attempts`).
+
+- `lib/rateLimit.ts` — `isRateLimited()`, `recordFailedAttempt()`, `clearAttempts()`
+- `auth.ts` — kontrola před každým pokusem; záznam při neúspěchu; smazání po úspěchu
+- `app/api/auth/is-locked/route.ts` — GET endpoint `?email=...` → `{ limited, retryAfterMs }`
+- `app/login/page.tsx` — po zamítnutí se dotáže `/api/auth/is-locked` a zobrazí „Zkuste za X min"
+- Neexistující email se také zaznamená (prevence user enumeration)
+- Tabulka se vytvoří přes `scripts/migrate.js`
 
 ### Automatická aktualizace dat
 

@@ -350,7 +350,7 @@ export default function MetaAdsPage() {
 
         {/* KPI cards — row 2 */}
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3">
-          <MetaKpiBox title="CPC"            value={fmtCzk(kpi.cpc)}                             icon={<Globe size={16} />}           bg="bg-slate-100"  yoyVal={yoy(kpi.cpc, kpiPrev.cpc)}                                               hasPrevData={hasPrev} invertColors />
+          <MetaKpiBox title="CPC"            value={`${fmt(kpi.cpc, 2)}\u00a0Kč`}                             icon={<Globe size={16} />}           bg="bg-slate-100"  yoyVal={yoy(kpi.cpc, kpiPrev.cpc)}                                               hasPrevData={hasPrev} invertColors />
           <MetaKpiBox title="Nákupy"         value={fmtInt(kpi.purchases)}                        icon={<ShoppingCart size={16} />}    bg="bg-emerald-50" yoyVal={yoy(kpi.purchases, kpiPrev.purchases)}                                    hasPrevData={hasPrev} />
           <MetaKpiBox title="Tržby z reklam" value={fmtCzk(kpi.revenue)}                         icon={<TrendingUp size={16} />}      bg="bg-emerald-50" textColor="text-emerald-700" yoyVal={yoy(kpi.revenue, kpiPrev.revenue)}          hasPrevData={hasPrev} />
           <MetaKpiBox title="CPA"            value={kpi.purchases > 0 ? fmtCzk(kpi.cpa) : '–'}  icon={<BadgeDollarSign size={16} />} bg="bg-amber-50"   yoyVal={kpi.purchases > 0 && kpiPrev.purchases > 0 ? yoy(kpi.cpa, kpiPrev.cpa) : null} hasPrevData={hasPrev} invertColors />
