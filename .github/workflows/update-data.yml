@@ -2,7 +2,7 @@ name: Aktualizace dat
 
 on:
   schedule:
-    - cron: '0 5 * * *'   # každý den v 6:00 SEČ (= 5:00 UTC)
+    - cron: '0 3 * * *'   # každý den cca v 6:00 SELČ — cron spouštíme v 3:00 UTC kvůli typickému zpoždění GitHub Actions (2–4 h)
   workflow_dispatch:        # možnost spustit ručně z GitHubu
 
 jobs:

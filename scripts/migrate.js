@@ -30,7 +30,19 @@ async function main() {
     CREATE INDEX IF NOT EXISTS users_email_idx ON users (LOWER(email))
   `);
 
-  console.log('✅ Migrace dokončena — tabulka users je připravena.');
+  await pool.query(`
+    CREATE TABLE IF NOT EXISTS login_attempts (
+      id           SERIAL      PRIMARY KEY,
+      email        TEXT        NOT NULL,
+      attempted_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
+    )
+  `);
+
+  await pool.query(`
+    CREATE INDEX IF NOT EXISTS login_attempts_email_idx ON login_attempts (email, attempted_at)
+  `);
+
+  console.log('✅ Migrace dokončena — tabulky users a login_attempts jsou připraveny.');
   await pool.end();
 }
 

@@ -27,6 +27,18 @@ export default function LoginPage() {
     setLoading(false);
 
     if (result?.error) {
+      // Zjisti, zda je příčinou rate limit
+      try {
+        const res = await fetch(`/api/auth/is-locked?email=${encodeURIComponent(email)}`);
+        const { limited, retryAfterMs } = await res.json();
+        if (limited) {
+          const minutes = Math.ceil(retryAfterMs / 60_000);
+          setError(`Příliš mnoho neúspěšných pokusů. Zkuste to znovu za ${minutes} min.`);
+          return;
+        }
+      } catch {
+        // fallback na obecnou chybu
+      }
       setError('Nesprávný email nebo heslo.');
     } else {
       router.push('/dashboard');

@@ -269,7 +269,9 @@ NextAuth 5 (beta). Uživatelé jsou uloženi v **Neon PostgreSQL** (tabulka `use
 
 ### Automatická aktualizace dat
 
-`.github/workflows/update-data.yml` — GitHub Actions spouští `node scripts/updateData.js` každý den v **6:00 SEČ** (5:00 UTC), commituje změněné soubory v `data/` a pushuje do `main`. Vercel pak automaticky nasadí nový build.
+`.github/workflows/update-data.yml` — GitHub Actions spouští `node scripts/updateData.js` každý den, cron nastaven na **3:00 UTC** (kompenzace za typické 2–4h zpoždění GitHub Actions u méně aktivních repozitářů; cíl je doručení cca v 6:00 SELČ). Commituje změněné soubory v `data/` a pushuje do `main`. Vercel pak automaticky nasadí nový build.
+
+`scripts/updateAndPush.ps1` — lokální alternativa pro Windows Task Scheduler (spouštět jako `06:00`). Stáhne data, commitne a pushne na GitHub. Pokud počítač běží, data jsou na Vercelu k dispozici přesně v 6:00.
 
 Ruční spuštění: GitHub → Actions → "Aktualizace dat" → Run workflow.
 
