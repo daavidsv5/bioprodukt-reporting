@@ -10,7 +10,7 @@ import { useSidebar } from './ConditionalLayout';
 import { LAST_UPDATE } from '@/data/lastUpdate';
 
 const CURRENT_YEAR = new Date().getFullYear();
-const AVAILABLE_YEARS = Array.from({ length: CURRENT_YEAR - 2023 }, (_, i) => 2024 + i).reverse();
+const AVAILABLE_YEARS = Array.from({ length: CURRENT_YEAR - 2021 }, (_, i) => 2022 + i).reverse();
 
 interface TopBarProps {
   filters: FilterState;
@@ -111,15 +111,20 @@ function TopBarInner({ filters, onChange }: TopBarProps) {
           <div className="h-6 w-px bg-slate-100 hidden md:block flex-shrink-0" />
           <div className="flex items-center gap-1.5 flex-shrink-0">
             <span className="text-xs text-slate-400 font-medium hidden sm:inline">Rok:</span>
-            <select
-              value={mainYear}
-              onChange={e => setMainParam('year', e.target.value)}
-              className="border border-slate-200 rounded-lg px-2 md:px-3 py-1.5 text-sm text-slate-700 bg-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-            >
-              {AVAILABLE_YEARS.map(y => (
-                <option key={y} value={y}>{y} vs. {y - 1}</option>
+            <div className="flex rounded-lg border border-slate-200 overflow-hidden bg-white">
+              {AVAILABLE_YEARS.map((y, idx) => (
+                <button
+                  key={y}
+                  onClick={() => setMainParam('year', String(y))}
+                  className={`px-3 py-1.5 text-sm font-medium transition-colors focus:outline-none ${
+                    idx > 0 ? 'border-l border-slate-200' : ''
+                  } ${mainYear === y ? 'bg-blue-600 text-white' : 'text-slate-600 hover:bg-slate-50'}`}
+                >
+                  {y}
+                </button>
               ))}
-            </select>
+            </div>
+            <span className="text-xs text-slate-400 font-medium hidden sm:inline">vs. {mainYear - 1}</span>
           </div>
         </>
       )}

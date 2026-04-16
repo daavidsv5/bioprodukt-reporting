@@ -234,6 +234,7 @@ Tabulka (full-width, tmavě modrá hlavička) s 9 sloupci: Zdroj/Médium, Sessio
 - Hook: `hooks/useMainDashboard.ts` → `useMainDashboard(country, year): MonthlyPoint[]`
 - Komponenta: `components/charts/YearCompareBarChart.tsx` — generický seskupený BarChart (aktuální rok + předchozí rok)
 - **Selektory Vše/CZ/SK a rok** jsou v TopBaru, předávají se přes URL search params (`?country=all&year=2025`)
+- **Rok selektor** — pill tlačítka (stejný styl jako Vše/CZ/SK), roky 2022–aktuální rok sestupně; vpravo label `vs. {rok-1}`
 - Stránka čte `useSearchParams()` — žádný lokální state; `TopBarInner` a `MainDashboardContent` obaleny `<Suspense>` (nutné pro Next.js prerender)
 - **`MainCountry = 'cz' | 'sk' | 'all'`** — při `'all'` se CZ a SK data mergují (SK EUR → CZK přes `EUR_TO_CZK`)
 - **Default: `'all'`** — při první návštěvě bez URL params se zobrazí CZ + SK kombinovaně
