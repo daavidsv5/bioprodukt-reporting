@@ -35,7 +35,7 @@ function fetchUrl(url, redirects = 0) {
   return new Promise((resolve, reject) => {
     if (redirects > 5) return reject(new Error('Too many redirects'));
     const lib = url.startsWith('https') ? https : http;
-    lib.get(url, { headers: { 'User-Agent': 'Mozilla/5.0' } }, (res) => {
+    const req = lib.get(url, { headers: { 'User-Agent': 'Mozilla/5.0' }, timeout: 60000 }, (res) => {
       if (res.statusCode >= 300 && res.statusCode < 400 && res.headers.location) {
         return resolve(fetchUrl(res.headers.location, redirects + 1));
       }
@@ -45,6 +45,10 @@ function fetchUrl(url, redirects = 0) {
       res.on('end', () => resolve(Buffer.concat(chunks).toString('utf8')));
       res.on('error', reject);
     }).on('error', reject);
+    req.on('timeout', () => {
+      req.destroy();
+      reject(new Error(`Request timeout (60s) for ${url}`));
+    });
   });
 }
 
