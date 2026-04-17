@@ -74,9 +74,12 @@ function aggregateByName(
 ): Record<string, { amount: number; revenue: number; revenue_vat: number }> {
   const byName: Record<string, { amount: number; revenue: number; revenue_vat: number }> = {};
 
+  const isDiscount = (name: string) => /^slev/i.test(name);
+
   if (countries.includes('cz')) {
     for (const r of productDataCZ) {
       if (r.date < startStr || r.date > endStr) continue;
+      if (isDiscount(r.name)) continue;
       if (!byName[r.name]) byName[r.name] = { amount: 0, revenue: 0, revenue_vat: 0 };
       byName[r.name].amount      += r.amount;
       byName[r.name].revenue     += r.revenue;
@@ -87,6 +90,7 @@ function aggregateByName(
   if (countries.includes('sk')) {
     for (const r of productDataSK) {
       if (r.date < startStr || r.date > endStr) continue;
+      if (isDiscount(r.name)) continue;
       if (!byName[r.name]) byName[r.name] = { amount: 0, revenue: 0, revenue_vat: 0 };
       byName[r.name].amount      += r.amount;
       byName[r.name].revenue     += r.revenue     * skMult;
