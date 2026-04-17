@@ -74,7 +74,7 @@ function aggregateByName(
 ): Record<string, { amount: number; revenue: number; revenue_vat: number }> {
   const byName: Record<string, { amount: number; revenue: number; revenue_vat: number }> = {};
 
-  const isDiscount = (name: string) => /^slev/i.test(name);
+  const isDiscount = (name: string) => /^slev|^zľav/i.test(name);
 
   if (countries.includes('cz')) {
     for (const r of productDataCZ) {
