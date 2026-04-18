@@ -50,6 +50,10 @@ export const C = {
   seznam:           '#f97316',  // orange-500
   /** Seznam CPC line (tmavší) */
   seznamDark:       '#c2410c',  // orange-700
+  /** Heureka (kliky, náklady) */
+  heureka:          '#7c3aed',  // violet-700
+  /** Heureka CPC line (tmavší) */
+  heurekaDark:      '#4c1d95',  // violet-900
 
   // ── Analytics ─────────────────────────────────────────────────────────────
   /** CVR %, Bounce rate */
