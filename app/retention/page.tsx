@@ -259,12 +259,18 @@ export default function RetentionPage() {
       {/* RFM segmenty po měsících */}
       <ChartCard title="Vývoj RFM segmentů po měsících">
         <ResponsiveContainer width="100%" height={300}>
-          <BarChart data={monthlyRfm} margin={{ top: 4, right: 16, left: 4, bottom: 4 }}>
+          <BarChart data={monthlyRfm} stackOffset="expand" margin={{ top: 4, right: 16, left: 4, bottom: 4 }}>
             <CartesianGrid strokeDasharray="0" stroke="#f1f5f9" vertical={false} />
             <XAxis dataKey="label" tick={{ fontSize: 10, fill: '#94a3b8' }} axisLine={false} tickLine={false} interval="preserveStartEnd" />
-            <YAxis tick={{ fontSize: 11, fill: '#94a3b8' }} axisLine={false} tickLine={false} width={36} />
+            <YAxis tickFormatter={v => `${Math.round((v as number) * 100)} %`} tick={{ fontSize: 11, fill: '#94a3b8' }} axisLine={false} tickLine={false} width={44} />
             <Tooltip
-              formatter={(v: any, name: any) => [`${v} zákazníků`, name]}
+              formatter={(v: any, name: any, props: any) => {
+                const total = Object.entries(props.payload)
+                  .filter(([k]) => ['champions','loyal','at_risk','new','one_time','lost'].includes(k))
+                  .reduce((s, [, val]) => s + (val as number), 0);
+                const pct = total > 0 ? ((props.payload[props.dataKey] / total) * 100).toFixed(1) : '0';
+                return [`${props.payload[props.dataKey]} zákazníků (${pct} %)`, name];
+              }}
               contentStyle={{ fontSize: 12 }}
             />
             <Legend wrapperStyle={{ fontSize: 11, color: '#64748b' }} iconType="square" iconSize={9} />
