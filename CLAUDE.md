@@ -146,11 +146,21 @@ Klasifikace se vždy počítá ze všech dat (sort dle revenue desc), nezávisle
 
 ### Marketing — CPC (`/marketing`)
 
-Data z `getDailyMarketingData()` — každý den má `clicks_facebook`, `clicks_google`, `cost_facebook`, `cost_google`, `revenue`.
+Data z `getDailyMarketingData()` — každý den má `clicks_facebook`, `clicks_google`, `clicks_seznam`, `clicks_heureka`, `cost_facebook`, `cost_google`, `cost_seznam`, `cost_heureka`, `revenue`.
 - **CPC** = cost_channel / clicks_channel (per den), zobrazeno na 2 desetinná místa
 - **ROAS byl odstraněn** ze všech přehledů
 - Grafy: ComposedChart (stacked bars kliky + lines CPC)
-- Výkon per channel obsahuje YoY srovnání (FB, Google — náklady, kliky, CPC)
+- Výkon per channel obsahuje YoY srovnání (FB, Google, Seznam, Heureka — náklady, kliky, CPC)
+- **Kanálové karty se zobrazují podmíněně** — Seznam karta jen pokud `sz.cost > 0 || sz.clicks > 0`, Heureka karta analogicky
+- **Barvy kanálů** (`lib/chartColors.ts`): Facebook = blue-600/800, Google = emerald-600/800, Seznam = orange-500/700, Heureka = violet-700/900
+- `buildSourceBreakdown()` filtruje zdroje s `cost === 0 && clicks === 0` — nezobrazí se prázdné kanály
+- `scripts/updateData.js` mapuje CSV `source` sloupec: `facebook` → `cost_facebook`, `google` → `cost_google`, `seznam` → `cost_seznam`, `heureka` → `cost_heureka`
+
+### ABC analýza — filtrování slev (`/products`)
+
+Funkce `isDiscount(name)` v `app/products/page.tsx` filtruje slevy a slevové kupony z analýzy prodejnosti:
+- Regex `/^slev|^zľav/i` — pokryje CZ (`Sleva`, `Slevový kupon č. …`) i SK (`Zľava`, `Zľavový kupón č. …`)
+- Filtr aplikovaný v `aggregateByName()` pro obě země před agregací
 
 ### RFM segmentace zákazníků (`/retention`)
 
@@ -164,6 +174,13 @@ Výpočet v `lib/retentionUtils.ts` → `computeRfmSegments()`. Referenční dat
 | Ohrožení | F ≥ 2 AND R > 180 dní |
 | Noví zákazníci | F = 1 AND R ≤ 90 dní |
 | Jednorázové | F = 1, ostatní |
+
+### RFM segmenty po měsících (`/retention`)
+
+`computeMonthlyRfmSegments()` v `lib/retentionUtils.ts` — pro každý měsíc přepočítá RFM stav každého zákazníka k poslednímu dni toho měsíce a vrátí počty per segment.
+- Graf: 100% stacked BarChart (`stackOffset="expand"`), Y-osa v %, tooltip zobrazuje počet zákazníků i podíl
+- Pořadí vrstev (spodek→vršek): Ztracení → Jednorázové → Ohrožení → Noví zákazníci → Věrní zákazníci → Šampioni
+- Umístění: hned pod RFM boxy, před grafy LTV/AOV
 
 ### Definice Noví vs. Stávající zákazníci (`/retention`)
 
