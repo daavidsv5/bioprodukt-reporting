@@ -454,6 +454,54 @@ export function computeRfmSegments(
   });
 }
 
+export interface MonthlyRfmPoint {
+  month: string;
+  label: string;
+  champions: number;
+  loyal: number;
+  at_risk: number;
+  new: number;
+  one_time: number;
+  lost: number;
+}
+
+/** RFM segment breakdown per month — state of each customer at end of each month */
+export function computeMonthlyRfmSegments(data: CustomerRetentionRecord[]): MonthlyRfmPoint[] {
+  const monthsSet = new Set<string>();
+  for (const c of data) {
+    for (const d of c.dates) monthsSet.add(d.substring(0, 7));
+  }
+  const months = [...monthsSet].sort();
+
+  return months.map(month => {
+    const [yearStr, monthStr] = month.split('-');
+    const label = `${CZ_MONTHS[parseInt(monthStr) - 1]} ${yearStr}`;
+    // Last moment of the month as reference date
+    const lastDay = new Date(Date.UTC(parseInt(yearStr), parseInt(monthStr), 0, 12, 0, 0));
+    const lastDayStr = lastDay.toISOString().split('T')[0];
+    const refTs = lastDay.getTime();
+
+    const counts: Record<RfmSegment, number> = { champions: 0, loyal: 0, at_risk: 0, new: 0, one_time: 0, lost: 0 };
+
+    for (const c of data) {
+      const datesUpTo = c.dates.filter(d => d <= lastDayStr);
+      if (datesUpTo.length === 0) continue;
+      const recency   = Math.round((refTs - new Date(datesUpTo[datesUpTo.length - 1] + 'T12:00:00').getTime()) / 86400000);
+      const frequency = datesUpTo.length;
+      let seg: RfmSegment;
+      if      (recency > 365)                    seg = 'lost';
+      else if (frequency >= 3 && recency <= 90)  seg = 'champions';
+      else if (frequency >= 2 && recency <= 180) seg = 'loyal';
+      else if (frequency >= 2)                   seg = 'at_risk';
+      else if (recency <= 90)                    seg = 'new';
+      else                                       seg = 'one_time';
+      counts[seg]++;
+    }
+
+    return { month, label, ...counts };
+  });
+}
+
 /** Histogram prodlevy mezi nákupy */
 export function computeDaysBetweenHistogram(data: CustomerRetentionRecord[]): DaysBin[] {
   const bins = [

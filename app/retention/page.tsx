@@ -14,6 +14,7 @@ import {
   computeDaysBetweenHistogram,
   computeRfmSegments,
   computeMonthlyNewVsReturning,
+  computeMonthlyRfmSegments,
 } from '@/lib/retentionUtils';
 import { formatCurrency, formatPercent, formatNumber, formatShortDate } from '@/lib/formatters';
 import {
@@ -73,6 +74,7 @@ export default function RetentionPage() {
   const purchaseDist = useMemo(() => computePurchaseDistribution(data), [data]);
   const daysBins     = useMemo(() => computeDaysBetweenHistogram(data), [data]);
   const monthlyNewVsReturning = useMemo(() => computeMonthlyNewVsReturning(data), [data]);
+  const monthlyRfm            = useMemo(() => computeMonthlyRfmSegments(data), [data]);
 
   const totalOrders      = yearCustomer.reduce((s, r) => s + r.orders, 0);
   const totalNewCustomers= yearCustomer.reduce((s, r) => s + r.newCustomers, 0);
@@ -253,6 +255,28 @@ export default function RetentionPage() {
           </div>
         </div>
       </div>
+
+      {/* RFM segmenty po měsících */}
+      <ChartCard title="Vývoj RFM segmentů po měsících">
+        <ResponsiveContainer width="100%" height={300}>
+          <BarChart data={monthlyRfm} margin={{ top: 4, right: 16, left: 4, bottom: 4 }}>
+            <CartesianGrid strokeDasharray="0" stroke="#f1f5f9" vertical={false} />
+            <XAxis dataKey="label" tick={{ fontSize: 10, fill: '#94a3b8' }} axisLine={false} tickLine={false} interval="preserveStartEnd" />
+            <YAxis tick={{ fontSize: 11, fill: '#94a3b8' }} axisLine={false} tickLine={false} width={36} />
+            <Tooltip
+              formatter={(v: any, name: any) => [`${v} zákazníků`, name]}
+              contentStyle={{ fontSize: 12 }}
+            />
+            <Legend wrapperStyle={{ fontSize: 11, color: '#64748b' }} iconType="square" iconSize={9} />
+            <Bar dataKey="lost"      name="Ztracení"         stackId="a" fill="#fb7185" />
+            <Bar dataKey="one_time"  name="Jednorázové"      stackId="a" fill="#cbd5e1" />
+            <Bar dataKey="at_risk"   name="Ohrožení"         stackId="a" fill="#fbbf24" />
+            <Bar dataKey="new"       name="Noví zákazníci"   stackId="a" fill="#38bdf8" />
+            <Bar dataKey="loyal"     name="Věrní zákazníci"  stackId="a" fill="#3b82f6" />
+            <Bar dataKey="champions" name="Šampioni"         stackId="a" fill="#22c55e" radius={[3, 3, 0, 0]} />
+          </BarChart>
+        </ResponsiveContainer>
+      </ChartCard>
 
       {/* Charts — řada 1: LTV + AOV */}
       <div className="grid grid-cols-1 xl:grid-cols-2 gap-6">
