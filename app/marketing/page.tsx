@@ -6,7 +6,7 @@ import { mockData, getMarketingSourceData, getDailyMarketingData } from '@/data/
 import KpiCard from '@/components/kpi/KpiCard';
 import CostPnoChart from '@/components/charts/CostPnoChart';
 import { formatCurrency, formatPercent, formatNumber, formatDate, formatShortDate } from '@/lib/formatters';
-import { TrendingUp as TrendingUpIcon, TrendingUp, TrendingDown, Percent, Tag, Banknote, Share2, Search } from 'lucide-react';
+import { TrendingUp as TrendingUpIcon, TrendingUp, TrendingDown, Percent, Tag, Banknote, Share2, Search, List } from 'lucide-react';
 import {
   ComposedChart, Bar, Line, XAxis, YAxis, CartesianGrid, Tooltip,
   Legend, ResponsiveContainer,
@@ -81,8 +81,10 @@ export default function MarketingPage() {
     date: r.date,
     clicks_fb: r.clicks_facebook,
     clicks_g:  r.clicks_google,
+    clicks_sz: r.clicks_seznam,
     cpc_fb: r.clicks_facebook > 0 ? Math.round(r.cost_facebook / r.clicks_facebook * 100) / 100 : null,
     cpc_g:  r.clicks_google   > 0 ? Math.round(r.cost_google   / r.clicks_google   * 100) / 100 : null,
+    cpc_sz: r.clicks_seznam   > 0 ? Math.round(r.cost_seznam   / r.clicks_seznam   * 100) / 100 : null,
   }));
 
   // Source breakdown — use real data with date range + country context
@@ -96,8 +98,10 @@ export default function MarketingPage() {
   // Per-channel summary metrics
   const fb = sourceData.find(s => s.source === 'Facebook Ads') ?? { cost: 0, clicks: 0, revenue: 0, cpa: 0, orders: 0, pno: 0 };
   const gg = sourceData.find(s => s.source === 'Google Ads')   ?? { cost: 0, clicks: 0, revenue: 0, cpa: 0, orders: 0, pno: 0 };
+  const sz = sourceData.find(s => s.source === 'Seznam Ads')   ?? { cost: 0, clicks: 0, revenue: 0, cpa: 0, orders: 0, pno: 0 };
   const fbCpc  = fb.clicks > 0 ? fb.cost / fb.clicks : 0;
   const gCpc   = gg.clicks > 0 ? gg.cost / gg.clicks : 0;
+  const szCpc  = sz.clicks > 0 ? sz.cost / sz.clicks : 0;
 
   // Previous year channel data for YoY
   const prevStart = new Date(sDaily); prevStart.setFullYear(prevStart.getFullYear() - 1);
@@ -110,8 +114,11 @@ export default function MarketingPage() {
   ) : [];
   const fbPrev = prevSourceData.find(s => s.source === 'Facebook Ads') ?? { cost: 0, clicks: 0 };
   const ggPrev = prevSourceData.find(s => s.source === 'Google Ads')   ?? { cost: 0, clicks: 0 };
+  const szPrev = prevSourceData.find(s => s.source === 'Seznam Ads')   ?? { cost: 0, clicks: 0 };
   const fbCpcPrev = fbPrev.clicks > 0 ? fbPrev.cost / fbPrev.clicks : 0;
   const gCpcPrev  = ggPrev.clicks > 0 ? ggPrev.cost / ggPrev.clicks : 0;
+  const szCpcPrev = szPrev.clicks > 0 ? szPrev.cost / szPrev.clicks : 0;
+  const hasSeznam = sz.cost > 0 || sz.clicks > 0;
 
   return (
     <div className="space-y-6">
@@ -137,8 +144,8 @@ export default function MarketingPage() {
           <h2 className="text-base font-semibold text-gray-800">Výkon per channel</h2>
         </div>
 
-        {/* FB + Google summary cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        {/* FB + Google + Seznam summary cards */}
+        <div className={`grid grid-cols-1 gap-4 ${hasSeznam ? 'sm:grid-cols-3' : 'sm:grid-cols-2'}`}>
           {/* Facebook Ads */}
           <div className="bg-white rounded-2xl border-2 border-blue-800 p-4 space-y-3">
             <div className="flex items-center justify-between">
@@ -192,6 +199,35 @@ export default function MarketingPage() {
               </div>
             </div>
           </div>
+
+          {/* Seznam Ads — zobrazit pouze pokud jsou data */}
+          {hasSeznam && (
+            <div className="bg-white rounded-2xl border-2 border-blue-800 p-4 space-y-3">
+              <div className="flex items-center justify-between">
+                <span className="text-xs font-bold uppercase tracking-wider text-orange-600">Seznam Ads</span>
+                <div className="w-8 h-8 bg-orange-50 rounded-lg flex items-center justify-center text-orange-500">
+                  <List size={15} />
+                </div>
+              </div>
+              <div className="grid grid-cols-3 gap-3">
+                <div>
+                  <p className="text-[10px] text-slate-400 uppercase tracking-wider">Náklady</p>
+                  <p className="text-xl font-bold text-slate-900">{fc(sz.cost)}</p>
+                  <YoyBadge pct={yoyPct(sz.cost, szPrev.cost)} invert />
+                </div>
+                <div>
+                  <p className="text-[10px] text-slate-400 uppercase tracking-wider">Kliky</p>
+                  <p className="text-xl font-bold text-slate-900">{formatNumber(sz.clicks)}</p>
+                  <YoyBadge pct={yoyPct(sz.clicks, szPrev.clicks)} />
+                </div>
+                <div>
+                  <p className="text-[10px] text-slate-400 uppercase tracking-wider">CPC</p>
+                  <p className="text-xl font-bold text-slate-900">{szCpc.toFixed(2)} {sym}</p>
+                  <YoyBadge pct={yoyPct(szCpc, szCpcPrev)} invert />
+                </div>
+              </div>
+            </div>
+          )}
         </div>
 
         {/* CPC + clicks trend */}
@@ -224,8 +260,10 @@ export default function MarketingPage() {
               <Legend wrapperStyle={{ fontSize: 12 }} />
               <Bar yAxisId="left" dataKey="clicks_fb" name="FB kliky"     fill={C.facebook}    opacity={0.7} stackId="c" />
               <Bar yAxisId="left" dataKey="clicks_g"  name="Google kliky" fill={C.google}      opacity={0.7} stackId="c" />
+              <Bar yAxisId="left" dataKey="clicks_sz" name="Seznam kliky" fill={C.seznam}      opacity={0.7} stackId="c" />
               <Line yAxisId="right" type="monotone" dataKey="cpc_fb" name="CPC Facebook" stroke={C.facebookDark} strokeWidth={2} dot={false} connectNulls />
               <Line yAxisId="right" type="monotone" dataKey="cpc_g"  name="CPC Google"   stroke={C.googleDark}   strokeWidth={2} dot={false} connectNulls />
+              <Line yAxisId="right" type="monotone" dataKey="cpc_sz" name="CPC Seznam"   stroke={C.seznamDark}   strokeWidth={2} dot={false} connectNulls />
             </ComposedChart>
           </ResponsiveContainer>
         </div>
@@ -247,6 +285,7 @@ export default function MarketingPage() {
                   <th className="px-4 py-3 text-right text-xs font-semibold text-white uppercase tracking-wide">Náklady celkem</th>
                   <th className="px-4 py-3 text-right text-xs font-semibold text-white uppercase tracking-wide">Facebook Ads</th>
                   <th className="px-4 py-3 text-right text-xs font-semibold text-white uppercase tracking-wide">Google Ads</th>
+                  {hasSeznam && <th className="px-4 py-3 text-right text-xs font-semibold text-white uppercase tracking-wide">Seznam Ads</th>}
                 </tr>
               </thead>
               <tbody>
@@ -258,6 +297,7 @@ export default function MarketingPage() {
                     <td className="px-4 py-2.5 text-right text-gray-800 font-semibold">{fc(r.cost)}</td>
                     <td className="px-4 py-2.5 text-right text-blue-700">{fc(r.cost_facebook)}</td>
                     <td className="px-4 py-2.5 text-right text-green-700">{fc(r.cost_google)}</td>
+                    {hasSeznam && <td className="px-4 py-2.5 text-right text-orange-600">{fc(r.cost_seznam)}</td>}
                   </tr>
                 ))}
               </tbody>

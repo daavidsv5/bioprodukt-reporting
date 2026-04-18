@@ -11,8 +11,10 @@ export interface RealDailyRecord {
   cost: number;
   cost_facebook: number;
   cost_google: number;
+  cost_seznam: number;
   clicks_facebook: number;
   clicks_google: number;
+  clicks_seznam: number;
 }
 
 export const realDataCZ: RealDailyRecord[] = [
@@ -26,8 +28,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 0,
     "cost_facebook": 0,
     "cost_google": 0,
+    "cost_seznam": 0,
     "clicks_facebook": 0,
-    "clicks_google": 0
+    "clicks_google": 0,
+    "clicks_seznam": 0
   },
   {
     "date": "2024-11-28",
@@ -39,8 +43,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 0,
     "cost_facebook": 0,
     "cost_google": 0,
+    "cost_seznam": 0,
     "clicks_facebook": 0,
-    "clicks_google": 0
+    "clicks_google": 0,
+    "clicks_seznam": 0
   },
   {
     "date": "2024-11-29",
@@ -52,8 +58,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 0,
     "cost_facebook": 0,
     "cost_google": 0,
+    "cost_seznam": 0,
     "clicks_facebook": 0,
-    "clicks_google": 0
+    "clicks_google": 0,
+    "clicks_seznam": 0
   },
   {
     "date": "2024-11-30",
@@ -65,8 +73,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 149.06,
     "cost_facebook": 0,
     "cost_google": 149.06,
+    "cost_seznam": 0,
     "clicks_facebook": 0,
-    "clicks_google": 3
+    "clicks_google": 3,
+    "clicks_seznam": 0
   },
   {
     "date": "2024-12-01",
@@ -78,8 +88,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 587.27,
     "cost_facebook": 297.66,
     "cost_google": 289.61,
+    "cost_seznam": 0,
     "clicks_facebook": 15,
-    "clicks_google": 26
+    "clicks_google": 26,
+    "clicks_seznam": 0
   },
   {
     "date": "2024-12-02",
@@ -91,8 +103,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 930.82,
     "cost_facebook": 446.11,
     "cost_google": 484.71,
+    "cost_seznam": 0,
     "clicks_facebook": 27,
-    "clicks_google": 36
+    "clicks_google": 36,
+    "clicks_seznam": 0
   },
   {
     "date": "2024-12-03",
@@ -104,8 +118,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 891.24,
     "cost_facebook": 422.03,
     "cost_google": 469.21,
+    "cost_seznam": 0,
     "clicks_facebook": 22,
-    "clicks_google": 40
+    "clicks_google": 40,
+    "clicks_seznam": 0
   },
   {
     "date": "2024-12-04",
@@ -117,8 +133,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 790.47,
     "cost_facebook": 479.81,
     "cost_google": 310.66,
+    "cost_seznam": 0,
     "clicks_facebook": 37,
-    "clicks_google": 23
+    "clicks_google": 23,
+    "clicks_seznam": 0
   },
   {
     "date": "2024-12-05",
@@ -130,8 +148,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 974.7,
     "cost_facebook": 561.5,
     "cost_google": 413.2,
+    "cost_seznam": 0,
     "clicks_facebook": 34,
-    "clicks_google": 36
+    "clicks_google": 36,
+    "clicks_seznam": 0
   },
   {
     "date": "2024-12-06",
@@ -143,8 +163,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 1585.2,
     "cost_facebook": 1184.28,
     "cost_google": 400.92,
+    "cost_seznam": 0,
     "clicks_facebook": 100,
-    "clicks_google": 41
+    "clicks_google": 41,
+    "clicks_seznam": 0
   },
   {
     "date": "2024-12-07",
@@ -156,8 +178,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 1553.42,
     "cost_facebook": 1198.31,
     "cost_google": 355.11,
+    "cost_seznam": 0,
     "clicks_facebook": 97,
-    "clicks_google": 35
+    "clicks_google": 35,
+    "clicks_seznam": 0
   },
   {
     "date": "2024-12-08",
@@ -169,8 +193,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 1622.93,
     "cost_facebook": 1223.78,
     "cost_google": 399.15,
+    "cost_seznam": 0,
     "clicks_facebook": 95,
-    "clicks_google": 43
+    "clicks_google": 43,
+    "clicks_seznam": 0
   },
   {
     "date": "2024-12-09",
@@ -182,8 +208,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 1564.46,
     "cost_facebook": 1204.15,
     "cost_google": 360.31,
+    "cost_seznam": 0,
     "clicks_facebook": 106,
-    "clicks_google": 40
+    "clicks_google": 40,
+    "clicks_seznam": 0
   },
   {
     "date": "2024-12-10",
@@ -195,8 +223,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 1715.63,
     "cost_facebook": 1200.92,
     "cost_google": 514.71,
+    "cost_seznam": 0,
     "clicks_facebook": 100,
-    "clicks_google": 45
+    "clicks_google": 45,
+    "clicks_seznam": 0
   },
   {
     "date": "2024-12-11",
@@ -208,8 +238,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 1769.48,
     "cost_facebook": 1336.52,
     "cost_google": 432.96,
+    "cost_seznam": 0,
     "clicks_facebook": 70,
-    "clicks_google": 36
+    "clicks_google": 36,
+    "clicks_seznam": 0
   },
   {
     "date": "2024-12-12",
@@ -221,8 +253,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 1616.43,
     "cost_facebook": 1222.95,
     "cost_google": 393.48,
+    "cost_seznam": 0,
     "clicks_facebook": 82,
-    "clicks_google": 40
+    "clicks_google": 40,
+    "clicks_seznam": 0
   },
   {
     "date": "2024-12-13",
@@ -234,8 +268,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 1633.86,
     "cost_facebook": 1216.93,
     "cost_google": 416.93,
+    "cost_seznam": 0,
     "clicks_facebook": 66,
-    "clicks_google": 42
+    "clicks_google": 42,
+    "clicks_seznam": 0
   },
   {
     "date": "2024-12-14",
@@ -247,8 +283,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 2476.41,
     "cost_facebook": 1874.52,
     "cost_google": 601.89,
+    "cost_seznam": 0,
     "clicks_facebook": 161,
-    "clicks_google": 55
+    "clicks_google": 55,
+    "clicks_seznam": 0
   },
   {
     "date": "2024-12-15",
@@ -260,8 +298,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 2788.53,
     "cost_facebook": 1802.6,
     "cost_google": 985.93,
+    "cost_seznam": 0,
     "clicks_facebook": 184,
-    "clicks_google": 85
+    "clicks_google": 85,
+    "clicks_seznam": 0
   },
   {
     "date": "2024-12-16",
@@ -273,8 +313,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 2456.8,
     "cost_facebook": 1481.14,
     "cost_google": 975.66,
+    "cost_seznam": 0,
     "clicks_facebook": 191,
-    "clicks_google": 77
+    "clicks_google": 77,
+    "clicks_seznam": 0
   },
   {
     "date": "2024-12-17",
@@ -286,8 +328,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 2191.76,
     "cost_facebook": 1458.03,
     "cost_google": 733.73,
+    "cost_seznam": 0,
     "clicks_facebook": 128,
-    "clicks_google": 62
+    "clicks_google": 62,
+    "clicks_seznam": 0
   },
   {
     "date": "2024-12-18",
@@ -299,8 +343,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 1996.87,
     "cost_facebook": 1368.77,
     "cost_google": 628.1,
+    "cost_seznam": 0,
     "clicks_facebook": 133,
-    "clicks_google": 61
+    "clicks_google": 61,
+    "clicks_seznam": 0
   },
   {
     "date": "2024-12-19",
@@ -312,8 +358,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 796.03,
     "cost_facebook": 614,
     "cost_google": 182.03,
+    "cost_seznam": 0,
     "clicks_facebook": 53,
-    "clicks_google": 17
+    "clicks_google": 17,
+    "clicks_seznam": 0
   },
   {
     "date": "2024-12-20",
@@ -325,8 +373,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 262.37,
     "cost_facebook": 108.12,
     "cost_google": 154.25,
+    "cost_seznam": 0,
     "clicks_facebook": 14,
-    "clicks_google": 16
+    "clicks_google": 16,
+    "clicks_seznam": 0
   },
   {
     "date": "2024-12-21",
@@ -338,8 +388,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 123.26,
     "cost_facebook": 32.29,
     "cost_google": 90.97,
+    "cost_seznam": 0,
     "clicks_facebook": 1,
-    "clicks_google": 15
+    "clicks_google": 15,
+    "clicks_seznam": 0
   },
   {
     "date": "2024-12-22",
@@ -351,8 +403,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 64.15,
     "cost_facebook": 26.85,
     "cost_google": 37.3,
+    "cost_seznam": 0,
     "clicks_facebook": 7,
-    "clicks_google": 4
+    "clicks_google": 4,
+    "clicks_seznam": 0
   },
   {
     "date": "2024-12-23",
@@ -364,8 +418,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 134.76,
     "cost_facebook": 26.5,
     "cost_google": 108.26,
+    "cost_seznam": 0,
     "clicks_facebook": 4,
-    "clicks_google": 19
+    "clicks_google": 19,
+    "clicks_seznam": 0
   },
   {
     "date": "2024-12-24",
@@ -377,8 +433,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 133.5,
     "cost_facebook": 25.64,
     "cost_google": 107.86,
+    "cost_seznam": 0,
     "clicks_facebook": 0,
-    "clicks_google": 17
+    "clicks_google": 17,
+    "clicks_seznam": 0
   },
   {
     "date": "2024-12-25",
@@ -390,8 +448,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 124.98,
     "cost_facebook": 34.25,
     "cost_google": 90.73,
+    "cost_seznam": 0,
     "clicks_facebook": 8,
-    "clicks_google": 17
+    "clicks_google": 17,
+    "clicks_seznam": 0
   },
   {
     "date": "2024-12-26",
@@ -403,8 +463,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 404.32,
     "cost_facebook": 270.16,
     "cost_google": 134.16,
+    "cost_seznam": 0,
     "clicks_facebook": 48,
-    "clicks_google": 21
+    "clicks_google": 21,
+    "clicks_seznam": 0
   },
   {
     "date": "2024-12-27",
@@ -416,8 +478,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 772.88,
     "cost_facebook": 565.41,
     "cost_google": 207.47,
+    "cost_seznam": 0,
     "clicks_facebook": 94,
-    "clicks_google": 27
+    "clicks_google": 27,
+    "clicks_seznam": 0
   },
   {
     "date": "2024-12-28",
@@ -429,8 +493,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 309.75,
     "cost_facebook": 219.87,
     "cost_google": 89.88,
+    "cost_seznam": 0,
     "clicks_facebook": 30,
-    "clicks_google": 13
+    "clicks_google": 13,
+    "clicks_seznam": 0
   },
   {
     "date": "2024-12-29",
@@ -442,8 +508,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 862.23,
     "cost_facebook": 513.75,
     "cost_google": 348.48,
+    "cost_seznam": 0,
     "clicks_facebook": 59,
-    "clicks_google": 44
+    "clicks_google": 44,
+    "clicks_seznam": 0
   },
   {
     "date": "2024-12-30",
@@ -455,8 +523,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 836.16,
     "cost_facebook": 517.6,
     "cost_google": 318.56,
+    "cost_seznam": 0,
     "clicks_facebook": 85,
-    "clicks_google": 31
+    "clicks_google": 31,
+    "clicks_seznam": 0
   },
   {
     "date": "2024-12-31",
@@ -468,8 +538,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 833.81,
     "cost_facebook": 435.09,
     "cost_google": 398.72,
+    "cost_seznam": 0,
     "clicks_facebook": 63,
-    "clicks_google": 37
+    "clicks_google": 37,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-01-01",
@@ -481,8 +553,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 849.4,
     "cost_facebook": 480.52,
     "cost_google": 368.88,
+    "cost_seznam": 0,
     "clicks_facebook": 113,
-    "clicks_google": 39
+    "clicks_google": 39,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-01-02",
@@ -494,8 +568,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 696.48,
     "cost_facebook": 393.61,
     "cost_google": 302.87,
+    "cost_seznam": 0,
     "clicks_facebook": 59,
-    "clicks_google": 37
+    "clicks_google": 37,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-01-03",
@@ -507,8 +583,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 806.56,
     "cost_facebook": 411.97,
     "cost_google": 394.59,
+    "cost_seznam": 0,
     "clicks_facebook": 60,
-    "clicks_google": 48
+    "clicks_google": 48,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-01-04",
@@ -520,8 +598,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 741.98,
     "cost_facebook": 416.93,
     "cost_google": 325.05,
+    "cost_seznam": 0,
     "clicks_facebook": 83,
-    "clicks_google": 40
+    "clicks_google": 40,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-01-05",
@@ -533,8 +613,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 1394.29,
     "cost_facebook": 918.45,
     "cost_google": 475.84,
+    "cost_seznam": 0,
     "clicks_facebook": 162,
-    "clicks_google": 57
+    "clicks_google": 57,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-01-06",
@@ -546,8 +628,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 1700.52,
     "cost_facebook": 1238.93,
     "cost_google": 461.59,
+    "cost_seznam": 0,
     "clicks_facebook": 188,
-    "clicks_google": 47
+    "clicks_google": 47,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-01-07",
@@ -559,8 +643,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 1268.58,
     "cost_facebook": 788.87,
     "cost_google": 479.71,
+    "cost_seznam": 0,
     "clicks_facebook": 146,
-    "clicks_google": 53
+    "clicks_google": 53,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-01-08",
@@ -572,8 +658,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 1179.46,
     "cost_facebook": 682.23,
     "cost_google": 497.23,
+    "cost_seznam": 0,
     "clicks_facebook": 114,
-    "clicks_google": 49
+    "clicks_google": 49,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-01-09",
@@ -585,8 +673,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 930.82,
     "cost_facebook": 530.7,
     "cost_google": 400.12,
+    "cost_seznam": 0,
     "clicks_facebook": 94,
-    "clicks_google": 43
+    "clicks_google": 43,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-01-10",
@@ -598,8 +688,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 935.58,
     "cost_facebook": 534.16,
     "cost_google": 401.42,
+    "cost_seznam": 0,
     "clicks_facebook": 70,
-    "clicks_google": 48
+    "clicks_google": 48,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-01-11",
@@ -611,8 +703,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 912.98,
     "cost_facebook": 562.27,
     "cost_google": 350.71,
+    "cost_seznam": 0,
     "clicks_facebook": 116,
-    "clicks_google": 44
+    "clicks_google": 44,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-01-12",
@@ -624,8 +718,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 1263.19,
     "cost_facebook": 848.13,
     "cost_google": 415.06,
+    "cost_seznam": 0,
     "clicks_facebook": 125,
-    "clicks_google": 58
+    "clicks_google": 58,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-01-13",
@@ -637,8 +733,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 1156.93,
     "cost_facebook": 849.41,
     "cost_google": 307.52,
+    "cost_seznam": 0,
     "clicks_facebook": 110,
-    "clicks_google": 48
+    "clicks_google": 48,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-01-14",
@@ -650,8 +748,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 1349.02,
     "cost_facebook": 1073.51,
     "cost_google": 275.51,
+    "cost_seznam": 0,
     "clicks_facebook": 121,
-    "clicks_google": 40
+    "clicks_google": 40,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-01-15",
@@ -663,8 +763,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 1718.33,
     "cost_facebook": 1481.88,
     "cost_google": 236.45,
+    "cost_seznam": 0,
     "clicks_facebook": 206,
-    "clicks_google": 34
+    "clicks_google": 34,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-01-16",
@@ -676,8 +778,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 2166.96,
     "cost_facebook": 1316.85,
     "cost_google": 850.11,
+    "cost_seznam": 0,
     "clicks_facebook": 185,
-    "clicks_google": 64
+    "clicks_google": 64,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-01-17",
@@ -689,8 +793,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 1287.01,
     "cost_facebook": 969.3,
     "cost_google": 317.71,
+    "cost_seznam": 0,
     "clicks_facebook": 124,
-    "clicks_google": 29
+    "clicks_google": 29,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-01-18",
@@ -702,8 +808,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 1168.91,
     "cost_facebook": 856.68,
     "cost_google": 312.23,
+    "cost_seznam": 0,
     "clicks_facebook": 110,
-    "clicks_google": 23
+    "clicks_google": 23,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-01-19",
@@ -715,8 +823,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 2154.19,
     "cost_facebook": 1720.5,
     "cost_google": 433.69,
+    "cost_seznam": 0,
     "clicks_facebook": 254,
-    "clicks_google": 33
+    "clicks_google": 33,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-01-20",
@@ -728,8 +838,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 2173.21,
     "cost_facebook": 1558.32,
     "cost_google": 614.89,
+    "cost_seznam": 0,
     "clicks_facebook": 168,
-    "clicks_google": 42
+    "clicks_google": 42,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-01-21",
@@ -741,8 +853,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 2912.21,
     "cost_facebook": 2117.53,
     "cost_google": 794.68,
+    "cost_seznam": 0,
     "clicks_facebook": 265,
-    "clicks_google": 47
+    "clicks_google": 47,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-01-22",
@@ -754,8 +868,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 2598.26,
     "cost_facebook": 2163.45,
     "cost_google": 434.81,
+    "cost_seznam": 0,
     "clicks_facebook": 214,
-    "clicks_google": 33
+    "clicks_google": 33,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-01-23",
@@ -767,8 +883,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 2122.82,
     "cost_facebook": 1668.58,
     "cost_google": 454.24,
+    "cost_seznam": 0,
     "clicks_facebook": 170,
-    "clicks_google": 36
+    "clicks_google": 36,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-01-24",
@@ -780,8 +898,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 2166.8,
     "cost_facebook": 1612.14,
     "cost_google": 554.66,
+    "cost_seznam": 0,
     "clicks_facebook": 177,
-    "clicks_google": 51
+    "clicks_google": 51,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-01-25",
@@ -793,8 +913,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 1568.39,
     "cost_facebook": 1371.12,
     "cost_google": 197.27,
+    "cost_seznam": 0,
     "clicks_facebook": 185,
-    "clicks_google": 24
+    "clicks_google": 24,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-01-26",
@@ -806,8 +928,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 2548.96,
     "cost_facebook": 2043.9,
     "cost_google": 505.06,
+    "cost_seznam": 0,
     "clicks_facebook": 255,
-    "clicks_google": 41
+    "clicks_google": 41,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-01-27",
@@ -819,8 +943,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 2514.84,
     "cost_facebook": 1949.1,
     "cost_google": 565.74,
+    "cost_seznam": 0,
     "clicks_facebook": 275,
-    "clicks_google": 68
+    "clicks_google": 68,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-01-28",
@@ -832,8 +958,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 2561.37,
     "cost_facebook": 1913.53,
     "cost_google": 647.84,
+    "cost_seznam": 0,
     "clicks_facebook": 293,
-    "clicks_google": 69
+    "clicks_google": 69,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-01-29",
@@ -845,8 +973,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 3021.81,
     "cost_facebook": 2521.91,
     "cost_google": 499.9,
+    "cost_seznam": 0,
     "clicks_facebook": 381,
-    "clicks_google": 61
+    "clicks_google": 61,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-01-30",
@@ -858,8 +988,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 2396.31,
     "cost_facebook": 1944.13,
     "cost_google": 452.18,
+    "cost_seznam": 0,
     "clicks_facebook": 242,
-    "clicks_google": 47
+    "clicks_google": 47,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-01-31",
@@ -871,8 +1003,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 2334.71,
     "cost_facebook": 1910.72,
     "cost_google": 423.99,
+    "cost_seznam": 0,
     "clicks_facebook": 257,
-    "clicks_google": 40
+    "clicks_google": 40,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-02-01",
@@ -884,8 +1018,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 1954.51,
     "cost_facebook": 1592.94,
     "cost_google": 361.57,
+    "cost_seznam": 0,
     "clicks_facebook": 216,
-    "clicks_google": 34
+    "clicks_google": 34,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-02-02",
@@ -897,8 +1033,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 2874.3,
     "cost_facebook": 2439.93,
     "cost_google": 434.37,
+    "cost_seznam": 0,
     "clicks_facebook": 384,
-    "clicks_google": 61
+    "clicks_google": 61,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-02-03",
@@ -910,8 +1048,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 3009.02,
     "cost_facebook": 2346.72,
     "cost_google": 662.3,
+    "cost_seznam": 0,
     "clicks_facebook": 384,
-    "clicks_google": 54
+    "clicks_google": 54,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-02-04",
@@ -923,8 +1063,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 3085.71,
     "cost_facebook": 2648.87,
     "cost_google": 436.84,
+    "cost_seznam": 0,
     "clicks_facebook": 544,
-    "clicks_google": 47
+    "clicks_google": 47,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-02-05",
@@ -936,8 +1078,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 3518.25,
     "cost_facebook": 2803.4,
     "cost_google": 714.85,
+    "cost_seznam": 0,
     "clicks_facebook": 610,
-    "clicks_google": 61
+    "clicks_google": 61,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-02-06",
@@ -949,8 +1093,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 3732.03,
     "cost_facebook": 3096.99,
     "cost_google": 635.04,
+    "cost_seznam": 0,
     "clicks_facebook": 651,
-    "clicks_google": 67
+    "clicks_google": 67,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-02-07",
@@ -962,8 +1108,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 3602.81,
     "cost_facebook": 2986.55,
     "cost_google": 616.26,
+    "cost_seznam": 0,
     "clicks_facebook": 478,
-    "clicks_google": 67
+    "clicks_google": 67,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-02-08",
@@ -975,8 +1123,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 3128.86,
     "cost_facebook": 2795.32,
     "cost_google": 333.54,
+    "cost_seznam": 0,
     "clicks_facebook": 439,
-    "clicks_google": 38
+    "clicks_google": 38,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-02-09",
@@ -988,8 +1138,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 3974.34,
     "cost_facebook": 3658.67,
     "cost_google": 315.67,
+    "cost_seznam": 0,
     "clicks_facebook": 546,
-    "clicks_google": 41
+    "clicks_google": 41,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-02-10",
@@ -1001,8 +1153,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 4308.92,
     "cost_facebook": 3801.23,
     "cost_google": 507.69,
+    "cost_seznam": 0,
     "clicks_facebook": 501,
-    "clicks_google": 59
+    "clicks_google": 59,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-02-11",
@@ -1014,8 +1168,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 4669.16,
     "cost_facebook": 3876.78,
     "cost_google": 792.38,
+    "cost_seznam": 0,
     "clicks_facebook": 443,
-    "clicks_google": 64
+    "clicks_google": 64,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-02-12",
@@ -1027,8 +1183,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 4519.45,
     "cost_facebook": 3758.36,
     "cost_google": 761.09,
+    "cost_seznam": 0,
     "clicks_facebook": 505,
-    "clicks_google": 61
+    "clicks_google": 61,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-02-13",
@@ -1040,8 +1198,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 4118.53,
     "cost_facebook": 3282.62,
     "cost_google": 835.91,
+    "cost_seznam": 0,
     "clicks_facebook": 424,
-    "clicks_google": 70
+    "clicks_google": 70,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-02-14",
@@ -1053,8 +1213,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 4121.86,
     "cost_facebook": 3297.75,
     "cost_google": 824.11,
+    "cost_seznam": 0,
     "clicks_facebook": 428,
-    "clicks_google": 64
+    "clicks_google": 64,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-02-15",
@@ -1066,8 +1228,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 4222.85,
     "cost_facebook": 3247.97,
     "cost_google": 974.88,
+    "cost_seznam": 0,
     "clicks_facebook": 458,
-    "clicks_google": 75
+    "clicks_google": 75,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-02-16",
@@ -1079,8 +1243,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 4044.73,
     "cost_facebook": 3342.4,
     "cost_google": 702.33,
+    "cost_seznam": 0,
     "clicks_facebook": 448,
-    "clicks_google": 74
+    "clicks_google": 74,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-02-17",
@@ -1092,8 +1258,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 3503.39,
     "cost_facebook": 2862.7,
     "cost_google": 640.69,
+    "cost_seznam": 0,
     "clicks_facebook": 352,
-    "clicks_google": 63
+    "clicks_google": 63,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-02-18",
@@ -1105,8 +1273,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 3784.66,
     "cost_facebook": 3007.41,
     "cost_google": 777.25,
+    "cost_seznam": 0,
     "clicks_facebook": 367,
-    "clicks_google": 93
+    "clicks_google": 93,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-02-19",
@@ -1118,8 +1288,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 3411.15,
     "cost_facebook": 2874.89,
     "cost_google": 536.26,
+    "cost_seznam": 0,
     "clicks_facebook": 309,
-    "clicks_google": 68
+    "clicks_google": 68,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-02-20",
@@ -1131,8 +1303,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 3561.83,
     "cost_facebook": 2817.16,
     "cost_google": 744.67,
+    "cost_seznam": 0,
     "clicks_facebook": 328,
-    "clicks_google": 80
+    "clicks_google": 80,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-02-21",
@@ -1144,8 +1318,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 3199.17,
     "cost_facebook": 2828.12,
     "cost_google": 371.05,
+    "cost_seznam": 0,
     "clicks_facebook": 342,
-    "clicks_google": 40
+    "clicks_google": 40,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-02-22",
@@ -1157,8 +1333,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 3217.77,
     "cost_facebook": 2734.27,
     "cost_google": 483.5,
+    "cost_seznam": 0,
     "clicks_facebook": 364,
-    "clicks_google": 35
+    "clicks_google": 35,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-02-23",
@@ -1170,8 +1348,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 3886.7,
     "cost_facebook": 2994.6,
     "cost_google": 892.1,
+    "cost_seznam": 0,
     "clicks_facebook": 414,
-    "clicks_google": 58
+    "clicks_google": 58,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-02-24",
@@ -1183,8 +1363,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 3473.52,
     "cost_facebook": 2882.71,
     "cost_google": 590.81,
+    "cost_seznam": 0,
     "clicks_facebook": 363,
-    "clicks_google": 53
+    "clicks_google": 53,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-02-25",
@@ -1196,8 +1378,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 3652.78,
     "cost_facebook": 2969.6,
     "cost_google": 683.18,
+    "cost_seznam": 0,
     "clicks_facebook": 337,
-    "clicks_google": 49
+    "clicks_google": 49,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-02-26",
@@ -1209,8 +1393,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 3670.17,
     "cost_facebook": 3042.7,
     "cost_google": 627.47,
+    "cost_seznam": 0,
     "clicks_facebook": 315,
-    "clicks_google": 72
+    "clicks_google": 72,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-02-27",
@@ -1222,8 +1408,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 3342.83,
     "cost_facebook": 2766.05,
     "cost_google": 576.78,
+    "cost_seznam": 0,
     "clicks_facebook": 267,
-    "clicks_google": 50
+    "clicks_google": 50,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-02-28",
@@ -1235,8 +1423,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 2998.41,
     "cost_facebook": 2662.51,
     "cost_google": 335.9,
+    "cost_seznam": 0,
     "clicks_facebook": 249,
-    "clicks_google": 36
+    "clicks_google": 36,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-03-01",
@@ -1248,8 +1438,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 3191.41,
     "cost_facebook": 2648.85,
     "cost_google": 542.56,
+    "cost_seznam": 0,
     "clicks_facebook": 315,
-    "clicks_google": 45
+    "clicks_google": 45,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-03-02",
@@ -1261,8 +1453,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 3551.92,
     "cost_facebook": 2943.73,
     "cost_google": 608.19,
+    "cost_seznam": 0,
     "clicks_facebook": 338,
-    "clicks_google": 48
+    "clicks_google": 48,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-03-03",
@@ -1274,8 +1468,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 3594.64,
     "cost_facebook": 2720.64,
     "cost_google": 874,
+    "cost_seznam": 0,
     "clicks_facebook": 296,
-    "clicks_google": 71
+    "clicks_google": 71,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-03-04",
@@ -1287,8 +1483,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 3597.33,
     "cost_facebook": 2690.65,
     "cost_google": 906.68,
+    "cost_seznam": 0,
     "clicks_facebook": 243,
-    "clicks_google": 67
+    "clicks_google": 67,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-03-05",
@@ -1300,8 +1498,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 3285.05,
     "cost_facebook": 2619.12,
     "cost_google": 665.93,
+    "cost_seznam": 0,
     "clicks_facebook": 247,
-    "clicks_google": 67
+    "clicks_google": 67,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-03-06",
@@ -1313,8 +1513,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 3143.27,
     "cost_facebook": 2598.24,
     "cost_google": 545.03,
+    "cost_seznam": 0,
     "clicks_facebook": 165,
-    "clicks_google": 48
+    "clicks_google": 48,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-03-07",
@@ -1326,8 +1528,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 3051.43,
     "cost_facebook": 2603,
     "cost_google": 448.43,
+    "cost_seznam": 0,
     "clicks_facebook": 214,
-    "clicks_google": 43
+    "clicks_google": 43,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-03-08",
@@ -1339,8 +1543,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 3197.19,
     "cost_facebook": 2551.58,
     "cost_google": 645.61,
+    "cost_seznam": 0,
     "clicks_facebook": 211,
-    "clicks_google": 46
+    "clicks_google": 46,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-03-09",
@@ -1352,8 +1558,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 3503.55,
     "cost_facebook": 2882.82,
     "cost_google": 620.73,
+    "cost_seznam": 0,
     "clicks_facebook": 203,
-    "clicks_google": 44
+    "clicks_google": 44,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-03-10",
@@ -1365,8 +1573,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 4064.33,
     "cost_facebook": 3301.86,
     "cost_google": 762.47,
+    "cost_seznam": 0,
     "clicks_facebook": 262,
-    "clicks_google": 50
+    "clicks_google": 50,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-03-11",
@@ -1378,8 +1588,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 2651.3,
     "cost_facebook": 2024.89,
     "cost_google": 626.41,
+    "cost_seznam": 0,
     "clicks_facebook": 150,
-    "clicks_google": 55
+    "clicks_google": 55,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-03-12",
@@ -1391,8 +1603,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 2737.61,
     "cost_facebook": 2039.06,
     "cost_google": 698.55,
+    "cost_seznam": 0,
     "clicks_facebook": 128,
-    "clicks_google": 58
+    "clicks_google": 58,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-03-13",
@@ -1404,8 +1618,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 2750.04,
     "cost_facebook": 2096.03,
     "cost_google": 654.01,
+    "cost_seznam": 0,
     "clicks_facebook": 168,
-    "clicks_google": 58
+    "clicks_google": 58,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-03-14",
@@ -1417,8 +1633,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 2839.98,
     "cost_facebook": 2086.55,
     "cost_google": 753.43,
+    "cost_seznam": 0,
     "clicks_facebook": 156,
-    "clicks_google": 38
+    "clicks_google": 38,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-03-15",
@@ -1430,8 +1648,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 2929.06,
     "cost_facebook": 2175.05,
     "cost_google": 754.01,
+    "cost_seznam": 0,
     "clicks_facebook": 179,
-    "clicks_google": 47
+    "clicks_google": 47,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-03-16",
@@ -1443,8 +1663,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 2476.99,
     "cost_facebook": 1620.82,
     "cost_google": 856.17,
+    "cost_seznam": 0,
     "clicks_facebook": 101,
-    "clicks_google": 61
+    "clicks_google": 61,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-03-17",
@@ -1456,8 +1678,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 3409.49,
     "cost_facebook": 2729.64,
     "cost_google": 679.85,
+    "cost_seznam": 0,
     "clicks_facebook": 200,
-    "clicks_google": 52
+    "clicks_google": 52,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-03-18",
@@ -1469,8 +1693,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 3567.21,
     "cost_facebook": 2689.61,
     "cost_google": 877.6,
+    "cost_seznam": 0,
     "clicks_facebook": 230,
-    "clicks_google": 52
+    "clicks_google": 52,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-03-19",
@@ -1482,8 +1708,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 3546.9,
     "cost_facebook": 2727.08,
     "cost_google": 819.82,
+    "cost_seznam": 0,
     "clicks_facebook": 192,
-    "clicks_google": 51
+    "clicks_google": 51,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-03-20",
@@ -1495,8 +1723,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 3278.71,
     "cost_facebook": 2636.8,
     "cost_google": 641.91,
+    "cost_seznam": 0,
     "clicks_facebook": 178,
-    "clicks_google": 43
+    "clicks_google": 43,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-03-21",
@@ -1508,8 +1738,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 3203.53,
     "cost_facebook": 2678.03,
     "cost_google": 525.5,
+    "cost_seznam": 0,
     "clicks_facebook": 230,
-    "clicks_google": 46
+    "clicks_google": 46,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-03-22",
@@ -1521,8 +1753,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 3311.27,
     "cost_facebook": 2403.45,
     "cost_google": 907.82,
+    "cost_seznam": 0,
     "clicks_facebook": 201,
-    "clicks_google": 58
+    "clicks_google": 58,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-03-23",
@@ -1534,8 +1768,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 4189.5,
     "cost_facebook": 3244.4,
     "cost_google": 945.1,
+    "cost_seznam": 0,
     "clicks_facebook": 278,
-    "clicks_google": 76
+    "clicks_google": 76,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-03-24",
@@ -1547,8 +1783,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 4310.84,
     "cost_facebook": 3223.58,
     "cost_google": 1087.26,
+    "cost_seznam": 0,
     "clicks_facebook": 247,
-    "clicks_google": 52
+    "clicks_google": 52,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-03-25",
@@ -1560,8 +1798,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 4506.63,
     "cost_facebook": 3319.45,
     "cost_google": 1187.18,
+    "cost_seznam": 0,
     "clicks_facebook": 186,
-    "clicks_google": 87
+    "clicks_google": 87,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-03-26",
@@ -1573,8 +1813,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 4345.54,
     "cost_facebook": 3089.14,
     "cost_google": 1256.4,
+    "cost_seznam": 0,
     "clicks_facebook": 204,
-    "clicks_google": 108
+    "clicks_google": 108,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-03-27",
@@ -1586,8 +1828,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 4091.98,
     "cost_facebook": 3103.02,
     "cost_google": 988.96,
+    "cost_seznam": 0,
     "clicks_facebook": 174,
-    "clicks_google": 119
+    "clicks_google": 119,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-03-28",
@@ -1599,8 +1843,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 4642.18,
     "cost_facebook": 2956.87,
     "cost_google": 1685.31,
+    "cost_seznam": 0,
     "clicks_facebook": 199,
-    "clicks_google": 196
+    "clicks_google": 196,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-03-29",
@@ -1612,8 +1858,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 4383.51,
     "cost_facebook": 3006.1,
     "cost_google": 1377.41,
+    "cost_seznam": 0,
     "clicks_facebook": 270,
-    "clicks_google": 117
+    "clicks_google": 117,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-03-30",
@@ -1625,8 +1873,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 4906.19,
     "cost_facebook": 3407.25,
     "cost_google": 1498.94,
+    "cost_seznam": 0,
     "clicks_facebook": 274,
-    "clicks_google": 71
+    "clicks_google": 71,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-03-31",
@@ -1638,8 +1888,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 5031.12,
     "cost_facebook": 3470.49,
     "cost_google": 1560.63,
+    "cost_seznam": 0,
     "clicks_facebook": 339,
-    "clicks_google": 124
+    "clicks_google": 124,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-04-01",
@@ -1651,8 +1903,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 4584.65,
     "cost_facebook": 3394.25,
     "cost_google": 1190.4,
+    "cost_seznam": 0,
     "clicks_facebook": 316,
-    "clicks_google": 95
+    "clicks_google": 95,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-04-02",
@@ -1664,8 +1918,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 3495.07,
     "cost_facebook": 2743.64,
     "cost_google": 751.43,
+    "cost_seznam": 0,
     "clicks_facebook": 244,
-    "clicks_google": 51
+    "clicks_google": 51,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-04-03",
@@ -1677,8 +1933,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 3457.28,
     "cost_facebook": 2624.55,
     "cost_google": 832.73,
+    "cost_seznam": 0,
     "clicks_facebook": 231,
-    "clicks_google": 60
+    "clicks_google": 60,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-04-04",
@@ -1690,8 +1948,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 3390.91,
     "cost_facebook": 2714.28,
     "cost_google": 676.63,
+    "cost_seznam": 0,
     "clicks_facebook": 199,
-    "clicks_google": 49
+    "clicks_google": 49,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-04-05",
@@ -1703,8 +1963,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 3339.38,
     "cost_facebook": 2716.17,
     "cost_google": 623.21,
+    "cost_seznam": 0,
     "clicks_facebook": 261,
-    "clicks_google": 46
+    "clicks_google": 46,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-04-06",
@@ -1716,8 +1978,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 3634.34,
     "cost_facebook": 2954.61,
     "cost_google": 679.73,
+    "cost_seznam": 0,
     "clicks_facebook": 294,
-    "clicks_google": 53
+    "clicks_google": 53,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-04-07",
@@ -1729,8 +1993,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 3700.49,
     "cost_facebook": 2866.17,
     "cost_google": 834.32,
+    "cost_seznam": 0,
     "clicks_facebook": 269,
-    "clicks_google": 65
+    "clicks_google": 65,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-04-08",
@@ -1742,8 +2008,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 4590.31,
     "cost_facebook": 3153.21,
     "cost_google": 1437.1,
+    "cost_seznam": 0,
     "clicks_facebook": 248,
-    "clicks_google": 101
+    "clicks_google": 101,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-04-09",
@@ -1755,8 +2023,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 4651.12,
     "cost_facebook": 3734.41,
     "cost_google": 916.71,
+    "cost_seznam": 0,
     "clicks_facebook": 269,
-    "clicks_google": 65
+    "clicks_google": 65,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-04-10",
@@ -1768,8 +2038,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 5249.47,
     "cost_facebook": 3641.23,
     "cost_google": 1608.24,
+    "cost_seznam": 0,
     "clicks_facebook": 292,
-    "clicks_google": 90
+    "clicks_google": 90,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-04-11",
@@ -1781,8 +2053,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 4896.42,
     "cost_facebook": 3684.9,
     "cost_google": 1211.52,
+    "cost_seznam": 0,
     "clicks_facebook": 257,
-    "clicks_google": 68
+    "clicks_google": 68,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-04-12",
@@ -1794,8 +2068,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 5598.73,
     "cost_facebook": 4130.92,
     "cost_google": 1467.81,
+    "cost_seznam": 0,
     "clicks_facebook": 269,
-    "clicks_google": 61
+    "clicks_google": 61,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-04-13",
@@ -1807,8 +2083,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 6514.71,
     "cost_facebook": 5318.34,
     "cost_google": 1196.37,
+    "cost_seznam": 0,
     "clicks_facebook": 358,
-    "clicks_google": 55
+    "clicks_google": 55,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-04-14",
@@ -1820,8 +2098,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 6189.02,
     "cost_facebook": 5159.21,
     "cost_google": 1029.81,
+    "cost_seznam": 0,
     "clicks_facebook": 367,
-    "clicks_google": 44
+    "clicks_google": 44,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-04-15",
@@ -1833,8 +2113,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 5882.17,
     "cost_facebook": 4850.53,
     "cost_google": 1031.64,
+    "cost_seznam": 0,
     "clicks_facebook": 347,
-    "clicks_google": 53
+    "clicks_google": 53,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-04-16",
@@ -1846,8 +2128,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 1649.1,
     "cost_facebook": 981.48,
     "cost_google": 667.62,
+    "cost_seznam": 0,
     "clicks_facebook": 47,
-    "clicks_google": 29
+    "clicks_google": 29,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-04-17",
@@ -1859,8 +2143,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 1178.15,
     "cost_facebook": 1009.68,
     "cost_google": 168.47,
+    "cost_seznam": 0,
     "clicks_facebook": 51,
-    "clicks_google": 15
+    "clicks_google": 15,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-04-18",
@@ -1872,8 +2158,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 1115.66,
     "cost_facebook": 880.5,
     "cost_google": 235.16,
+    "cost_seznam": 0,
     "clicks_facebook": 62,
-    "clicks_google": 19
+    "clicks_google": 19,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-04-19",
@@ -1885,8 +2173,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 1088.01,
     "cost_facebook": 817.9,
     "cost_google": 270.11,
+    "cost_seznam": 0,
     "clicks_facebook": 52,
-    "clicks_google": 20
+    "clicks_google": 20,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-04-20",
@@ -1898,8 +2188,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 1079.7,
     "cost_facebook": 852.13,
     "cost_google": 227.57,
+    "cost_seznam": 0,
     "clicks_facebook": 56,
-    "clicks_google": 16
+    "clicks_google": 16,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-04-21",
@@ -1911,8 +2203,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 1539.28,
     "cost_facebook": 1232.89,
     "cost_google": 306.39,
+    "cost_seznam": 0,
     "clicks_facebook": 132,
-    "clicks_google": 21
+    "clicks_google": 21,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-04-22",
@@ -1924,8 +2218,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 2159.95,
     "cost_facebook": 1535.52,
     "cost_google": 624.43,
+    "cost_seznam": 0,
     "clicks_facebook": 167,
-    "clicks_google": 30
+    "clicks_google": 30,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-04-23",
@@ -1937,8 +2233,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 1700.91,
     "cost_facebook": 1535.1,
     "cost_google": 165.81,
+    "cost_seznam": 0,
     "clicks_facebook": 156,
-    "clicks_google": 17
+    "clicks_google": 17,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-04-24",
@@ -1950,8 +2248,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 2014.41,
     "cost_facebook": 1520.72,
     "cost_google": 493.69,
+    "cost_seznam": 0,
     "clicks_facebook": 152,
-    "clicks_google": 33
+    "clicks_google": 33,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-04-25",
@@ -1963,8 +2263,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 1893.66,
     "cost_facebook": 1410.98,
     "cost_google": 482.68,
+    "cost_seznam": 0,
     "clicks_facebook": 147,
-    "clicks_google": 31
+    "clicks_google": 31,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-04-26",
@@ -1976,8 +2278,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 1404.21,
     "cost_facebook": 1103.58,
     "cost_google": 300.63,
+    "cost_seznam": 0,
     "clicks_facebook": 110,
-    "clicks_google": 22
+    "clicks_google": 22,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-04-27",
@@ -1989,8 +2293,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 1642.45,
     "cost_facebook": 1146.36,
     "cost_google": 496.09,
+    "cost_seznam": 0,
     "clicks_facebook": 103,
-    "clicks_google": 30
+    "clicks_google": 30,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-04-28",
@@ -2002,8 +2308,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 1540.28,
     "cost_facebook": 1099.05,
     "cost_google": 441.23,
+    "cost_seznam": 0,
     "clicks_facebook": 117,
-    "clicks_google": 32
+    "clicks_google": 32,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-04-29",
@@ -2015,8 +2323,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 1610.17,
     "cost_facebook": 1077.79,
     "cost_google": 532.38,
+    "cost_seznam": 0,
     "clicks_facebook": 114,
-    "clicks_google": 37
+    "clicks_google": 37,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-04-30",
@@ -2028,8 +2338,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 1508.63,
     "cost_facebook": 990,
     "cost_google": 518.63,
+    "cost_seznam": 0,
     "clicks_facebook": 71,
-    "clicks_google": 43
+    "clicks_google": 43,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-05-01",
@@ -2041,8 +2353,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 1346.42,
     "cost_facebook": 837.99,
     "cost_google": 508.43,
+    "cost_seznam": 0,
     "clicks_facebook": 84,
-    "clicks_google": 43
+    "clicks_google": 43,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-05-02",
@@ -2054,8 +2368,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 1182.83,
     "cost_facebook": 819.57,
     "cost_google": 363.26,
+    "cost_seznam": 0,
     "clicks_facebook": 65,
-    "clicks_google": 41
+    "clicks_google": 41,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-05-03",
@@ -2067,8 +2383,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 1229.41,
     "cost_facebook": 830.66,
     "cost_google": 398.75,
+    "cost_seznam": 0,
     "clicks_facebook": 111,
-    "clicks_google": 53
+    "clicks_google": 53,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-05-04",
@@ -2080,8 +2398,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 1723.54,
     "cost_facebook": 1272.23,
     "cost_google": 451.31,
+    "cost_seznam": 0,
     "clicks_facebook": 130,
-    "clicks_google": 57
+    "clicks_google": 57,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-05-05",
@@ -2093,8 +2413,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 1614.47,
     "cost_facebook": 1246.78,
     "cost_google": 367.69,
+    "cost_seznam": 0,
     "clicks_facebook": 131,
-    "clicks_google": 47
+    "clicks_google": 47,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-05-06",
@@ -2106,8 +2428,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 1775.14,
     "cost_facebook": 1202.47,
     "cost_google": 572.67,
+    "cost_seznam": 0,
     "clicks_facebook": 121,
-    "clicks_google": 59
+    "clicks_google": 59,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-05-07",
@@ -2119,8 +2443,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 1983.53,
     "cost_facebook": 1215.91,
     "cost_google": 767.62,
+    "cost_seznam": 0,
     "clicks_facebook": 91,
-    "clicks_google": 44
+    "clicks_google": 44,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-05-08",
@@ -2132,8 +2458,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 1651.32,
     "cost_facebook": 1231.64,
     "cost_google": 419.68,
+    "cost_seznam": 0,
     "clicks_facebook": 91,
-    "clicks_google": 41
+    "clicks_google": 41,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-05-09",
@@ -2145,8 +2473,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 1609.74,
     "cost_facebook": 1214.1,
     "cost_google": 395.64,
+    "cost_seznam": 0,
     "clicks_facebook": 90,
-    "clicks_google": 37
+    "clicks_google": 37,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-05-10",
@@ -2158,8 +2488,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 1439.32,
     "cost_facebook": 1181.06,
     "cost_google": 258.26,
+    "cost_seznam": 0,
     "clicks_facebook": 118,
-    "clicks_google": 26
+    "clicks_google": 26,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-05-11",
@@ -2171,8 +2503,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 1990.06,
     "cost_facebook": 1355.34,
     "cost_google": 634.72,
+    "cost_seznam": 0,
     "clicks_facebook": 174,
-    "clicks_google": 44
+    "clicks_google": 44,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-05-12",
@@ -2184,8 +2518,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 2220.18,
     "cost_facebook": 1377.09,
     "cost_google": 843.09,
+    "cost_seznam": 0,
     "clicks_facebook": 141,
-    "clicks_google": 38
+    "clicks_google": 38,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-05-13",
@@ -2197,8 +2533,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 1923.43,
     "cost_facebook": 1469.91,
     "cost_google": 453.52,
+    "cost_seznam": 0,
     "clicks_facebook": 163,
-    "clicks_google": 31
+    "clicks_google": 31,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-05-14",
@@ -2210,8 +2548,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 2576.68,
     "cost_facebook": 1696.36,
     "cost_google": 880.32,
+    "cost_seznam": 0,
     "clicks_facebook": 136,
-    "clicks_google": 40
+    "clicks_google": 40,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-05-15",
@@ -2223,8 +2563,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 2558.86,
     "cost_facebook": 1691.07,
     "cost_google": 867.79,
+    "cost_seznam": 0,
     "clicks_facebook": 119,
-    "clicks_google": 45
+    "clicks_google": 45,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-05-16",
@@ -2236,8 +2578,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 1445.06,
     "cost_facebook": 909.34,
     "cost_google": 535.72,
+    "cost_seznam": 0,
     "clicks_facebook": 56,
-    "clicks_google": 24
+    "clicks_google": 24,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-05-17",
@@ -2249,8 +2593,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 2331.94,
     "cost_facebook": 1707.36,
     "cost_google": 624.58,
+    "cost_seznam": 0,
     "clicks_facebook": 226,
-    "clicks_google": 22
+    "clicks_google": 22,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-05-18",
@@ -2262,8 +2608,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 2854.09,
     "cost_facebook": 2286.7,
     "cost_google": 567.39,
+    "cost_seznam": 0,
     "clicks_facebook": 195,
-    "clicks_google": 30
+    "clicks_google": 30,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-05-19",
@@ -2275,8 +2623,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 3063.7,
     "cost_facebook": 2605.53,
     "cost_google": 458.17,
+    "cost_seznam": 0,
     "clicks_facebook": 272,
-    "clicks_google": 49
+    "clicks_google": 49,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-05-20",
@@ -2288,8 +2638,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 4031.45,
     "cost_facebook": 3233.66,
     "cost_google": 797.79,
+    "cost_seznam": 0,
     "clicks_facebook": 303,
-    "clicks_google": 55
+    "clicks_google": 55,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-05-21",
@@ -2301,8 +2653,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 4161.68,
     "cost_facebook": 3506.17,
     "cost_google": 655.51,
+    "cost_seznam": 0,
     "clicks_facebook": 298,
-    "clicks_google": 44
+    "clicks_google": 44,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-05-22",
@@ -2314,8 +2668,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 4396.28,
     "cost_facebook": 3510.88,
     "cost_google": 885.4,
+    "cost_seznam": 0,
     "clicks_facebook": 283,
-    "clicks_google": 47
+    "clicks_google": 47,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-05-23",
@@ -2327,8 +2683,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 4421.77,
     "cost_facebook": 3604.45,
     "cost_google": 817.32,
+    "cost_seznam": 0,
     "clicks_facebook": 299,
-    "clicks_google": 40
+    "clicks_google": 40,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-05-24",
@@ -2340,8 +2698,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 4138.61,
     "cost_facebook": 3717.14,
     "cost_google": 421.47,
+    "cost_seznam": 0,
     "clicks_facebook": 262,
-    "clicks_google": 25
+    "clicks_google": 25,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-05-25",
@@ -2353,8 +2713,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 4814.62,
     "cost_facebook": 4112.41,
     "cost_google": 702.21,
+    "cost_seznam": 0,
     "clicks_facebook": 359,
-    "clicks_google": 46
+    "clicks_google": 46,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-05-26",
@@ -2366,8 +2728,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 4758.17,
     "cost_facebook": 3866.98,
     "cost_google": 891.19,
+    "cost_seznam": 0,
     "clicks_facebook": 247,
-    "clicks_google": 47
+    "clicks_google": 47,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-05-27",
@@ -2379,8 +2743,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 4879.66,
     "cost_facebook": 3861.45,
     "cost_google": 1018.21,
+    "cost_seznam": 0,
     "clicks_facebook": 256,
-    "clicks_google": 49
+    "clicks_google": 49,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-05-28",
@@ -2392,8 +2758,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 3360.22,
     "cost_facebook": 2482.69,
     "cost_google": 877.53,
+    "cost_seznam": 0,
     "clicks_facebook": 199,
-    "clicks_google": 55
+    "clicks_google": 55,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-05-29",
@@ -2405,8 +2773,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 1614.88,
     "cost_facebook": 1142.2,
     "cost_google": 472.68,
+    "cost_seznam": 0,
     "clicks_facebook": 81,
-    "clicks_google": 35
+    "clicks_google": 35,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-05-30",
@@ -2418,8 +2788,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 1652.86,
     "cost_facebook": 1086.85,
     "cost_google": 566.01,
+    "cost_seznam": 0,
     "clicks_facebook": 78,
-    "clicks_google": 34
+    "clicks_google": 34,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-05-31",
@@ -2431,8 +2803,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 1497.81,
     "cost_facebook": 1078.48,
     "cost_google": 419.33,
+    "cost_seznam": 0,
     "clicks_facebook": 68,
-    "clicks_google": 25
+    "clicks_google": 25,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-06-01",
@@ -2444,8 +2818,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 1836.81,
     "cost_facebook": 1216.29,
     "cost_google": 620.52,
+    "cost_seznam": 0,
     "clicks_facebook": 129,
-    "clicks_google": 26
+    "clicks_google": 26,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-06-02",
@@ -2457,8 +2833,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 1598.72,
     "cost_facebook": 1162.38,
     "cost_google": 436.34,
+    "cost_seznam": 0,
     "clicks_facebook": 123,
-    "clicks_google": 25
+    "clicks_google": 25,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-06-03",
@@ -2470,8 +2848,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 1665.83,
     "cost_facebook": 1122.6,
     "cost_google": 543.23,
+    "cost_seznam": 0,
     "clicks_facebook": 102,
-    "clicks_google": 38
+    "clicks_google": 38,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-06-04",
@@ -2483,8 +2863,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 1766.5,
     "cost_facebook": 1139.28,
     "cost_google": 627.22,
+    "cost_seznam": 0,
     "clicks_facebook": 107,
-    "clicks_google": 40
+    "clicks_google": 40,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-06-05",
@@ -2496,8 +2878,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 1430.1,
     "cost_facebook": 1144.18,
     "cost_google": 285.92,
+    "cost_seznam": 0,
     "clicks_facebook": 77,
-    "clicks_google": 20
+    "clicks_google": 20,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-06-06",
@@ -2509,8 +2893,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 1525.79,
     "cost_facebook": 1050.38,
     "cost_google": 475.41,
+    "cost_seznam": 0,
     "clicks_facebook": 71,
-    "clicks_google": 31
+    "clicks_google": 31,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-06-07",
@@ -2522,8 +2908,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 1416.61,
     "cost_facebook": 968.21,
     "cost_google": 448.4,
+    "cost_seznam": 0,
     "clicks_facebook": 93,
-    "clicks_google": 24
+    "clicks_google": 24,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-06-08",
@@ -2535,8 +2923,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 1503.67,
     "cost_facebook": 1089.96,
     "cost_google": 413.71,
+    "cost_seznam": 0,
     "clicks_facebook": 124,
-    "clicks_google": 30
+    "clicks_google": 30,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-06-09",
@@ -2548,8 +2938,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 1543.62,
     "cost_facebook": 1038.97,
     "cost_google": 504.65,
+    "cost_seznam": 0,
     "clicks_facebook": 97,
-    "clicks_google": 30
+    "clicks_google": 30,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-06-10",
@@ -2561,8 +2953,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 1561.18,
     "cost_facebook": 1081.53,
     "cost_google": 479.65,
+    "cost_seznam": 0,
     "clicks_facebook": 93,
-    "clicks_google": 32
+    "clicks_google": 32,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-06-11",
@@ -2574,8 +2968,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 1669.55,
     "cost_facebook": 1047.79,
     "cost_google": 621.76,
+    "cost_seznam": 0,
     "clicks_facebook": 83,
-    "clicks_google": 42
+    "clicks_google": 42,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-06-12",
@@ -2587,8 +2983,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 1099.86,
     "cost_facebook": 659.97,
     "cost_google": 439.89,
+    "cost_seznam": 0,
     "clicks_facebook": 37,
-    "clicks_google": 19
+    "clicks_google": 19,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-06-13",
@@ -2600,8 +2998,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 936.3,
     "cost_facebook": 660.89,
     "cost_google": 275.41,
+    "cost_seznam": 0,
     "clicks_facebook": 24,
-    "clicks_google": 20
+    "clicks_google": 20,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-06-14",
@@ -2613,8 +3013,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 776.9,
     "cost_facebook": 665.2,
     "cost_google": 111.7,
+    "cost_seznam": 0,
     "clicks_facebook": 32,
-    "clicks_google": 9
+    "clicks_google": 9,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-06-15",
@@ -2626,8 +3028,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 1305.39,
     "cost_facebook": 738.2,
     "cost_google": 567.19,
+    "cost_seznam": 0,
     "clicks_facebook": 53,
-    "clicks_google": 28
+    "clicks_google": 28,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-06-16",
@@ -2639,8 +3043,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 1333.57,
     "cost_facebook": 723.35,
     "cost_google": 610.22,
+    "cost_seznam": 0,
     "clicks_facebook": 75,
-    "clicks_google": 24
+    "clicks_google": 24,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-06-17",
@@ -2652,8 +3058,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 1250.59,
     "cost_facebook": 697.31,
     "cost_google": 553.28,
+    "cost_seznam": 0,
     "clicks_facebook": 32,
-    "clicks_google": 31
+    "clicks_google": 31,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-06-18",
@@ -2665,8 +3073,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 1158.77,
     "cost_facebook": 746.07,
     "cost_google": 412.7,
+    "cost_seznam": 0,
     "clicks_facebook": 46,
-    "clicks_google": 31
+    "clicks_google": 31,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-06-19",
@@ -2678,8 +3088,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 1093.82,
     "cost_facebook": 667.1,
     "cost_google": 426.72,
+    "cost_seznam": 0,
     "clicks_facebook": 26,
-    "clicks_google": 25
+    "clicks_google": 25,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-06-20",
@@ -2691,8 +3103,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 1689.2,
     "cost_facebook": 1171.07,
     "cost_google": 518.13,
+    "cost_seznam": 0,
     "clicks_facebook": 47,
-    "clicks_google": 26
+    "clicks_google": 26,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-06-21",
@@ -2704,8 +3118,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 1100.89,
     "cost_facebook": 849.19,
     "cost_google": 251.7,
+    "cost_seznam": 0,
     "clicks_facebook": 36,
-    "clicks_google": 20
+    "clicks_google": 20,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-06-22",
@@ -2717,8 +3133,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 1319.29,
     "cost_facebook": 955.75,
     "cost_google": 363.54,
+    "cost_seznam": 0,
     "clicks_facebook": 59,
-    "clicks_google": 22
+    "clicks_google": 22,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-06-23",
@@ -2730,8 +3148,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 1374.46,
     "cost_facebook": 946.36,
     "cost_google": 428.1,
+    "cost_seznam": 0,
     "clicks_facebook": 47,
-    "clicks_google": 29
+    "clicks_google": 29,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-06-24",
@@ -2743,8 +3163,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 1271.66,
     "cost_facebook": 928.33,
     "cost_google": 343.33,
+    "cost_seznam": 0,
     "clicks_facebook": 42,
-    "clicks_google": 24
+    "clicks_google": 24,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-06-25",
@@ -2756,8 +3178,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 1354.28,
     "cost_facebook": 914.66,
     "cost_google": 439.62,
+    "cost_seznam": 0,
     "clicks_facebook": 39,
-    "clicks_google": 28
+    "clicks_google": 28,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-06-26",
@@ -2769,8 +3193,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 1505.22,
     "cost_facebook": 924.89,
     "cost_google": 580.33,
+    "cost_seznam": 0,
     "clicks_facebook": 37,
-    "clicks_google": 31
+    "clicks_google": 31,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-06-27",
@@ -2782,8 +3208,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 1726.05,
     "cost_facebook": 787.05,
     "cost_google": 939,
+    "cost_seznam": 0,
     "clicks_facebook": 40,
-    "clicks_google": 33
+    "clicks_google": 33,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-06-28",
@@ -2795,8 +3223,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 877.92,
     "cost_facebook": 706.32,
     "cost_google": 171.6,
+    "cost_seznam": 0,
     "clicks_facebook": 29,
-    "clicks_google": 14
+    "clicks_google": 14,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-06-29",
@@ -2808,8 +3238,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 1076.38,
     "cost_facebook": 801.07,
     "cost_google": 275.31,
+    "cost_seznam": 0,
     "clicks_facebook": 44,
-    "clicks_google": 15
+    "clicks_google": 15,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-06-30",
@@ -2821,8 +3253,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 1311.98,
     "cost_facebook": 807.36,
     "cost_google": 504.62,
+    "cost_seznam": 0,
     "clicks_facebook": 37,
-    "clicks_google": 28
+    "clicks_google": 28,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-07-01",
@@ -2834,8 +3268,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 1061.77,
     "cost_facebook": 883.41,
     "cost_google": 178.36,
+    "cost_seznam": 0,
     "clicks_facebook": 50,
-    "clicks_google": 12
+    "clicks_google": 12,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-07-02",
@@ -2847,8 +3283,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 1169.96,
     "cost_facebook": 882.05,
     "cost_google": 287.91,
+    "cost_seznam": 0,
     "clicks_facebook": 43,
-    "clicks_google": 25
+    "clicks_google": 25,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-07-03",
@@ -2860,8 +3298,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 1175.02,
     "cost_facebook": 869.16,
     "cost_google": 305.86,
+    "cost_seznam": 0,
     "clicks_facebook": 57,
-    "clicks_google": 19
+    "clicks_google": 19,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-07-04",
@@ -2873,8 +3313,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 1000.51,
     "cost_facebook": 840.94,
     "cost_google": 159.57,
+    "cost_seznam": 0,
     "clicks_facebook": 60,
-    "clicks_google": 16
+    "clicks_google": 16,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-07-05",
@@ -2886,8 +3328,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 1068.29,
     "cost_facebook": 838.3,
     "cost_google": 229.99,
+    "cost_seznam": 0,
     "clicks_facebook": 60,
-    "clicks_google": 14
+    "clicks_google": 14,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-07-06",
@@ -2899,8 +3343,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 1130.22,
     "cost_facebook": 922.45,
     "cost_google": 207.77,
+    "cost_seznam": 0,
     "clicks_facebook": 67,
-    "clicks_google": 19
+    "clicks_google": 19,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-07-07",
@@ -2912,8 +3358,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 1262.38,
     "cost_facebook": 891.08,
     "cost_google": 371.3,
+    "cost_seznam": 0,
     "clicks_facebook": 57,
-    "clicks_google": 22
+    "clicks_google": 22,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-07-08",
@@ -2925,8 +3373,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 1120.91,
     "cost_facebook": 928.94,
     "cost_google": 191.97,
+    "cost_seznam": 0,
     "clicks_facebook": 66,
-    "clicks_google": 20
+    "clicks_google": 20,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-07-09",
@@ -2938,8 +3388,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 1374.56,
     "cost_facebook": 980.77,
     "cost_google": 393.79,
+    "cost_seznam": 0,
     "clicks_facebook": 57,
-    "clicks_google": 27
+    "clicks_google": 27,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-07-10",
@@ -2951,8 +3403,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 1200.53,
     "cost_facebook": 978.22,
     "cost_google": 222.31,
+    "cost_seznam": 0,
     "clicks_facebook": 66,
-    "clicks_google": 18
+    "clicks_google": 18,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-07-11",
@@ -2964,8 +3418,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 1344.18,
     "cost_facebook": 979.57,
     "cost_google": 364.61,
+    "cost_seznam": 0,
     "clicks_facebook": 61,
-    "clicks_google": 25
+    "clicks_google": 25,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-07-12",
@@ -2977,8 +3433,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 1653.76,
     "cost_facebook": 951.32,
     "cost_google": 702.44,
+    "cost_seznam": 0,
     "clicks_facebook": 57,
-    "clicks_google": 24
+    "clicks_google": 24,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-07-13",
@@ -2990,8 +3448,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 1034.9,
     "cost_facebook": 827.64,
     "cost_google": 207.26,
+    "cost_seznam": 0,
     "clicks_facebook": 51,
-    "clicks_google": 18
+    "clicks_google": 18,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-07-14",
@@ -3003,8 +3463,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 1197.23,
     "cost_facebook": 816.64,
     "cost_google": 380.59,
+    "cost_seznam": 0,
     "clicks_facebook": 50,
-    "clicks_google": 30
+    "clicks_google": 30,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-07-15",
@@ -3016,8 +3478,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 1122.73,
     "cost_facebook": 794.94,
     "cost_google": 327.79,
+    "cost_seznam": 0,
     "clicks_facebook": 42,
-    "clicks_google": 22
+    "clicks_google": 22,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-07-16",
@@ -3029,8 +3493,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 1102.89,
     "cost_facebook": 801.21,
     "cost_google": 301.68,
+    "cost_seznam": 0,
     "clicks_facebook": 41,
-    "clicks_google": 16
+    "clicks_google": 16,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-07-17",
@@ -3042,8 +3508,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 1371.79,
     "cost_facebook": 770.39,
     "cost_google": 601.4,
+    "cost_seznam": 0,
     "clicks_facebook": 59,
-    "clicks_google": 36
+    "clicks_google": 36,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-07-18",
@@ -3055,8 +3523,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 1064.83,
     "cost_facebook": 754.08,
     "cost_google": 310.75,
+    "cost_seznam": 0,
     "clicks_facebook": 57,
-    "clicks_google": 21
+    "clicks_google": 21,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-07-19",
@@ -3068,8 +3538,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 1110.82,
     "cost_facebook": 765.05,
     "cost_google": 345.77,
+    "cost_seznam": 0,
     "clicks_facebook": 55,
-    "clicks_google": 19
+    "clicks_google": 19,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-07-20",
@@ -3081,8 +3553,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 1282.26,
     "cost_facebook": 830.76,
     "cost_google": 451.5,
+    "cost_seznam": 0,
     "clicks_facebook": 54,
-    "clicks_google": 36
+    "clicks_google": 36,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-07-21",
@@ -3094,8 +3568,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 1263.85,
     "cost_facebook": 801.25,
     "cost_google": 462.6,
+    "cost_seznam": 0,
     "clicks_facebook": 42,
-    "clicks_google": 27
+    "clicks_google": 27,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-07-22",
@@ -3107,8 +3583,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 1341.47,
     "cost_facebook": 789.53,
     "cost_google": 551.94,
+    "cost_seznam": 0,
     "clicks_facebook": 60,
-    "clicks_google": 29
+    "clicks_google": 29,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-07-23",
@@ -3120,8 +3598,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 1049.86,
     "cost_facebook": 774.43,
     "cost_google": 275.43,
+    "cost_seznam": 0,
     "clicks_facebook": 42,
-    "clicks_google": 19
+    "clicks_google": 19,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-07-24",
@@ -3133,8 +3613,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 1208.1,
     "cost_facebook": 786.54,
     "cost_google": 421.56,
+    "cost_seznam": 0,
     "clicks_facebook": 74,
-    "clicks_google": 18
+    "clicks_google": 18,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-07-25",
@@ -3146,8 +3628,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 1231.81,
     "cost_facebook": 771.8,
     "cost_google": 460.01,
+    "cost_seznam": 0,
     "clicks_facebook": 57,
-    "clicks_google": 21
+    "clicks_google": 21,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-07-26",
@@ -3159,8 +3643,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 1010.2,
     "cost_facebook": 745.35,
     "cost_google": 264.85,
+    "cost_seznam": 0,
     "clicks_facebook": 57,
-    "clicks_google": 23
+    "clicks_google": 23,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-07-27",
@@ -3172,8 +3658,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 1071.48,
     "cost_facebook": 817.82,
     "cost_google": 253.66,
+    "cost_seznam": 0,
     "clicks_facebook": 82,
-    "clicks_google": 25
+    "clicks_google": 25,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-07-28",
@@ -3185,8 +3673,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 1109.26,
     "cost_facebook": 817.49,
     "cost_google": 291.77,
+    "cost_seznam": 0,
     "clicks_facebook": 50,
-    "clicks_google": 24
+    "clicks_google": 24,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-07-29",
@@ -3198,8 +3688,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 1333.13,
     "cost_facebook": 806.82,
     "cost_google": 526.31,
+    "cost_seznam": 0,
     "clicks_facebook": 42,
-    "clicks_google": 35
+    "clicks_google": 35,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-07-30",
@@ -3211,8 +3703,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 1246.15,
     "cost_facebook": 791.74,
     "cost_google": 454.41,
+    "cost_seznam": 0,
     "clicks_facebook": 55,
-    "clicks_google": 27
+    "clicks_google": 27,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-07-31",
@@ -3224,8 +3718,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 1151.61,
     "cost_facebook": 795.07,
     "cost_google": 356.54,
+    "cost_seznam": 0,
     "clicks_facebook": 61,
-    "clicks_google": 36
+    "clicks_google": 36,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-08-01",
@@ -3237,8 +3733,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 1202.09,
     "cost_facebook": 874.34,
     "cost_google": 327.75,
+    "cost_seznam": 0,
     "clicks_facebook": 96,
-    "clicks_google": 25
+    "clicks_google": 25,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-08-02",
@@ -3250,8 +3748,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 1081.02,
     "cost_facebook": 887.47,
     "cost_google": 193.55,
+    "cost_seznam": 0,
     "clicks_facebook": 84,
-    "clicks_google": 18
+    "clicks_google": 18,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-08-03",
@@ -3263,8 +3763,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 1323.31,
     "cost_facebook": 1006.17,
     "cost_google": 317.14,
+    "cost_seznam": 0,
     "clicks_facebook": 139,
-    "clicks_google": 23
+    "clicks_google": 23,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-08-04",
@@ -3276,8 +3778,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 1104.52,
     "cost_facebook": 967.51,
     "cost_google": 137.01,
+    "cost_seznam": 0,
     "clicks_facebook": 90,
-    "clicks_google": 11
+    "clicks_google": 11,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-08-05",
@@ -3289,8 +3793,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 1291.54,
     "cost_facebook": 965.74,
     "cost_google": 325.8,
+    "cost_seznam": 0,
     "clicks_facebook": 72,
-    "clicks_google": 22
+    "clicks_google": 22,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-08-06",
@@ -3302,8 +3808,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 1200.09,
     "cost_facebook": 927.68,
     "cost_google": 272.41,
+    "cost_seznam": 0,
     "clicks_facebook": 57,
-    "clicks_google": 15
+    "clicks_google": 15,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-08-07",
@@ -3315,8 +3823,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 1235.16,
     "cost_facebook": 999.23,
     "cost_google": 235.93,
+    "cost_seznam": 0,
     "clicks_facebook": 65,
-    "clicks_google": 15
+    "clicks_google": 15,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-08-08",
@@ -3328,8 +3838,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 1461.71,
     "cost_facebook": 1072.54,
     "cost_google": 389.17,
+    "cost_seznam": 0,
     "clicks_facebook": 69,
-    "clicks_google": 21
+    "clicks_google": 21,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-08-09",
@@ -3341,8 +3853,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 1256.03,
     "cost_facebook": 1029.05,
     "cost_google": 226.98,
+    "cost_seznam": 0,
     "clicks_facebook": 92,
-    "clicks_google": 14
+    "clicks_google": 14,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-08-10",
@@ -3354,8 +3868,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 1336.41,
     "cost_facebook": 1211.22,
     "cost_google": 125.19,
+    "cost_seznam": 0,
     "clicks_facebook": 99,
-    "clicks_google": 15
+    "clicks_google": 15,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-08-11",
@@ -3367,8 +3883,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 1446.26,
     "cost_facebook": 1179.4,
     "cost_google": 266.86,
+    "cost_seznam": 0,
     "clicks_facebook": 105,
-    "clicks_google": 23
+    "clicks_google": 23,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-08-12",
@@ -3380,8 +3898,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 1128.97,
     "cost_facebook": 1001.45,
     "cost_google": 127.52,
+    "cost_seznam": 0,
     "clicks_facebook": 81,
-    "clicks_google": 9
+    "clicks_google": 9,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-08-13",
@@ -3393,8 +3913,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 881.57,
     "cost_facebook": 737.54,
     "cost_google": 144.03,
+    "cost_seznam": 0,
     "clicks_facebook": 47,
-    "clicks_google": 13
+    "clicks_google": 13,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-08-14",
@@ -3406,8 +3928,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 1220.69,
     "cost_facebook": 736.97,
     "cost_google": 483.72,
+    "cost_seznam": 0,
     "clicks_facebook": 45,
-    "clicks_google": 29
+    "clicks_google": 29,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-08-15",
@@ -3419,8 +3943,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 841.44,
     "cost_facebook": 635.21,
     "cost_google": 206.23,
+    "cost_seznam": 0,
     "clicks_facebook": 45,
-    "clicks_google": 13
+    "clicks_google": 13,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-08-16",
@@ -3432,8 +3958,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 679.13,
     "cost_facebook": 521.25,
     "cost_google": 157.88,
+    "cost_seznam": 0,
     "clicks_facebook": 35,
-    "clicks_google": 11
+    "clicks_google": 11,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-08-17",
@@ -3445,8 +3973,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 1224.5,
     "cost_facebook": 655.88,
     "cost_google": 568.62,
+    "cost_seznam": 0,
     "clicks_facebook": 44,
-    "clicks_google": 24
+    "clicks_google": 24,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-08-18",
@@ -3458,8 +3988,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 1270.33,
     "cost_facebook": 826.9,
     "cost_google": 443.43,
+    "cost_seznam": 0,
     "clicks_facebook": 47,
-    "clicks_google": 27
+    "clicks_google": 27,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-08-19",
@@ -3471,8 +4003,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 1579.22,
     "cost_facebook": 885.49,
     "cost_google": 693.73,
+    "cost_seznam": 0,
     "clicks_facebook": 57,
-    "clicks_google": 32
+    "clicks_google": 32,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-08-20",
@@ -3484,8 +4018,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 1668.86,
     "cost_facebook": 1103.32,
     "cost_google": 565.54,
+    "cost_seznam": 0,
     "clicks_facebook": 66,
-    "clicks_google": 33
+    "clicks_google": 33,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-08-21",
@@ -3497,8 +4033,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 1314.25,
     "cost_facebook": 721.12,
     "cost_google": 593.13,
+    "cost_seznam": 0,
     "clicks_facebook": 45,
-    "clicks_google": 26
+    "clicks_google": 26,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-08-22",
@@ -3510,8 +4048,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 1590.95,
     "cost_facebook": 1331.4,
     "cost_google": 259.55,
+    "cost_seznam": 0,
     "clicks_facebook": 96,
-    "clicks_google": 14
+    "clicks_google": 14,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-08-23",
@@ -3523,8 +4063,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 1720.11,
     "cost_facebook": 1276.5,
     "cost_google": 443.61,
+    "cost_seznam": 0,
     "clicks_facebook": 88,
-    "clicks_google": 27
+    "clicks_google": 27,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-08-24",
@@ -3536,8 +4078,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 1344.17,
     "cost_facebook": 1154.45,
     "cost_google": 189.72,
+    "cost_seznam": 0,
     "clicks_facebook": 70,
-    "clicks_google": 27
+    "clicks_google": 27,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-08-25",
@@ -3549,8 +4093,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 1742.67,
     "cost_facebook": 1093.72,
     "cost_google": 648.95,
+    "cost_seznam": 0,
     "clicks_facebook": 54,
-    "clicks_google": 41
+    "clicks_google": 41,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-08-26",
@@ -3562,8 +4108,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 1431.01,
     "cost_facebook": 1084.98,
     "cost_google": 346.03,
+    "cost_seznam": 0,
     "clicks_facebook": 56,
-    "clicks_google": 28
+    "clicks_google": 28,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-08-27",
@@ -3575,8 +4123,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 1681.48,
     "cost_facebook": 1200.01,
     "cost_google": 481.47,
+    "cost_seznam": 0,
     "clicks_facebook": 68,
-    "clicks_google": 35
+    "clicks_google": 35,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-08-28",
@@ -3588,8 +4138,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 1661.04,
     "cost_facebook": 1184.08,
     "cost_google": 476.96,
+    "cost_seznam": 0,
     "clicks_facebook": 83,
-    "clicks_google": 24
+    "clicks_google": 24,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-08-29",
@@ -3601,8 +4153,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 1713.41,
     "cost_facebook": 1089.37,
     "cost_google": 624.04,
+    "cost_seznam": 0,
     "clicks_facebook": 60,
-    "clicks_google": 46
+    "clicks_google": 46,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-08-30",
@@ -3614,8 +4168,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 1459.57,
     "cost_facebook": 1030.37,
     "cost_google": 429.2,
+    "cost_seznam": 0,
     "clicks_facebook": 48,
-    "clicks_google": 37
+    "clicks_google": 37,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-08-31",
@@ -3627,8 +4183,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 1505.85,
     "cost_facebook": 1118.13,
     "cost_google": 387.72,
+    "cost_seznam": 0,
     "clicks_facebook": 72,
-    "clicks_google": 38
+    "clicks_google": 38,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-09-01",
@@ -3640,8 +4198,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 1774.17,
     "cost_facebook": 1083.47,
     "cost_google": 690.7,
+    "cost_seznam": 0,
     "clicks_facebook": 83,
-    "clicks_google": 65
+    "clicks_google": 65,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-09-02",
@@ -3653,8 +4213,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 1606.56,
     "cost_facebook": 1064.22,
     "cost_google": 542.34,
+    "cost_seznam": 0,
     "clicks_facebook": 72,
-    "clicks_google": 60
+    "clicks_google": 60,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-09-03",
@@ -3666,8 +4228,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 1580.74,
     "cost_facebook": 1047.95,
     "cost_google": 532.79,
+    "cost_seznam": 0,
     "clicks_facebook": 76,
-    "clicks_google": 46
+    "clicks_google": 46,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-09-04",
@@ -3679,8 +4243,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 1322.21,
     "cost_facebook": 1026.71,
     "cost_google": 295.5,
+    "cost_seznam": 0,
     "clicks_facebook": 67,
-    "clicks_google": 27
+    "clicks_google": 27,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-09-05",
@@ -3692,8 +4258,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 1351.47,
     "cost_facebook": 1009.04,
     "cost_google": 342.43,
+    "cost_seznam": 0,
     "clicks_facebook": 66,
-    "clicks_google": 25
+    "clicks_google": 25,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-09-06",
@@ -3705,8 +4273,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 1404.5,
     "cost_facebook": 999.44,
     "cost_google": 405.06,
+    "cost_seznam": 0,
     "clicks_facebook": 61,
-    "clicks_google": 32
+    "clicks_google": 32,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-09-07",
@@ -3718,8 +4288,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 1722.31,
     "cost_facebook": 1140.66,
     "cost_google": 581.65,
+    "cost_seznam": 0,
     "clicks_facebook": 63,
-    "clicks_google": 27
+    "clicks_google": 27,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-09-08",
@@ -3731,8 +4303,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 1652.6,
     "cost_facebook": 1068.6,
     "cost_google": 584,
+    "cost_seznam": 0,
     "clicks_facebook": 66,
-    "clicks_google": 39
+    "clicks_google": 39,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-09-09",
@@ -3744,8 +4318,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 1534.38,
     "cost_facebook": 1054.94,
     "cost_google": 479.44,
+    "cost_seznam": 0,
     "clicks_facebook": 71,
-    "clicks_google": 36
+    "clicks_google": 36,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-09-10",
@@ -3757,8 +4333,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 1788.95,
     "cost_facebook": 1061.27,
     "cost_google": 727.68,
+    "cost_seznam": 0,
     "clicks_facebook": 66,
-    "clicks_google": 43
+    "clicks_google": 43,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-09-11",
@@ -3770,8 +4348,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 1643.32,
     "cost_facebook": 1021.73,
     "cost_google": 621.59,
+    "cost_seznam": 0,
     "clicks_facebook": 68,
-    "clicks_google": 36
+    "clicks_google": 36,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-09-12",
@@ -3783,8 +4363,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 1841.28,
     "cost_facebook": 1011.51,
     "cost_google": 829.77,
+    "cost_seznam": 0,
     "clicks_facebook": 46,
-    "clicks_google": 53
+    "clicks_google": 53,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-09-13",
@@ -3796,8 +4378,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 1637.95,
     "cost_facebook": 989.84,
     "cost_google": 648.11,
+    "cost_seznam": 0,
     "clicks_facebook": 86,
-    "clicks_google": 38
+    "clicks_google": 38,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-09-14",
@@ -3809,8 +4393,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 1752.77,
     "cost_facebook": 1140.41,
     "cost_google": 612.36,
+    "cost_seznam": 0,
     "clicks_facebook": 89,
-    "clicks_google": 43
+    "clicks_google": 43,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-09-15",
@@ -3822,8 +4408,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 1898.39,
     "cost_facebook": 1093.82,
     "cost_google": 804.57,
+    "cost_seznam": 0,
     "clicks_facebook": 44,
-    "clicks_google": 51
+    "clicks_google": 51,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-09-16",
@@ -3835,8 +4423,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 1843.77,
     "cost_facebook": 1106.38,
     "cost_google": 737.39,
+    "cost_seznam": 0,
     "clicks_facebook": 50,
-    "clicks_google": 50
+    "clicks_google": 50,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-09-17",
@@ -3848,8 +4438,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 2078.04,
     "cost_facebook": 1069.16,
     "cost_google": 1008.88,
+    "cost_seznam": 0,
     "clicks_facebook": 56,
-    "clicks_google": 50
+    "clicks_google": 50,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-09-18",
@@ -3861,8 +4453,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 1826.32,
     "cost_facebook": 1077,
     "cost_google": 749.32,
+    "cost_seznam": 0,
     "clicks_facebook": 53,
-    "clicks_google": 31
+    "clicks_google": 31,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-09-19",
@@ -3874,8 +4468,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 1990.44,
     "cost_facebook": 1056.69,
     "cost_google": 933.75,
+    "cost_seznam": 0,
     "clicks_facebook": 62,
-    "clicks_google": 45
+    "clicks_google": 45,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-09-20",
@@ -3887,8 +4483,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 1606.03,
     "cost_facebook": 1050.38,
     "cost_google": 555.65,
+    "cost_seznam": 0,
     "clicks_facebook": 58,
-    "clicks_google": 32
+    "clicks_google": 32,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-09-21",
@@ -3900,8 +4498,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 1945.39,
     "cost_facebook": 1178.98,
     "cost_google": 766.41,
+    "cost_seznam": 0,
     "clicks_facebook": 50,
-    "clicks_google": 44
+    "clicks_google": 44,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-09-22",
@@ -3913,8 +4513,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 1881.82,
     "cost_facebook": 1118.63,
     "cost_google": 763.19,
+    "cost_seznam": 0,
     "clicks_facebook": 61,
-    "clicks_google": 43
+    "clicks_google": 43,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-09-23",
@@ -3926,8 +4528,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 1899.81,
     "cost_facebook": 1186.94,
     "cost_google": 712.87,
+    "cost_seznam": 0,
     "clicks_facebook": 58,
-    "clicks_google": 67
+    "clicks_google": 67,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-09-24",
@@ -3939,8 +4543,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 1965.42,
     "cost_facebook": 1196.02,
     "cost_google": 769.4,
+    "cost_seznam": 0,
     "clicks_facebook": 75,
-    "clicks_google": 57
+    "clicks_google": 57,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-09-25",
@@ -3952,8 +4558,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 1702.56,
     "cost_facebook": 1188.98,
     "cost_google": 513.58,
+    "cost_seznam": 0,
     "clicks_facebook": 67,
-    "clicks_google": 45
+    "clicks_google": 45,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-09-26",
@@ -3965,8 +4573,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 1780.62,
     "cost_facebook": 1185.32,
     "cost_google": 595.3,
+    "cost_seznam": 0,
     "clicks_facebook": 69,
-    "clicks_google": 42
+    "clicks_google": 42,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-09-27",
@@ -3978,8 +4588,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 1585.78,
     "cost_facebook": 1183.86,
     "cost_google": 401.92,
+    "cost_seznam": 0,
     "clicks_facebook": 61,
-    "clicks_google": 32
+    "clicks_google": 32,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-09-28",
@@ -3991,8 +4603,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 1532.57,
     "cost_facebook": 1289.45,
     "cost_google": 243.12,
+    "cost_seznam": 0,
     "clicks_facebook": 66,
-    "clicks_google": 23
+    "clicks_google": 23,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-09-29",
@@ -4004,8 +4618,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 1581.78,
     "cost_facebook": 1263.67,
     "cost_google": 318.11,
+    "cost_seznam": 0,
     "clicks_facebook": 61,
-    "clicks_google": 30
+    "clicks_google": 30,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-09-30",
@@ -4017,8 +4633,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 1661.34,
     "cost_facebook": 1204.57,
     "cost_google": 456.77,
+    "cost_seznam": 0,
     "clicks_facebook": 62,
-    "clicks_google": 39
+    "clicks_google": 39,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-10-01",
@@ -4030,8 +4648,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 1736.45,
     "cost_facebook": 956.46,
     "cost_google": 779.99,
+    "cost_seznam": 0,
     "clicks_facebook": 59,
-    "clicks_google": 33
+    "clicks_google": 33,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-10-02",
@@ -4043,8 +4663,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 1508.83,
     "cost_facebook": 1265.49,
     "cost_google": 243.34,
+    "cost_seznam": 0,
     "clicks_facebook": 69,
-    "clicks_google": 27
+    "clicks_google": 27,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-10-03",
@@ -4056,8 +4678,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 1902.45,
     "cost_facebook": 1419.94,
     "cost_google": 482.51,
+    "cost_seznam": 0,
     "clicks_facebook": 96,
-    "clicks_google": 42
+    "clicks_google": 42,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-10-04",
@@ -4069,8 +4693,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 1647.92,
     "cost_facebook": 1371.1,
     "cost_google": 276.82,
+    "cost_seznam": 0,
     "clicks_facebook": 115,
-    "clicks_google": 23
+    "clicks_google": 23,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-10-05",
@@ -4082,8 +4708,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 1776,
     "cost_facebook": 1492.47,
     "cost_google": 283.53,
+    "cost_seznam": 0,
     "clicks_facebook": 109,
-    "clicks_google": 30
+    "clicks_google": 30,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-10-06",
@@ -4095,8 +4723,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 2074.04,
     "cost_facebook": 1603.45,
     "cost_google": 470.59,
+    "cost_seznam": 0,
     "clicks_facebook": 105,
-    "clicks_google": 40
+    "clicks_google": 40,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-10-07",
@@ -4108,8 +4738,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 2468.98,
     "cost_facebook": 1756.71,
     "cost_google": 712.27,
+    "cost_seznam": 0,
     "clicks_facebook": 105,
-    "clicks_google": 51
+    "clicks_google": 51,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-10-08",
@@ -4121,8 +4753,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 2395.7,
     "cost_facebook": 1860.39,
     "cost_google": 535.31,
+    "cost_seznam": 0,
     "clicks_facebook": 133,
-    "clicks_google": 58
+    "clicks_google": 58,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-10-09",
@@ -4134,8 +4768,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 2625.89,
     "cost_facebook": 1932.49,
     "cost_google": 693.4,
+    "cost_seznam": 0,
     "clicks_facebook": 118,
-    "clicks_google": 61
+    "clicks_google": 61,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-10-10",
@@ -4147,8 +4783,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 2664.01,
     "cost_facebook": 1905.15,
     "cost_google": 758.86,
+    "cost_seznam": 0,
     "clicks_facebook": 106,
-    "clicks_google": 55
+    "clicks_google": 55,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-10-11",
@@ -4160,8 +4798,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 2664.78,
     "cost_facebook": 1872.29,
     "cost_google": 792.49,
+    "cost_seznam": 0,
     "clicks_facebook": 128,
-    "clicks_google": 39
+    "clicks_google": 39,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-10-12",
@@ -4173,8 +4813,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 2757.01,
     "cost_facebook": 2261.13,
     "cost_google": 495.88,
+    "cost_seznam": 0,
     "clicks_facebook": 128,
-    "clicks_google": 38
+    "clicks_google": 38,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-10-13",
@@ -4186,8 +4828,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 4462.42,
     "cost_facebook": 3687.89,
     "cost_google": 774.53,
+    "cost_seznam": 0,
     "clicks_facebook": 258,
-    "clicks_google": 67
+    "clicks_google": 67,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-10-14",
@@ -4199,8 +4843,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 4274.5,
     "cost_facebook": 3612.48,
     "cost_google": 662.02,
+    "cost_seznam": 0,
     "clicks_facebook": 229,
-    "clicks_google": 47
+    "clicks_google": 47,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-10-15",
@@ -4212,8 +4858,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 4454.27,
     "cost_facebook": 3493.26,
     "cost_google": 961.01,
+    "cost_seznam": 0,
     "clicks_facebook": 224,
-    "clicks_google": 69
+    "clicks_google": 69,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-10-16",
@@ -4225,8 +4873,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 4925.08,
     "cost_facebook": 3991.32,
     "cost_google": 933.76,
+    "cost_seznam": 0,
     "clicks_facebook": 270,
-    "clicks_google": 63
+    "clicks_google": 63,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-10-17",
@@ -4238,8 +4888,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 3973.34,
     "cost_facebook": 3498.62,
     "cost_google": 474.72,
+    "cost_seznam": 0,
     "clicks_facebook": 240,
-    "clicks_google": 31
+    "clicks_google": 31,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-10-18",
@@ -4251,8 +4903,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 3817.55,
     "cost_facebook": 3193.84,
     "cost_google": 623.71,
+    "cost_seznam": 0,
     "clicks_facebook": 238,
-    "clicks_google": 41
+    "clicks_google": 41,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-10-19",
@@ -4264,8 +4918,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 5889.84,
     "cost_facebook": 5161.38,
     "cost_google": 728.46,
+    "cost_seznam": 0,
     "clicks_facebook": 366,
-    "clicks_google": 47
+    "clicks_google": 47,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-10-20",
@@ -4277,8 +4933,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 3045.04,
     "cost_facebook": 2360.29,
     "cost_google": 684.75,
+    "cost_seznam": 0,
     "clicks_facebook": 136,
-    "clicks_google": 54
+    "clicks_google": 54,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-10-21",
@@ -4290,8 +4948,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 2747.33,
     "cost_facebook": 1970.22,
     "cost_google": 777.11,
+    "cost_seznam": 0,
     "clicks_facebook": 101,
-    "clicks_google": 67
+    "clicks_google": 67,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-10-22",
@@ -4303,8 +4963,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 2679.31,
     "cost_facebook": 1939.01,
     "cost_google": 740.3,
+    "cost_seznam": 0,
     "clicks_facebook": 134,
-    "clicks_google": 45
+    "clicks_google": 45,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-10-23",
@@ -4316,8 +4978,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 2546,
     "cost_facebook": 1824.47,
     "cost_google": 721.53,
+    "cost_seznam": 0,
     "clicks_facebook": 132,
-    "clicks_google": 52
+    "clicks_google": 52,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-10-24",
@@ -4329,8 +4993,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 2464.27,
     "cost_facebook": 1780.56,
     "cost_google": 683.71,
+    "cost_seznam": 0,
     "clicks_facebook": 119,
-    "clicks_google": 50
+    "clicks_google": 50,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-10-25",
@@ -4342,8 +5008,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 2358.36,
     "cost_facebook": 1694.62,
     "cost_google": 663.74,
+    "cost_seznam": 0,
     "clicks_facebook": 126,
-    "clicks_google": 57
+    "clicks_google": 57,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-10-26",
@@ -4355,8 +5023,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 3005.1,
     "cost_facebook": 1973.8,
     "cost_google": 1031.3,
+    "cost_seznam": 0,
     "clicks_facebook": 150,
-    "clicks_google": 75
+    "clicks_google": 75,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-10-27",
@@ -4368,8 +5038,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 2288.22,
     "cost_facebook": 1682.43,
     "cost_google": 605.79,
+    "cost_seznam": 0,
     "clicks_facebook": 141,
-    "clicks_google": 61
+    "clicks_google": 61,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-10-28",
@@ -4381,8 +5053,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 2460.74,
     "cost_facebook": 1737.61,
     "cost_google": 723.13,
+    "cost_seznam": 0,
     "clicks_facebook": 118,
-    "clicks_google": 62
+    "clicks_google": 62,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-10-29",
@@ -4394,8 +5068,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 2297.76,
     "cost_facebook": 1723.46,
     "cost_google": 574.3,
+    "cost_seznam": 0,
     "clicks_facebook": 93,
-    "clicks_google": 55
+    "clicks_google": 55,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-10-30",
@@ -4407,8 +5083,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 2491.14,
     "cost_facebook": 1727.82,
     "cost_google": 763.32,
+    "cost_seznam": 0,
     "clicks_facebook": 95,
-    "clicks_google": 61
+    "clicks_google": 61,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-10-31",
@@ -4420,8 +5098,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 2845.66,
     "cost_facebook": 2423.33,
     "cost_google": 422.33,
+    "cost_seznam": 0,
     "clicks_facebook": 134,
-    "clicks_google": 41
+    "clicks_google": 41,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-11-01",
@@ -4433,8 +5113,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 2097.41,
     "cost_facebook": 1510.32,
     "cost_google": 587.09,
+    "cost_seznam": 0,
     "clicks_facebook": 111,
-    "clicks_google": 54
+    "clicks_google": 54,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-11-02",
@@ -4446,8 +5128,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 2896.15,
     "cost_facebook": 2122.75,
     "cost_google": 773.4,
+    "cost_seznam": 0,
     "clicks_facebook": 167,
-    "clicks_google": 58
+    "clicks_google": 58,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-11-03",
@@ -4459,8 +5143,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 2983.23,
     "cost_facebook": 2134.93,
     "cost_google": 848.3,
+    "cost_seznam": 0,
     "clicks_facebook": 144,
-    "clicks_google": 65
+    "clicks_google": 65,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-11-04",
@@ -4472,8 +5158,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 4003.49,
     "cost_facebook": 3119.02,
     "cost_google": 884.47,
+    "cost_seznam": 0,
     "clicks_facebook": 404,
-    "clicks_google": 80
+    "clicks_google": 80,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-11-05",
@@ -4485,8 +5173,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 3843.83,
     "cost_facebook": 2887.72,
     "cost_google": 956.11,
+    "cost_seznam": 0,
     "clicks_facebook": 383,
-    "clicks_google": 88
+    "clicks_google": 88,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-11-06",
@@ -4498,8 +5188,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 4209.62,
     "cost_facebook": 3176.23,
     "cost_google": 1033.39,
+    "cost_seznam": 0,
     "clicks_facebook": 457,
-    "clicks_google": 85
+    "clicks_google": 85,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-11-07",
@@ -4511,8 +5203,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 3311.25,
     "cost_facebook": 2607.54,
     "cost_google": 703.71,
+    "cost_seznam": 0,
     "clicks_facebook": 310,
-    "clicks_google": 70
+    "clicks_google": 70,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-11-08",
@@ -4524,8 +5218,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 3500.64,
     "cost_facebook": 2539.63,
     "cost_google": 961.01,
+    "cost_seznam": 0,
     "clicks_facebook": 230,
-    "clicks_google": 69
+    "clicks_google": 69,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-11-09",
@@ -4537,8 +5233,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 4474.26,
     "cost_facebook": 3406.01,
     "cost_google": 1068.25,
+    "cost_seznam": 0,
     "clicks_facebook": 330,
-    "clicks_google": 82
+    "clicks_google": 82,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-11-10",
@@ -4550,8 +5248,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 4487.41,
     "cost_facebook": 3511.87,
     "cost_google": 975.54,
+    "cost_seznam": 0,
     "clicks_facebook": 351,
-    "clicks_google": 68
+    "clicks_google": 68,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-11-11",
@@ -4563,8 +5263,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 4180.35,
     "cost_facebook": 3285.5,
     "cost_google": 894.85,
+    "cost_seznam": 0,
     "clicks_facebook": 278,
-    "clicks_google": 77
+    "clicks_google": 77,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-11-12",
@@ -4576,8 +5278,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 5241.89,
     "cost_facebook": 3647.4,
     "cost_google": 1594.49,
+    "cost_seznam": 0,
     "clicks_facebook": 327,
-    "clicks_google": 71
+    "clicks_google": 71,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-11-13",
@@ -4589,8 +5293,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 4044.02,
     "cost_facebook": 2955.55,
     "cost_google": 1088.47,
+    "cost_seznam": 0,
     "clicks_facebook": 215,
-    "clicks_google": 91
+    "clicks_google": 91,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-11-14",
@@ -4602,8 +5308,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 3925.64,
     "cost_facebook": 3023.29,
     "cost_google": 902.35,
+    "cost_seznam": 0,
     "clicks_facebook": 171,
-    "clicks_google": 70
+    "clicks_google": 70,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-11-15",
@@ -4615,8 +5323,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 3749.5,
     "cost_facebook": 3040.83,
     "cost_google": 708.67,
+    "cost_seznam": 0,
     "clicks_facebook": 231,
-    "clicks_google": 61
+    "clicks_google": 61,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-11-16",
@@ -4628,8 +5338,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 4998.88,
     "cost_facebook": 3769.87,
     "cost_google": 1229.01,
+    "cost_seznam": 0,
     "clicks_facebook": 342,
-    "clicks_google": 69
+    "clicks_google": 69,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-11-17",
@@ -4641,8 +5353,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 6336.97,
     "cost_facebook": 4746.48,
     "cost_google": 1590.49,
+    "cost_seznam": 0,
     "clicks_facebook": 466,
-    "clicks_google": 217
+    "clicks_google": 217,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-11-18",
@@ -4654,8 +5368,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 7469.31,
     "cost_facebook": 5891.37,
     "cost_google": 1577.94,
+    "cost_seznam": 0,
     "clicks_facebook": 423,
-    "clicks_google": 169
+    "clicks_google": 169,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-11-19",
@@ -4667,8 +5383,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 7650.28,
     "cost_facebook": 5778.84,
     "cost_google": 1871.44,
+    "cost_seznam": 0,
     "clicks_facebook": 409,
-    "clicks_google": 293
+    "clicks_google": 293,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-11-20",
@@ -4680,8 +5398,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 7974.34,
     "cost_facebook": 6109.55,
     "cost_google": 1864.79,
+    "cost_seznam": 0,
     "clicks_facebook": 473,
-    "clicks_google": 303
+    "clicks_google": 303,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-11-21",
@@ -4693,8 +5413,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 7393.53,
     "cost_facebook": 5709.94,
     "cost_google": 1683.59,
+    "cost_seznam": 0,
     "clicks_facebook": 460,
-    "clicks_google": 193
+    "clicks_google": 193,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-11-22",
@@ -4706,8 +5428,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 6923.31,
     "cost_facebook": 5103.61,
     "cost_google": 1819.7,
+    "cost_seznam": 0,
     "clicks_facebook": 408,
-    "clicks_google": 142
+    "clicks_google": 142,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-11-23",
@@ -4719,8 +5443,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 7953.35,
     "cost_facebook": 6206.99,
     "cost_google": 1746.36,
+    "cost_seznam": 0,
     "clicks_facebook": 427,
-    "clicks_google": 130
+    "clicks_google": 130,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-11-24",
@@ -4732,8 +5458,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 7277.57,
     "cost_facebook": 5683.42,
     "cost_google": 1594.15,
+    "cost_seznam": 0,
     "clicks_facebook": 287,
-    "clicks_google": 128
+    "clicks_google": 128,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-11-25",
@@ -4745,8 +5473,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 6487.92,
     "cost_facebook": 4458.56,
     "cost_google": 2029.36,
+    "cost_seznam": 0,
     "clicks_facebook": 228,
-    "clicks_google": 166
+    "clicks_google": 166,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-11-26",
@@ -4758,8 +5488,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 6593.55,
     "cost_facebook": 4512.25,
     "cost_google": 2081.3,
+    "cost_seznam": 0,
     "clicks_facebook": 234,
-    "clicks_google": 149
+    "clicks_google": 149,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-11-27",
@@ -4771,8 +5503,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 6682.7,
     "cost_facebook": 4522.5,
     "cost_google": 2160.2,
+    "cost_seznam": 0,
     "clicks_facebook": 232,
-    "clicks_google": 180
+    "clicks_google": 180,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-11-28",
@@ -4784,8 +5518,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 7991.2,
     "cost_facebook": 4754.47,
     "cost_google": 3236.73,
+    "cost_seznam": 0,
     "clicks_facebook": 186,
-    "clicks_google": 226
+    "clicks_google": 226,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-11-29",
@@ -4797,8 +5533,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 5770.43,
     "cost_facebook": 3708.84,
     "cost_google": 2061.59,
+    "cost_seznam": 0,
     "clicks_facebook": 190,
-    "clicks_google": 231
+    "clicks_google": 231,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-11-30",
@@ -4810,8 +5548,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 7400.76,
     "cost_facebook": 4481.32,
     "cost_google": 2919.44,
+    "cost_seznam": 0,
     "clicks_facebook": 231,
-    "clicks_google": 305
+    "clicks_google": 305,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-12-01",
@@ -4823,8 +5563,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 6939.19,
     "cost_facebook": 4224.43,
     "cost_google": 2714.76,
+    "cost_seznam": 0,
     "clicks_facebook": 182,
-    "clicks_google": 186
+    "clicks_google": 186,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-12-02",
@@ -4836,8 +5578,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 6614.46,
     "cost_facebook": 4256.81,
     "cost_google": 2357.65,
+    "cost_seznam": 0,
     "clicks_facebook": 227,
-    "clicks_google": 292
+    "clicks_google": 292,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-12-03",
@@ -4849,8 +5593,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 8170.11,
     "cost_facebook": 4845.44,
     "cost_google": 3324.67,
+    "cost_seznam": 0,
     "clicks_facebook": 256,
-    "clicks_google": 178
+    "clicks_google": 178,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-12-04",
@@ -4862,8 +5608,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 5870.84,
     "cost_facebook": 3027.94,
     "cost_google": 2842.9,
+    "cost_seznam": 0,
     "clicks_facebook": 158,
-    "clicks_google": 621
+    "clicks_google": 621,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-12-05",
@@ -4875,8 +5623,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 5669.6,
     "cost_facebook": 3651.98,
     "cost_google": 2017.62,
+    "cost_seznam": 0,
     "clicks_facebook": 167,
-    "clicks_google": 131
+    "clicks_google": 131,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-12-06",
@@ -4888,8 +5638,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 5982.87,
     "cost_facebook": 3119.51,
     "cost_google": 2863.36,
+    "cost_seznam": 0,
     "clicks_facebook": 148,
-    "clicks_google": 416
+    "clicks_google": 416,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-12-07",
@@ -4901,8 +5653,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 5720.43,
     "cost_facebook": 3345.01,
     "cost_google": 2375.42,
+    "cost_seznam": 0,
     "clicks_facebook": 193,
-    "clicks_google": 500
+    "clicks_google": 500,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-12-08",
@@ -4914,8 +5668,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 5325.7,
     "cost_facebook": 3058.38,
     "cost_google": 2267.32,
+    "cost_seznam": 0,
     "clicks_facebook": 150,
-    "clicks_google": 358
+    "clicks_google": 358,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-12-09",
@@ -4927,8 +5683,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 4596.4,
     "cost_facebook": 3016.48,
     "cost_google": 1579.92,
+    "cost_seznam": 0,
     "clicks_facebook": 135,
-    "clicks_google": 280
+    "clicks_google": 280,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-12-10",
@@ -4940,8 +5698,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 4679.92,
     "cost_facebook": 2664.33,
     "cost_google": 2015.59,
+    "cost_seznam": 0,
     "clicks_facebook": 98,
-    "clicks_google": 608
+    "clicks_google": 608,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-12-11",
@@ -4953,8 +5713,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 4470.24,
     "cost_facebook": 2678.36,
     "cost_google": 1791.88,
+    "cost_seznam": 0,
     "clicks_facebook": 114,
-    "clicks_google": 354
+    "clicks_google": 354,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-12-12",
@@ -4966,8 +5728,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 4110.9,
     "cost_facebook": 2097.33,
     "cost_google": 2013.57,
+    "cost_seznam": 0,
     "clicks_facebook": 96,
-    "clicks_google": 793
+    "clicks_google": 793,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-12-13",
@@ -4979,8 +5743,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 3773.49,
     "cost_facebook": 1770.56,
     "cost_google": 2002.93,
+    "cost_seznam": 0,
     "clicks_facebook": 85,
-    "clicks_google": 781
+    "clicks_google": 781,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-12-14",
@@ -4992,8 +5758,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 4749.38,
     "cost_facebook": 2345,
     "cost_google": 2404.38,
+    "cost_seznam": 0,
     "clicks_facebook": 111,
-    "clicks_google": 426
+    "clicks_google": 426,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-12-15",
@@ -5005,8 +5773,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 5327.79,
     "cost_facebook": 2552.63,
     "cost_google": 2775.16,
+    "cost_seznam": 0,
     "clicks_facebook": 108,
-    "clicks_google": 685
+    "clicks_google": 685,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-12-16",
@@ -5018,8 +5788,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 4315.24,
     "cost_facebook": 1902.03,
     "cost_google": 2413.21,
+    "cost_seznam": 0,
     "clicks_facebook": 92,
-    "clicks_google": 773
+    "clicks_google": 773,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-12-17",
@@ -5031,8 +5803,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 4480.39,
     "cost_facebook": 2221.62,
     "cost_google": 2258.77,
+    "cost_seznam": 0,
     "clicks_facebook": 103,
-    "clicks_google": 838
+    "clicks_google": 838,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-12-18",
@@ -5044,8 +5818,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 2689.33,
     "cost_facebook": 969.95,
     "cost_google": 1719.38,
+    "cost_seznam": 0,
     "clicks_facebook": 37,
-    "clicks_google": 454
+    "clicks_google": 454,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-12-19",
@@ -5057,8 +5833,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 205.82,
     "cost_facebook": 65.1,
     "cost_google": 140.72,
+    "cost_seznam": 0,
     "clicks_facebook": 3,
-    "clicks_google": 50
+    "clicks_google": 50,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-12-20",
@@ -5070,8 +5848,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 139.95,
     "cost_facebook": 0,
     "cost_google": 139.95,
+    "cost_seznam": 0,
     "clicks_facebook": 0,
-    "clicks_google": 58
+    "clicks_google": 58,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-12-21",
@@ -5083,8 +5863,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 123.6,
     "cost_facebook": 0,
     "cost_google": 123.6,
+    "cost_seznam": 0,
     "clicks_facebook": 0,
-    "clicks_google": 34
+    "clicks_google": 34,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-12-22",
@@ -5096,8 +5878,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 319.63,
     "cost_facebook": 0,
     "cost_google": 319.63,
+    "cost_seznam": 0,
     "clicks_facebook": 0,
-    "clicks_google": 61
+    "clicks_google": 61,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-12-23",
@@ -5109,8 +5893,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 71.07,
     "cost_facebook": 0,
     "cost_google": 71.07,
+    "cost_seznam": 0,
     "clicks_facebook": 0,
-    "clicks_google": 27
+    "clicks_google": 27,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-12-24",
@@ -5122,8 +5908,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 228.41,
     "cost_facebook": 0,
     "cost_google": 228.41,
+    "cost_seznam": 0,
     "clicks_facebook": 0,
-    "clicks_google": 110
+    "clicks_google": 110,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-12-25",
@@ -5135,8 +5923,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 44.64,
     "cost_facebook": 0,
     "cost_google": 44.64,
+    "cost_seznam": 0,
     "clicks_facebook": 0,
-    "clicks_google": 17
+    "clicks_google": 17,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-12-26",
@@ -5148,8 +5938,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 698.72,
     "cost_facebook": 237.39,
     "cost_google": 461.33,
+    "cost_seznam": 0,
     "clicks_facebook": 32,
-    "clicks_google": 261
+    "clicks_google": 261,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-12-27",
@@ -5161,8 +5953,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 605.04,
     "cost_facebook": 264.29,
     "cost_google": 340.75,
+    "cost_seznam": 0,
     "clicks_facebook": 22,
-    "clicks_google": 188
+    "clicks_google": 188,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-12-28",
@@ -5174,8 +5968,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 859.87,
     "cost_facebook": 321.99,
     "cost_google": 537.88,
+    "cost_seznam": 0,
     "clicks_facebook": 30,
-    "clicks_google": 251
+    "clicks_google": 251,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-12-29",
@@ -5187,8 +5983,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 1064.51,
     "cost_facebook": 679.93,
     "cost_google": 384.58,
+    "cost_seznam": 0,
     "clicks_facebook": 66,
-    "clicks_google": 144
+    "clicks_google": 144,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-12-30",
@@ -5200,8 +5998,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 1970.5,
     "cost_facebook": 1444.15,
     "cost_google": 526.35,
+    "cost_seznam": 0,
     "clicks_facebook": 155,
-    "clicks_google": 129
+    "clicks_google": 129,
+    "clicks_seznam": 0
   },
   {
     "date": "2025-12-31",
@@ -5213,8 +6013,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 1462.23,
     "cost_facebook": 1124.22,
     "cost_google": 338.01,
+    "cost_seznam": 0,
     "clicks_facebook": 91,
-    "clicks_google": 55
+    "clicks_google": 55,
+    "clicks_seznam": 0
   },
   {
     "date": "2026-01-01",
@@ -5226,8 +6028,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 1843.99,
     "cost_facebook": 1286.88,
     "cost_google": 557.11,
+    "cost_seznam": 0,
     "clicks_facebook": 145,
-    "clicks_google": 106
+    "clicks_google": 106,
+    "clicks_seznam": 0
   },
   {
     "date": "2026-01-02",
@@ -5239,8 +6043,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 1790.27,
     "cost_facebook": 1417.12,
     "cost_google": 373.15,
+    "cost_seznam": 0,
     "clicks_facebook": 158,
-    "clicks_google": 95
+    "clicks_google": 95,
+    "clicks_seznam": 0
   },
   {
     "date": "2026-01-03",
@@ -5252,8 +6058,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 1295.67,
     "cost_facebook": 927.56,
     "cost_google": 368.11,
+    "cost_seznam": 0,
     "clicks_facebook": 93,
-    "clicks_google": 158
+    "clicks_google": 158,
+    "clicks_seznam": 0
   },
   {
     "date": "2026-01-04",
@@ -5265,8 +6073,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 1925.16,
     "cost_facebook": 1470.17,
     "cost_google": 454.99,
+    "cost_seznam": 0,
     "clicks_facebook": 136,
-    "clicks_google": 70
+    "clicks_google": 70,
+    "clicks_seznam": 0
   },
   {
     "date": "2026-01-05",
@@ -5278,8 +6088,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 3067.46,
     "cost_facebook": 2551.91,
     "cost_google": 515.55,
+    "cost_seznam": 0,
     "clicks_facebook": 230,
-    "clicks_google": 75
+    "clicks_google": 75,
+    "clicks_seznam": 0
   },
   {
     "date": "2026-01-06",
@@ -5291,8 +6103,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 4282.1,
     "cost_facebook": 3354,
     "cost_google": 928.1,
+    "cost_seznam": 0,
     "clicks_facebook": 335,
-    "clicks_google": 92
+    "clicks_google": 92,
+    "clicks_seznam": 0
   },
   {
     "date": "2026-01-07",
@@ -5304,8 +6118,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 3705.81,
     "cost_facebook": 3008.62,
     "cost_google": 697.19,
+    "cost_seznam": 0,
     "clicks_facebook": 273,
-    "clicks_google": 72
+    "clicks_google": 72,
+    "clicks_seznam": 0
   },
   {
     "date": "2026-01-08",
@@ -5317,8 +6133,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 4408.65,
     "cost_facebook": 3429.02,
     "cost_google": 979.63,
+    "cost_seznam": 0,
     "clicks_facebook": 329,
-    "clicks_google": 90
+    "clicks_google": 90,
+    "clicks_seznam": 0
   },
   {
     "date": "2026-01-09",
@@ -5330,8 +6148,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 3976.33,
     "cost_facebook": 2768.68,
     "cost_google": 1207.65,
+    "cost_seznam": 0,
     "clicks_facebook": 235,
-    "clicks_google": 186
+    "clicks_google": 186,
+    "clicks_seznam": 0
   },
   {
     "date": "2026-01-10",
@@ -5343,8 +6163,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 3537.85,
     "cost_facebook": 2549.93,
     "cost_google": 987.92,
+    "cost_seznam": 0,
     "clicks_facebook": 282,
-    "clicks_google": 77
+    "clicks_google": 77,
+    "clicks_seznam": 0
   },
   {
     "date": "2026-01-11",
@@ -5356,8 +6178,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 4692.96,
     "cost_facebook": 3538.13,
     "cost_google": 1154.83,
+    "cost_seznam": 0,
     "clicks_facebook": 381,
-    "clicks_google": 83
+    "clicks_google": 83,
+    "clicks_seznam": 0
   },
   {
     "date": "2026-01-12",
@@ -5369,8 +6193,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 5317.45,
     "cost_facebook": 3362.91,
     "cost_google": 1954.54,
+    "cost_seznam": 0,
     "clicks_facebook": 301,
-    "clicks_google": 144
+    "clicks_google": 144,
+    "clicks_seznam": 0
   },
   {
     "date": "2026-01-13",
@@ -5382,8 +6208,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 4706.54,
     "cost_facebook": 3257.57,
     "cost_google": 1448.97,
+    "cost_seznam": 0,
     "clicks_facebook": 304,
-    "clicks_google": 105
+    "clicks_google": 105,
+    "clicks_seznam": 0
   },
   {
     "date": "2026-01-14",
@@ -5395,8 +6223,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 4689.58,
     "cost_facebook": 3050.65,
     "cost_google": 1638.93,
+    "cost_seznam": 0,
     "clicks_facebook": 266,
-    "clicks_google": 82
+    "clicks_google": 82,
+    "clicks_seznam": 0
   },
   {
     "date": "2026-01-15",
@@ -5408,8 +6238,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 4517.7,
     "cost_facebook": 3035.57,
     "cost_google": 1482.13,
+    "cost_seznam": 0,
     "clicks_facebook": 289,
-    "clicks_google": 88
+    "clicks_google": 88,
+    "clicks_seznam": 0
   },
   {
     "date": "2026-01-16",
@@ -5421,8 +6253,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 4323.31,
     "cost_facebook": 3024.38,
     "cost_google": 1298.93,
+    "cost_seznam": 0,
     "clicks_facebook": 304,
-    "clicks_google": 75
+    "clicks_google": 75,
+    "clicks_seznam": 0
   },
   {
     "date": "2026-01-17",
@@ -5434,8 +6268,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 3154.5,
     "cost_facebook": 1826.95,
     "cost_google": 1327.55,
+    "cost_seznam": 0,
     "clicks_facebook": 191,
-    "clicks_google": 72
+    "clicks_google": 72,
+    "clicks_seznam": 0
   },
   {
     "date": "2026-01-18",
@@ -5447,8 +6283,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 3922.84,
     "cost_facebook": 2590.98,
     "cost_google": 1331.86,
+    "cost_seznam": 0,
     "clicks_facebook": 248,
-    "clicks_google": 80
+    "clicks_google": 80,
+    "clicks_seznam": 0
   },
   {
     "date": "2026-01-19",
@@ -5460,8 +6298,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 3568.19,
     "cost_facebook": 2408.04,
     "cost_google": 1160.15,
+    "cost_seznam": 0,
     "clicks_facebook": 192,
-    "clicks_google": 69
+    "clicks_google": 69,
+    "clicks_seznam": 0
   },
   {
     "date": "2026-01-20",
@@ -5473,8 +6313,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 3657.08,
     "cost_facebook": 2234.07,
     "cost_google": 1423.01,
+    "cost_seznam": 0,
     "clicks_facebook": 139,
-    "clicks_google": 83
+    "clicks_google": 83,
+    "clicks_seznam": 0
   },
   {
     "date": "2026-01-21",
@@ -5486,8 +6328,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 3129.8,
     "cost_facebook": 2093.26,
     "cost_google": 1036.54,
+    "cost_seznam": 0,
     "clicks_facebook": 159,
-    "clicks_google": 67
+    "clicks_google": 67,
+    "clicks_seznam": 0
   },
   {
     "date": "2026-01-22",
@@ -5499,8 +6343,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 3285.45,
     "cost_facebook": 2475.68,
     "cost_google": 809.77,
+    "cost_seznam": 0,
     "clicks_facebook": 171,
-    "clicks_google": 49
+    "clicks_google": 49,
+    "clicks_seznam": 0
   },
   {
     "date": "2026-01-23",
@@ -5512,8 +6358,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 3160.99,
     "cost_facebook": 2025.73,
     "cost_google": 1135.26,
+    "cost_seznam": 0,
     "clicks_facebook": 123,
-    "clicks_google": 67
+    "clicks_google": 67,
+    "clicks_seznam": 0
   },
   {
     "date": "2026-01-24",
@@ -5525,8 +6373,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 3029.87,
     "cost_facebook": 2053.8,
     "cost_google": 976.07,
+    "cost_seznam": 0,
     "clicks_facebook": 213,
-    "clicks_google": 46
+    "clicks_google": 46,
+    "clicks_seznam": 0
   },
   {
     "date": "2026-01-25",
@@ -5538,8 +6388,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 3904.41,
     "cost_facebook": 3075.71,
     "cost_google": 828.7,
+    "cost_seznam": 0,
     "clicks_facebook": 288,
-    "clicks_google": 58
+    "clicks_google": 58,
+    "clicks_seznam": 0
   },
   {
     "date": "2026-01-26",
@@ -5551,8 +6403,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 2491.2,
     "cost_facebook": 1757.76,
     "cost_google": 733.44,
+    "cost_seznam": 0,
     "clicks_facebook": 134,
-    "clicks_google": 50
+    "clicks_google": 50,
+    "clicks_seznam": 0
   },
   {
     "date": "2026-01-27",
@@ -5564,8 +6418,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 2376.71,
     "cost_facebook": 1616.5,
     "cost_google": 760.21,
+    "cost_seznam": 0,
     "clicks_facebook": 114,
-    "clicks_google": 56
+    "clicks_google": 56,
+    "clicks_seznam": 0
   },
   {
     "date": "2026-01-28",
@@ -5577,8 +6433,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 2203.17,
     "cost_facebook": 1551.73,
     "cost_google": 651.44,
+    "cost_seznam": 0,
     "clicks_facebook": 128,
-    "clicks_google": 42
+    "clicks_google": 42,
+    "clicks_seznam": 0
   },
   {
     "date": "2026-01-29",
@@ -5590,8 +6448,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 2336.33,
     "cost_facebook": 1476.83,
     "cost_google": 859.5,
+    "cost_seznam": 0,
     "clicks_facebook": 95,
-    "clicks_google": 63
+    "clicks_google": 63,
+    "clicks_seznam": 0
   },
   {
     "date": "2026-01-30",
@@ -5603,8 +6463,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 2251.52,
     "cost_facebook": 1390.62,
     "cost_google": 860.9,
+    "cost_seznam": 0,
     "clicks_facebook": 110,
-    "clicks_google": 52
+    "clicks_google": 52,
+    "clicks_seznam": 0
   },
   {
     "date": "2026-01-31",
@@ -5616,8 +6478,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 2011.99,
     "cost_facebook": 1428.69,
     "cost_google": 583.3,
+    "cost_seznam": 0,
     "clicks_facebook": 109,
-    "clicks_google": 44
+    "clicks_google": 44,
+    "clicks_seznam": 0
   },
   {
     "date": "2026-02-01",
@@ -5629,8 +6493,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 2064.52,
     "cost_facebook": 1513.45,
     "cost_google": 551.07,
+    "cost_seznam": 0,
     "clicks_facebook": 124,
-    "clicks_google": 43
+    "clicks_google": 43,
+    "clicks_seznam": 0
   },
   {
     "date": "2026-02-02",
@@ -5642,8 +6508,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 2508.44,
     "cost_facebook": 1829.32,
     "cost_google": 679.12,
+    "cost_seznam": 0,
     "clicks_facebook": 130,
-    "clicks_google": 48
+    "clicks_google": 48,
+    "clicks_seznam": 0
   },
   {
     "date": "2026-02-03",
@@ -5655,8 +6523,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 2978.07,
     "cost_facebook": 2063.79,
     "cost_google": 914.28,
+    "cost_seznam": 0,
     "clicks_facebook": 141,
-    "clicks_google": 50
+    "clicks_google": 50,
+    "clicks_seznam": 0
   },
   {
     "date": "2026-02-04",
@@ -5668,8 +6538,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 2750.28,
     "cost_facebook": 1903.81,
     "cost_google": 846.47,
+    "cost_seznam": 0,
     "clicks_facebook": 113,
-    "clicks_google": 73
+    "clicks_google": 73,
+    "clicks_seznam": 0
   },
   {
     "date": "2026-02-05",
@@ -5681,8 +6553,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 3129.28,
     "cost_facebook": 2549.05,
     "cost_google": 580.23,
+    "cost_seznam": 0,
     "clicks_facebook": 157,
-    "clicks_google": 49
+    "clicks_google": 49,
+    "clicks_seznam": 0
   },
   {
     "date": "2026-02-06",
@@ -5694,8 +6568,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 3901.53,
     "cost_facebook": 2753.54,
     "cost_google": 1147.99,
+    "cost_seznam": 0,
     "clicks_facebook": 235,
-    "clicks_google": 55
+    "clicks_google": 55,
+    "clicks_seznam": 0
   },
   {
     "date": "2026-02-07",
@@ -5707,8 +6583,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 3325.91,
     "cost_facebook": 2467.94,
     "cost_google": 857.97,
+    "cost_seznam": 0,
     "clicks_facebook": 188,
-    "clicks_google": 62
+    "clicks_google": 62,
+    "clicks_seznam": 0
   },
   {
     "date": "2026-02-08",
@@ -5720,8 +6598,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 4324.48,
     "cost_facebook": 3635.78,
     "cost_google": 688.7,
+    "cost_seznam": 0,
     "clicks_facebook": 281,
-    "clicks_google": 50
+    "clicks_google": 50,
+    "clicks_seznam": 0
   },
   {
     "date": "2026-02-09",
@@ -5733,8 +6613,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 4686.4,
     "cost_facebook": 3515.3,
     "cost_google": 1171.1,
+    "cost_seznam": 0,
     "clicks_facebook": 257,
-    "clicks_google": 76
+    "clicks_google": 76,
+    "clicks_seznam": 0
   },
   {
     "date": "2026-02-10",
@@ -5746,8 +6628,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 5186.79,
     "cost_facebook": 3752.82,
     "cost_google": 1433.97,
+    "cost_seznam": 0,
     "clicks_facebook": 255,
-    "clicks_google": 83
+    "clicks_google": 83,
+    "clicks_seznam": 0
   },
   {
     "date": "2026-02-11",
@@ -5759,8 +6643,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 5294.01,
     "cost_facebook": 3710.25,
     "cost_google": 1583.76,
+    "cost_seznam": 0,
     "clicks_facebook": 258,
-    "clicks_google": 94
+    "clicks_google": 94,
+    "clicks_seznam": 0
   },
   {
     "date": "2026-02-12",
@@ -5772,8 +6658,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 3887.66,
     "cost_facebook": 2873.99,
     "cost_google": 1013.67,
+    "cost_seznam": 0,
     "clicks_facebook": 208,
-    "clicks_google": 83
+    "clicks_google": 83,
+    "clicks_seznam": 0
   },
   {
     "date": "2026-02-13",
@@ -5785,8 +6673,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 2941.41,
     "cost_facebook": 2174.07,
     "cost_google": 767.34,
+    "cost_seznam": 0,
     "clicks_facebook": 133,
-    "clicks_google": 59
+    "clicks_google": 59,
+    "clicks_seznam": 0
   },
   {
     "date": "2026-02-14",
@@ -5798,8 +6688,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 2865.43,
     "cost_facebook": 2007.55,
     "cost_google": 857.88,
+    "cost_seznam": 0,
     "clicks_facebook": 152,
-    "clicks_google": 54
+    "clicks_google": 54,
+    "clicks_seznam": 0
   },
   {
     "date": "2026-02-15",
@@ -5811,8 +6703,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 3122.38,
     "cost_facebook": 2363.08,
     "cost_google": 759.3,
+    "cost_seznam": 0,
     "clicks_facebook": 176,
-    "clicks_google": 37
+    "clicks_google": 37,
+    "clicks_seznam": 0
   },
   {
     "date": "2026-02-16",
@@ -5824,8 +6718,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 3259.06,
     "cost_facebook": 2381.77,
     "cost_google": 877.29,
+    "cost_seznam": 0,
     "clicks_facebook": 171,
-    "clicks_google": 50
+    "clicks_google": 50,
+    "clicks_seznam": 0
   },
   {
     "date": "2026-02-17",
@@ -5837,8 +6733,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 2848.73,
     "cost_facebook": 2126.03,
     "cost_google": 722.7,
+    "cost_seznam": 0,
     "clicks_facebook": 150,
-    "clicks_google": 46
+    "clicks_google": 46,
+    "clicks_seznam": 0
   },
   {
     "date": "2026-02-18",
@@ -5850,8 +6748,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 2770.25,
     "cost_facebook": 1917.76,
     "cost_google": 852.49,
+    "cost_seznam": 0,
     "clicks_facebook": 137,
-    "clicks_google": 51
+    "clicks_google": 51,
+    "clicks_seznam": 0
   },
   {
     "date": "2026-02-19",
@@ -5863,8 +6763,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 2650.87,
     "cost_facebook": 1888.56,
     "cost_google": 762.31,
+    "cost_seznam": 0,
     "clicks_facebook": 119,
-    "clicks_google": 52
+    "clicks_google": 52,
+    "clicks_seznam": 0
   },
   {
     "date": "2026-02-20",
@@ -5876,8 +6778,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 3154.27,
     "cost_facebook": 2063.1,
     "cost_google": 1091.17,
+    "cost_seznam": 0,
     "clicks_facebook": 175,
-    "clicks_google": 59
+    "clicks_google": 59,
+    "clicks_seznam": 0
   },
   {
     "date": "2026-02-21",
@@ -5889,8 +6793,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 2115.09,
     "cost_facebook": 1466.38,
     "cost_google": 648.71,
+    "cost_seznam": 0,
     "clicks_facebook": 118,
-    "clicks_google": 43
+    "clicks_google": 43,
+    "clicks_seznam": 0
   },
   {
     "date": "2026-02-22",
@@ -5902,8 +6808,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 2459.47,
     "cost_facebook": 1874.83,
     "cost_google": 584.64,
+    "cost_seznam": 0,
     "clicks_facebook": 175,
-    "clicks_google": 41
+    "clicks_google": 41,
+    "clicks_seznam": 0
   },
   {
     "date": "2026-02-23",
@@ -5915,8 +6823,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 3541.62,
     "cost_facebook": 2619.96,
     "cost_google": 921.66,
+    "cost_seznam": 0,
     "clicks_facebook": 177,
-    "clicks_google": 52
+    "clicks_google": 52,
+    "clicks_seznam": 0
   },
   {
     "date": "2026-02-24",
@@ -5928,8 +6838,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 3719.36,
     "cost_facebook": 2948.42,
     "cost_google": 770.94,
+    "cost_seznam": 0,
     "clicks_facebook": 190,
-    "clicks_google": 56
+    "clicks_google": 56,
+    "clicks_seznam": 0
   },
   {
     "date": "2026-02-25",
@@ -5941,8 +6853,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 3527.21,
     "cost_facebook": 2551.63,
     "cost_google": 975.58,
+    "cost_seznam": 0,
     "clicks_facebook": 169,
-    "clicks_google": 46
+    "clicks_google": 46,
+    "clicks_seznam": 0
   },
   {
     "date": "2026-02-26",
@@ -5954,8 +6868,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 3191.27,
     "cost_facebook": 2561.93,
     "cost_google": 629.34,
+    "cost_seznam": 0,
     "clicks_facebook": 191,
-    "clicks_google": 54
+    "clicks_google": 54,
+    "clicks_seznam": 0
   },
   {
     "date": "2026-02-27",
@@ -5967,8 +6883,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 2614.97,
     "cost_facebook": 1999.41,
     "cost_google": 615.56,
+    "cost_seznam": 0,
     "clicks_facebook": 119,
-    "clicks_google": 32
+    "clicks_google": 32,
+    "clicks_seznam": 0
   },
   {
     "date": "2026-02-28",
@@ -5980,8 +6898,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 2126.96,
     "cost_facebook": 1525.43,
     "cost_google": 601.53,
+    "cost_seznam": 0,
     "clicks_facebook": 113,
-    "clicks_google": 37
+    "clicks_google": 37,
+    "clicks_seznam": 0
   },
   {
     "date": "2026-03-01",
@@ -5993,8 +6913,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 2791,
     "cost_facebook": 1993.32,
     "cost_google": 797.68,
+    "cost_seznam": 0,
     "clicks_facebook": 124,
-    "clicks_google": 56
+    "clicks_google": 56,
+    "clicks_seznam": 0
   },
   {
     "date": "2026-03-02",
@@ -6006,8 +6928,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 2377.24,
     "cost_facebook": 1681.12,
     "cost_google": 696.12,
+    "cost_seznam": 0,
     "clicks_facebook": 117,
-    "clicks_google": 41
+    "clicks_google": 41,
+    "clicks_seznam": 0
   },
   {
     "date": "2026-03-03",
@@ -6019,8 +6943,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 2385.8,
     "cost_facebook": 1664.13,
     "cost_google": 721.67,
+    "cost_seznam": 0,
     "clicks_facebook": 118,
-    "clicks_google": 60
+    "clicks_google": 60,
+    "clicks_seznam": 0
   },
   {
     "date": "2026-03-04",
@@ -6032,8 +6958,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 2200.82,
     "cost_facebook": 1519.26,
     "cost_google": 681.56,
+    "cost_seznam": 0,
     "clicks_facebook": 109,
-    "clicks_google": 50
+    "clicks_google": 50,
+    "clicks_seznam": 0
   },
   {
     "date": "2026-03-05",
@@ -6045,8 +6973,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 1866.4,
     "cost_facebook": 1227.52,
     "cost_google": 638.88,
+    "cost_seznam": 0,
     "clicks_facebook": 106,
-    "clicks_google": 44
+    "clicks_google": 44,
+    "clicks_seznam": 0
   },
   {
     "date": "2026-03-06",
@@ -6058,8 +6988,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 1475.31,
     "cost_facebook": 1089.86,
     "cost_google": 385.45,
+    "cost_seznam": 0,
     "clicks_facebook": 107,
-    "clicks_google": 32
+    "clicks_google": 32,
+    "clicks_seznam": 0
   },
   {
     "date": "2026-03-07",
@@ -6071,8 +7003,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 1815.41,
     "cost_facebook": 1083.89,
     "cost_google": 731.52,
+    "cost_seznam": 0,
     "clicks_facebook": 114,
-    "clicks_google": 104
+    "clicks_google": 104,
+    "clicks_seznam": 0
   },
   {
     "date": "2026-03-08",
@@ -6084,8 +7018,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 3623.44,
     "cost_facebook": 2864.35,
     "cost_google": 759.09,
+    "cost_seznam": 0,
     "clicks_facebook": 181,
-    "clicks_google": 57
+    "clicks_google": 57,
+    "clicks_seznam": 0
   },
   {
     "date": "2026-03-09",
@@ -6097,8 +7033,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 2027.14,
     "cost_facebook": 1259.57,
     "cost_google": 767.57,
+    "cost_seznam": 0,
     "clicks_facebook": 69,
-    "clicks_google": 49
+    "clicks_google": 49,
+    "clicks_seznam": 0
   },
   {
     "date": "2026-03-10",
@@ -6110,8 +7048,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 2298.81,
     "cost_facebook": 1270.68,
     "cost_google": 1028.13,
+    "cost_seznam": 0,
     "clicks_facebook": 67,
-    "clicks_google": 99
+    "clicks_google": 99,
+    "clicks_seznam": 0
   },
   {
     "date": "2026-03-11",
@@ -6123,8 +7063,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 1837.49,
     "cost_facebook": 1150.63,
     "cost_google": 686.86,
+    "cost_seznam": 0,
     "clicks_facebook": 62,
-    "clicks_google": 56
+    "clicks_google": 56,
+    "clicks_seznam": 0
   },
   {
     "date": "2026-03-12",
@@ -6136,8 +7078,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 2058.64,
     "cost_facebook": 1116.16,
     "cost_google": 942.48,
+    "cost_seznam": 0,
     "clicks_facebook": 83,
-    "clicks_google": 87
+    "clicks_google": 87,
+    "clicks_seznam": 0
   },
   {
     "date": "2026-03-13",
@@ -6149,8 +7093,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 2033.88,
     "cost_facebook": 1221.26,
     "cost_google": 812.62,
+    "cost_seznam": 0,
     "clicks_facebook": 69,
-    "clicks_google": 92
+    "clicks_google": 92,
+    "clicks_seznam": 0
   },
   {
     "date": "2026-03-14",
@@ -6162,8 +7108,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 1869.99,
     "cost_facebook": 1359.7,
     "cost_google": 510.29,
+    "cost_seznam": 0,
     "clicks_facebook": 89,
-    "clicks_google": 30
+    "clicks_google": 30,
+    "clicks_seznam": 0
   },
   {
     "date": "2026-03-15",
@@ -6175,8 +7123,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 2883.64,
     "cost_facebook": 2194.57,
     "cost_google": 689.07,
+    "cost_seznam": 0,
     "clicks_facebook": 197,
-    "clicks_google": 52
+    "clicks_google": 52,
+    "clicks_seznam": 0
   },
   {
     "date": "2026-03-16",
@@ -6188,8 +7138,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 3215.32,
     "cost_facebook": 2601.23,
     "cost_google": 614.09,
+    "cost_seznam": 0,
     "clicks_facebook": 220,
-    "clicks_google": 57
+    "clicks_google": 57,
+    "clicks_seznam": 0
   },
   {
     "date": "2026-03-17",
@@ -6201,8 +7153,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 3460.29,
     "cost_facebook": 2431.62,
     "cost_google": 1028.67,
+    "cost_seznam": 0,
     "clicks_facebook": 162,
-    "clicks_google": 78
+    "clicks_google": 78,
+    "clicks_seznam": 0
   },
   {
     "date": "2026-03-18",
@@ -6214,8 +7168,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 2991.96,
     "cost_facebook": 2159.14,
     "cost_google": 832.82,
+    "cost_seznam": 0,
     "clicks_facebook": 122,
-    "clicks_google": 64
+    "clicks_google": 64,
+    "clicks_seznam": 0
   },
   {
     "date": "2026-03-19",
@@ -6227,8 +7183,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 2956.29,
     "cost_facebook": 2316.17,
     "cost_google": 640.12,
+    "cost_seznam": 0,
     "clicks_facebook": 106,
-    "clicks_google": 42
+    "clicks_google": 42,
+    "clicks_seznam": 0
   },
   {
     "date": "2026-03-20",
@@ -6240,8 +7198,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 3000.63,
     "cost_facebook": 2289.64,
     "cost_google": 710.99,
+    "cost_seznam": 0,
     "clicks_facebook": 140,
-    "clicks_google": 92
+    "clicks_google": 92,
+    "clicks_seznam": 0
   },
   {
     "date": "2026-03-21",
@@ -6253,8 +7213,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 3477.91,
     "cost_facebook": 2252.48,
     "cost_google": 1225.43,
+    "cost_seznam": 0,
     "clicks_facebook": 150,
-    "clicks_google": 136
+    "clicks_google": 136,
+    "clicks_seznam": 0
   },
   {
     "date": "2026-03-22",
@@ -6266,8 +7228,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 2881.27,
     "cost_facebook": 2358.66,
     "cost_google": 522.61,
+    "cost_seznam": 0,
     "clicks_facebook": 150,
-    "clicks_google": 37
+    "clicks_google": 37,
+    "clicks_seznam": 0
   },
   {
     "date": "2026-03-23",
@@ -6279,8 +7243,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 3117.02,
     "cost_facebook": 2247.8,
     "cost_google": 869.22,
+    "cost_seznam": 0,
     "clicks_facebook": 156,
-    "clicks_google": 30
+    "clicks_google": 30,
+    "clicks_seznam": 0
   },
   {
     "date": "2026-03-24",
@@ -6292,8 +7258,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 2752.96,
     "cost_facebook": 2245.57,
     "cost_google": 507.39,
+    "cost_seznam": 0,
     "clicks_facebook": 132,
-    "clicks_google": 51
+    "clicks_google": 51,
+    "clicks_seznam": 0
   },
   {
     "date": "2026-03-25",
@@ -6305,8 +7273,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 3276.92,
     "cost_facebook": 2443.15,
     "cost_google": 833.77,
+    "cost_seznam": 0,
     "clicks_facebook": 182,
-    "clicks_google": 69
+    "clicks_google": 69,
+    "clicks_seznam": 0
   },
   {
     "date": "2026-03-26",
@@ -6318,8 +7288,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 2992.75,
     "cost_facebook": 2218.17,
     "cost_google": 774.58,
+    "cost_seznam": 0,
     "clicks_facebook": 144,
-    "clicks_google": 89
+    "clicks_google": 89,
+    "clicks_seznam": 0
   },
   {
     "date": "2026-03-27",
@@ -6331,8 +7303,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 2757.54,
     "cost_facebook": 1942.26,
     "cost_google": 815.28,
+    "cost_seznam": 0,
     "clicks_facebook": 141,
-    "clicks_google": 56
+    "clicks_google": 56,
+    "clicks_seznam": 0
   },
   {
     "date": "2026-03-28",
@@ -6344,8 +7318,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 2779.74,
     "cost_facebook": 2014.7,
     "cost_google": 765.04,
+    "cost_seznam": 0,
     "clicks_facebook": 158,
-    "clicks_google": 56
+    "clicks_google": 56,
+    "clicks_seznam": 0
   },
   {
     "date": "2026-03-29",
@@ -6357,8 +7333,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 3631.04,
     "cost_facebook": 2680.54,
     "cost_google": 950.5,
+    "cost_seznam": 0,
     "clicks_facebook": 168,
-    "clicks_google": 75
+    "clicks_google": 75,
+    "clicks_seznam": 0
   },
   {
     "date": "2026-03-30",
@@ -6370,8 +7348,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 3609.49,
     "cost_facebook": 3002.31,
     "cost_google": 607.18,
+    "cost_seznam": 0,
     "clicks_facebook": 241,
-    "clicks_google": 76
+    "clicks_google": 76,
+    "clicks_seznam": 0
   },
   {
     "date": "2026-03-31",
@@ -6383,8 +7363,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 3571.54,
     "cost_facebook": 2796.86,
     "cost_google": 774.68,
+    "cost_seznam": 0,
     "clicks_facebook": 158,
-    "clicks_google": 73
+    "clicks_google": 73,
+    "clicks_seznam": 0
   },
   {
     "date": "2026-04-01",
@@ -6396,8 +7378,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 2443.25,
     "cost_facebook": 2076.48,
     "cost_google": 366.77,
+    "cost_seznam": 0,
     "clicks_facebook": 101,
-    "clicks_google": 38
+    "clicks_google": 38,
+    "clicks_seznam": 0
   },
   {
     "date": "2026-04-02",
@@ -6409,8 +7393,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 1892.22,
     "cost_facebook": 1512.99,
     "cost_google": 379.23,
+    "cost_seznam": 0,
     "clicks_facebook": 75,
-    "clicks_google": 39
+    "clicks_google": 39,
+    "clicks_seznam": 0
   },
   {
     "date": "2026-04-03",
@@ -6422,8 +7408,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 1539.02,
     "cost_facebook": 993.24,
     "cost_google": 391.66,
+    "cost_seznam": 154.12,
     "clicks_facebook": 79,
-    "clicks_google": 38
+    "clicks_google": 38,
+    "clicks_seznam": 54
   },
   {
     "date": "2026-04-04",
@@ -6435,8 +7423,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 1427.31,
     "cost_facebook": 972.88,
     "cost_google": 317.06,
+    "cost_seznam": 137.37,
     "clicks_facebook": 59,
-    "clicks_google": 37
+    "clicks_google": 37,
+    "clicks_seznam": 49
   },
   {
     "date": "2026-04-05",
@@ -6448,8 +7438,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 1864.81,
     "cost_facebook": 1253.25,
     "cost_google": 488.35,
+    "cost_seznam": 123.21,
     "clicks_facebook": 71,
-    "clicks_google": 48
+    "clicks_google": 48,
+    "clicks_seznam": 47
   },
   {
     "date": "2026-04-06",
@@ -6461,8 +7453,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 2169.19,
     "cost_facebook": 1393.39,
     "cost_google": 622.79,
+    "cost_seznam": 153.01,
     "clicks_facebook": 100,
-    "clicks_google": 39
+    "clicks_google": 39,
+    "clicks_seznam": 52
   },
   {
     "date": "2026-04-07",
@@ -6474,8 +7468,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 2260.65,
     "cost_facebook": 1535.55,
     "cost_google": 698.55,
+    "cost_seznam": 26.55,
     "clicks_facebook": 82,
-    "clicks_google": 42
+    "clicks_google": 42,
+    "clicks_seznam": 9
   },
   {
     "date": "2026-04-08",
@@ -6487,8 +7483,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 2142.24,
     "cost_facebook": 1457.4,
     "cost_google": 662.87,
+    "cost_seznam": 21.97,
     "clicks_facebook": 76,
-    "clicks_google": 34
+    "clicks_google": 34,
+    "clicks_seznam": 5
   },
   {
     "date": "2026-04-09",
@@ -6500,8 +7498,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 2050.58,
     "cost_facebook": 1418.67,
     "cost_google": 608.81,
+    "cost_seznam": 23.1,
     "clicks_facebook": 81,
-    "clicks_google": 34
+    "clicks_google": 34,
+    "clicks_seznam": 6
   },
   {
     "date": "2026-04-10",
@@ -6513,8 +7513,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 1588.9,
     "cost_facebook": 1112.45,
     "cost_google": 443.87,
+    "cost_seznam": 32.58,
     "clicks_facebook": 65,
-    "clicks_google": 43
+    "clicks_google": 43,
+    "clicks_seznam": 9
   },
   {
     "date": "2026-04-11",
@@ -6526,8 +7528,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 1184.33,
     "cost_facebook": 758.83,
     "cost_google": 401.26,
+    "cost_seznam": 24.24,
     "clicks_facebook": 44,
-    "clicks_google": 69
+    "clicks_google": 69,
+    "clicks_seznam": 8
   },
   {
     "date": "2026-04-12",
@@ -6539,8 +7543,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 1724.68,
     "cost_facebook": 1121.72,
     "cost_google": 532.49,
+    "cost_seznam": 70.47,
     "clicks_facebook": 78,
-    "clicks_google": 120
+    "clicks_google": 120,
+    "clicks_seznam": 14
   },
   {
     "date": "2026-04-13",
@@ -6552,8 +7558,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 1701.65,
     "cost_facebook": 1005.49,
     "cost_google": 656.38,
+    "cost_seznam": 39.78,
     "clicks_facebook": 54,
-    "clicks_google": 74
+    "clicks_google": 74,
+    "clicks_seznam": 8
   },
   {
     "date": "2026-04-14",
@@ -6565,8 +7573,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 1528.34,
     "cost_facebook": 1006.13,
     "cost_google": 492.8,
+    "cost_seznam": 29.41,
     "clicks_facebook": 52,
-    "clicks_google": 39
+    "clicks_google": 39,
+    "clicks_seznam": 8
   },
   {
     "date": "2026-04-15",
@@ -6578,8 +7588,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 1433.61,
     "cost_facebook": 967.69,
     "cost_google": 435.32,
+    "cost_seznam": 30.6,
     "clicks_facebook": 41,
-    "clicks_google": 61
+    "clicks_google": 61,
+    "clicks_seznam": 6
   },
   {
     "date": "2026-04-16",
@@ -6591,8 +7603,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 1620.82,
     "cost_facebook": 1302.73,
     "cost_google": 271.16,
+    "cost_seznam": 46.93,
     "clicks_facebook": 80,
-    "clicks_google": 44
+    "clicks_google": 44,
+    "clicks_seznam": 10
   },
   {
     "date": "2026-04-17",
@@ -6604,8 +7618,10 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 1538.42,
     "cost_facebook": 1038.86,
     "cost_google": 476.43,
+    "cost_seznam": 23.13,
     "clicks_facebook": 51,
-    "clicks_google": 42
+    "clicks_google": 42,
+    "clicks_seznam": 8
   },
   {
     "date": "2026-04-18",
@@ -6617,7 +7633,9 @@ export const realDataCZ: RealDailyRecord[] = [
     "cost": 211.99,
     "cost_facebook": 36.82,
     "cost_google": 175.17,
+    "cost_seznam": 0,
     "clicks_facebook": 0,
-    "clicks_google": 4
+    "clicks_google": 4,
+    "clicks_seznam": 0
   }
 ];
