@@ -20,6 +20,7 @@ interface DailyRow {
   conversions: number;
   bounceRate: number;
   avgDuration: number;
+  sessionCvr: number;
 }
 
 interface AggrRow {
@@ -28,6 +29,7 @@ interface AggrRow {
   conversions: number;
   bounceRate: number;
   avgDuration: number;
+  sessionCvr: number;
 }
 
 interface SourceRow {
@@ -170,18 +172,18 @@ export default function AnalyticsPage() {
   const cur  = data?.totals.current;
   const prev = data?.totals.previous;
 
-  const curCvr  = cur  ? cvr(cur.conversions,  cur.sessions)  : 0;
-  const prevCvr = prev ? cvr(prev.conversions, prev.sessions) : 0;
+  const curCvr  = cur?.sessionCvr  ?? 0;
+  const prevCvr = prev?.sessionCvr ?? 0;
 
   const chartData = data?.daily.map((r, i) => ({
     ...r,
     dateLabel: fmtDate(r.date),
-    cvr:              cvr(r.conversions, r.sessions),
+    cvr:              r.sessionCvr,
     sessions_prev:    data.dailyPrev[i]?.sessions,
     users_prev:       data.dailyPrev[i]?.users,
     bounceRate_prev:  data.dailyPrev[i]?.bounceRate,
     avgDuration_prev: data.dailyPrev[i]?.avgDuration,
-    cvr_prev:         data.dailyPrev[i] ? cvr(data.dailyPrev[i].conversions, data.dailyPrev[i].sessions) : undefined,
+    cvr_prev:         data.dailyPrev[i]?.sessionCvr,
   })) ?? [];
 
   const totalDeviceSessions = data?.devices.reduce((s, d) => s + d.sessions, 0) ?? 1;

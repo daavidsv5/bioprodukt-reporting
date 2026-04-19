@@ -71832,6 +71832,13 @@ export const productDataCZ: ProductSaleRecord[] = [
   },
   {
     "date": "2026-01-20",
+    "name": "MIX krížovky x hrušky 100g - české ovocie",
+    "amount": 1,
+    "revenue_vat": 63.2,
+    "revenue": 56.43
+  },
+  {
+    "date": "2026-01-20",
     "name": "MIX křížaly x hrušky 100g - české ovoce",
     "amount": 1,
     "revenue_vat": 79,
@@ -71843,13 +71850,6 @@ export const productDataCZ: ProductSaleRecord[] = [
     "amount": 1,
     "revenue_vat": 27.2,
     "revenue": 24.29
-  },
-  {
-    "date": "2026-01-20",
-    "name": "MIX krížovky x hrušky 100g - české ovocie",
-    "amount": 1,
-    "revenue_vat": 63.2,
-    "revenue": 56.43
   },
   {
     "date": "2026-01-20",

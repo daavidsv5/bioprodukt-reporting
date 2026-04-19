@@ -42,6 +42,7 @@ export async function GET(req: NextRequest) {
         { name: 'conversions' },
         { name: 'bounceRate' },
         { name: 'averageSessionDuration' },
+        { name: 'sessionConversionRate' },
       ],
       orderBys: [{ dimension: { dimensionName: 'date' } }],
     });
@@ -59,6 +60,7 @@ export async function GET(req: NextRequest) {
         { name: 'conversions' },
         { name: 'bounceRate' },
         { name: 'averageSessionDuration' },
+        { name: 'sessionConversionRate' },
       ],
     });
 
@@ -91,6 +93,7 @@ export async function GET(req: NextRequest) {
         { name: 'conversions' },
         { name: 'bounceRate' },
         { name: 'averageSessionDuration' },
+        { name: 'sessionConversionRate' },
       ],
       orderBys: [{ dimension: { dimensionName: 'date' } }],
     });
@@ -159,18 +162,20 @@ export async function GET(req: NextRequest) {
       conversions: Number(row.metricValues?.[2].value ?? 0),
       bounceRate:  Math.round(Number(row.metricValues?.[3].value ?? 0) * 100),
       avgDuration: Math.round(Number(row.metricValues?.[4].value ?? 0)),
+      sessionCvr:  Math.round(Number(row.metricValues?.[5].value ?? 0) * 10000) / 100,
     })) ?? [];
 
     // Parse aggregate rows — GA4 returns one row per dateRange when no dimensions
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const parseAgg = (row: any) => {
-      if (!row) return { sessions: 0, users: 0, conversions: 0, bounceRate: 0, avgDuration: 0 };
+      if (!row) return { sessions: 0, users: 0, conversions: 0, bounceRate: 0, avgDuration: 0, sessionCvr: 0 };
       return {
         sessions:    Number(row.metricValues?.[0]?.value ?? 0),
         users:       Number(row.metricValues?.[1]?.value ?? 0),
         conversions: Number(row.metricValues?.[2]?.value ?? 0),
         bounceRate:  Math.round(Number(row.metricValues?.[3]?.value ?? 0) * 100),
         avgDuration: Math.round(Number(row.metricValues?.[4]?.value ?? 0)),
+        sessionCvr:  Math.round(Number(row.metricValues?.[5]?.value ?? 0) * 10000) / 100,
       };
     };
 
@@ -212,6 +217,7 @@ export async function GET(req: NextRequest) {
       conversions: Number(row.metricValues?.[2].value ?? 0),
       bounceRate:  Math.round(Number(row.metricValues?.[3].value ?? 0) * 100),
       avgDuration: Math.round(Number(row.metricValues?.[4].value ?? 0)),
+      sessionCvr:  Math.round(Number(row.metricValues?.[5].value ?? 0) * 10000) / 100,
     })) ?? [];
 
     const landingPages = landingRes.rows?.map(row => ({
