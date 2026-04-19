@@ -39,7 +39,7 @@ app/(dashboard|orders|marketing|products|margin|analytics|behavior|crosssell|ret
 
 | Stránka | Popis |
 |---------|-------|
-| `/dashboard` | **Klíčové ukazatele (KPI)** — 13 metrik vč. marže a hrubého zisku; grafy: Tržby bez DPH, Náklady/PNO, AOV (YoY), Cena za objednávku (YoY); DailyTable |
+| `/dashboard` | **Klíčové ukazatele (KPI)** — 13 metrik vč. marže a hrubého zisku; 6 spojnicových grafů: Tržby bez DPH, Počet objednávek, Náklady, PNO %, AOV, CPA (všechny YoY); DailyTable |
 | `/orders` | Objednávky — tržby vs počet, distribuce hodnot košíku (histogram), rozložení CZ/SK |
 | `/marketing` | Marketingové investice — CPC per channel (FB/Google), trend kliky+CPC |
 | `/products` | Prodejnost produktů — ABC analýza (A/B/C segmenty), sortovatelná tabulka, YoY, CSV export |
@@ -109,6 +109,28 @@ Marže a Hrubý zisk se počítají z `marginDataCZ` / `marginDataSK`:
 - `grossPct = grossProfit / marginRev × 100`
 
 Karta **Hrubý zisk** a **Hrubý zisk %** mají `variant='green'`.
+
+### `/dashboard` — Grafy
+
+6 spojnicových grafů (LineChart, YoY přerušovaná čára), rozložení 2×3 grid (`xl:grid-cols-2`):
+- **Řada 1**: Tržby bez DPH (`RevenueOrdersChart`) + Počet objednávek
+- **Řada 2**: Náklady + PNO %
+- **Řada 3**: AOV + CPA
+
+`CostPnoChart` component je zachován pro `/marketing` stránku (používá ComposedChart s bary+liniemi).
+
+### `/dashboard` — Distribuce podle země (`CountryDistribution`)
+
+Zobrazuje se pouze při výběru obou zemí (`filters.countries.length > 1`).
+
+**Tabulka** (10 sloupců): Země, Objednávky, Tržby bez DPH, Tržby s DPH, Náklady, PNO, CPA, Marže, Hrubý zisk, Hrubý zisk %
+
+- **Všechny hodnoty v Kč** — SK data (nativně EUR) se přepočítávají live kurzem `eurToCzk` z frankfurter.app
+- **YoY srovnání** pod každou hodnotou (zelená/červená %) — zobrazuje se pouze pokud `hasPrevData`
+- **Marže, Hrubý zisk, Hrubý zisk %** — počítají se z `marginCurrent`/`marginPrev` props (per-country, nativní měna → konverze)
+- Props: `data`, `prevData`, `hasPrevData`, `eurToCzk`, `marginCurrent`, `marginPrev`
+- `marginCurrent`/`marginPrev` jsou `Partial<Record<Country, CountryMargin>>` kde `CountryMargin = { purchaseCost, marginRev }` v nativní měně
+- Dashboard předává per-country margin z rozšířeného `marginTotals` useMemo (vrací `perCountryCur`, `perCountryPrev`)
 
 ### `/shipping` — Doprava a platby
 

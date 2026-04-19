@@ -4,13 +4,13 @@ import { useFilters, getDateRange } from '@/hooks/useFilters';
 import { useDashboardData } from '@/hooks/useDashboardData';
 import { mockData, getMarketingSourceData, getDailyMarketingData } from '@/data/mockGenerator';
 import KpiCard from '@/components/kpi/KpiCard';
-import CostPnoChart from '@/components/charts/CostPnoChart';
 import { formatCurrency, formatPercent, formatNumber, formatDate, formatShortDate } from '@/lib/formatters';
 import { TrendingUp as TrendingUpIcon, TrendingUp, TrendingDown, Percent, Tag, Banknote, Share2, Search, List } from 'lucide-react';
 import {
-  ComposedChart, Bar, Line, XAxis, YAxis, CartesianGrid, Tooltip,
-  Legend, ResponsiveContainer,
+  Bar, Line, XAxis, YAxis, CartesianGrid, Tooltip,
+  Legend, ResponsiveContainer, ComposedChart, LineChart,
 } from 'recharts';
+import CostPnoChart from '@/components/charts/CostPnoChart';
 import { C } from '@/lib/chartColors';
 
 function yoyPct(curr: number, prev: number): number | null {
@@ -61,6 +61,11 @@ export default function MarketingPage() {
 
   // Daily marketing data — base for table + trend charts
   const { start: sDaily, end: eDaily } = getDateRange(filters);
+
+  // Previous year bounds — defined early so they can be used below
+  const prevStart = new Date(sDaily); prevStart.setFullYear(prevStart.getFullYear() - 1);
+  const prevEnd   = new Date(eDaily); prevEnd.setFullYear(prevEnd.getFullYear() - 1);
+
   const allDailyMarketing = getDailyMarketingData(
     sDaily.toISOString().split('T')[0],
     eDaily.toISOString().split('T')[0],
@@ -77,17 +82,30 @@ export default function MarketingPage() {
   }));
 
   // Ascending for trend charts
-  const marketingChartData = [...allDailyMarketing].reverse().map(r => ({
-    date: r.date,
-    clicks_fb: r.clicks_facebook,
-    clicks_g:  r.clicks_google,
-    clicks_sz: r.clicks_seznam,
-    clicks_hk: r.clicks_heureka,
-    cpc_fb: r.clicks_facebook > 0 ? Math.round(r.cost_facebook / r.clicks_facebook * 100) / 100 : null,
-    cpc_g:  r.clicks_google   > 0 ? Math.round(r.cost_google   / r.clicks_google   * 100) / 100 : null,
-    cpc_sz: r.clicks_seznam   > 0 ? Math.round(r.cost_seznam   / r.clicks_seznam   * 100) / 100 : null,
-    cpc_hk: r.clicks_heureka  > 0 ? Math.round(r.cost_heureka  / r.clicks_heureka  * 100) / 100 : null,
-  }));
+  const marketingAsc = [...allDailyMarketing].reverse();
+
+  // Prev year CPC data (aligned by index)
+  const prevMarketingData = hasPrevData ? getDailyMarketingData(
+    prevStart.toISOString().split('T')[0],
+    prevEnd.toISOString().split('T')[0],
+    filters.countries,
+    eurToCzk
+  ).reverse() : [];
+
+  const cpc = (cost: number, clicks: number) => clicks > 0 ? Math.round(cost / clicks * 100) / 100 : null;
+
+  const marketingChartData = marketingAsc.map((r, i) => {
+    const p = prevMarketingData[i];
+    return {
+      date: r.date,
+      cpc_fb: cpc(r.cost_facebook, r.clicks_facebook),
+      cpc_g:  cpc(r.cost_google,   r.clicks_google),
+      cpc_sz: cpc(r.cost_seznam,   r.clicks_seznam),
+      cpc_hk: cpc(r.cost_heureka,  r.clicks_heureka),
+      cpc_fb_prev: p ? cpc(p.cost_facebook, p.clicks_facebook) : null,
+      cpc_g_prev:  p ? cpc(p.cost_google,   p.clicks_google)   : null,
+    };
+  });
 
   // Source breakdown — use real data with date range + country context
   const sourceData = getMarketingSourceData(
@@ -106,10 +124,6 @@ export default function MarketingPage() {
   const gCpc   = gg.clicks > 0 ? gg.cost / gg.clicks : 0;
   const szCpc  = sz.clicks > 0 ? sz.cost / sz.clicks : 0;
   const hkCpc  = hk.clicks > 0 ? hk.cost / hk.clicks : 0;
-
-  // Previous year channel data for YoY
-  const prevStart = new Date(sDaily); prevStart.setFullYear(prevStart.getFullYear() - 1);
-  const prevEnd   = new Date(eDaily); prevEnd.setFullYear(prevEnd.getFullYear() - 1);
   const prevSourceData = hasPrevData ? getMarketingSourceData(
     prevStart.toISOString().split('T')[0],
     prevEnd.toISOString().split('T')[0],
@@ -266,43 +280,23 @@ export default function MarketingPage() {
           )}
         </div>
 
-        {/* CPC + clicks trend */}
+        {/* CPC trend — pure line chart with YoY */}
         <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-5">
-          <h3 className="text-sm font-semibold text-gray-800 mb-4">CPC a kliky v čase</h3>
+          <h3 className="text-sm font-semibold text-gray-800 mb-4">CPC v čase – meziroční srovnání</h3>
           <ResponsiveContainer width="100%" height={260}>
-            <ComposedChart data={marketingChartData} margin={{ top: 5, right: 20, left: 10, bottom: 5 }}>
+            <LineChart data={marketingChartData} margin={{ top: 5, right: 20, left: 10, bottom: 5 }}>
               <CartesianGrid strokeDasharray="3 3" stroke="#f0f0f0" />
-              <XAxis
-                dataKey="date"
-                tickFormatter={formatShortDate}
-                tick={{ fontSize: 11, fill: '#9ca3af' }}
-                interval="preserveStartEnd"
-              />
-              <YAxis yAxisId="left" tick={{ fontSize: 11, fill: '#9ca3af' }} width={45} />
-              <YAxis
-                yAxisId="right"
-                orientation="right"
-                tickFormatter={v => `${v} ${sym}`}
-                tick={{ fontSize: 11, fill: '#9ca3af' }}
-                width={65}
-              />
-              <Tooltip
-                // eslint-disable-next-line @typescript-eslint/no-explicit-any
-                formatter={(value: any, name: any) => {
-                  if (name === 'FB kliky' || name === 'Google kliky') return [formatNumber(Number(value)), String(name)];
-                  return [`${Number(value).toFixed(2)} ${sym}`, String(name)];
-                }}
-              />
+              <XAxis dataKey="date" tickFormatter={formatShortDate} tick={{ fontSize: 11, fill: '#9ca3af' }} interval="preserveStartEnd" />
+              <YAxis tickFormatter={v => `${v} ${sym}`} tick={{ fontSize: 11, fill: '#9ca3af' }} width={65} />
+              <Tooltip formatter={(v: unknown, name: unknown) => [`${Number(v).toFixed(2)} ${sym}`, String(name)]} labelFormatter={formatShortDate} />
               <Legend wrapperStyle={{ fontSize: 12 }} />
-              <Bar yAxisId="left" dataKey="clicks_fb" name="FB kliky"     fill={C.facebook}    opacity={0.7} stackId="c" />
-              <Bar yAxisId="left" dataKey="clicks_g"  name="Google kliky" fill={C.google}      opacity={0.7} stackId="c" />
-              <Bar yAxisId="left" dataKey="clicks_sz" name="Seznam kliky"  fill={C.seznam}  opacity={0.7} stackId="c" />
-              <Bar yAxisId="left" dataKey="clicks_hk" name="Heureka kliky" fill={C.heureka} opacity={0.7} stackId="c" />
-              <Line yAxisId="right" type="monotone" dataKey="cpc_fb" name="CPC Facebook" stroke={C.facebookDark} strokeWidth={2} dot={false} connectNulls />
-              <Line yAxisId="right" type="monotone" dataKey="cpc_g"  name="CPC Google"   stroke={C.googleDark}   strokeWidth={2} dot={false} connectNulls />
-              <Line yAxisId="right" type="monotone" dataKey="cpc_sz" name="CPC Seznam"   stroke={C.seznamDark}   strokeWidth={2} dot={false} connectNulls />
-              <Line yAxisId="right" type="monotone" dataKey="cpc_hk" name="CPC Heureka"  stroke={C.heurekaDark}  strokeWidth={2} dot={false} connectNulls />
-            </ComposedChart>
+              <Line type="monotone" dataKey="cpc_fb" name="CPC Facebook" stroke={C.facebook} strokeWidth={2} dot={false} connectNulls />
+              <Line type="monotone" dataKey="cpc_g"  name="CPC Google"   stroke={C.google}   strokeWidth={2} dot={false} connectNulls />
+              {hasSeznam  && <Line type="monotone" dataKey="cpc_sz" name="CPC Seznam"  stroke={C.seznam}  strokeWidth={2} dot={false} connectNulls />}
+              {hasHeureka && <Line type="monotone" dataKey="cpc_hk" name="CPC Heureka" stroke={C.heureka} strokeWidth={2} dot={false} connectNulls />}
+              {hasPrevData && <Line type="monotone" dataKey="cpc_fb_prev" name="CPC Facebook (předch. rok)" stroke={C.facebookDark} strokeDasharray="4 3" strokeWidth={1.5} dot={false} connectNulls />}
+              {hasPrevData && <Line type="monotone" dataKey="cpc_g_prev"  name="CPC Google (předch. rok)"   stroke={C.googleDark}   strokeDasharray="4 3" strokeWidth={1.5} dot={false} connectNulls />}
+            </LineChart>
           </ResponsiveContainer>
         </div>
 

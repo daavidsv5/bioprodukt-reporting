@@ -10,8 +10,8 @@ import { retentionDataCZ } from '@/data/retentionDataCZ';
 import { retentionDataSK } from '@/data/retentionDataSK';
 import KpiCard from '@/components/kpi/KpiCard';
 import RevenueOrdersChart from '@/components/charts/RevenueOrdersChart';
-import CostPnoChart from '@/components/charts/CostPnoChart';
 import DailyTable from '@/components/tables/DailyTable';
+import { CountryMargin } from '@/components/tables/CountryDistribution';
 import CountryDistribution from '@/components/tables/CountryDistribution';
 import { formatCurrency, formatPercent, formatNumber, formatDate, formatShortDate } from '@/lib/formatters';
 import { Wallet, Banknote, ShoppingCart, BarChart2, TrendingUp, Percent, Tag, Users } from 'lucide-react';
@@ -29,7 +29,7 @@ const periodTitles: Record<string, string> = {
 
 export default function DashboardPage() {
   const { filters, eurToCzk } = useFilters();
-  const { kpi, prevKpi, yoy, chartData, currentData, currency, hasPrevData } = useDashboardData(filters, mockData, eurToCzk);
+  const { kpi, prevKpi, yoy, chartData, currentData, prevData, currency, hasPrevData } = useDashboardData(filters, mockData, eurToCzk);
 
   const { start, end, prevStart, prevEnd } = getDateRange(filters);
 
@@ -44,19 +44,28 @@ export default function DashboardPage() {
     const pe = prevEnd.toISOString().split('T')[0];
     let pc = 0, mr = 0, prevPc = 0, prevMr = 0;
     const marginData: { date: string; purchaseCost: number }[] = [];
+    // Per-country in native currency (no skMult) for CountryDistribution
+    const perCountryCur: Partial<Record<'cz' | 'sk', CountryMargin>> = {};
+    const perCountryPrev: Partial<Record<'cz' | 'sk', CountryMargin>> = {};
     if (filters.countries.includes('cz')) {
+      let czPc = 0, czMr = 0, czPrevPc = 0, czPrevMr = 0;
       for (const r of marginDataCZ) {
-        if (r.date >= s && r.date <= e)  { pc += r.purchaseCost; mr += r.revenue; marginData.push({ date: r.date, purchaseCost: r.purchaseCost }); }
-        if (r.date >= ps && r.date <= pe){ prevPc += r.purchaseCost; prevMr += r.revenue; }
+        if (r.date >= s && r.date <= e)  { pc += r.purchaseCost; mr += r.revenue; czPc += r.purchaseCost; czMr += r.revenue; marginData.push({ date: r.date, purchaseCost: r.purchaseCost }); }
+        if (r.date >= ps && r.date <= pe){ prevPc += r.purchaseCost; prevMr += r.revenue; czPrevPc += r.purchaseCost; czPrevMr += r.revenue; }
       }
+      perCountryCur.cz  = { purchaseCost: czPc,     marginRev: czMr };
+      perCountryPrev.cz = { purchaseCost: czPrevPc, marginRev: czPrevMr };
     }
     if (filters.countries.includes('sk')) {
+      let skPc = 0, skMr = 0, skPrevPc = 0, skPrevMr = 0;
       for (const r of marginDataSK) {
-        if (r.date >= s && r.date <= e)  { pc += r.purchaseCost * skMult; mr += r.revenue * skMult; marginData.push({ date: r.date, purchaseCost: r.purchaseCost * skMult }); }
-        if (r.date >= ps && r.date <= pe){ prevPc += r.purchaseCost * skMult; prevMr += r.revenue * skMult; }
+        if (r.date >= s && r.date <= e)  { pc += r.purchaseCost * skMult; mr += r.revenue * skMult; skPc += r.purchaseCost; skMr += r.revenue; marginData.push({ date: r.date, purchaseCost: r.purchaseCost * skMult }); }
+        if (r.date >= ps && r.date <= pe){ prevPc += r.purchaseCost * skMult; prevMr += r.revenue * skMult; skPrevPc += r.purchaseCost; skPrevMr += r.revenue; }
       }
+      perCountryCur.sk  = { purchaseCost: skPc,     marginRev: skMr };
+      perCountryPrev.sk = { purchaseCost: skPrevPc, marginRev: skPrevMr };
     }
-    return { marginData, purchaseCost: pc, marginRev: mr, prevPurchaseCost: prevPc, prevMarginRev: prevMr };
+    return { marginData, purchaseCost: pc, marginRev: mr, prevPurchaseCost: prevPc, prevMarginRev: prevMr, perCountryCur, perCountryPrev };
   }, [filters.countries, start, end, prevStart, prevEnd, skMult]);
 
   const newCustomerCounts = useMemo(() => {
@@ -79,7 +88,7 @@ export default function DashboardPage() {
     return { cur, prev, allCur, allPrev };
   }, [filters.countries, start, end, prevStart, prevEnd]);
 
-  const { marginData, marginRev, purchaseCost, prevMarginRev, prevPurchaseCost } = marginTotals;
+  const { marginData, marginRev, purchaseCost, prevMarginRev, prevPurchaseCost, perCountryCur, perCountryPrev } = marginTotals;
   const margin        = marginRev - purchaseCost;
   const marginPct     = marginRev > 0 ? (margin / marginRev) * 100 : 0;
   const grossProfit   = margin - kpi.cost;
@@ -153,13 +162,82 @@ export default function DashboardPage() {
 
       {/* Country Distribution */}
       {filters.countries.length > 1 && (
-        <CountryDistribution data={currentData} eurToCzk={eurToCzk} />
+        <CountryDistribution
+          data={currentData}
+          prevData={prevData}
+          hasPrevData={hasPrevData}
+          eurToCzk={eurToCzk}
+          marginCurrent={perCountryCur}
+          marginPrev={perCountryPrev}
+        />
       )}
 
-      {/* Charts */}
+      {/* Charts row 1 — Tržby + Počet objednávek */}
       <div className="grid grid-cols-1 xl:grid-cols-2 gap-6">
         <RevenueOrdersChart data={chartData} currency={currency} hasPrevData={hasPrevData} />
-        <CostPnoChart data={chartData} currency={currency} hasPrevData={hasPrevData} />
+
+        {/* Počet objednávek (YoY) */}
+        <div className="bg-white rounded-2xl border border-slate-100 shadow-sm p-5">
+          <h2 className="text-sm font-semibold text-slate-700 mb-5">{hasPrevData ? 'Počet objednávek (YoY)' : 'Počet objednávek'}</h2>
+          <ResponsiveContainer width="100%" height={300}>
+            <LineChart data={chartData} margin={{ top: 4, right: 16, left: 4, bottom: 4 }}>
+              <CartesianGrid strokeDasharray="0" stroke="#f1f5f9" vertical={false} />
+              <XAxis dataKey="date" tickFormatter={formatShortDate} tick={{ fontSize: 11, fill: '#94a3b8' }} axisLine={false} tickLine={false} interval="preserveStartEnd" />
+              <YAxis tick={{ fontSize: 11, fill: '#94a3b8' }} axisLine={false} tickLine={false} width={40} />
+              <Tooltip
+                formatter={(v: unknown, name: unknown) => [formatNumber(Number(v)), String(name)]}
+                labelFormatter={(l: unknown) => formatShortDate(String(l))}
+                contentStyle={{ fontSize: 12, borderRadius: 8, border: '1px solid #e2e8f0' }}
+              />
+              <Legend iconType="plainline" wrapperStyle={{ fontSize: 11, paddingTop: 16, color: '#64748b' }} />
+              <Line type="monotone" dataKey="orders" name="Objednávky (aktuální)" stroke={C.google} strokeWidth={2.5} dot={false} activeDot={{ r: 4 }} />
+              {hasPrevData && <Line type="monotone" dataKey="orders_prev" name="Objednávky (loňský rok)" stroke="#86efac" strokeWidth={1.5} strokeDasharray="5 4" dot={false} />}
+            </LineChart>
+          </ResponsiveContainer>
+        </div>
+      </div>
+
+      {/* Charts row 2 — Náklady + PNO */}
+      <div className="grid grid-cols-1 xl:grid-cols-2 gap-6">
+        {/* Náklady (YoY) */}
+        <div className="bg-white rounded-2xl border border-slate-100 shadow-sm p-5">
+          <h2 className="text-sm font-semibold text-slate-700 mb-5">{hasPrevData ? 'Náklady (YoY)' : 'Náklady'}</h2>
+          <ResponsiveContainer width="100%" height={300}>
+            <LineChart data={chartData} margin={{ top: 4, right: 16, left: 4, bottom: 4 }}>
+              <CartesianGrid strokeDasharray="0" stroke="#f1f5f9" vertical={false} />
+              <XAxis dataKey="date" tickFormatter={formatShortDate} tick={{ fontSize: 11, fill: '#94a3b8' }} axisLine={false} tickLine={false} interval="preserveStartEnd" />
+              <YAxis tickFormatter={(v: number) => v >= 1000 ? `${Math.round(v / 1000)}k` : String(v)} tick={{ fontSize: 11, fill: '#94a3b8' }} axisLine={false} tickLine={false} width={52} />
+              <Tooltip
+                formatter={(v: unknown, name: unknown) => [fc(Number(v)), String(name)]}
+                labelFormatter={(l: unknown) => formatShortDate(String(l))}
+                contentStyle={{ fontSize: 12, borderRadius: 8, border: '1px solid #e2e8f0' }}
+              />
+              <Legend iconType="plainline" wrapperStyle={{ fontSize: 11, paddingTop: 16, color: '#64748b' }} />
+              <Line type="monotone" dataKey="cost" name="Náklady (aktuální)" stroke={C.cost} strokeWidth={2.5} dot={false} activeDot={{ r: 4 }} />
+              {hasPrevData && <Line type="monotone" dataKey="cost_prev" name="Náklady (loňský rok)" stroke={C.costLight} strokeWidth={1.5} strokeDasharray="5 4" dot={false} />}
+            </LineChart>
+          </ResponsiveContainer>
+        </div>
+
+        {/* PNO (YoY) */}
+        <div className="bg-white rounded-2xl border border-slate-100 shadow-sm p-5">
+          <h2 className="text-sm font-semibold text-slate-700 mb-5">{hasPrevData ? 'PNO % (YoY)' : 'PNO %'}</h2>
+          <ResponsiveContainer width="100%" height={300}>
+            <LineChart data={chartData} margin={{ top: 4, right: 16, left: 4, bottom: 4 }}>
+              <CartesianGrid strokeDasharray="0" stroke="#f1f5f9" vertical={false} />
+              <XAxis dataKey="date" tickFormatter={formatShortDate} tick={{ fontSize: 11, fill: '#94a3b8' }} axisLine={false} tickLine={false} interval="preserveStartEnd" />
+              <YAxis tickFormatter={(v: number) => `${v.toFixed(0)}%`} tick={{ fontSize: 11, fill: '#94a3b8' }} axisLine={false} tickLine={false} width={38} />
+              <Tooltip
+                formatter={(v: unknown, name: unknown) => [`${Number(v).toFixed(2)} %`, String(name)]}
+                labelFormatter={(l: unknown) => formatShortDate(String(l))}
+                contentStyle={{ fontSize: 12, borderRadius: 8, border: '1px solid #e2e8f0' }}
+              />
+              <Legend wrapperStyle={{ fontSize: 11, paddingTop: 16, color: '#64748b' }} iconType="plainline" />
+              <Line type="monotone" dataKey="pno" name="PNO % (aktuální)" stroke={C.rate} strokeWidth={2.5} dot={false} />
+              {hasPrevData && <Line type="monotone" dataKey="pno_prev" name="PNO % (loňský rok)" stroke={C.rateLight} strokeWidth={1.5} dot={false} strokeDasharray="5 4" />}
+            </LineChart>
+          </ResponsiveContainer>
+        </div>
       </div>
 
       {/* AOV + CPA charts */}
