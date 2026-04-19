@@ -44,6 +44,11 @@ export function getDateRange(filters: FilterState): DateRange {
   let end: Date;
 
   switch (filters.timePeriod) {
+    case 'yesterday': {
+      start = utcDay(y, mo, d - 1);
+      end   = utcDay(y, mo, d - 1);
+      break;
+    }
     case 'current_year': {
       start = utcDay(y, 0, 1);
       end   = utcDay(y, mo, d);
@@ -57,6 +62,11 @@ export function getDateRange(filters: FilterState): DateRange {
     case 'last_month': {
       start = utcDay(y, mo - 1, 1);
       end   = utcDay(y, mo, 0);
+      break;
+    }
+    case 'last_7_days': {
+      end   = utcDay(y, mo, d);
+      start = utcDay(y, mo, d - 6);
       break;
     }
     case 'last_14_days': {
