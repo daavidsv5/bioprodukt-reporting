@@ -1,11 +1,11 @@
 'use client';
 
-import { Suspense, useState } from 'react';
+import { Suspense } from 'react';
 import { usePathname, useSearchParams, useRouter } from 'next/navigation';
 import { FilterState, Country, TimePeriod } from '@/data/types';
 import { getDateRange } from '@/hooks/useFilters';
 import { formatDate } from '@/lib/formatters';
-import { RefreshCw, Menu, Clock } from 'lucide-react';
+import { Menu, Clock } from 'lucide-react';
 import { useSidebar } from './ConditionalLayout';
 import { LAST_UPDATE } from '@/data/lastUpdate';
 
@@ -31,8 +31,6 @@ const periodLabels: Record<TimePeriod, string> = {
 
 function TopBarInner({ filters, onChange }: TopBarProps) {
   const { start, end } = getDateRange(filters);
-  const [updating, setUpdating] = useState(false);
-  const [updateMsg, setUpdateMsg] = useState<string | null>(null);
   const { toggle } = useSidebar();
   const pathname = usePathname();
   const searchParams = useSearchParams();
@@ -49,20 +47,6 @@ function TopBarInner({ filters, onChange }: TopBarProps) {
     const params = new URLSearchParams(searchParams.toString());
     params.set(key, value);
     router.replace(`/main?${params.toString()}`, { scroll: false });
-  };
-
-  const handleUpdate = async () => {
-    setUpdating(true);
-    setUpdateMsg(null);
-    try {
-      const res = await fetch('/api/update', { method: 'POST' });
-      const json = await res.json();
-      setUpdateMsg(json.ok ? 'Data aktualizována — obnovte stránku.' : 'Chyba při aktualizaci.');
-    } catch {
-      setUpdateMsg('Chyba při aktualizaci.');
-    } finally {
-      setUpdating(false);
-    }
   };
 
   const handlePeriodChange = (period: TimePeriod) => {
@@ -230,23 +214,6 @@ function TopBarInner({ filters, onChange }: TopBarProps) {
         <span>Aktualizováno: <span className="text-slate-600 font-medium">{new Date(LAST_UPDATE).toLocaleString('cs-CZ', { day: '2-digit', month: '2-digit', year: 'numeric', hour: '2-digit', minute: '2-digit' })}</span></span>
       </div>
 
-      {/* Update button */}
-      <div className="flex items-center gap-2 flex-shrink-0">
-        {updateMsg && (
-          <span className={`text-xs font-medium hidden sm:inline ${updateMsg.startsWith('Chyba') ? 'text-rose-500' : 'text-emerald-600'}`}>
-            {updateMsg}
-          </span>
-        )}
-        <button
-          onClick={handleUpdate}
-          disabled={updating}
-          title={updateMsg ?? 'Aktualizovat data'}
-          className="inline-flex items-center gap-1.5 px-2.5 md:px-3 py-1.5 rounded-lg border border-blue-200 bg-blue-50 text-blue-700 text-sm font-medium hover:bg-blue-100 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
-        >
-          <RefreshCw size={13} className={updating ? 'animate-spin' : ''} />
-          <span className="hidden md:inline">{updating ? 'Aktualizuji…' : 'Aktualizovat data'}</span>
-        </button>
-      </div>
     </div>
   );
 }
