@@ -299,6 +299,8 @@ Pie charty (doručení + platby) jsou v samostatném řádku nad tabulkami. Tabu
 
 `app/shipping/page.tsx` má ~8 TS chyb (Recharts PieLabel + Tooltip typy). Jsou **pre-existující**, nezpůsobené nedávnými změnami — neřešit, pokud se nerefaktoruje shipping stránka.
 
+`app/marketing/page.tsx` — `labelFormatter` na `<Tooltip>` musí být `(l: unknown) => string`, ne přímý odkaz na `formatShortDate: (s: string) => string` (Recharts očekává `ReactNode` jako parametr label).
+
 ### Autentizace
 
 NextAuth 5 (beta). Uživatelé jsou uloženi v **Neon PostgreSQL** (tabulka `users`, bcrypt hesla). Admin stránka `/admin/users` vyžaduje `role: 'admin'`.
@@ -320,9 +322,9 @@ Max **5 neúspěšných pokusů za 30 minut** per email. Implementováno přes N
 
 ### Automatická aktualizace dat
 
-`.github/workflows/update-data.yml` — GitHub Actions spouští `node scripts/updateData.js` každý den, cron nastaven na **3:00 UTC** (kompenzace za typické 2–4h zpoždění GitHub Actions u méně aktivních repozitářů; cíl je doručení cca v 6:00 SELČ). Commituje změněné soubory v `data/` a pushuje do `main`. Vercel pak automaticky nasadí nový build.
+`.github/workflows/update-data.yml` — GitHub Actions spouští `node scripts/updateData.js` každý den, cron nastaven na **3:00 UTC** (kompenzace za typické 2–4h zpoždění GitHub Actions u méně aktivních repozitářů; cíl je doručení cca v 6:00 SELČ). Commituje změněné soubory v `data/`, pushuje do `main` a poté volá **Vercel Deploy Hook** přes `curl -X POST` — bez tohoto kroku Vercel nespustí deploy z github-actions[bot] commitů.
 
-`scripts/updateAndPush.ps1` — lokální alternativa pro Windows Task Scheduler (spouštět jako `06:00`). Stáhne data, commitne a pushne na GitHub. Pokud počítač běží, data jsou na Vercelu k dispozici přesně v 6:00.
+`scripts/updateAndPush.ps1` — lokální záloha pro Windows Task Scheduler (spouštět v `06:00`). Stáhne data, commitne, provede `git pull --rebase origin main` (aby nevznikl konflikt s GitHub Actions) a pushne. Logy zapisuje v **UTF-8** (`Add-Content -Encoding UTF8`). Pokud počítač není zapnutý, data i tak přijdou přes GitHub Actions.
 
 Ruční spuštění: GitHub → Actions → "Aktualizace dat" → Run workflow.
 
@@ -330,6 +332,16 @@ Script při každém spuštění:
 1. Fetchuje live **EUR→CZK kurz** z `frankfurter.app` (fallback 25)
 2. Stahuje Google Sheets (orders, cost, margin, stock)
 3. SK marže dopočítává spojením margin sheetu s orders exportem přes kód objednávky (SK = měna EUR)
+
+### Line endings (CRLF / LF)
+
+`.gitattributes` nastavuje `data/*.ts text eol=lf` — zabraňuje tomu, aby `git add` na Windows (kde je `core.autocrlf = true`) konvertoval LF→CRLF a tím způsoboval falešné "žádné změny" při porovnání s HEAD. GitHub Actions (Linux) zapisuje LF, lokální Node.js také — bez tohoto nastavení by lokální PS1 skript nikdy nedetekoval změny a nepushnul.
+
+### TopBar
+
+Tlačítko **Aktualizovat data** bylo odstraněno (`components/layout/TopBar.tsx`) — data se aktualizují automaticky přes GitHub Actions, ruční refresh není potřeba.
+
+`app/marketing/page.tsx` — `labelFormatter` na `<Tooltip>` musí být `(l: unknown) => string`, ne přímý odkaz na `formatShortDate: (s: string) => string` (Recharts očekává `ReactNode` jako parametr).
 
 ### Timezone fix
 
