@@ -288,7 +288,7 @@ export default function MarketingPage() {
               <CartesianGrid strokeDasharray="3 3" stroke="#f0f0f0" />
               <XAxis dataKey="date" tickFormatter={formatShortDate} tick={{ fontSize: 11, fill: '#9ca3af' }} interval="preserveStartEnd" />
               <YAxis tickFormatter={v => `${v} ${sym}`} tick={{ fontSize: 11, fill: '#9ca3af' }} width={65} />
-              <Tooltip formatter={(v: unknown, name: unknown) => [`${Number(v).toFixed(2)} ${sym}`, String(name)]} labelFormatter={formatShortDate} />
+              <Tooltip formatter={(v: unknown, name: unknown) => [`${Number(v).toFixed(2)} ${sym}`, String(name)]} labelFormatter={(l: unknown) => formatShortDate(String(l))} />
               <Legend wrapperStyle={{ fontSize: 12 }} />
               <Line type="monotone" dataKey="cpc_fb" name="CPC Facebook" stroke={C.facebook} strokeWidth={2} dot={false} connectNulls />
               <Line type="monotone" dataKey="cpc_g"  name="CPC Google"   stroke={C.google}   strokeWidth={2} dot={false} connectNulls />
