@@ -64,7 +64,7 @@ export async function GET(req: NextRequest) {
     // Purchase-specific session count — for accurate purchase CVR
     // (property may have multiple key events; sessionConversionRate counts all of them)
     const purchaseFilter = {
-      filter: { fieldName: 'eventName', stringFilter: { matchType: 'EXACT', value: 'purchase' } },
+      filter: { fieldName: 'eventName', stringFilter: { value: 'purchase' } },
     };
     const [[purchaseCurrentRes], [purchasePrevRes]] = await Promise.all([
       client.runReport({ property: `properties/${propertyId}`, dateRanges: [{ startDate, endDate }], metrics: [{ name: 'sessions' }], dimensionFilter: purchaseFilter }),
