@@ -41,7 +41,7 @@ app/(dashboard|orders|marketing|products|margin|analytics|behavior|crosssell|ret
 |---------|-------|
 | `/dashboard` | **Klíčové ukazatele (KPI)** — 13 metrik vč. marže a hrubého zisku; 6 spojnicových grafů: Tržby bez DPH, Počet objednávek, Náklady, PNO %, AOV, CPA (všechny YoY); DailyTable |
 | `/orders` | Objednávky — tržby vs počet, distribuce hodnot košíku (histogram), rozložení CZ/SK |
-| `/marketing` | Marketingové investice — CPC per channel (FB/Google), trend kliky+CPC |
+| `/marketing` | Marketingové investice — spojnicový graf nákladů s YoY, stacked BarChart podílu nákladů per kanál, CPC trend per channel (FB/Google/Seznam/Heureka) s YoY |
 | `/products` | Prodejnost produktů — ABC analýza (A/B/C segmenty), sortovatelná tabulka, YoY, CSV export |
 | `/margin` | Maržový report — marže %, hrubý zisk, grafy |
 | `/analytics` | GA4 integrace — sessions, CVR, sources tabulka (Sessions/Nákupy/CVR/Tržby bez DPH + YoY), devices, vstupní stránky; zatím jen CZ |
@@ -65,7 +65,7 @@ app/(dashboard|orders|marketing|products|margin|analytics|behavior|crosssell|ret
 
 - **CZ nemá YoY** — e-shop běží od května 2025. `hasPrevData` bude `false` kdykoliv je ve filtru CZ a nejsou dostupné záznamy z předchozího roku.
 - **SK má YoY** — reálná data od března 2024; mock SK data (seeded RNG) doplňují leden–únor 2024 jako základ pro YoY.
-- `hasPrevData` předávej do `KpiCard`, `RevenueOrdersChart` a `CostPnoChart`, aby šlo podmíněně skrýt YoY badge a "minulý rok" řady v grafech.
+- `hasPrevData` předávej do `KpiCard` a `RevenueOrdersChart`, aby šlo podmíněně skrýt YoY badge a "minulý rok" řady v grafech.
 
 ### Klíčové soubory
 
@@ -117,7 +117,7 @@ Karta **Hrubý zisk** a **Hrubý zisk %** mají `variant='green'`.
 - **Řada 2**: Náklady + PNO %
 - **Řada 3**: AOV + CPA
 
-`CostPnoChart` component je zachován pro `/marketing` stránku (používá ComposedChart s bary+liniemi).
+`CostPnoChart` component existuje v `components/charts/` ale není používán žádnou stránkou — nahrazen inline `LineChart` na `/marketing`.
 
 ### `/dashboard` — Distribuce podle země (`CountryDistribution`)
 
@@ -166,16 +166,18 @@ Klasifikace se vždy počítá ze všech dat (sort dle revenue desc), nezávisle
 - Při kombinaci CZ+SK se SK hodnoty převádí na CZK přes `eurToCzk`.
 - Histogram zobrazuje peak bucket (tmavě modrý) + amber tip na dopravu zdarma.
 
-### Marketing — CPC (`/marketing`)
+### Marketing — grafy (`/marketing`)
 
 Data z `getDailyMarketingData()` — každý den má `clicks_facebook`, `clicks_google`, `clicks_seznam`, `clicks_heureka`, `cost_facebook`, `cost_google`, `cost_seznam`, `cost_heureka`, `revenue`.
-- **CPC** = cost_channel / clicks_channel (per den), zobrazeno na 2 desetinná místa
+
+**Grafy (pořadí shora):**
+1. **Náklady v čase** — `LineChart`, `cost` (plná, `C.cost`) + `cost_prev` (přerušovaná, `C.costLight`); YoY čára jen pokud `hasPrevData`
+2. **Podíl nákladů z reklamních systémů** — stacked `BarChart`, sloupce per kanál (`cost_facebook`, `cost_google`, `cost_seznam`, `cost_heureka`), barvy z `lib/chartColors.ts`; bez YoY
+3. **CPC v čase** — `LineChart`, CPC per kanál + YoY přerušovaná čára; CPC = cost/clicks per den (2 desetinná místa)
+
 - **ROAS byl odstraněn** ze všech přehledů
-- Grafy: ComposedChart (stacked bars kliky + lines CPC)
-- Výkon per channel obsahuje YoY srovnání (FB, Google, Seznam, Heureka — náklady, kliky, CPC)
-- **Kanálové karty se zobrazují podmíněně** — Seznam karta jen pokud `sz.cost > 0 || sz.clicks > 0`, Heureka karta analogicky
+- **Kanálové karty** se zobrazují podmíněně — Seznam karta jen pokud `sz.cost > 0 || sz.clicks > 0`, Heureka karta analogicky
 - **Barvy kanálů** (`lib/chartColors.ts`): Facebook = blue-600/800, Google = emerald-600/800, Seznam = orange-500/700, Heureka = violet-700/900
-- `buildSourceBreakdown()` filtruje zdroje s `cost === 0 && clicks === 0` — nezobrazí se prázdné kanály
 - `scripts/updateData.js` mapuje CSV `source` sloupec: `facebook` → `cost_facebook`, `google` → `cost_google`, `seznam` → `cost_seznam`, `heureka` → `cost_heureka`
 
 ### ABC analýza — filtrování slev (`/products`)
@@ -241,8 +243,9 @@ Na stránce `/analytics` jsou v TopBaru skryty selektory **Vše** a **SK** — z
 
 **`app/api/analytics/route.ts`** — vrací:
 - `daily`, `dailyPrev` — denní sessions/users/conversions/bounceRate/avgDuration
-- `totals` — agregáty za aktuální + předchozí rok (dva dateRanges v jednom requestu)
-- `sources`, `sourcesPrev` — zdroje návštěvnosti (source/medium, top 20)
+- `totals` — agregáty za aktuální + předchozí rok; **dva samostatné dotazy** (ne multi-dateRange), protože GA4 API vrací řádky multi-dateRange dotazů v **chronologickém pořadí** (nejdřív starší rok), nikoliv v pořadí zadání
+- `totals.current.sessionCvr` / `totals.previous.sessionCvr` — počítá se jako `purchase_sessions / total_sessions`; purchase sessions se získají samostatným dotazem s `dimensionFilter: eventName == 'purchase'` (vlastnost může mít více klíčových událostí než jen `purchase`, což by nafouknulo `sessionConversionRate`)
+- `sources`, `sourcesPrev` — zdroje návštěvnosti (source/medium, top 20); CVR per zdroj čte přímo metriku `sessionConversionRate` z GA4 (index 4)
 - `devices`, `devicesPrev` — rozpad na deviceCategory
 - `landingPages` — vstupní stránky (top 20)
 - `funnel` — checkout trychtýř agregát: begin_checkout → add_shipping_info → add_payment_info → purchase, rozpad desktop/mobile/tablet

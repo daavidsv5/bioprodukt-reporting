@@ -7,10 +7,9 @@ import KpiCard from '@/components/kpi/KpiCard';
 import { formatCurrency, formatPercent, formatNumber, formatDate, formatShortDate } from '@/lib/formatters';
 import { TrendingUp as TrendingUpIcon, TrendingUp, TrendingDown, Percent, Tag, Banknote, Share2, Search, List } from 'lucide-react';
 import {
-  Bar, Line, XAxis, YAxis, CartesianGrid, Tooltip,
-  Legend, ResponsiveContainer, ComposedChart, LineChart,
+  Bar, BarChart, Line, XAxis, YAxis, CartesianGrid, Tooltip,
+  Legend, ResponsiveContainer, LineChart,
 } from 'recharts';
-import CostPnoChart from '@/components/charts/CostPnoChart';
 import { C } from '@/lib/chartColors';
 
 function yoyPct(curr: number, prev: number): number | null {
@@ -156,8 +155,27 @@ export default function MarketingPage() {
         ))}
       </div>
 
-      {/* Chart */}
-      <CostPnoChart data={chartData} currency={currency} hasPrevData={hasPrevData} />
+      {/* Náklady v čase — spojnicový graf s YoY */}
+      <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-5">
+        <h2 className="text-sm font-semibold text-gray-800 mb-1">Náklady v čase</h2>
+        <p className="text-xs text-slate-400 mb-4">Plná čára = aktuální období · přerušovaná = loni</p>
+        <ResponsiveContainer width="100%" height={240}>
+          <LineChart data={chartData} margin={{ top: 5, right: 20, left: 10, bottom: 5 }}>
+            <CartesianGrid strokeDasharray="3 3" stroke="#f0f0f0" />
+            <XAxis dataKey="date" tickFormatter={formatShortDate} tick={{ fontSize: 11, fill: '#9ca3af' }} interval="preserveStartEnd" />
+            <YAxis tickFormatter={v => `${Math.round(v).toLocaleString('cs-CZ')} ${sym}`} tick={{ fontSize: 11, fill: '#9ca3af' }} width={80} />
+            <Tooltip
+              formatter={(v: unknown, name: unknown) => [`${Math.round(Number(v)).toLocaleString('cs-CZ')} ${sym}`, String(name)]}
+              labelFormatter={(l: unknown) => formatShortDate(String(l))}
+            />
+            <Legend wrapperStyle={{ fontSize: 12 }} />
+            <Line type="monotone" dataKey="cost"      name="Náklady"        stroke={C.cost}      strokeWidth={2}   dot={false} />
+            {hasPrevData && (
+              <Line type="monotone" dataKey="cost_prev" name="Náklady (loni)" stroke={C.costLight} strokeWidth={1.5} strokeDasharray="4 3" dot={false} />
+            )}
+          </LineChart>
+        </ResponsiveContainer>
+      </div>
 
       {/* Per-channel performance */}
       <div className="space-y-4">
@@ -278,6 +296,27 @@ export default function MarketingPage() {
               </div>
             </div>
           )}
+        </div>
+
+        {/* Podíl nákladů z reklamních systémů — stacked bar chart */}
+        <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-5">
+          <h3 className="text-sm font-semibold text-gray-800 mb-4">Podíl nákladů z reklamních systémů</h3>
+          <ResponsiveContainer width="100%" height={240}>
+            <BarChart data={marketingAsc} margin={{ top: 5, right: 20, left: 10, bottom: 5 }}>
+              <CartesianGrid strokeDasharray="3 3" stroke="#f0f0f0" vertical={false} />
+              <XAxis dataKey="date" tickFormatter={formatShortDate} tick={{ fontSize: 11, fill: '#9ca3af' }} interval="preserveStartEnd" />
+              <YAxis tickFormatter={v => `${Math.round(v).toLocaleString('cs-CZ')} ${sym}`} tick={{ fontSize: 11, fill: '#9ca3af' }} width={80} />
+              <Tooltip
+                formatter={(v: unknown, name: unknown) => [`${Math.round(Number(v)).toLocaleString('cs-CZ')} ${sym}`, String(name)]}
+                labelFormatter={(l: unknown) => formatShortDate(String(l))}
+              />
+              <Legend wrapperStyle={{ fontSize: 12 }} />
+              <Bar dataKey="cost_facebook" name="Facebook Ads" stackId="costs" fill={C.facebook} />
+              <Bar dataKey="cost_google"   name="Google Ads"   stackId="costs" fill={C.google} />
+              {hasSeznam  && <Bar dataKey="cost_seznam"  name="Seznam Ads" stackId="costs" fill={C.seznam} />}
+              {hasHeureka && <Bar dataKey="cost_heureka" name="Heureka"    stackId="costs" fill={C.heureka} />}
+            </BarChart>
+          </ResponsiveContainer>
         </div>
 
         {/* CPC trend — pure line chart with YoY */}

@@ -47,29 +47,36 @@ export async function GET(req: NextRequest) {
       orderBys: [{ dimension: { dimensionName: 'date' } }],
     });
 
-    // Aggregate totals: current + previous year in one request (two dateRanges, no dimensions)
-    const [aggRes] = await client.runReport({
-      property: `properties/${propertyId}`,
-      dateRanges: [
-        { startDate, endDate,   name: 'current'  },
-        { startDate: prevStart, endDate: prevEnd, name: 'previous' },
-      ],
-      metrics: [
-        { name: 'sessions' },
-        { name: 'activeUsers' },
-        { name: 'conversions' },
-        { name: 'bounceRate' },
-        { name: 'averageSessionDuration' },
-        { name: 'sessionConversionRate' },
-      ],
-    });
+    // Aggregate totals: two separate queries to avoid GA4's chronological row ordering
+    const aggMetrics = [
+      { name: 'sessions' },
+      { name: 'activeUsers' },
+      { name: 'conversions' },
+      { name: 'bounceRate' },
+      { name: 'averageSessionDuration' },
+      { name: 'sessionConversionRate' },
+    ];
+    const [[aggCurrentRes], [aggPrevRes]] = await Promise.all([
+      client.runReport({ property: `properties/${propertyId}`, dateRanges: [{ startDate, endDate }], metrics: aggMetrics }),
+      client.runReport({ property: `properties/${propertyId}`, dateRanges: [{ startDate: prevStart, endDate: prevEnd }], metrics: aggMetrics }),
+    ]);
+
+    // Purchase-specific session count — for accurate purchase CVR
+    // (property may have multiple key events; sessionConversionRate counts all of them)
+    const purchaseFilter = {
+      filter: { fieldName: 'eventName', stringFilter: { matchType: 'EXACT', value: 'purchase' } },
+    };
+    const [[purchaseCurrentRes], [purchasePrevRes]] = await Promise.all([
+      client.runReport({ property: `properties/${propertyId}`, dateRanges: [{ startDate, endDate }], metrics: [{ name: 'sessions' }], dimensionFilter: purchaseFilter }),
+      client.runReport({ property: `properties/${propertyId}`, dateRanges: [{ startDate: prevStart, endDate: prevEnd }], metrics: [{ name: 'sessions' }], dimensionFilter: purchaseFilter }),
+    ]);
 
     // Traffic by source/medium
     const [sourceRes] = await client.runReport({
       property: `properties/${propertyId}`,
       dateRanges: [{ startDate, endDate }],
       dimensions: [{ name: 'sessionSource' }, { name: 'sessionMedium' }],
-      metrics: [{ name: 'sessions' }, { name: 'conversions' }, { name: 'activeUsers' }, { name: 'purchaseRevenue' }],
+      metrics: [{ name: 'sessions' }, { name: 'conversions' }, { name: 'activeUsers' }, { name: 'purchaseRevenue' }, { name: 'sessionConversionRate' }],
       orderBys: [{ metric: { metricName: 'sessions' }, desc: true }],
       limit: 20,
     });
@@ -103,7 +110,7 @@ export async function GET(req: NextRequest) {
       property: `properties/${propertyId}`,
       dateRanges: [{ startDate: prevStart, endDate: prevEnd }],
       dimensions: [{ name: 'sessionSource' }, { name: 'sessionMedium' }],
-      metrics: [{ name: 'sessions' }, { name: 'conversions' }, { name: 'activeUsers' }, { name: 'purchaseRevenue' }],
+      metrics: [{ name: 'sessions' }, { name: 'conversions' }, { name: 'activeUsers' }, { name: 'purchaseRevenue' }, { name: 'sessionConversionRate' }],
       orderBys: [{ metric: { metricName: 'sessions' }, desc: true }],
       limit: 20,
     });
@@ -179,10 +186,25 @@ export async function GET(req: NextRequest) {
       };
     };
 
-    const rows = aggRes.rows ?? [];
+    const curAgg  = parseAgg(aggCurrentRes.rows?.[0]);
+    const prevAgg = parseAgg(aggPrevRes.rows?.[0]);
+
+    const purchaseSessionsCur  = Number(purchaseCurrentRes.rows?.[0]?.metricValues?.[0]?.value ?? 0);
+    const purchaseSessionsPrev = Number(purchasePrevRes.rows?.[0]?.metricValues?.[0]?.value ?? 0);
+
     const totals = {
-      current:  parseAgg(rows[0]),
-      previous: parseAgg(rows[1]),
+      current: {
+        ...curAgg,
+        sessionCvr: curAgg.sessions > 0
+          ? Math.round(purchaseSessionsCur / curAgg.sessions * 10000) / 100
+          : 0,
+      },
+      previous: {
+        ...prevAgg,
+        sessionCvr: prevAgg.sessions > 0
+          ? Math.round(purchaseSessionsPrev / prevAgg.sessions * 10000) / 100
+          : 0,
+      },
     };
 
     const parseSourceRows = (res: typeof sourceRes) => res.rows?.map(row => {
@@ -195,7 +217,7 @@ export async function GET(req: NextRequest) {
         conversions,
         users:       Number(row.metricValues?.[2].value ?? 0),
         revenue:     Number(row.metricValues?.[3].value ?? 0),
-        cvr:         sessions > 0 ? (conversions / sessions) * 100 : 0,
+        cvr:         Math.round(Number(row.metricValues?.[4].value ?? 0) * 10000) / 100,
       };
     }) ?? [];
 
