@@ -276,13 +276,24 @@ Tabulka (full-width, tmavě modrá hlavička) s 9 sloupci: Zdroj/Médium, Sessio
 - Hook: `hooks/useMainDashboard.ts` → `useMainDashboard(country, year): MonthlyPoint[]`
 - Komponenta: `components/charts/YearCompareBarChart.tsx` — generický seskupený BarChart (aktuální rok + předchozí rok)
 - **Selektory Vše/CZ/SK a rok** jsou v TopBaru, předávají se přes URL search params (`?country=all&year=2025`)
-- **Rok selektor** — pill tlačítka (stejný styl jako Vše/CZ/SK), roky 2022–aktuální rok sestupně; vpravo label `vs. {rok-1}`
+- **Rok selektor** — pill tlačítka (stejný styl jako Vše/CZ/SK), roky **2024–aktuální rok** sestupně (2022 a 2023 odstraněny); vpravo label `vs. {rok-1}`
 - Stránka čte `useSearchParams()` — žádný lokální state; `TopBarInner` a `MainDashboardContent` obaleny `<Suspense>` (nutné pro Next.js prerender)
 - **`MainCountry = 'cz' | 'sk' | 'all'`** — při `'all'` se CZ a SK data mergují (SK EUR → CZK přes `EUR_TO_CZK`)
 - **Default: `'all'`** — při první návštěvě bez URL params se zobrazí CZ + SK kombinovaně
-- **8 grafů** (grid `md:grid-cols-2`): Tržby bez DPH, Hrubý zisk, Počet objednávek, Marketingové investice, PNO (%), AOV, Marže (%), CPA
+- **9 grafů** (grid `md:grid-cols-2`): Tržby bez DPH, Hrubý zisk, Počet objednávek, Marketingové investice, PNO (%), AOV, Marže (%), CPA, **Konverzní poměr**
 - **Hrubý zisk** = (marginRev − purchaseCost) − marketingové náklady; zelená barva (#16a34a)
 - Při `'all'` nebo `'cz'` se zobrazuje CZK, při `'sk'` EUR
+- **Konverzní poměr** — 9. graf; data z GA4 via `hooks/useGA4MonthlyCvr.ts` + `app/api/analytics/monthly-cvr/route.ts`; zobrazuje se pouze pro CZ a Vše (skryto pro SK); při chybě GA4 se zobrazí placeholder místo prázdného místa
+
+### `YearCompareBarChart` — tooltip s YoY %
+
+- Vlastní tooltip (`content` prop) zobrazuje pro každý měsíc: hodnotu předchozího roku, hodnotu aktuálního roku a **YoY %** (zelená = růst, červená = pokles)
+- Props: `title`, `subtitle?` (malý popis pod nadpisem), `data: { label: string }[]`, `dataKey: string`, `prevKey: string`, `color`, `colorPrev`, `formatter`, `currentYear`, `isPercent?`
+- Data jsou typována volně (`{ label: string }[]`), hodnoty se přistupují přes `Record<string, unknown>` cast — kompatibilní s `MonthlyPoint[]` i `MonthCvrPoint[]`
+
+### `app/api/analytics/monthly-cvr/route.ts`
+
+Lehký GA4 endpoint jen pro `/main` CVR graf — dělá **2 GA4 volání** (aktuální rok + předchozí rok, jen `sessions` + `conversions` per den). Přijímá `?year=YYYY`. Nepoužívat plný `/api/analytics` pro roční rozsah — ten dělá 10+ GA4 volání a pro roční range failuje.
 
 ### `/meta` — Meta Ads
 
