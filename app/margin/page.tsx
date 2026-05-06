@@ -239,15 +239,6 @@ export default function MarginPage() {
       </div>
 
       {/* Info banners */}
-      {isAll && (
-        <div className="flex items-center gap-2.5 bg-blue-50 border border-blue-200 rounded-xl px-4 py-3 text-sm text-blue-700">
-          <Info size={16} className="flex-shrink-0 text-blue-500" />
-          <span>
-            Zobrazeny hodnoty pro <strong>CZ + SK</strong>. SK data jsou v EUR, přepočítána aktuálním kurzem{' '}
-            <strong>1 EUR = {eurToCzk.toFixed(2)} Kč</strong>.
-          </span>
-        </div>
-      )}
       {showSKNoPurchaseNote && (
         <div className="flex items-center gap-2.5 bg-amber-50 border border-amber-200 rounded-xl px-4 py-3 text-sm text-amber-700">
           <Info size={16} className="flex-shrink-0 text-amber-500" />

@@ -10,7 +10,7 @@ import { useSidebar } from './ConditionalLayout';
 import { LAST_UPDATE } from '@/data/lastUpdate';
 
 const CURRENT_YEAR = new Date().getFullYear();
-const AVAILABLE_YEARS = Array.from({ length: CURRENT_YEAR - 2021 }, (_, i) => 2022 + i).reverse();
+const AVAILABLE_YEARS = Array.from({ length: CURRENT_YEAR - 2023 }, (_, i) => 2024 + i).reverse();
 
 interface TopBarProps {
   filters: FilterState;
