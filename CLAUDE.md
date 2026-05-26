@@ -51,6 +51,7 @@ app/(dashboard|orders|marketing|products|margin|analytics|behavior|crosssell|ret
 | `/shipping` | Doprava a platby — KPI vč. zisku/ztráty dopravy, pie charty (doručení/platby), tabulky vedle sebe, ceník dopravců |
 | `/main` | **Hlavní Dashboard** — 8 měsíčních sloupcových grafů YoY (Tržby, Hrubý zisk, Počet obj., Investice, PNO%, AOV, Marže%, CPA); grid 2 sloupce; selektory Vše/CZ/SK a rok v TopBaru; default Vše |
 | `/meta` | Meta Ads — KPI boxy s barevným pozadím + YoY, grafy CPC/CPA/Nákupy/ROAS, tabulka kreativ s color-coded CPA/ROAS; filtrace dle kampaně a sady reklam |
+| `/profit-planner` | **Plánovač zisku** — reverzní kalkulačka: zadáš cílový čistý zisk, kalkulačka zpětně vypočítá potřebný reklamní rozpočet, objednávky, prokliky, obrat, CPA a PNO; 4 grafy (rozpad objednávky, zisk vs. investice, scénáře ±20 %, citlivost na marži); vstupní parametry předvyplněny z posledních 30 dní CZ dat; TopBar bez filtrů |
 | `/login` | Přihlášení (NextAuth) |
 | `/admin/users` | Správa uživatelů (admin only) |
 

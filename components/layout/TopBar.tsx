@@ -38,6 +38,7 @@ function TopBarInner({ filters, onChange }: TopBarProps) {
   const isRetention = pathname === '/retention' || pathname === '/crosssell';
   const isAnalytics = pathname === '/analytics';
   const isMainDashboard = pathname === '/main';
+  const isProfitPlanner = pathname === '/profit-planner';
 
   // Main dashboard local controls (via URL params)
   const mainCountry = (searchParams.get('country') ?? 'all') as 'cz' | 'sk' | 'all';
@@ -115,8 +116,8 @@ function TopBarInner({ filters, onChange }: TopBarProps) {
         </>
       )}
 
-      {/* Country segmented control — hidden on retention + main dashboard page */}
-      {!isRetention && !isMainDashboard && (
+      {/* Country segmented control — hidden on retention + main dashboard + profit planner page */}
+      {!isRetention && !isMainDashboard && !isProfitPlanner && (
         <div className="flex items-center gap-1.5 flex-shrink-0">
           <span className="text-xs text-slate-400 font-medium hidden sm:inline">Trh:</span>
           <div className="flex rounded-lg border border-slate-200 overflow-hidden bg-white">
@@ -159,10 +160,10 @@ function TopBarInner({ filters, onChange }: TopBarProps) {
       )}
 
       {/* Divider — desktop only */}
-      {!isRetention && !isMainDashboard && <div className="h-6 w-px bg-slate-100 hidden md:block flex-shrink-0" />}
+      {!isRetention && !isMainDashboard && !isProfitPlanner && <div className="h-6 w-px bg-slate-100 hidden md:block flex-shrink-0" />}
 
-      {/* Time period — hidden on main dashboard */}
-      {!isMainDashboard && (
+      {/* Time period — hidden on main dashboard + profit planner */}
+      {!isMainDashboard && !isProfitPlanner && (
         <div className="flex items-center gap-1.5 flex-shrink-0">
           <span className="text-xs text-slate-400 font-medium hidden sm:inline">Období:</span>
           <select
@@ -178,7 +179,7 @@ function TopBarInner({ filters, onChange }: TopBarProps) {
       )}
 
       {/* Custom date range */}
-      {!isMainDashboard && filters.timePeriod === 'custom' && (
+      {!isMainDashboard && !isProfitPlanner && filters.timePeriod === 'custom' && (
         <div className="flex items-center gap-1.5 flex-wrap flex-shrink-0">
           <input
             type="date"
@@ -196,8 +197,8 @@ function TopBarInner({ filters, onChange }: TopBarProps) {
         </div>
       )}
 
-      {/* Date range label — hidden on main dashboard */}
-      {!isMainDashboard && (
+      {/* Date range label — hidden on main dashboard + profit planner */}
+      {!isMainDashboard && !isProfitPlanner && (
         <div className="text-xs md:text-sm text-slate-500 hidden sm:block flex-shrink-0">
           <span className="font-medium text-slate-700">{formatDate(start)}</span>
           <span className="mx-1.5 text-slate-300">–</span>
