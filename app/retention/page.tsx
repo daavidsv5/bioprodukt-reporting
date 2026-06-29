@@ -162,20 +162,61 @@ export default function RetentionPage() {
 
       {/* Noví vs. stávající zákazníci — vývoj po měsících */}
       <ChartCard title="Noví vs. stávající zákazníci — vývoj po měsících">
-        <ResponsiveContainer width="100%" height={280}>
-          <BarChart data={monthlyNewVsReturning} margin={{ top: 4, right: 16, left: 4, bottom: 4 }}>
+        <ResponsiveContainer width="100%" height={300}>
+          <BarChart data={monthlyNewVsReturning} margin={{ top: 4, right: 16, left: 4, bottom: 4 }} barCategoryGap="20%" barGap={2}>
             <CartesianGrid strokeDasharray="0" stroke="#f1f5f9" vertical={false} />
-            <XAxis dataKey="label" tick={{ fontSize: 10, fill: '#94a3b8' }} axisLine={false} tickLine={false} />
-            <YAxis tickFormatter={v => `${Math.round(v)} %`} domain={[0, 100]} tick={{ fontSize: 11, fill: '#94a3b8' }} axisLine={false} tickLine={false} width={44} />
+            <XAxis dataKey="label" tick={{ fontSize: 10, fill: '#94a3b8' }} axisLine={false} tickLine={false} interval="preserveStartEnd" />
+            <YAxis tickFormatter={v => formatNumber(v as number)} tick={{ fontSize: 11, fill: '#94a3b8' }} axisLine={false} tickLine={false} width={44} />
             <Tooltip
-              formatter={(v: any, name: any, props: any) => {
-                const count = name === 'Noví zákazníci' ? props.payload.newCount : props.payload.returningCount;
-                return [`${(v as number).toFixed(1)} % (${count})`, name];
+              content={({ active, payload }: any) => {
+                if (!active || !payload?.length) return null;
+                const d = payload[0].payload;
+                function yoyBadge(curr: number, prev: number | null) {
+                  if (prev === null || prev === 0) return null;
+                  const pct = ((curr - prev) / prev) * 100;
+                  const color = pct >= 0 ? 'text-emerald-600' : 'text-rose-500';
+                  return <span className={`text-[10px] font-semibold ${color}`}>{pct >= 0 ? '▲' : '▼'} {Math.abs(pct).toFixed(1)} %</span>;
+                }
+                return (
+                  <div className="bg-white border border-slate-200 rounded-xl shadow-lg p-3 text-xs min-w-[200px]">
+                    <p className="font-semibold text-slate-700 mb-2">{d.label}</p>
+                    <div className="space-y-1.5">
+                      <div className="flex items-center justify-between gap-4">
+                        <span className="flex items-center gap-1.5">
+                          <span className="w-2.5 h-2.5 rounded-sm bg-emerald-500 flex-shrink-0" />
+                          <span className="text-slate-500">Noví zákazníci</span>
+                        </span>
+                        <span className="flex items-center gap-1.5 font-semibold text-slate-800">
+                          {formatNumber(d.newCount)} {yoyBadge(d.newCount, d.prevNewCount)}
+                        </span>
+                      </div>
+                      <div className="flex items-center justify-between gap-4">
+                        <span className="flex items-center gap-1.5">
+                          <span className="w-2.5 h-2.5 rounded-sm flex-shrink-0" style={{ backgroundColor: C.primary }} />
+                          <span className="text-slate-500">Stávající zákazníci</span>
+                        </span>
+                        <span className="flex items-center gap-1.5 font-semibold text-slate-800">
+                          {formatNumber(d.returningCount)} {yoyBadge(d.returningCount, d.prevReturningCount)}
+                        </span>
+                      </div>
+                      <div className="border-t border-slate-100 pt-1.5 flex items-center justify-between gap-4">
+                        <span className="flex items-center gap-1.5">
+                          <span className="w-2.5 h-2.5 rounded-sm bg-slate-400 flex-shrink-0" />
+                          <span className="text-slate-500">Objednávky celkem</span>
+                        </span>
+                        <span className="flex items-center gap-1.5 font-semibold text-slate-800">
+                          {formatNumber(d.orders)} {yoyBadge(d.orders, d.prevOrders)}
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                );
               }}
             />
             <Legend wrapperStyle={{ fontSize: 11, color: '#64748b' }} iconType="square" iconSize={9} />
-            <Bar dataKey="newPct"       name="Noví zákazníci"      stackId="a" fill="#22c55e" />
-            <Bar dataKey="returningPct" name="Stávající zákazníci" stackId="a" fill={C.primary} radius={[3, 3, 0, 0]} />
+            <Bar dataKey="newCount"       name="Noví zákazníci"      fill="#22c55e" radius={[3, 3, 0, 0]} />
+            <Bar dataKey="returningCount" name="Stávající zákazníci" fill={C.primary} radius={[3, 3, 0, 0]} />
+            <Bar dataKey="orders"         name="Objednávky"          fill="#94a3b8" radius={[3, 3, 0, 0]} />
           </BarChart>
         </ResponsiveContainer>
       </ChartCard>

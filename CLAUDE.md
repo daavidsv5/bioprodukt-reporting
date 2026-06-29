@@ -306,6 +306,37 @@ Lehký GA4 endpoint jen pro `/main` CVR graf — dělá **2 GA4 volání** (aktu
 
 Pie charty (doručení + platby) jsou v samostatném řádku nad tabulkami. Tabulky jsou v dalším řádku vedle sebe — vždy na stejné výšce.
 
+### Sidebar — skupiny navigace
+
+`components/layout/Sidebar.tsx` — navigace rozdělena do 5 pojmenovaných skupin (`navGroups`):
+- **Strategický přehled**: Hlavní Dashboard, Hlavní KPI, Marketingový Mix & PNO
+- **Prodej a profitabilita**: Výkon prodeje, Analýza marže, Doprava a platba
+- **Produktová analytika**: Produktový žebříček, Cross-sell potenciál, Stav skladu
+- **Zákazníci a retence**: Nákupní chování, Retenční analýza
+- **Akvizice a kanály**: Webová návštěvnost (GA4), Meta Ads
+
+Plánovač zisku byl odstraněn ze sidebaru. Google Ads bude přidáno až bude stránka hotová.
+
+### Cross-sell — filtrování dle období
+
+`data/crossSellDataCZ.ts` / `crossSellDataSK.ts` — nový formát: `CrossSellMonthlyRecord[]` (místo starého all-time `CrossSellData`). Každý záznam: `{ month, totalOrders, multiItemOrders, pairs[] }`. Pairs: top 300 per měsíc (pro správné re-rankování při filtraci libovolného rozsahu).
+
+`app/crosssell/page.tsx` — používá `useFilters()` a `getDateRange()`. `useMemo` filtruje měsíce v rozsahu, re-agreguje páry přes `pairMap`, re-rankuje a bere top 100.
+
+### `/shipping` — výpočet dopravy zdarma
+
+`scripts/updateData.js` — `aggregateShippingPayment()`: klíč agregace rozšířen o příznak `free/paid` (`${date}||${type}||${name}||free` nebo `||paid`). Dříve se free a placené objednávky se stejnou metodou ve stejný den sčítaly do jednoho záznamu — `revenue_vat` nebyl 0, i když část objednávek měla dopravu zdarma. Nyní jsou odděleny, `freeShippingPct` v `app/shipping/page.tsx` (detekce přes `revenue_vat === 0`) počítá správně.
+
+### `/retention` — Noví vs. stávající zákazníci graf
+
+`lib/retentionUtils.ts` — `MonthlyNewVsReturningPoint` rozšířen o `orders` (počet objednávek v měsíci), `prevNewCount`, `prevReturningCount`, `prevOrders` (hodnoty stejného měsíce předchozího roku pro YoY).
+
+`app/retention/page.tsx` — "Noví vs. stávající zákazníci — vývoj po měsících": přepnut z 100% stacked na grouped BarChart s absolutními počty. Tři sloupce: Noví zákazníci (zelená), Stávající zákazníci (modrá), Objednávky (šedá). Tooltip zobrazuje hodnoty + YoY badge (▲/▼ %) pro každý segment.
+
+### `/marketing` — CPC graf s filtrací kanálů
+
+`app/marketing/page.tsx` — CPC trend graf má pill buttony nad grafem pro výběr kanálu (`CpcChannel`: facebook | google | heureka | seznam). Aktivní kanál barevně zvýrazněn. Graf zobrazuje pouze zvolený kanál (plná čára aktuální rok + přerušovaná předchozí rok). `marketingChartData` rozšířen o `cpc_sz_prev` a `cpc_hk_prev`. Tlačítka jsou disabled pokud kanál nemá data (`hasSeznam`, `hasHeureka`).
+
 ### Cross-sell — vyloučení platebních metod
 
 `isPaymentName()` v `scripts/updateData.js` nově vylučuje i **Převodem** (dříve se mohlo objevit jako produkt v párech).

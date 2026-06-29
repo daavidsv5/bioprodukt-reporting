@@ -4,6 +4,8 @@ import { useState, useMemo } from 'react';
 import { ShoppingBag, Package, TrendingUp, Search } from 'lucide-react';
 import { crossSellDataCZ } from '@/data/crossSellDataCZ';
 import { crossSellDataSK } from '@/data/crossSellDataSK';
+import { useFilters, getDateRange } from '@/hooks/useFilters';
+import { formatDate } from '@/lib/formatters';
 import {
   BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip,
   ResponsiveContainer, Cell,
@@ -21,7 +23,43 @@ export default function CrossSellPage() {
   const [page, setPage] = useState(0);
   const PAGE_SIZE = 25;
 
-  const data = tab === 'cz' ? crossSellDataCZ : crossSellDataSK;
+  const { filters } = useFilters();
+  const { start, end } = getDateRange(filters);
+  const startMonth = start.toISOString().substring(0, 7);
+  const endMonth   = end.toISOString().substring(0, 7);
+  const subtitle   = `${formatDate(start)} – ${formatDate(end)}`;
+
+  const raw = tab === 'cz' ? crossSellDataCZ : crossSellDataSK;
+
+  // Filter monthly records to selected period and re-aggregate pairs
+  const data = useMemo(() => {
+    const inRange = raw.filter(m => m.month >= startMonth && m.month <= endMonth);
+    const totalOrders      = inRange.reduce((s, m) => s + m.totalOrders, 0);
+    const multiItemOrders  = inRange.reduce((s, m) => s + m.multiItemOrders, 0);
+
+    const pairMap = new Map<string, number>();
+    for (const m of inRange) {
+      for (const p of m.pairs) {
+        const key = `${p.productA}|||${p.productB}`;
+        pairMap.set(key, (pairMap.get(key) ?? 0) + p.count);
+      }
+    }
+
+    const pairs = [...pairMap.entries()]
+      .sort((a, b) => b[1] - a[1])
+      .slice(0, 100)
+      .map(([key, count]) => {
+        const sep = key.indexOf('|||');
+        return {
+          productA: key.slice(0, sep),
+          productB: key.slice(sep + 3),
+          count,
+          pct: totalOrders > 0 ? Math.round((count / totalOrders) * 10000) / 100 : 0,
+        };
+      });
+
+    return { totalOrders, multiItemOrders, pairs };
+  }, [raw, startMonth, endMonth]);
 
   const multiPct = data.totalOrders > 0
     ? Math.round((data.multiItemOrders / data.totalOrders) * 100)
@@ -58,7 +96,7 @@ export default function CrossSellPage() {
       <div className="flex items-center justify-between flex-wrap gap-3">
         <div>
           <h1 className="text-xl font-bold text-slate-800">Cross-sell potenciál</h1>
-          <p className="text-sm text-slate-500 mt-0.5">Produkty nejčastěji kupované společně v jedné objednávce</p>
+          <p className="text-sm text-slate-500 mt-0.5">Produkty nejčastěji kupované společně · {subtitle}</p>
         </div>
         <div className="flex rounded-xl border border-slate-200 overflow-hidden bg-white">
           {(['cz', 'sk'] as Tab[]).map((t) => (

@@ -1,26 +1,56 @@
 'use client';
 
+import React from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { BarChart2, LayoutDashboard, LayoutGrid, ShoppingCart, TrendingUp, Package, Brain, PieChart, Users, ShieldCheck, LogOut, X, GitMerge, KeyRound, Activity, Truck, Archive, Facebook, Calculator } from 'lucide-react';
+import { BarChart2, LayoutDashboard, LayoutGrid, ShoppingCart, TrendingUp, Package, Brain, PieChart, Users, ShieldCheck, LogOut, X, GitMerge, KeyRound, Activity, Truck, Archive, Facebook } from 'lucide-react';
 import { useSession, signOut } from 'next-auth/react';
 import { useSidebar } from './ConditionalLayout';
 
-const navItems = [
-  { icon: LayoutGrid,      label: 'Hlavní Dashboard',        href: '/main' },
-  { icon: LayoutDashboard, label: 'Klíčové ukazatele (KPI)', href: '/dashboard' },
-  { icon: ShoppingCart,    label: 'Objednávky',               href: '/orders' },
-  { icon: TrendingUp,      label: 'Marketingové investice',   href: '/marketing' },
-  { icon: PieChart,        label: 'Maržový report',           href: '/margin' },
-  { icon: Truck,           label: 'Doprava a platba',         href: '/shipping' },
-  { icon: Package,         label: 'Prodejnost produktů',      href: '/products' },
-  { icon: Brain,           label: 'Nákupní chování',          href: '/behavior' },
-  { icon: GitMerge,        label: 'Cross-sell potenciál',     href: '/crosssell' },
-  { icon: Archive,         label: 'Stav skladu',              href: '/stock' },
-  { icon: Users,           label: 'Retenční analýza',         href: '/retention' },
-  { icon: Activity,        label: 'Návštěvnost (GA4)',        href: '/analytics' },
-  { icon: Facebook,        label: 'Meta Ads',                 href: '/meta' },
-  { icon: Calculator,      label: 'Plánovač zisku',           href: '/profit-planner' },
+type NavGroup = {
+  label: string;
+  items: { icon: React.ElementType; label: string; href: string }[];
+};
+
+const navGroups: NavGroup[] = [
+  {
+    label: 'Strategický přehled',
+    items: [
+      { icon: LayoutGrid,      label: 'Hlavní Dashboard',       href: '/main' },
+      { icon: LayoutDashboard, label: 'Hlavní KPI',             href: '/dashboard' },
+      { icon: TrendingUp,      label: 'Marketingový Mix & PNO', href: '/marketing' },
+    ],
+  },
+  {
+    label: 'Prodej a profitabilita',
+    items: [
+      { icon: ShoppingCart, label: 'Výkon prodeje',  href: '/orders' },
+      { icon: PieChart,     label: 'Analýza marže',  href: '/margin' },
+      { icon: Truck,        label: 'Doprava a platba', href: '/shipping' },
+    ],
+  },
+  {
+    label: 'Produktová analytika',
+    items: [
+      { icon: Package,   label: 'Produktový žebříček', href: '/products' },
+      { icon: GitMerge,  label: 'Cross-sell potenciál', href: '/crosssell' },
+      { icon: Archive,   label: 'Stav skladu',          href: '/stock' },
+    ],
+  },
+  {
+    label: 'Zákazníci a retence',
+    items: [
+      { icon: Brain,  label: 'Nákupní chování',  href: '/behavior' },
+      { icon: Users,  label: 'Retenční analýza', href: '/retention' },
+    ],
+  },
+  {
+    label: 'Akvizice a kanály',
+    items: [
+      { icon: Activity, label: 'Webová návštěvnost (GA4)', href: '/analytics' },
+      { icon: Facebook, label: 'Meta Ads',                 href: '/meta' },
+    ],
+  },
 ];
 
 export default function Sidebar() {
@@ -53,25 +83,34 @@ export default function Sidebar() {
       </div>
 
       {/* Navigation */}
-      <nav className="flex-1 px-3 py-4 space-y-0.5 overflow-y-auto">
-        {navItems.map(({ icon: Icon, label, href }) => {
-          const isActive = pathname === href || pathname.startsWith(href + '/');
-          return (
-            <Link
-              key={href}
-              href={href}
-              onClick={close}
-              className={`flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm transition-colors ${
-                isActive
-                  ? 'bg-blue-600 text-white font-medium'
-                  : 'text-blue-100 hover:bg-white/10 hover:text-white'
-              }`}
-            >
-              <Icon size={17} className={isActive ? 'text-white' : 'text-blue-300'} />
-              <span>{label}</span>
-            </Link>
-          );
-        })}
+      <nav className="flex-1 px-3 py-4 overflow-y-auto space-y-4">
+        {navGroups.map((group) => (
+          <div key={group.label}>
+            <p className="px-3 pb-1 text-blue-400 text-[10px] uppercase tracking-wider font-medium">
+              {group.label}
+            </p>
+            <div className="space-y-0.5">
+              {group.items.map(({ icon: Icon, label, href }) => {
+                const isActive = pathname === href || pathname.startsWith(href + '/');
+                return (
+                  <Link
+                    key={href}
+                    href={href}
+                    onClick={close}
+                    className={`flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm transition-colors ${
+                      isActive
+                        ? 'bg-blue-600 text-white font-medium'
+                        : 'text-blue-100 hover:bg-white/10 hover:text-white'
+                    }`}
+                  >
+                    <Icon size={17} className={isActive ? 'text-white' : 'text-blue-300'} />
+                    <span>{label}</span>
+                  </Link>
+                );
+              })}
+            </div>
+          </div>
+        ))}
 
         {isAdmin && (
           <>

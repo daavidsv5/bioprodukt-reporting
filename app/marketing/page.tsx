@@ -1,5 +1,6 @@
 'use client';
 
+import { useState } from 'react';
 import { useFilters, getDateRange } from '@/hooks/useFilters';
 import { useDashboardData } from '@/hooks/useDashboardData';
 import { mockData, getMarketingSourceData, getDailyMarketingData } from '@/data/mockGenerator';
@@ -36,7 +37,17 @@ function pnoColor(pno: number): string {
 }
 
 
+type CpcChannel = 'facebook' | 'google' | 'heureka' | 'seznam';
+
+const CPC_CHANNELS: { key: CpcChannel; label: string; dataKey: string; prevKey: string; color: string; darkColor: string }[] = [
+  { key: 'facebook', label: 'Facebook Ads', dataKey: 'cpc_fb', prevKey: 'cpc_fb_prev', color: C.facebook,  darkColor: C.facebookDark },
+  { key: 'google',   label: 'Google Ads',   dataKey: 'cpc_g',  prevKey: 'cpc_g_prev',  color: C.google,    darkColor: C.googleDark },
+  { key: 'heureka',  label: 'Heureka',      dataKey: 'cpc_hk', prevKey: 'cpc_hk_prev', color: C.heureka,   darkColor: C.heurekaDark },
+  { key: 'seznam',   label: 'Seznam Ads',   dataKey: 'cpc_sz', prevKey: 'cpc_sz_prev', color: C.seznam,    darkColor: C.seznamDark },
+];
+
 export default function MarketingPage() {
+  const [cpcChannel, setCpcChannel] = useState<CpcChannel>('facebook');
   const { filters, eurToCzk } = useFilters();
   const { kpi, yoy, chartData, currentData, currency, hasPrevData } = useDashboardData(filters, mockData, eurToCzk);
   const fc = (v: number) => formatCurrency(v, currency);
@@ -103,6 +114,8 @@ export default function MarketingPage() {
       cpc_hk: cpc(r.cost_heureka,  r.clicks_heureka),
       cpc_fb_prev: p ? cpc(p.cost_facebook, p.clicks_facebook) : null,
       cpc_g_prev:  p ? cpc(p.cost_google,   p.clicks_google)   : null,
+      cpc_sz_prev: p ? cpc(p.cost_seznam,   p.clicks_seznam)   : null,
+      cpc_hk_prev: p ? cpc(p.cost_heureka,  p.clicks_heureka)  : null,
     };
   });
 
@@ -319,24 +332,85 @@ export default function MarketingPage() {
           </ResponsiveContainer>
         </div>
 
-        {/* CPC trend — pure line chart with YoY */}
+        {/* CPC trend — filtrovatelný per kanál */}
         <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-5">
-          <h3 className="text-sm font-semibold text-gray-800 mb-4">CPC v čase – meziroční srovnání</h3>
-          <ResponsiveContainer width="100%" height={260}>
-            <LineChart data={marketingChartData} margin={{ top: 5, right: 20, left: 10, bottom: 5 }}>
-              <CartesianGrid strokeDasharray="3 3" stroke="#f0f0f0" />
-              <XAxis dataKey="date" tickFormatter={formatShortDate} tick={{ fontSize: 11, fill: '#9ca3af' }} interval="preserveStartEnd" />
-              <YAxis tickFormatter={v => `${v} ${sym}`} tick={{ fontSize: 11, fill: '#9ca3af' }} width={65} />
-              <Tooltip formatter={(v: unknown, name: unknown) => [`${Number(v).toFixed(2)} ${sym}`, String(name)]} labelFormatter={(l: unknown) => formatShortDate(String(l))} />
-              <Legend wrapperStyle={{ fontSize: 12 }} />
-              <Line type="monotone" dataKey="cpc_fb" name="CPC Facebook" stroke={C.facebook} strokeWidth={2} dot={false} connectNulls />
-              <Line type="monotone" dataKey="cpc_g"  name="CPC Google"   stroke={C.google}   strokeWidth={2} dot={false} connectNulls />
-              {hasSeznam  && <Line type="monotone" dataKey="cpc_sz" name="CPC Seznam"  stroke={C.seznam}  strokeWidth={2} dot={false} connectNulls />}
-              {hasHeureka && <Line type="monotone" dataKey="cpc_hk" name="CPC Heureka" stroke={C.heureka} strokeWidth={2} dot={false} connectNulls />}
-              {hasPrevData && <Line type="monotone" dataKey="cpc_fb_prev" name="CPC Facebook (předch. rok)" stroke={C.facebookDark} strokeDasharray="4 3" strokeWidth={1.5} dot={false} connectNulls />}
-              {hasPrevData && <Line type="monotone" dataKey="cpc_g_prev"  name="CPC Google (předch. rok)"   stroke={C.googleDark}   strokeDasharray="4 3" strokeWidth={1.5} dot={false} connectNulls />}
-            </LineChart>
-          </ResponsiveContainer>
+          <div className="flex flex-wrap items-start justify-between gap-3 mb-1">
+            <div>
+              <h3 className="text-sm font-semibold text-gray-800">CPC v čase – meziroční srovnání</h3>
+              <p className="text-xs text-slate-400 mt-0.5">Plná čára = aktuální období · přerušovaná = předchozí rok</p>
+            </div>
+            <div className="flex flex-wrap gap-1.5">
+              {CPC_CHANNELS.map(ch => {
+                const hasData = ch.key === 'facebook' ? true
+                  : ch.key === 'google'  ? true
+                  : ch.key === 'heureka' ? hasHeureka
+                  : ch.key === 'seznam'  ? hasSeznam
+                  : false;
+                const active = cpcChannel === ch.key;
+                return (
+                  <button
+                    key={ch.key}
+                    onClick={() => hasData && setCpcChannel(ch.key)}
+                    disabled={!hasData}
+                    className={`flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-medium border transition-all
+                      ${active
+                        ? 'text-white border-transparent'
+                        : hasData
+                          ? 'bg-white text-slate-500 border-slate-200 hover:border-slate-400 hover:text-slate-700'
+                          : 'bg-white text-slate-300 border-slate-100 cursor-not-allowed'
+                      }`}
+                    style={active ? { backgroundColor: ch.color, borderColor: ch.color } : {}}
+                  >
+                    <span
+                      className="w-2 h-2 rounded-full flex-shrink-0"
+                      style={{ backgroundColor: active ? 'white' : hasData ? ch.color : '#cbd5e1' }}
+                    />
+                    {ch.label}
+                  </button>
+                );
+              })}
+            </div>
+          </div>
+          {(() => {
+            const ch = CPC_CHANNELS.find(c => c.key === cpcChannel)!;
+            return (
+              <ResponsiveContainer width="100%" height={260}>
+                <LineChart data={marketingChartData} margin={{ top: 5, right: 20, left: 10, bottom: 5 }}>
+                  <CartesianGrid strokeDasharray="3 3" stroke="#f0f0f0" />
+                  <XAxis dataKey="date" tickFormatter={formatShortDate} tick={{ fontSize: 11, fill: '#9ca3af' }} interval="preserveStartEnd" />
+                  <YAxis tickFormatter={v => `${v} ${sym}`} tick={{ fontSize: 11, fill: '#9ca3af' }} width={65} />
+                  <Tooltip
+                    formatter={(v: unknown, name: unknown) => [`${Number(v).toFixed(2)} ${sym}`, String(name)]}
+                    labelFormatter={(l: unknown) => formatShortDate(String(l))}
+                  />
+                  <Legend wrapperStyle={{ fontSize: 12 }} />
+                  <Line
+                    key={ch.dataKey}
+                    type="monotone"
+                    dataKey={ch.dataKey}
+                    name={`CPC ${ch.label}`}
+                    stroke={ch.color}
+                    strokeWidth={2}
+                    dot={false}
+                    connectNulls
+                  />
+                  {hasPrevData && (
+                    <Line
+                      key={ch.prevKey}
+                      type="monotone"
+                      dataKey={ch.prevKey}
+                      name={`CPC ${ch.label} (předch. rok)`}
+                      stroke={ch.darkColor}
+                      strokeDasharray="4 3"
+                      strokeWidth={1.5}
+                      dot={false}
+                      connectNulls
+                    />
+                  )}
+                </LineChart>
+              </ResponsiveContainer>
+            );
+          })()}
         </div>
 
       </div>

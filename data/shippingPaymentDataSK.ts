@@ -28,8 +28,15 @@ export const shippingPaymentDataSK: ShippingPaymentRecord[] = [
     "date": "2025-12-09",
     "type": "shipping",
     "name": "Zásilkovna na výdejní místo SK",
-    "count": 3,
+    "count": 2,
     "revenue_vat": 7
+  },
+  {
+    "date": "2025-12-09",
+    "type": "shipping",
+    "name": "Zásilkovna na výdejní místo SK",
+    "count": 1,
+    "revenue_vat": 0
   },
   {
     "date": "2025-12-10",
@@ -42,7 +49,14 @@ export const shippingPaymentDataSK: ShippingPaymentRecord[] = [
     "date": "2025-12-10",
     "type": "shipping",
     "name": "Zásilkovna na výdejní místo SK",
-    "count": 4,
+    "count": 1,
+    "revenue_vat": 0
+  },
+  {
+    "date": "2025-12-10",
+    "type": "shipping",
+    "name": "Zásilkovna na výdejní místo SK",
+    "count": 3,
     "revenue_vat": 10.5
   },
   {
@@ -168,8 +182,15 @@ export const shippingPaymentDataSK: ShippingPaymentRecord[] = [
     "date": "2025-12-17",
     "type": "shipping",
     "name": "Zásilkovna na výdejní místo SK",
-    "count": 2,
+    "count": 1,
     "revenue_vat": 3.5
+  },
+  {
+    "date": "2025-12-17",
+    "type": "shipping",
+    "name": "Zásilkovna na výdejní místo SK",
+    "count": 1,
+    "revenue_vat": 0
   },
   {
     "date": "2025-12-18",
@@ -196,8 +217,15 @@ export const shippingPaymentDataSK: ShippingPaymentRecord[] = [
     "date": "2025-12-18",
     "type": "shipping",
     "name": "Zásilkovna na výdejní místo SK",
-    "count": 3,
+    "count": 1,
     "revenue_vat": 3.5
+  },
+  {
+    "date": "2025-12-18",
+    "type": "shipping",
+    "name": "Zásilkovna na výdejní místo SK",
+    "count": 2,
+    "revenue_vat": 0
   },
   {
     "date": "2026-01-04",
@@ -231,15 +259,29 @@ export const shippingPaymentDataSK: ShippingPaymentRecord[] = [
     "date": "2026-01-05",
     "type": "shipping",
     "name": "Zásilkovna na adresu SK",
-    "count": 2,
+    "count": 1,
     "revenue_vat": 4.3
   },
   {
     "date": "2026-01-05",
     "type": "shipping",
+    "name": "Zásilkovna na adresu SK",
+    "count": 1,
+    "revenue_vat": 0
+  },
+  {
+    "date": "2026-01-05",
+    "type": "shipping",
     "name": "Zásilkovna na výdejní místo SK",
-    "count": 3,
+    "count": 2,
     "revenue_vat": 7
+  },
+  {
+    "date": "2026-01-05",
+    "type": "shipping",
+    "name": "Zásilkovna na výdejní místo SK",
+    "count": 1,
+    "revenue_vat": 0
   },
   {
     "date": "2026-01-06",
@@ -301,8 +343,15 @@ export const shippingPaymentDataSK: ShippingPaymentRecord[] = [
     "date": "2026-01-07",
     "type": "shipping",
     "name": "Zásilkovna na výdejní místo SK",
-    "count": 10,
+    "count": 8,
     "revenue_vat": 28
+  },
+  {
+    "date": "2026-01-07",
+    "type": "shipping",
+    "name": "Zásilkovna na výdejní místo SK",
+    "count": 2,
+    "revenue_vat": 0
   },
   {
     "date": "2026-01-08",
@@ -336,8 +385,15 @@ export const shippingPaymentDataSK: ShippingPaymentRecord[] = [
     "date": "2026-01-08",
     "type": "shipping",
     "name": "Zásilkovna na výdejní místo SK",
-    "count": 8,
+    "count": 7,
     "revenue_vat": 24.5
+  },
+  {
+    "date": "2026-01-08",
+    "type": "shipping",
+    "name": "Zásilkovna na výdejní místo SK",
+    "count": 1,
+    "revenue_vat": 0
   },
   {
     "date": "2026-01-09",
@@ -357,8 +413,15 @@ export const shippingPaymentDataSK: ShippingPaymentRecord[] = [
     "date": "2026-01-09",
     "type": "shipping",
     "name": "Zásilkovna na výdejní místo SK",
-    "count": 2,
+    "count": 1,
     "revenue_vat": 3.5
+  },
+  {
+    "date": "2026-01-09",
+    "type": "shipping",
+    "name": "Zásilkovna na výdejní místo SK",
+    "count": 1,
+    "revenue_vat": 0
   },
   {
     "date": "2026-01-10",
@@ -385,7 +448,14 @@ export const shippingPaymentDataSK: ShippingPaymentRecord[] = [
     "date": "2026-01-10",
     "type": "shipping",
     "name": "Zásilkovna na výdejní místo SK",
-    "count": 6,
+    "count": 1,
+    "revenue_vat": 0
+  },
+  {
+    "date": "2026-01-10",
+    "type": "shipping",
+    "name": "Zásilkovna na výdejní místo SK",
+    "count": 5,
     "revenue_vat": 17.5
   },
   {
@@ -420,8 +490,15 @@ export const shippingPaymentDataSK: ShippingPaymentRecord[] = [
     "date": "2026-01-11",
     "type": "shipping",
     "name": "Zásilkovna na výdejní místo SK",
-    "count": 4,
+    "count": 3,
     "revenue_vat": 10.5
+  },
+  {
+    "date": "2026-01-11",
+    "type": "shipping",
+    "name": "Zásilkovna na výdejní místo SK",
+    "count": 1,
+    "revenue_vat": 0
   },
   {
     "date": "2026-01-12",
@@ -441,8 +518,15 @@ export const shippingPaymentDataSK: ShippingPaymentRecord[] = [
     "date": "2026-01-12",
     "type": "shipping",
     "name": "Zásilkovna na výdejní místo SK",
-    "count": 2,
+    "count": 1,
     "revenue_vat": 3.5
+  },
+  {
+    "date": "2026-01-12",
+    "type": "shipping",
+    "name": "Zásilkovna na výdejní místo SK",
+    "count": 1,
+    "revenue_vat": 0
   },
   {
     "date": "2026-01-13",
@@ -469,8 +553,15 @@ export const shippingPaymentDataSK: ShippingPaymentRecord[] = [
     "date": "2026-01-13",
     "type": "shipping",
     "name": "Zásilkovna na výdejní místo SK",
-    "count": 5,
+    "count": 3,
     "revenue_vat": 10.5
+  },
+  {
+    "date": "2026-01-13",
+    "type": "shipping",
+    "name": "Zásilkovna na výdejní místo SK",
+    "count": 2,
+    "revenue_vat": 0
   },
   {
     "date": "2026-01-14",
@@ -490,7 +581,14 @@ export const shippingPaymentDataSK: ShippingPaymentRecord[] = [
     "date": "2026-01-14",
     "type": "shipping",
     "name": "Zásilkovna na adresu SK",
-    "count": 3,
+    "count": 2,
+    "revenue_vat": 0
+  },
+  {
+    "date": "2026-01-14",
+    "type": "shipping",
+    "name": "Zásilkovna na adresu SK",
+    "count": 1,
     "revenue_vat": 3.84
   },
   {
@@ -560,8 +658,15 @@ export const shippingPaymentDataSK: ShippingPaymentRecord[] = [
     "date": "2026-01-16",
     "type": "shipping",
     "name": "Zásilkovna na výdejní místo SK",
-    "count": 5,
+    "count": 3,
     "revenue_vat": 10.5
+  },
+  {
+    "date": "2026-01-16",
+    "type": "shipping",
+    "name": "Zásilkovna na výdejní místo SK",
+    "count": 2,
+    "revenue_vat": 0
   },
   {
     "date": "2026-01-17",
@@ -595,8 +700,15 @@ export const shippingPaymentDataSK: ShippingPaymentRecord[] = [
     "date": "2026-01-18",
     "type": "shipping",
     "name": "Zásilkovna na výdejní místo SK",
-    "count": 3,
+    "count": 2,
     "revenue_vat": 7
+  },
+  {
+    "date": "2026-01-18",
+    "type": "shipping",
+    "name": "Zásilkovna na výdejní místo SK",
+    "count": 1,
+    "revenue_vat": 0
   },
   {
     "date": "2026-01-19",
@@ -665,8 +777,15 @@ export const shippingPaymentDataSK: ShippingPaymentRecord[] = [
     "date": "2026-01-21",
     "type": "shipping",
     "name": "Zásilkovna na adresu SK",
-    "count": 2,
+    "count": 1,
     "revenue_vat": 4.3
+  },
+  {
+    "date": "2026-01-21",
+    "type": "shipping",
+    "name": "Zásilkovna na adresu SK",
+    "count": 1,
+    "revenue_vat": 0
   },
   {
     "date": "2026-01-23",
@@ -728,7 +847,14 @@ export const shippingPaymentDataSK: ShippingPaymentRecord[] = [
     "date": "2026-01-25",
     "type": "shipping",
     "name": "Zásilkovna na výdejní místo SK",
-    "count": 4,
+    "count": 2,
+    "revenue_vat": 0
+  },
+  {
+    "date": "2026-01-25",
+    "type": "shipping",
+    "name": "Zásilkovna na výdejní místo SK",
+    "count": 2,
     "revenue_vat": 7
   },
   {
@@ -861,7 +987,14 @@ export const shippingPaymentDataSK: ShippingPaymentRecord[] = [
     "date": "2026-02-05",
     "type": "shipping",
     "name": "Zásilkovna na adresu SK",
-    "count": 3,
+    "count": 2,
+    "revenue_vat": 0
+  },
+  {
+    "date": "2026-02-05",
+    "type": "shipping",
+    "name": "Zásilkovna na adresu SK",
+    "count": 1,
     "revenue_vat": 4.3
   },
   {
@@ -952,7 +1085,14 @@ export const shippingPaymentDataSK: ShippingPaymentRecord[] = [
     "date": "2026-02-09",
     "type": "shipping",
     "name": "Zásilkovna na výdejní místo SK",
-    "count": 2,
+    "count": 1,
+    "revenue_vat": 0
+  },
+  {
+    "date": "2026-02-09",
+    "type": "shipping",
+    "name": "Zásilkovna na výdejní místo SK",
+    "count": 1,
     "revenue_vat": 3.5
   },
   {
@@ -994,8 +1134,15 @@ export const shippingPaymentDataSK: ShippingPaymentRecord[] = [
     "date": "2026-02-11",
     "type": "shipping",
     "name": "Zásilkovna na výdejní místo SK",
-    "count": 5,
+    "count": 3,
     "revenue_vat": 10.5
+  },
+  {
+    "date": "2026-02-11",
+    "type": "shipping",
+    "name": "Zásilkovna na výdejní místo SK",
+    "count": 2,
+    "revenue_vat": 0
   },
   {
     "date": "2026-02-12",
@@ -1071,8 +1218,15 @@ export const shippingPaymentDataSK: ShippingPaymentRecord[] = [
     "date": "2026-02-18",
     "type": "shipping",
     "name": "Zásilkovna na adresu SK",
-    "count": 4,
+    "count": 2,
     "revenue_vat": 8.6
+  },
+  {
+    "date": "2026-02-18",
+    "type": "shipping",
+    "name": "Zásilkovna na adresu SK",
+    "count": 2,
+    "revenue_vat": 0
   },
   {
     "date": "2026-02-19",
@@ -1197,7 +1351,14 @@ export const shippingPaymentDataSK: ShippingPaymentRecord[] = [
     "date": "2026-02-26",
     "type": "shipping",
     "name": "Zásilkovna na výdejní místo SK",
-    "count": 5,
+    "count": 4,
+    "revenue_vat": 0
+  },
+  {
+    "date": "2026-02-26",
+    "type": "shipping",
+    "name": "Zásilkovna na výdejní místo SK",
+    "count": 1,
     "revenue_vat": 3.5
   },
   {
@@ -1519,8 +1680,15 @@ export const shippingPaymentDataSK: ShippingPaymentRecord[] = [
     "date": "2026-03-13",
     "type": "shipping",
     "name": "Zásilkovna na výdejní místo SK",
-    "count": 2,
+    "count": 1,
     "revenue_vat": 3.5
+  },
+  {
+    "date": "2026-03-13",
+    "type": "shipping",
+    "name": "Zásilkovna na výdejní místo SK",
+    "count": 1,
+    "revenue_vat": 0
   },
   {
     "date": "2026-03-14",
@@ -1554,10 +1722,17 @@ export const shippingPaymentDataSK: ShippingPaymentRecord[] = [
     "date": "2026-03-15",
     "type": "shipping",
     "name": "Zásilkovna na výdejní místo SK",
-    "count": 5,
+    "count": 3,
     "revenue_vat": 10.5
   },
   {
+    "date": "2026-03-15",
+    "type": "shipping",
+    "name": "Zásilkovna na výdejní místo SK",
+    "count": 2,
+    "revenue_vat": 0
+  },
+  {
     "date": "2026-03-16",
     "type": "payment",
     "name": "Apple Pay",
@@ -1582,14 +1757,28 @@ export const shippingPaymentDataSK: ShippingPaymentRecord[] = [
     "date": "2026-03-16",
     "type": "shipping",
     "name": "Zásilkovna na adresu SK",
-    "count": 3,
+    "count": 2,
     "revenue_vat": 8.14
   },
   {
     "date": "2026-03-16",
     "type": "shipping",
+    "name": "Zásilkovna na adresu SK",
+    "count": 1,
+    "revenue_vat": 0
+  },
+  {
+    "date": "2026-03-16",
+    "type": "shipping",
     "name": "Zásilkovna na výdejní místo SK",
-    "count": 4,
+    "count": 2,
+    "revenue_vat": 0
+  },
+  {
+    "date": "2026-03-16",
+    "type": "shipping",
+    "name": "Zásilkovna na výdejní místo SK",
+    "count": 2,
     "revenue_vat": 7
   },
   {
@@ -1638,7 +1827,14 @@ export const shippingPaymentDataSK: ShippingPaymentRecord[] = [
     "date": "2026-03-18",
     "type": "shipping",
     "name": "Zásilkovna na adresu SK",
-    "count": 3,
+    "count": 2,
+    "revenue_vat": 0
+  },
+  {
+    "date": "2026-03-18",
+    "type": "shipping",
+    "name": "Zásilkovna na adresu SK",
+    "count": 1,
     "revenue_vat": 3.84
   },
   {
@@ -1666,7 +1862,14 @@ export const shippingPaymentDataSK: ShippingPaymentRecord[] = [
     "date": "2026-03-19",
     "type": "shipping",
     "name": "Zásilkovna na adresu SK",
-    "count": 2,
+    "count": 1,
+    "revenue_vat": 0
+  },
+  {
+    "date": "2026-03-19",
+    "type": "shipping",
+    "name": "Zásilkovna na adresu SK",
+    "count": 1,
     "revenue_vat": 4.3
   },
   {
@@ -1708,8 +1911,15 @@ export const shippingPaymentDataSK: ShippingPaymentRecord[] = [
     "date": "2026-03-20",
     "type": "shipping",
     "name": "Zásilkovna na výdejní místo SK",
-    "count": 3,
+    "count": 2,
     "revenue_vat": 7
+  },
+  {
+    "date": "2026-03-20",
+    "type": "shipping",
+    "name": "Zásilkovna na výdejní místo SK",
+    "count": 1,
+    "revenue_vat": 0
   },
   {
     "date": "2026-03-21",
@@ -1729,10 +1939,17 @@ export const shippingPaymentDataSK: ShippingPaymentRecord[] = [
     "date": "2026-03-21",
     "type": "shipping",
     "name": "Zásilkovna na výdejní místo SK",
-    "count": 5,
+    "count": 4,
     "revenue_vat": 14
   },
   {
+    "date": "2026-03-21",
+    "type": "shipping",
+    "name": "Zásilkovna na výdejní místo SK",
+    "count": 1,
+    "revenue_vat": 0
+  },
+  {
     "date": "2026-03-22",
     "type": "payment",
     "name": "Google Pay",
@@ -1827,8 +2044,15 @@ export const shippingPaymentDataSK: ShippingPaymentRecord[] = [
     "date": "2026-03-25",
     "type": "shipping",
     "name": "Zásilkovna na adresu SK",
-    "count": 4,
+    "count": 1,
     "revenue_vat": 4.3
+  },
+  {
+    "date": "2026-03-25",
+    "type": "shipping",
+    "name": "Zásilkovna na adresu SK",
+    "count": 3,
+    "revenue_vat": 0
   },
   {
     "date": "2026-03-25",
@@ -1904,8 +2128,15 @@ export const shippingPaymentDataSK: ShippingPaymentRecord[] = [
     "date": "2026-03-28",
     "type": "shipping",
     "name": "Zásilkovna na adresu SK",
-    "count": 2,
+    "count": 1,
     "revenue_vat": 4.3
+  },
+  {
+    "date": "2026-03-28",
+    "type": "shipping",
+    "name": "Zásilkovna na adresu SK",
+    "count": 1,
+    "revenue_vat": 0
   },
   {
     "date": "2026-03-28",
@@ -2072,12 +2303,19 @@ export const shippingPaymentDataSK: ShippingPaymentRecord[] = [
     "date": "2026-04-14",
     "type": "shipping",
     "name": "Zásilkovna na adresu SK",
-    "count": 2,
+    "count": 1,
     "revenue_vat": 3.84
   },
   {
     "date": "2026-04-14",
     "type": "shipping",
+    "name": "Zásilkovna na adresu SK",
+    "count": 1,
+    "revenue_vat": 0
+  },
+  {
+    "date": "2026-04-14",
+    "type": "shipping",
     "name": "Zásilkovna na výdejní místo SK",
     "count": 1,
     "revenue_vat": 0
@@ -2100,7 +2338,14 @@ export const shippingPaymentDataSK: ShippingPaymentRecord[] = [
     "date": "2026-04-16",
     "type": "shipping",
     "name": "Zásilkovna na výdejní místo SK",
-    "count": 3,
+    "count": 1,
+    "revenue_vat": 0
+  },
+  {
+    "date": "2026-04-16",
+    "type": "shipping",
+    "name": "Zásilkovna na výdejní místo SK",
+    "count": 2,
     "revenue_vat": 7
   },
   {
@@ -2121,8 +2366,15 @@ export const shippingPaymentDataSK: ShippingPaymentRecord[] = [
     "date": "2026-04-17",
     "type": "shipping",
     "name": "Zásilkovna na výdejní místo SK",
-    "count": 2,
+    "count": 1,
     "revenue_vat": 3.5
+  },
+  {
+    "date": "2026-04-17",
+    "type": "shipping",
+    "name": "Zásilkovna na výdejní místo SK",
+    "count": 1,
+    "revenue_vat": 0
   },
   {
     "date": "2026-04-18",
@@ -2282,7 +2534,14 @@ export const shippingPaymentDataSK: ShippingPaymentRecord[] = [
     "date": "2026-04-26",
     "type": "shipping",
     "name": "Zásilkovna na výdejní místo SK",
-    "count": 3,
+    "count": 1,
+    "revenue_vat": 0
+  },
+  {
+    "date": "2026-04-26",
+    "type": "shipping",
+    "name": "Zásilkovna na výdejní místo SK",
+    "count": 2,
     "revenue_vat": 7
   },
   {
@@ -2345,8 +2604,15 @@ export const shippingPaymentDataSK: ShippingPaymentRecord[] = [
     "date": "2026-05-02",
     "type": "shipping",
     "name": "Zásilkovna na výdejní místo SK",
-    "count": 3,
+    "count": 1,
     "revenue_vat": 3.5
+  },
+  {
+    "date": "2026-05-02",
+    "type": "shipping",
+    "name": "Zásilkovna na výdejní místo SK",
+    "count": 2,
+    "revenue_vat": 0
   },
   {
     "date": "2026-05-04",
@@ -2373,10 +2639,17 @@ export const shippingPaymentDataSK: ShippingPaymentRecord[] = [
     "date": "2026-05-04",
     "type": "shipping",
     "name": "Zásilkovna na výdejní místo SK",
-    "count": 3,
+    "count": 2,
     "revenue_vat": 6.63
   },
   {
+    "date": "2026-05-04",
+    "type": "shipping",
+    "name": "Zásilkovna na výdejní místo SK",
+    "count": 1,
+    "revenue_vat": 0
+  },
+  {
     "date": "2026-05-05",
     "type": "payment",
     "name": "Apple Pay",
@@ -2415,7 +2688,14 @@ export const shippingPaymentDataSK: ShippingPaymentRecord[] = [
     "date": "2026-05-07",
     "type": "shipping",
     "name": "Zásilkovna na adresu SK",
-    "count": 2,
+    "count": 1,
+    "revenue_vat": 0
+  },
+  {
+    "date": "2026-05-07",
+    "type": "shipping",
+    "name": "Zásilkovna na adresu SK",
+    "count": 1,
     "revenue_vat": 4.3
   },
   {
@@ -2492,7 +2772,14 @@ export const shippingPaymentDataSK: ShippingPaymentRecord[] = [
     "date": "2026-05-12",
     "type": "shipping",
     "name": "Zásilkovna na výdejní místo SK",
-    "count": 3,
+    "count": 2,
+    "revenue_vat": 0
+  },
+  {
+    "date": "2026-05-12",
+    "type": "shipping",
+    "name": "Zásilkovna na výdejní místo SK",
+    "count": 1,
     "revenue_vat": 3.5
   },
   {
@@ -2534,7 +2821,14 @@ export const shippingPaymentDataSK: ShippingPaymentRecord[] = [
     "date": "2026-05-16",
     "type": "shipping",
     "name": "Zásilkovna na výdejní místo SK",
-    "count": 4,
+    "count": 2,
+    "revenue_vat": 0
+  },
+  {
+    "date": "2026-05-16",
+    "type": "shipping",
+    "name": "Zásilkovna na výdejní místo SK",
+    "count": 2,
     "revenue_vat": 7
   },
   {
@@ -2709,8 +3003,15 @@ export const shippingPaymentDataSK: ShippingPaymentRecord[] = [
     "date": "2026-05-24",
     "type": "shipping",
     "name": "Zásilkovna na výdejní místo SK",
-    "count": 3,
+    "count": 2,
     "revenue_vat": 7
+  },
+  {
+    "date": "2026-05-24",
+    "type": "shipping",
+    "name": "Zásilkovna na výdejní místo SK",
+    "count": 1,
+    "revenue_vat": 0
   },
   {
     "date": "2026-05-25",
@@ -2737,7 +3038,14 @@ export const shippingPaymentDataSK: ShippingPaymentRecord[] = [
     "date": "2026-05-26",
     "type": "shipping",
     "name": "Zásilkovna na adresu SK",
-    "count": 2,
+    "count": 1,
+    "revenue_vat": 0
+  },
+  {
+    "date": "2026-05-26",
+    "type": "shipping",
+    "name": "Zásilkovna na adresu SK",
+    "count": 1,
     "revenue_vat": 4.3
   },
   {
@@ -2821,8 +3129,15 @@ export const shippingPaymentDataSK: ShippingPaymentRecord[] = [
     "date": "2026-05-30",
     "type": "shipping",
     "name": "Zásilkovna na výdejní místo SK",
-    "count": 3,
+    "count": 2,
     "revenue_vat": 7
+  },
+  {
+    "date": "2026-05-30",
+    "type": "shipping",
+    "name": "Zásilkovna na výdejní místo SK",
+    "count": 1,
+    "revenue_vat": 0
   },
   {
     "date": "2026-05-31",
@@ -2933,7 +3248,14 @@ export const shippingPaymentDataSK: ShippingPaymentRecord[] = [
     "date": "2026-06-09",
     "type": "shipping",
     "name": "Zásilkovna na adresu SK",
-    "count": 2,
+    "count": 1,
+    "revenue_vat": 0
+  },
+  {
+    "date": "2026-06-09",
+    "type": "shipping",
+    "name": "Zásilkovna na adresu SK",
+    "count": 1,
     "revenue_vat": 4.3
   },
   {
@@ -2989,7 +3311,14 @@ export const shippingPaymentDataSK: ShippingPaymentRecord[] = [
     "date": "2026-06-15",
     "type": "shipping",
     "name": "Zásilkovna na výdejní místo SK",
-    "count": 2,
+    "count": 1,
+    "revenue_vat": 0
+  },
+  {
+    "date": "2026-06-15",
+    "type": "shipping",
+    "name": "Zásilkovna na výdejní místo SK",
+    "count": 1,
     "revenue_vat": 3.5
   },
   {

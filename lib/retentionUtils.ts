@@ -284,12 +284,14 @@ export function computePurchaseDistribution(data: CustomerRetentionRecord[]): Pu
 }
 
 export interface MonthlyNewVsReturningPoint {
-  month: string;   // "2025-05"
-  label: string;   // "Kvě 2025"
-  newPct: number;
-  returningPct: number;
+  month: string;           // "2025-05"
+  label: string;           // "Kvě 2025"
   newCount: number;
   returningCount: number;
+  orders: number;
+  prevNewCount: number | null;
+  prevReturningCount: number | null;
+  prevOrders: number | null;
 }
 
 const CZ_MONTHS = ['Led', 'Úno', 'Bře', 'Dub', 'Kvě', 'Čvn', 'Čvc', 'Srp', 'Zář', 'Říj', 'Lis', 'Pro'];
@@ -301,25 +303,36 @@ export function computeMonthlyNewVsReturning(data: CustomerRetentionRecord[]): M
   }
   const months = [...monthsSet].sort();
 
-  return months.map(month => {
-    let newCount = 0, returningCount = 0;
+  // First pass: compute raw counts per month
+  const byMonth = new Map<string, { newCount: number; returningCount: number; orders: number }>();
+  for (const month of months) {
+    let newCount = 0, returningCount = 0, orders = 0;
     for (const c of data) {
-      const hasInMonth = c.dates.some(d => d.startsWith(month));
-      if (!hasInMonth) continue;
-      const isNew = c.dates[0].startsWith(month);
-      if (isNew) newCount++;
+      const inMonth = c.dates.filter(d => d.startsWith(month));
+      if (inMonth.length === 0) continue;
+      orders += inMonth.length;
+      if (c.dates[0].startsWith(month)) newCount++;
       else returningCount++;
     }
-    const total = newCount + returningCount;
+    byMonth.set(month, { newCount, returningCount, orders });
+  }
+
+  // Second pass: attach YoY (same month previous year)
+  return months.map(month => {
+    const curr = byMonth.get(month)!;
     const [yearStr, monthStr] = month.split('-');
     const label = `${CZ_MONTHS[parseInt(monthStr) - 1]} ${yearStr}`;
+    const prevMonthKey = `${parseInt(yearStr) - 1}-${monthStr}`;
+    const prev = byMonth.get(prevMonthKey) ?? null;
     return {
       month,
       label,
-      newPct:       total > 0 ? (newCount / total) * 100 : 0,
-      returningPct: total > 0 ? (returningCount / total) * 100 : 0,
-      newCount,
-      returningCount,
+      newCount: curr.newCount,
+      returningCount: curr.returningCount,
+      orders: curr.orders,
+      prevNewCount: prev?.newCount ?? null,
+      prevReturningCount: prev?.returningCount ?? null,
+      prevOrders: prev?.orders ?? null,
     };
   });
 }
