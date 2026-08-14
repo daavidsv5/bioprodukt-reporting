@@ -202,10 +202,11 @@ Výpočet v `lib/retentionUtils.ts` → `computeRfmSegments()`. Referenční dat
 
 ### RFM segmenty po měsících (`/retention`)
 
-`computeMonthlyRfmSegments()` v `lib/retentionUtils.ts` — pro každý měsíc přepočítá RFM stav každého zákazníka k poslednímu dni toho měsíce a vrátí počty per segment.
-- Graf: 100% stacked BarChart (`stackOffset="expand"`), Y-osa v %, tooltip zobrazuje počet zákazníků i podíl
-- Pořadí vrstev (spodek→vršek): Ztracení → Jednorázové → Ohrožení → Noví zákazníci → Věrní zákazníci → Šampioni
-- Umístění: hned pod RFM boxy, před grafy LTV/AOV
+`computeMonthlyRfmDistribution()` v `lib/retentionUtils.ts` — pro každý měsíc kumulativně přepočítá RFM stav každého zákazníka (recency/frequency k datu konce daného měsíce, jen z objednávek do té doby) a vrátí počty per segment. Klasifikační logika sdílená s `computeRfmSegments()` přes interní helper `classifyRfmSegment()`.
+- `computeMonthlyRfmRevenueDistribution()` — stejná měsíční kumulativní klasifikace, ale místo počtu zákazníků sčítá jejich kumulativní tržby bez DPH do konce daného měsíce
+- Barvy segmentů: `RFM_META[segment].hex`, pořadí `RFM_ORDER` — obojí exportováno z `lib/retentionUtils.ts`
+- Grafy: 100% stacked `AreaChart` (`stackOffset="expand"`), Y-osa v %, vlastní tooltip (`RfmDistributionTooltip` v `app/retention/page.tsx`) zobrazuje hodnotu (počet nebo tržby) i podíl segmentu v daném měsíci + řádek Celkem
+- Umístění: uvnitř RFM karty, hned pod „Distribuce zákazníků", před tabulkou Doporučené akce (nejdřív graf počtů, pak graf tržeb)
 
 ### Definice Noví vs. Stávající zákazníci (`/retention`)
 

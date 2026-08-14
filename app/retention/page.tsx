@@ -14,9 +14,12 @@ import {
   computeDaysBetweenHistogram,
   computeRfmSegments,
   computeMonthlyNewVsReturning,
-  computeMonthlyRfmSegments,
+  computeMonthlyRfmDistribution,
+  computeMonthlyRfmRevenueDistribution,
+  RFM_META,
+  RFM_ORDER,
 } from '@/lib/retentionUtils';
-import { formatCurrency, formatPercent, formatNumber, formatShortDate } from '@/lib/formatters';
+import { formatCurrency, formatPercent, formatNumber, formatShortDate, formatMonthYear } from '@/lib/formatters';
 import {
   AreaChart, Area, BarChart, Bar, LineChart, Line,
   XAxis, YAxis, CartesianGrid, Tooltip, Legend,
@@ -57,6 +60,48 @@ function fmtYAxis(v: number, currency: 'CZK' | 'EUR') {
   return `${Math.round(v)} ${s}`;
 }
 
+/** Tooltip pro měsíční vývoj RFM segmentů — hodnota (počty nebo tržby) + podíl v daném měsíci */
+function RfmDistributionTooltip({
+  active, label, fullData, segmentDefs, formatValue = formatNumber,
+}: {
+  active?: boolean;
+  label?: any;
+  fullData: { date: string; [key: string]: any }[];
+  segmentDefs: { key: string; label: string; color: string }[];
+  formatValue?: (v: number) => string;
+}) {
+  if (!active || !label) return null;
+  const cur = fullData.find(d => d.date === label);
+  if (!cur) return null;
+  const total = segmentDefs.reduce((s, seg) => s + (cur[seg.key] ?? 0), 0);
+
+  return (
+    <div className="bg-white border border-slate-200 rounded-lg shadow-lg px-3.5 py-3 text-xs min-w-[220px]">
+      <p className="font-semibold text-slate-700 mb-2">{formatMonthYear(label as string)}</p>
+      {segmentDefs.map(seg => {
+        const value = cur[seg.key] ?? 0;
+        if (value === 0) return null;
+        const pct = total > 0 ? (value / total) * 100 : 0;
+        return (
+          <div key={seg.key} className="flex items-center justify-between gap-4 mb-1 last:mb-0">
+            <span className="flex items-center gap-1.5 font-medium" style={{ color: seg.color }}>
+              <span className="inline-block w-2 h-2 rounded-sm" style={{ background: seg.color }} />
+              {seg.label}
+            </span>
+            <span className="font-semibold text-slate-700">
+              {formatValue(value)} <span className="text-slate-400 font-normal">({pct.toFixed(1)} %)</span>
+            </span>
+          </div>
+        );
+      })}
+      <div className="flex items-center justify-between gap-4 mt-2 pt-2 border-t border-slate-100 font-semibold text-slate-700">
+        <span>Celkem</span>
+        <span>{formatValue(total)}</span>
+      </div>
+    </div>
+  );
+}
+
 export default function RetentionPage() {
   const [tab, setTab] = useState<Tab>('cz');
 
@@ -65,7 +110,10 @@ export default function RetentionPage() {
   const fc = (v: number) => formatCurrency(v, currency);
   const fp = (v: number) => formatPercent(v, 1);
 
-  const rfmSegments  = useMemo(() => computeRfmSegments(data), [data]);
+  const rfmSegments       = useMemo(() => computeRfmSegments(data), [data]);
+  const monthlyRfm        = useMemo(() => computeMonthlyRfmDistribution(data), [data]);
+  const monthlyRfmRevenue = useMemo(() => computeMonthlyRfmRevenueDistribution(data), [data]);
+  const rfmSegmentDefs    = useMemo(() => RFM_ORDER.map(seg => ({ key: seg, label: RFM_META[seg].label, color: RFM_META[seg].hex })), []);
   const kpis         = useMemo(() => computeRetentionKpis(data), [data]);
   const yearCustomer = useMemo(() => computeYearCustomerMetrics(data), [data]);
   const yearRetention= useMemo(() => computeYearRetentionMetrics(data), [data]);
@@ -74,7 +122,6 @@ export default function RetentionPage() {
   const purchaseDist = useMemo(() => computePurchaseDistribution(data), [data]);
   const daysBins     = useMemo(() => computeDaysBetweenHistogram(data), [data]);
   const monthlyNewVsReturning = useMemo(() => computeMonthlyNewVsReturning(data), [data]);
-  const monthlyRfm            = useMemo(() => computeMonthlyRfmSegments(data), [data]);
 
   const totalOrders      = yearCustomer.reduce((s, r) => s + r.orders, 0);
   const totalNewCustomers= yearCustomer.reduce((s, r) => s + r.newCustomers, 0);
@@ -280,6 +327,40 @@ export default function RetentionPage() {
           </div>
         </div>
 
+        {/* Rozložení segmentů v čase (měsíčně) */}
+        <div>
+          <p className="text-[10px] text-slate-400 mb-1.5 uppercase tracking-wider">Rozložení segmentů v čase (měsíčně)</p>
+          <ResponsiveContainer width="100%" height={260}>
+            <AreaChart data={monthlyRfm} margin={{ top: 4, right: 16, left: 4, bottom: 4 }} stackOffset="expand">
+              <CartesianGrid strokeDasharray="0" stroke="#f1f5f9" vertical={false} />
+              <XAxis dataKey="date" tickFormatter={formatMonthYear} tick={{ fontSize: 11, fill: '#94a3b8' }} axisLine={false} tickLine={false} interval="preserveStartEnd" />
+              <YAxis tickFormatter={v => `${Math.round((v as number) * 100)} %`} tick={{ fontSize: 11, fill: '#94a3b8' }} axisLine={false} tickLine={false} width={44} />
+              <Tooltip content={<RfmDistributionTooltip fullData={monthlyRfm} segmentDefs={rfmSegmentDefs} />} />
+              <Legend wrapperStyle={{ fontSize: 11, color: '#64748b' }} iconType="square" iconSize={9} />
+              {rfmSegmentDefs.map(seg => (
+                <Area key={seg.key} type="monotone" dataKey={seg.key} name={seg.label} stackId="a" stroke={seg.color} fill={seg.color} fillOpacity={0.85} />
+              ))}
+            </AreaChart>
+          </ResponsiveContainer>
+        </div>
+
+        {/* Rozložení tržeb dle segmentů v čase (měsíčně) */}
+        <div>
+          <p className="text-[10px] text-slate-400 mb-1.5 uppercase tracking-wider">Rozložení tržeb dle segmentů v čase (měsíčně)</p>
+          <ResponsiveContainer width="100%" height={260}>
+            <AreaChart data={monthlyRfmRevenue} margin={{ top: 4, right: 16, left: 4, bottom: 4 }} stackOffset="expand">
+              <CartesianGrid strokeDasharray="0" stroke="#f1f5f9" vertical={false} />
+              <XAxis dataKey="date" tickFormatter={formatMonthYear} tick={{ fontSize: 11, fill: '#94a3b8' }} axisLine={false} tickLine={false} interval="preserveStartEnd" />
+              <YAxis tickFormatter={v => `${Math.round((v as number) * 100)} %`} tick={{ fontSize: 11, fill: '#94a3b8' }} axisLine={false} tickLine={false} width={44} />
+              <Tooltip content={<RfmDistributionTooltip fullData={monthlyRfmRevenue} segmentDefs={rfmSegmentDefs} formatValue={fc} />} />
+              <Legend wrapperStyle={{ fontSize: 11, color: '#64748b' }} iconType="square" iconSize={9} />
+              {rfmSegmentDefs.map(seg => (
+                <Area key={seg.key} type="monotone" dataKey={seg.key} name={seg.label} stackId="a" stroke={seg.color} fill={seg.color} fillOpacity={0.85} />
+              ))}
+            </AreaChart>
+          </ResponsiveContainer>
+        </div>
+
         {/* Action table */}
         <div>
           <p className="text-[10px] text-slate-400 mb-2 uppercase tracking-wider">Doporučené akce</p>
@@ -296,34 +377,6 @@ export default function RetentionPage() {
           </div>
         </div>
       </div>
-
-      {/* RFM segmenty po měsících */}
-      <ChartCard title="Vývoj RFM segmentů po měsících">
-        <ResponsiveContainer width="100%" height={300}>
-          <BarChart data={monthlyRfm} stackOffset="expand" margin={{ top: 4, right: 16, left: 4, bottom: 4 }}>
-            <CartesianGrid strokeDasharray="0" stroke="#f1f5f9" vertical={false} />
-            <XAxis dataKey="label" tick={{ fontSize: 10, fill: '#94a3b8' }} axisLine={false} tickLine={false} interval="preserveStartEnd" />
-            <YAxis tickFormatter={v => `${Math.round((v as number) * 100)} %`} tick={{ fontSize: 11, fill: '#94a3b8' }} axisLine={false} tickLine={false} width={44} />
-            <Tooltip
-              formatter={(v: any, name: any, props: any) => {
-                const total = Object.entries(props.payload)
-                  .filter(([k]) => ['champions','loyal','at_risk','new','one_time','lost'].includes(k))
-                  .reduce((s, [, val]) => s + (val as number), 0);
-                const pct = total > 0 ? ((props.payload[props.dataKey] / total) * 100).toFixed(1) : '0';
-                return [`${props.payload[props.dataKey]} zákazníků (${pct} %)`, name];
-              }}
-              contentStyle={{ fontSize: 12 }}
-            />
-            <Legend wrapperStyle={{ fontSize: 11, color: '#64748b' }} iconType="square" iconSize={9} />
-            <Bar dataKey="lost"      name="Ztracení"         stackId="a" fill="#fb7185" />
-            <Bar dataKey="one_time"  name="Jednorázové"      stackId="a" fill="#cbd5e1" />
-            <Bar dataKey="at_risk"   name="Ohrožení"         stackId="a" fill="#fbbf24" />
-            <Bar dataKey="new"       name="Noví zákazníci"   stackId="a" fill="#38bdf8" />
-            <Bar dataKey="loyal"     name="Věrní zákazníci"  stackId="a" fill="#3b82f6" />
-            <Bar dataKey="champions" name="Šampioni"         stackId="a" fill="#22c55e" radius={[3, 3, 0, 0]} />
-          </BarChart>
-        </ResponsiveContainer>
-      </ChartCard>
 
       {/* Charts — řada 1: LTV + AOV */}
       <div className="grid grid-cols-1 xl:grid-cols-2 gap-6">
