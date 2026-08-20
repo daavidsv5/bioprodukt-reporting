@@ -4,13 +4,13 @@ import {
   LineChart, Line, XAxis, YAxis,
   CartesianGrid, Tooltip, Legend, ResponsiveContainer,
 } from 'recharts';
-import { ChartDataPoint } from '@/hooks/useDashboardData';
+import { ExtendedChartDataPoint } from '@/hooks/useDashboardData';
 import { formatCurrency, formatShortDate } from '@/lib/formatters';
 import { Currency } from '@/data/types';
 import { C } from '@/lib/chartColors';
 
 interface Props {
-  data: ChartDataPoint[];
+  data: ExtendedChartDataPoint[];
   currency?: Currency;
   hasPrevData?: boolean;
 }
@@ -46,7 +46,7 @@ export default function RevenueOrdersChart({ data, currency = 'CZK', hasPrevData
             width={52}
           />
           <Tooltip
-            formatter={(v: unknown, name: unknown) => [formatCurrency(Number(v), currency), String(name)]}
+            formatter={(v: unknown, name: unknown) => [v == null ? '—' : formatCurrency(Number(v), currency), String(name)]}
             labelFormatter={(l: unknown) => formatShortDate(String(l))}
             contentStyle={{ fontSize: 12, borderRadius: 8, border: '1px solid #e2e8f0' }}
           />

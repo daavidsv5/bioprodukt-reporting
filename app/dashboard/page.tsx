@@ -29,7 +29,7 @@ const periodTitles: Record<string, string> = {
 
 export default function DashboardPage() {
   const { filters, eurToCzk } = useFilters();
-  const { kpi, prevKpi, yoy, chartData, currentData, prevData, currency, hasPrevData } = useDashboardData(filters, mockData, eurToCzk);
+  const { kpi, prevKpi, yoy, chartData, chartDataExtended, currentData, prevData, currency, hasPrevData } = useDashboardData(filters, mockData, eurToCzk);
 
   const { start, end, prevStart, prevEnd } = getDateRange(filters);
 
@@ -174,18 +174,18 @@ export default function DashboardPage() {
 
       {/* Charts row 1 — Tržby + Počet objednávek */}
       <div className="grid grid-cols-1 xl:grid-cols-2 gap-6">
-        <RevenueOrdersChart data={chartData} currency={currency} hasPrevData={hasPrevData} />
+        <RevenueOrdersChart data={chartDataExtended} currency={currency} hasPrevData={hasPrevData} />
 
         {/* Počet objednávek (YoY) */}
         <div className="bg-white rounded-2xl border border-slate-100 shadow-sm p-5">
           <h2 className="text-sm font-semibold text-slate-700 mb-5">{hasPrevData ? 'Počet objednávek (YoY)' : 'Počet objednávek'}</h2>
           <ResponsiveContainer width="100%" height={300}>
-            <LineChart data={chartData} margin={{ top: 4, right: 16, left: 4, bottom: 4 }}>
+            <LineChart data={chartDataExtended} margin={{ top: 4, right: 16, left: 4, bottom: 4 }}>
               <CartesianGrid strokeDasharray="0" stroke="#f1f5f9" vertical={false} />
               <XAxis dataKey="date" tickFormatter={formatShortDate} tick={{ fontSize: 11, fill: '#94a3b8' }} axisLine={false} tickLine={false} interval="preserveStartEnd" />
               <YAxis tick={{ fontSize: 11, fill: '#94a3b8' }} axisLine={false} tickLine={false} width={40} />
               <Tooltip
-                formatter={(v: unknown, name: unknown) => [formatNumber(Number(v)), String(name)]}
+                formatter={(v: unknown, name: unknown) => [v == null ? '—' : formatNumber(Number(v)), String(name)]}
                 labelFormatter={(l: unknown) => formatShortDate(String(l))}
                 contentStyle={{ fontSize: 12, borderRadius: 8, border: '1px solid #e2e8f0' }}
               />
@@ -203,12 +203,12 @@ export default function DashboardPage() {
         <div className="bg-white rounded-2xl border border-slate-100 shadow-sm p-5">
           <h2 className="text-sm font-semibold text-slate-700 mb-5">{hasPrevData ? 'Náklady (YoY)' : 'Náklady'}</h2>
           <ResponsiveContainer width="100%" height={300}>
-            <LineChart data={chartData} margin={{ top: 4, right: 16, left: 4, bottom: 4 }}>
+            <LineChart data={chartDataExtended} margin={{ top: 4, right: 16, left: 4, bottom: 4 }}>
               <CartesianGrid strokeDasharray="0" stroke="#f1f5f9" vertical={false} />
               <XAxis dataKey="date" tickFormatter={formatShortDate} tick={{ fontSize: 11, fill: '#94a3b8' }} axisLine={false} tickLine={false} interval="preserveStartEnd" />
               <YAxis tickFormatter={(v: number) => v >= 1000 ? `${Math.round(v / 1000)}k` : String(v)} tick={{ fontSize: 11, fill: '#94a3b8' }} axisLine={false} tickLine={false} width={52} />
               <Tooltip
-                formatter={(v: unknown, name: unknown) => [fc(Number(v)), String(name)]}
+                formatter={(v: unknown, name: unknown) => [v == null ? '—' : fc(Number(v)), String(name)]}
                 labelFormatter={(l: unknown) => formatShortDate(String(l))}
                 contentStyle={{ fontSize: 12, borderRadius: 8, border: '1px solid #e2e8f0' }}
               />
@@ -223,12 +223,12 @@ export default function DashboardPage() {
         <div className="bg-white rounded-2xl border border-slate-100 shadow-sm p-5">
           <h2 className="text-sm font-semibold text-slate-700 mb-5">{hasPrevData ? 'PNO % (YoY)' : 'PNO %'}</h2>
           <ResponsiveContainer width="100%" height={300}>
-            <LineChart data={chartData} margin={{ top: 4, right: 16, left: 4, bottom: 4 }}>
+            <LineChart data={chartDataExtended} margin={{ top: 4, right: 16, left: 4, bottom: 4 }}>
               <CartesianGrid strokeDasharray="0" stroke="#f1f5f9" vertical={false} />
               <XAxis dataKey="date" tickFormatter={formatShortDate} tick={{ fontSize: 11, fill: '#94a3b8' }} axisLine={false} tickLine={false} interval="preserveStartEnd" />
               <YAxis tickFormatter={(v: number) => `${v.toFixed(0)}%`} tick={{ fontSize: 11, fill: '#94a3b8' }} axisLine={false} tickLine={false} width={38} />
               <Tooltip
-                formatter={(v: unknown, name: unknown) => [`${Number(v).toFixed(2)} %`, String(name)]}
+                formatter={(v: unknown, name: unknown) => [v == null ? '—' : `${Number(v).toFixed(2)} %`, String(name)]}
                 labelFormatter={(l: unknown) => formatShortDate(String(l))}
                 contentStyle={{ fontSize: 12, borderRadius: 8, border: '1px solid #e2e8f0' }}
               />
@@ -245,7 +245,7 @@ export default function DashboardPage() {
         <div className="bg-white rounded-2xl p-5 shadow-sm border border-slate-100">
           <h3 className="text-sm font-semibold text-slate-700 mb-4">{hasPrevData ? 'AOV – Průměrná hodnota objednávky (YoY)' : 'AOV – Průměrná hodnota objednávky'}</h3>
           <ResponsiveContainer width="100%" height={220}>
-            <LineChart data={chartData} margin={{ top: 4, right: 8, bottom: 0, left: 0 }}>
+            <LineChart data={chartDataExtended} margin={{ top: 4, right: 8, bottom: 0, left: 0 }}>
               <CartesianGrid strokeDasharray="3 3" stroke="#f1f5f9" vertical={false} />
               <XAxis
                 dataKey="date"
@@ -261,12 +261,12 @@ export default function DashboardPage() {
                 width={70}
               />
               <Tooltip
-                formatter={(v: unknown) => [fc(Number(v)), '']}
+                formatter={(v: unknown) => [v == null ? '—' : fc(Number(v)), '']}
                 labelFormatter={(l: unknown) => formatShortDate(String(l))}
                 contentStyle={{ fontSize: 12, borderRadius: 8, border: '1px solid #e2e8f0' }}
               />
               <Legend iconType="plainline" wrapperStyle={{ fontSize: 12 }} />
-              <Line type="monotone" dataKey={(d) => d.orders > 0 ? d.revenue / d.orders : null} name="AOV (aktuální)" stroke={C.aov} strokeWidth={2} dot={false} activeDot={{ r: 4 }} />
+              <Line type="monotone" dataKey={(d) => (d.orders ?? 0) > 0 ? (d.revenue as number) / (d.orders as number) : null} name="AOV (aktuální)" stroke={C.aov} strokeWidth={2} dot={false} activeDot={{ r: 4 }} />
               {hasPrevData && (
                 <Line type="monotone" dataKey={(d) => d.orders_prev > 0 ? d.revenue_prev / d.orders_prev : null} name="AOV (loňský rok)" stroke={C.aov} strokeWidth={1.5} strokeDasharray="4 3" dot={false} opacity={0.5} />
               )}
@@ -277,7 +277,7 @@ export default function DashboardPage() {
         <div className="bg-white rounded-2xl p-5 shadow-sm border border-slate-100">
           <h3 className="text-sm font-semibold text-slate-700 mb-4">{hasPrevData ? 'Cena za objednávku (YoY)' : 'Cena za objednávku'}</h3>
           <ResponsiveContainer width="100%" height={220}>
-            <LineChart data={chartData} margin={{ top: 4, right: 8, bottom: 0, left: 0 }}>
+            <LineChart data={chartDataExtended} margin={{ top: 4, right: 8, bottom: 0, left: 0 }}>
               <CartesianGrid strokeDasharray="3 3" stroke="#f1f5f9" vertical={false} />
               <XAxis
                 dataKey="date"
@@ -293,12 +293,12 @@ export default function DashboardPage() {
                 width={70}
               />
               <Tooltip
-                formatter={(v: unknown) => [fc(Number(v)), '']}
+                formatter={(v: unknown) => [v == null ? '—' : fc(Number(v)), '']}
                 labelFormatter={(l: unknown) => formatShortDate(String(l))}
                 contentStyle={{ fontSize: 12, borderRadius: 8, border: '1px solid #e2e8f0' }}
               />
               <Legend iconType="plainline" wrapperStyle={{ fontSize: 12 }} />
-              <Line type="monotone" dataKey={(d) => d.orders > 0 ? d.cost / d.orders : null} name="CPA (aktuální)" stroke={C.cost} strokeWidth={2} dot={false} activeDot={{ r: 4 }} />
+              <Line type="monotone" dataKey={(d) => (d.orders ?? 0) > 0 ? (d.cost as number) / (d.orders as number) : null} name="CPA (aktuální)" stroke={C.cost} strokeWidth={2} dot={false} activeDot={{ r: 4 }} />
               {hasPrevData && (
                 <Line type="monotone" dataKey={(d) => d.orders_prev > 0 ? d.cost_prev / d.orders_prev : null} name="CPA (loňský rok)" stroke={C.cost} strokeWidth={1.5} strokeDasharray="4 3" dot={false} opacity={0.5} />
               )}
