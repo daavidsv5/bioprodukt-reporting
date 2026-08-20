@@ -120,6 +120,8 @@ Karta **Hrubý zisk** a **Hrubý zisk %** mají `variant='green'`.
 
 `CostPnoChart` component existuje v `components/charts/` ale není používán žádnou stránkou — nahrazen inline `LineChart` na `/marketing`.
 
+**Grafy prodloužené do konce měsíce/roku (`chartDataExtended`, 2026-08):** U otevřených period (`current_month`/`current_year`) `hooks/useDashboardData.ts` vrací kromě `chartData` (jen dny s reálnými daty) i `chartDataExtended` — sjednocení dní aktuálního období s loňskými daty rozšířenými až do konce měsíce/roku (`chartPrevEnd`), takže loňská (přerušovaná) křivka na grafu pokračuje až na konec osy X, zatímco letošní křivka viditelně končí posledním dostupným dnem (pole = `null` pro dny bez letošních dat). Všech 6 grafů výše i `RevenueOrdersChart` vykreslují z `chartDataExtended`; tooltipy u dnů bez letošních dat zobrazí „—" místo zavádějící „0". Sparklines v KPI kartách a tabulka „Přehled po dnech" nadále používají nerozšířený `chartData`. Stejný princip jako u Celtic-supply reportingu.
+
 ### `/dashboard` — Distribuce podle země (`CountryDistribution`)
 
 Zobrazuje se pouze při výběru obou zemí (`filters.countries.length > 1`).
@@ -328,11 +330,15 @@ Plánovač zisku byl odstraněn ze sidebaru. Google Ads bude přidáno až bude 
 
 `scripts/updateData.js` — `aggregateShippingPayment()`: klíč agregace rozšířen o příznak `free/paid` (`${date}||${type}||${name}||free` nebo `||paid`). Dříve se free a placené objednávky se stejnou metodou ve stejný den sčítaly do jednoho záznamu — `revenue_vat` nebyl 0, i když část objednávek měla dopravu zdarma. Nyní jsou odděleny, `freeShippingPct` v `app/shipping/page.tsx` (detekce přes `revenue_vat === 0`) počítá správně.
 
-### `/retention` — Noví vs. stávající zákazníci graf
+### `/retention` — Noví vs. stávající zákazníci grafy
 
-`lib/retentionUtils.ts` — `MonthlyNewVsReturningPoint` rozšířen o `orders` (počet objednávek v měsíci), `prevNewCount`, `prevReturningCount`, `prevOrders` (hodnoty stejného měsíce předchozího roku pro YoY).
+Sjednoceno se strukturou Celtic-supply reportingu (2026-08). Dva grouped bar charty (dva sloupce vedle sebe per měsíc, ne stacked, ne 100% stacked):
+- **„Noví vs. stávající zákazníci — vývoj po měsících"** — absolutní počty, data z `computeMonthlyNewVsReturning()` v `lib/retentionUtils.ts`
+- **„Noví vs. stávající zákazníci — tržby bez DPH po měsících"** — stejná struktura, data z `computeMonthlyNewVsReturningRevenue()` (sčítá `c.revenues`)
 
-`app/retention/page.tsx` — "Noví vs. stávající zákazníci — vývoj po měsících": přepnut z 100% stacked na grouped BarChart s absolutními počty. Tři sloupce: Noví zákazníci (zelená), Stávající zákazníci (modrá), Objednávky (šedá). Tooltip zobrazuje hodnoty + YoY badge (▲/▼ %) pro každý segment.
+Tooltip obou grafů (custom `content` v `app/retention/page.tsx`) zobrazuje hodnotu + podíl v měsíci, srovnání se stejným měsícem loňského roku (YoY % + předchozí hodnota) a řádek Celkem.
+
+**Meziroční srovnání aktuálního (nedokončeného) měsíce k předcházejícímu dni, ne k celému loňskému měsíci** — `computeCurrentMonthYoyCutoff()` v `lib/retentionUtils.ts` spočítá loňská data jen do stejného dne v měsíci jako letos (`cutoffDay` = den včerejška). Tooltip při najetí na aktuální měsíc použije tato cutoff data místo `byDate[prevDate]` a zobrazí popisek „vs. loňský rok (do X. dne)" místo celého loňského měsíce.
 
 ### `/marketing` — CPC graf s filtrací kanálů
 
