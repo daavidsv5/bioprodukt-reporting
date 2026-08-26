@@ -7,6 +7,7 @@ export interface ShippingPaymentRecord {
   name: string;         // normalized method name e.g. "Zásilkovna", "Online platba kartou"
   count: number;        // number of orders using this method on this day
   revenue_vat: number;  // total paid by customers incl. VAT
+  free_count: number;   // orders with free shipping (revenue_vat === 0), excl. pickup/return/email; always 0 for payment records
 }
 
 export const shippingPaymentDataSK: ShippingPaymentRecord[] = [
@@ -15,4199 +16,4367 @@ export const shippingPaymentDataSK: ShippingPaymentRecord[] = [
     "type": "payment",
     "name": "Apple Pay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-12-09",
     "type": "payment",
     "name": "Online platba kartou",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-12-09",
     "type": "shipping",
     "name": "Zásilkovna na výdejní místo SK",
-    "count": 2,
-    "revenue_vat": 7
-  },
-  {
-    "date": "2025-12-09",
-    "type": "shipping",
-    "name": "Zásilkovna na výdejní místo SK",
-    "count": 1,
-    "revenue_vat": 0
+    "count": 3,
+    "revenue_vat": 7,
+    "free_count": 1
   },
   {
     "date": "2025-12-10",
     "type": "payment",
     "name": "Online platba kartou",
     "count": 4,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-12-10",
     "type": "shipping",
     "name": "Zásilkovna na výdejní místo SK",
-    "count": 1,
-    "revenue_vat": 0
-  },
-  {
-    "date": "2025-12-10",
-    "type": "shipping",
-    "name": "Zásilkovna na výdejní místo SK",
-    "count": 3,
-    "revenue_vat": 10.5
+    "count": 4,
+    "revenue_vat": 10.5,
+    "free_count": 1
   },
   {
     "date": "2025-12-11",
     "type": "payment",
     "name": "Google Pay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-12-11",
     "type": "payment",
     "name": "Online platba kartou",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-12-11",
     "type": "shipping",
     "name": "Zásilkovna na adresu SK",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-12-11",
     "type": "shipping",
     "name": "Zásilkovna na výdejní místo SK",
     "count": 1,
-    "revenue_vat": 3.5
+    "revenue_vat": 3.5,
+    "free_count": 0
   },
   {
     "date": "2025-12-12",
     "type": "payment",
     "name": "Apple Pay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-12-12",
     "type": "shipping",
     "name": "Zásilkovna na výdejní místo SK",
     "count": 1,
-    "revenue_vat": 3.5
+    "revenue_vat": 3.5,
+    "free_count": 0
   },
   {
     "date": "2025-12-13",
     "type": "payment",
     "name": "Apple Pay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-12-13",
     "type": "shipping",
     "name": "Zásilkovna na výdejní místo SK",
     "count": 1,
-    "revenue_vat": 3.5
+    "revenue_vat": 3.5,
+    "free_count": 0
   },
   {
     "date": "2025-12-14",
     "type": "payment",
     "name": "Apple Pay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-12-14",
     "type": "shipping",
     "name": "Zásilkovna na adresu SK",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2025-12-15",
     "type": "payment",
     "name": "Google Pay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-12-15",
     "type": "payment",
     "name": "Online platba kartou",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-12-15",
     "type": "shipping",
     "name": "Zásilkovna na výdejní místo SK",
     "count": 2,
-    "revenue_vat": 7
+    "revenue_vat": 7,
+    "free_count": 0
   },
   {
     "date": "2025-12-16",
     "type": "payment",
     "name": "Online platba kartou",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-12-16",
     "type": "shipping",
     "name": "Zásilkovna na výdejní místo SK",
     "count": 1,
-    "revenue_vat": 3.5
+    "revenue_vat": 3.5,
+    "free_count": 0
   },
   {
     "date": "2025-12-17",
     "type": "payment",
     "name": "Online platba kartou",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-12-17",
     "type": "shipping",
     "name": "Zásilkovna na adresu SK",
     "count": 1,
-    "revenue_vat": 4.3
+    "revenue_vat": 4.3,
+    "free_count": 0
   },
   {
     "date": "2025-12-17",
     "type": "shipping",
     "name": "Zásilkovna na výdejní místo SK",
-    "count": 1,
-    "revenue_vat": 3.5
-  },
-  {
-    "date": "2025-12-17",
-    "type": "shipping",
-    "name": "Zásilkovna na výdejní místo SK",
-    "count": 1,
-    "revenue_vat": 0
+    "count": 2,
+    "revenue_vat": 3.5,
+    "free_count": 1
   },
   {
     "date": "2025-12-18",
     "type": "payment",
     "name": "Apple Pay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-12-18",
     "type": "payment",
     "name": "Google Pay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-12-18",
     "type": "payment",
     "name": "Online platba kartou",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2025-12-18",
     "type": "shipping",
     "name": "Zásilkovna na výdejní místo SK",
-    "count": 1,
-    "revenue_vat": 3.5
-  },
-  {
-    "date": "2025-12-18",
-    "type": "shipping",
-    "name": "Zásilkovna na výdejní místo SK",
-    "count": 2,
-    "revenue_vat": 0
+    "count": 3,
+    "revenue_vat": 3.5,
+    "free_count": 2
   },
   {
     "date": "2026-01-04",
     "type": "payment",
     "name": "Online platba kartou",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-01-04",
     "type": "shipping",
     "name": "Zásilkovna na výdejní místo SK",
     "count": 1,
-    "revenue_vat": 3.5
+    "revenue_vat": 3.5,
+    "free_count": 0
   },
   {
     "date": "2026-01-05",
     "type": "payment",
     "name": "Apple Pay",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-01-05",
     "type": "payment",
     "name": "Online platba kartou",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-01-05",
     "type": "shipping",
     "name": "Zásilkovna na adresu SK",
-    "count": 1,
-    "revenue_vat": 4.3
-  },
-  {
-    "date": "2026-01-05",
-    "type": "shipping",
-    "name": "Zásilkovna na adresu SK",
-    "count": 1,
-    "revenue_vat": 0
-  },
-  {
-    "date": "2026-01-05",
-    "type": "shipping",
-    "name": "Zásilkovna na výdejní místo SK",
     "count": 2,
-    "revenue_vat": 7
+    "revenue_vat": 4.3,
+    "free_count": 1
   },
   {
     "date": "2026-01-05",
     "type": "shipping",
     "name": "Zásilkovna na výdejní místo SK",
-    "count": 1,
-    "revenue_vat": 0
+    "count": 3,
+    "revenue_vat": 7,
+    "free_count": 1
   },
   {
     "date": "2026-01-06",
     "type": "payment",
     "name": "Apple Pay",
     "count": 4,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-01-06",
     "type": "payment",
     "name": "Google Pay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-01-06",
     "type": "payment",
     "name": "Online platba kartou",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-01-06",
     "type": "shipping",
     "name": "Zásilkovna na výdejní místo SK",
     "count": 6,
-    "revenue_vat": 21
+    "revenue_vat": 21,
+    "free_count": 0
   },
   {
     "date": "2026-01-07",
     "type": "payment",
     "name": "Apple Pay",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-01-07",
     "type": "payment",
     "name": "Google Pay",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-01-07",
     "type": "payment",
     "name": "Online platba kartou",
     "count": 6,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-01-07",
     "type": "shipping",
     "name": "Zásilkovna na adresu SK",
     "count": 1,
-    "revenue_vat": 4.3
+    "revenue_vat": 4.3,
+    "free_count": 0
   },
   {
     "date": "2026-01-07",
+    "type": "shipping",
+    "name": "Zásilkovna na výdejní místo SK",
+    "count": 10,
+    "revenue_vat": 28,
+    "free_count": 2
+  },
+  {
+    "date": "2026-01-08",
+    "type": "payment",
+    "name": "Apple Pay",
+    "count": 5,
+    "revenue_vat": 0,
+    "free_count": 0
+  },
+  {
+    "date": "2026-01-08",
+    "type": "payment",
+    "name": "Google Pay",
+    "count": 1,
+    "revenue_vat": 0,
+    "free_count": 0
+  },
+  {
+    "date": "2026-01-08",
+    "type": "payment",
+    "name": "Online platba kartou",
+    "count": 3,
+    "revenue_vat": 0,
+    "free_count": 0
+  },
+  {
+    "date": "2026-01-08",
+    "type": "shipping",
+    "name": "Zásilkovna na adresu SK",
+    "count": 1,
+    "revenue_vat": 0,
+    "free_count": 1
+  },
+  {
+    "date": "2026-01-08",
     "type": "shipping",
     "name": "Zásilkovna na výdejní místo SK",
     "count": 8,
-    "revenue_vat": 28
+    "revenue_vat": 24.5,
+    "free_count": 1
   },
   {
-    "date": "2026-01-07",
+    "date": "2026-01-09",
+    "type": "payment",
+    "name": "Apple Pay",
+    "count": 1,
+    "revenue_vat": 0,
+    "free_count": 0
+  },
+  {
+    "date": "2026-01-09",
+    "type": "payment",
+    "name": "Google Pay",
+    "count": 1,
+    "revenue_vat": 0,
+    "free_count": 0
+  },
+  {
+    "date": "2026-01-09",
     "type": "shipping",
     "name": "Zásilkovna na výdejní místo SK",
     "count": 2,
-    "revenue_vat": 0
-  },
-  {
-    "date": "2026-01-08",
-    "type": "payment",
-    "name": "Apple Pay",
-    "count": 5,
-    "revenue_vat": 0
-  },
-  {
-    "date": "2026-01-08",
-    "type": "payment",
-    "name": "Google Pay",
-    "count": 1,
-    "revenue_vat": 0
-  },
-  {
-    "date": "2026-01-08",
-    "type": "payment",
-    "name": "Online platba kartou",
-    "count": 3,
-    "revenue_vat": 0
-  },
-  {
-    "date": "2026-01-08",
-    "type": "shipping",
-    "name": "Zásilkovna na adresu SK",
-    "count": 1,
-    "revenue_vat": 0
-  },
-  {
-    "date": "2026-01-08",
-    "type": "shipping",
-    "name": "Zásilkovna na výdejní místo SK",
-    "count": 7,
-    "revenue_vat": 24.5
-  },
-  {
-    "date": "2026-01-08",
-    "type": "shipping",
-    "name": "Zásilkovna na výdejní místo SK",
-    "count": 1,
-    "revenue_vat": 0
-  },
-  {
-    "date": "2026-01-09",
-    "type": "payment",
-    "name": "Apple Pay",
-    "count": 1,
-    "revenue_vat": 0
-  },
-  {
-    "date": "2026-01-09",
-    "type": "payment",
-    "name": "Google Pay",
-    "count": 1,
-    "revenue_vat": 0
-  },
-  {
-    "date": "2026-01-09",
-    "type": "shipping",
-    "name": "Zásilkovna na výdejní místo SK",
-    "count": 1,
-    "revenue_vat": 3.5
-  },
-  {
-    "date": "2026-01-09",
-    "type": "shipping",
-    "name": "Zásilkovna na výdejní místo SK",
-    "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 3.5,
+    "free_count": 1
   },
   {
     "date": "2026-01-10",
     "type": "payment",
     "name": "Apple Pay",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-01-10",
     "type": "payment",
     "name": "Google Pay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-01-10",
     "type": "payment",
     "name": "Online platba kartou",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-01-10",
     "type": "shipping",
     "name": "Zásilkovna na výdejní místo SK",
-    "count": 1,
-    "revenue_vat": 0
-  },
-  {
-    "date": "2026-01-10",
-    "type": "shipping",
-    "name": "Zásilkovna na výdejní místo SK",
-    "count": 5,
-    "revenue_vat": 17.5
+    "count": 6,
+    "revenue_vat": 17.5,
+    "free_count": 1
   },
   {
     "date": "2026-01-11",
     "type": "payment",
     "name": "Apple Pay",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-01-11",
     "type": "payment",
     "name": "Google Pay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-01-11",
     "type": "payment",
     "name": "Online platba kartou",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-01-11",
     "type": "shipping",
     "name": "Zásilkovna na adresu SK",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2026-01-11",
     "type": "shipping",
     "name": "Zásilkovna na výdejní místo SK",
-    "count": 3,
-    "revenue_vat": 10.5
-  },
-  {
-    "date": "2026-01-11",
-    "type": "shipping",
-    "name": "Zásilkovna na výdejní místo SK",
-    "count": 1,
-    "revenue_vat": 0
+    "count": 4,
+    "revenue_vat": 10.5,
+    "free_count": 1
   },
   {
     "date": "2026-01-12",
     "type": "payment",
     "name": "Apple Pay",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-01-12",
     "type": "shipping",
     "name": "Zásilkovna na adresu SK",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2026-01-12",
     "type": "shipping",
     "name": "Zásilkovna na výdejní místo SK",
-    "count": 1,
-    "revenue_vat": 3.5
-  },
-  {
-    "date": "2026-01-12",
-    "type": "shipping",
-    "name": "Zásilkovna na výdejní místo SK",
-    "count": 1,
-    "revenue_vat": 0
+    "count": 2,
+    "revenue_vat": 3.5,
+    "free_count": 1
   },
   {
     "date": "2026-01-13",
     "type": "payment",
     "name": "Apple Pay",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-01-13",
     "type": "payment",
     "name": "Online platba kartou",
     "count": 4,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-01-13",
     "type": "shipping",
     "name": "Zásilkovna na adresu SK",
     "count": 1,
-    "revenue_vat": 4.3
+    "revenue_vat": 4.3,
+    "free_count": 0
   },
   {
     "date": "2026-01-13",
     "type": "shipping",
     "name": "Zásilkovna na výdejní místo SK",
-    "count": 3,
-    "revenue_vat": 10.5
-  },
-  {
-    "date": "2026-01-13",
-    "type": "shipping",
-    "name": "Zásilkovna na výdejní místo SK",
-    "count": 2,
-    "revenue_vat": 0
+    "count": 5,
+    "revenue_vat": 10.5,
+    "free_count": 2
   },
   {
     "date": "2026-01-14",
     "type": "payment",
     "name": "Apple Pay",
     "count": 4,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-01-14",
     "type": "payment",
     "name": "Online platba kartou",
     "count": 4,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-01-14",
     "type": "shipping",
     "name": "Zásilkovna na adresu SK",
-    "count": 2,
-    "revenue_vat": 0
-  },
-  {
-    "date": "2026-01-14",
-    "type": "shipping",
-    "name": "Zásilkovna na adresu SK",
-    "count": 1,
-    "revenue_vat": 3.84
+    "count": 3,
+    "revenue_vat": 3.84,
+    "free_count": 2
   },
   {
     "date": "2026-01-14",
     "type": "shipping",
     "name": "Zásilkovna na výdejní místo SK",
     "count": 5,
-    "revenue_vat": 17.5
+    "revenue_vat": 17.5,
+    "free_count": 0
   },
   {
     "date": "2026-01-15",
     "type": "payment",
     "name": "Apple Pay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-01-15",
     "type": "payment",
     "name": "Online platba kartou",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-01-15",
     "type": "shipping",
     "name": "Zásilkovna na adresu SK",
     "count": 1,
-    "revenue_vat": 4.3
+    "revenue_vat": 4.3,
+    "free_count": 0
   },
   {
     "date": "2026-01-15",
     "type": "shipping",
     "name": "Zásilkovna na výdejní místo SK",
     "count": 1,
-    "revenue_vat": 3.5
+    "revenue_vat": 3.5,
+    "free_count": 0
   },
   {
     "date": "2026-01-16",
     "type": "payment",
     "name": "Apple Pay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-01-16",
     "type": "payment",
     "name": "Google Pay",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-01-16",
     "type": "payment",
     "name": "Online platba kartou",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-01-16",
     "type": "shipping",
     "name": "Zásilkovna na adresu SK",
     "count": 1,
-    "revenue_vat": 4.3
+    "revenue_vat": 4.3,
+    "free_count": 0
   },
   {
     "date": "2026-01-16",
     "type": "shipping",
     "name": "Zásilkovna na výdejní místo SK",
-    "count": 3,
-    "revenue_vat": 10.5
-  },
-  {
-    "date": "2026-01-16",
-    "type": "shipping",
-    "name": "Zásilkovna na výdejní místo SK",
-    "count": 2,
-    "revenue_vat": 0
+    "count": 5,
+    "revenue_vat": 10.5,
+    "free_count": 2
   },
   {
     "date": "2026-01-17",
     "type": "payment",
     "name": "Online platba kartou",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-01-17",
     "type": "shipping",
     "name": "Zásilkovna na adresu SK",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2026-01-18",
     "type": "payment",
     "name": "Apple Pay",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-01-18",
     "type": "payment",
     "name": "Online platba kartou",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-01-18",
     "type": "shipping",
     "name": "Zásilkovna na výdejní místo SK",
-    "count": 2,
-    "revenue_vat": 7
-  },
-  {
-    "date": "2026-01-18",
-    "type": "shipping",
-    "name": "Zásilkovna na výdejní místo SK",
-    "count": 1,
-    "revenue_vat": 0
+    "count": 3,
+    "revenue_vat": 7,
+    "free_count": 1
   },
   {
     "date": "2026-01-19",
     "type": "payment",
     "name": "Apple Pay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-01-19",
     "type": "payment",
     "name": "Online platba kartou",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-01-19",
     "type": "shipping",
     "name": "Zásilkovna na adresu SK",
     "count": 1,
-    "revenue_vat": 4.3
+    "revenue_vat": 4.3,
+    "free_count": 0
   },
   {
     "date": "2026-01-19",
     "type": "shipping",
     "name": "Zásilkovna na výdejní místo SK",
     "count": 2,
-    "revenue_vat": 7
+    "revenue_vat": 7,
+    "free_count": 0
   },
   {
     "date": "2026-01-20",
     "type": "payment",
     "name": "Online platba kartou",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-01-20",
     "type": "shipping",
     "name": "Zásilkovna na adresu SK",
     "count": 1,
-    "revenue_vat": 4.3
+    "revenue_vat": 4.3,
+    "free_count": 0
   },
   {
     "date": "2026-01-20",
     "type": "shipping",
     "name": "Zásilkovna na výdejní místo SK",
     "count": 1,
-    "revenue_vat": 3.5
+    "revenue_vat": 3.5,
+    "free_count": 0
   },
   {
     "date": "2026-01-21",
     "type": "payment",
     "name": "Apple Pay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-01-21",
     "type": "payment",
     "name": "Online platba kartou",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-01-21",
     "type": "shipping",
     "name": "Zásilkovna na adresu SK",
-    "count": 1,
-    "revenue_vat": 4.3
-  },
-  {
-    "date": "2026-01-21",
-    "type": "shipping",
-    "name": "Zásilkovna na adresu SK",
-    "count": 1,
-    "revenue_vat": 0
+    "count": 2,
+    "revenue_vat": 4.3,
+    "free_count": 1
   },
   {
     "date": "2026-01-23",
     "type": "payment",
     "name": "Apple Pay",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-01-23",
     "type": "payment",
     "name": "Online platba kartou",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-01-23",
     "type": "shipping",
     "name": "Zásilkovna na výdejní místo SK",
     "count": 3,
-    "revenue_vat": 10.5
+    "revenue_vat": 10.5,
+    "free_count": 0
   },
   {
     "date": "2026-01-24",
     "type": "payment",
     "name": "Apple Pay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-01-24",
     "type": "shipping",
     "name": "Zásilkovna na adresu SK",
     "count": 1,
-    "revenue_vat": 4.3
+    "revenue_vat": 4.3,
+    "free_count": 0
   },
   {
     "date": "2026-01-25",
     "type": "payment",
     "name": "Apple Pay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-01-25",
     "type": "payment",
     "name": "Google Pay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-01-25",
     "type": "payment",
     "name": "Online platba kartou",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-01-25",
     "type": "shipping",
     "name": "Zásilkovna na výdejní místo SK",
-    "count": 2,
-    "revenue_vat": 0
-  },
-  {
-    "date": "2026-01-25",
-    "type": "shipping",
-    "name": "Zásilkovna na výdejní místo SK",
-    "count": 2,
-    "revenue_vat": 7
+    "count": 4,
+    "revenue_vat": 7,
+    "free_count": 2
   },
   {
     "date": "2026-01-26",
     "type": "payment",
     "name": "Google Pay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-01-26",
     "type": "payment",
     "name": "Online platba kartou",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-01-26",
     "type": "shipping",
     "name": "Zásilkovna na výdejní místo SK",
     "count": 2,
-    "revenue_vat": 7
+    "revenue_vat": 7,
+    "free_count": 0
   },
   {
     "date": "2026-01-30",
     "type": "payment",
     "name": "Apple Pay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-01-30",
     "type": "shipping",
     "name": "Zásilkovna na výdejní místo SK",
     "count": 1,
-    "revenue_vat": 3.5
+    "revenue_vat": 3.5,
+    "free_count": 0
   },
   {
     "date": "2026-01-31",
     "type": "payment",
     "name": "Online platba kartou",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-01-31",
     "type": "shipping",
     "name": "Zásilkovna na výdejní místo SK",
     "count": 1,
-    "revenue_vat": 3.5
+    "revenue_vat": 3.5,
+    "free_count": 0
   },
   {
     "date": "2026-02-02",
     "type": "payment",
     "name": "Apple Pay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-02-02",
     "type": "payment",
     "name": "Google Pay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-02-02",
     "type": "shipping",
     "name": "Zásilkovna na výdejní místo SK",
     "count": 2,
-    "revenue_vat": 7
+    "revenue_vat": 7,
+    "free_count": 0
   },
   {
     "date": "2026-02-03",
     "type": "payment",
     "name": "Google Pay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-02-03",
     "type": "payment",
     "name": "Online platba kartou",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-02-03",
     "type": "shipping",
     "name": "Zásilkovna na výdejní místo SK",
     "count": 2,
-    "revenue_vat": 7
+    "revenue_vat": 7,
+    "free_count": 0
   },
   {
     "date": "2026-02-04",
     "type": "payment",
     "name": "Apple Pay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-02-04",
     "type": "payment",
     "name": "Online platba kartou",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-02-04",
     "type": "shipping",
     "name": "Zásilkovna na výdejní místo SK",
     "count": 3,
-    "revenue_vat": 10.5
+    "revenue_vat": 10.5,
+    "free_count": 0
   },
   {
     "date": "2026-02-05",
     "type": "payment",
     "name": "Apple Pay",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-02-05",
     "type": "payment",
     "name": "Online platba kartou",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-02-05",
     "type": "shipping",
     "name": "Zásilkovna na adresu SK",
-    "count": 2,
-    "revenue_vat": 0
-  },
-  {
-    "date": "2026-02-05",
-    "type": "shipping",
-    "name": "Zásilkovna na adresu SK",
-    "count": 1,
-    "revenue_vat": 4.3
+    "count": 3,
+    "revenue_vat": 4.3,
+    "free_count": 2
   },
   {
     "date": "2026-02-05",
     "type": "shipping",
     "name": "Zásilkovna na výdejní místo SK",
     "count": 1,
-    "revenue_vat": 3.5
+    "revenue_vat": 3.5,
+    "free_count": 0
   },
   {
     "date": "2026-02-06",
     "type": "payment",
     "name": "Apple Pay",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-02-06",
     "type": "payment",
     "name": "Google Pay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-02-06",
     "type": "shipping",
     "name": "Zásilkovna na adresu SK",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2026-02-06",
     "type": "shipping",
     "name": "Zásilkovna na výdejní místo SK",
     "count": 2,
-    "revenue_vat": 7
+    "revenue_vat": 7,
+    "free_count": 0
   },
   {
     "date": "2026-02-07",
     "type": "payment",
     "name": "Online platba kartou",
     "count": 4,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-02-07",
     "type": "shipping",
     "name": "Zásilkovna na adresu SK",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2026-02-07",
     "type": "shipping",
     "name": "Zásilkovna na výdejní místo SK",
     "count": 3,
-    "revenue_vat": 10.5
+    "revenue_vat": 10.5,
+    "free_count": 0
   },
   {
     "date": "2026-02-08",
     "type": "payment",
     "name": "Apple Pay",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-02-08",
     "type": "payment",
     "name": "Online platba kartou",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-02-08",
     "type": "shipping",
     "name": "Zásilkovna na výdejní místo SK",
     "count": 3,
-    "revenue_vat": 10.5
+    "revenue_vat": 10.5,
+    "free_count": 0
   },
   {
     "date": "2026-02-09",
     "type": "payment",
     "name": "Online platba kartou",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-02-09",
     "type": "shipping",
     "name": "Zásilkovna na výdejní místo SK",
-    "count": 1,
-    "revenue_vat": 0
-  },
-  {
-    "date": "2026-02-09",
-    "type": "shipping",
-    "name": "Zásilkovna na výdejní místo SK",
-    "count": 1,
-    "revenue_vat": 3.5
+    "count": 2,
+    "revenue_vat": 3.5,
+    "free_count": 1
   },
   {
     "date": "2026-02-10",
     "type": "payment",
     "name": "Apple Pay",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-02-10",
     "type": "payment",
     "name": "Online platba kartou",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-02-10",
     "type": "shipping",
     "name": "Zásilkovna na adresu SK",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2026-02-10",
     "type": "shipping",
     "name": "Zásilkovna na výdejní místo SK",
     "count": 3,
-    "revenue_vat": 10.5
+    "revenue_vat": 10.5,
+    "free_count": 0
   },
   {
     "date": "2026-02-11",
     "type": "payment",
     "name": "Online platba kartou",
     "count": 5,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-02-11",
     "type": "shipping",
     "name": "Zásilkovna na výdejní místo SK",
-    "count": 3,
-    "revenue_vat": 10.5
-  },
-  {
-    "date": "2026-02-11",
-    "type": "shipping",
-    "name": "Zásilkovna na výdejní místo SK",
-    "count": 2,
-    "revenue_vat": 0
+    "count": 5,
+    "revenue_vat": 10.5,
+    "free_count": 2
   },
   {
     "date": "2026-02-12",
     "type": "payment",
     "name": "Apple Pay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-02-12",
     "type": "shipping",
     "name": "Zásilkovna na adresu SK",
     "count": 1,
-    "revenue_vat": 4.3
+    "revenue_vat": 4.3,
+    "free_count": 0
   },
   {
     "date": "2026-02-15",
     "type": "payment",
     "name": "Online platba kartou",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-02-15",
     "type": "shipping",
     "name": "Zásilkovna na výdejní místo SK",
     "count": 1,
-    "revenue_vat": 3.5
+    "revenue_vat": 3.5,
+    "free_count": 0
   },
   {
     "date": "2026-02-16",
     "type": "payment",
     "name": "Apple Pay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-02-16",
     "type": "shipping",
     "name": "Zásilkovna na adresu SK",
     "count": 1,
-    "revenue_vat": 4.3
+    "revenue_vat": 4.3,
+    "free_count": 0
   },
   {
     "date": "2026-02-17",
     "type": "payment",
     "name": "Online platba kartou",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-02-17",
     "type": "shipping",
     "name": "Zásilkovna na adresu SK",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2026-02-18",
     "type": "payment",
     "name": "Apple Pay",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-02-18",
     "type": "payment",
     "name": "Online platba kartou",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-02-18",
     "type": "shipping",
     "name": "Zásilkovna na adresu SK",
-    "count": 2,
-    "revenue_vat": 8.6
-  },
-  {
-    "date": "2026-02-18",
-    "type": "shipping",
-    "name": "Zásilkovna na adresu SK",
-    "count": 2,
-    "revenue_vat": 0
+    "count": 4,
+    "revenue_vat": 8.6,
+    "free_count": 2
   },
   {
     "date": "2026-02-19",
     "type": "payment",
     "name": "Online platba kartou",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-02-19",
     "type": "shipping",
     "name": "Zásilkovna na adresu SK",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2026-02-20",
     "type": "payment",
     "name": "Online platba kartou",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-02-20",
     "type": "shipping",
     "name": "Zásilkovna na výdejní místo SK",
     "count": 2,
-    "revenue_vat": 7
+    "revenue_vat": 7,
+    "free_count": 0
   },
   {
     "date": "2026-02-21",
     "type": "payment",
     "name": "Online platba kartou",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-02-21",
     "type": "shipping",
     "name": "Zásilkovna na výdejní místo SK",
     "count": 1,
-    "revenue_vat": 3.5
+    "revenue_vat": 3.5,
+    "free_count": 0
   },
   {
     "date": "2026-02-24",
     "type": "payment",
     "name": "Apple Pay",
     "count": 4,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-02-24",
     "type": "shipping",
     "name": "Zásilkovna na adresu SK",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2026-02-24",
     "type": "shipping",
     "name": "Zásilkovna na výdejní místo SK",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2026-02-25",
     "type": "payment",
     "name": "Apple Pay",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-02-25",
     "type": "payment",
     "name": "Google Pay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-02-25",
     "type": "payment",
     "name": "Online platba kartou",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-02-25",
     "type": "shipping",
     "name": "Zásilkovna na adresu SK",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2026-02-25",
     "type": "shipping",
     "name": "Zásilkovna na výdejní místo SK",
     "count": 4,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 4
   },
   {
     "date": "2026-02-26",
     "type": "payment",
     "name": "Google Pay",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-02-26",
     "type": "payment",
     "name": "Online platba kartou",
     "count": 6,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-02-26",
     "type": "shipping",
     "name": "Zásilkovna na adresu SK",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 3
   },
   {
     "date": "2026-02-26",
     "type": "shipping",
     "name": "Zásilkovna na výdejní místo SK",
-    "count": 4,
-    "revenue_vat": 0
-  },
-  {
-    "date": "2026-02-26",
-    "type": "shipping",
-    "name": "Zásilkovna na výdejní místo SK",
-    "count": 1,
-    "revenue_vat": 3.5
+    "count": 5,
+    "revenue_vat": 3.5,
+    "free_count": 4
   },
   {
     "date": "2026-02-27",
     "type": "payment",
     "name": "Apple Pay",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-02-27",
     "type": "payment",
     "name": "Google Pay",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-02-27",
     "type": "payment",
     "name": "Online platba kartou",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-02-27",
     "type": "shipping",
     "name": "Zásilkovna na adresu SK",
     "count": 5,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 5
   },
   {
     "date": "2026-02-27",
     "type": "shipping",
     "name": "Zásilkovna na výdejní místo SK",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2026-02-28",
     "type": "payment",
     "name": "Apple Pay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-02-28",
     "type": "payment",
     "name": "Online platba kartou",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-02-28",
     "type": "shipping",
     "name": "Zásilkovna na adresu SK",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2026-02-28",
     "type": "shipping",
     "name": "Zásilkovna na výdejní místo SK",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2026-03-01",
     "type": "payment",
     "name": "Apple Pay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-03-01",
     "type": "payment",
     "name": "Online platba kartou",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-03-01",
     "type": "shipping",
     "name": "Zásilkovna na výdejní místo SK",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2026-03-02",
     "type": "payment",
     "name": "Apple Pay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-03-02",
     "type": "payment",
     "name": "Online platba kartou",
     "count": 4,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-03-02",
     "type": "shipping",
     "name": "Zásilkovna na adresu SK",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 3
   },
   {
     "date": "2026-03-02",
     "type": "shipping",
     "name": "Zásilkovna na výdejní místo SK",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2026-03-03",
     "type": "payment",
     "name": "Apple Pay",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-03-03",
     "type": "shipping",
     "name": "Zásilkovna na adresu SK",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2026-03-03",
     "type": "shipping",
     "name": "Zásilkovna na výdejní místo SK",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2026-03-04",
     "type": "payment",
     "name": "Online platba kartou",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-03-04",
     "type": "shipping",
     "name": "Zásilkovna na výdejní místo SK",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2026-03-05",
     "type": "payment",
     "name": "Google Pay",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-03-05",
     "type": "payment",
     "name": "Online platba kartou",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-03-05",
     "type": "shipping",
     "name": "Zásilkovna na adresu SK",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 3
   },
   {
     "date": "2026-03-05",
     "type": "shipping",
     "name": "Zásilkovna na výdejní místo SK",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2026-03-06",
     "type": "payment",
     "name": "Apple Pay",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-03-06",
     "type": "shipping",
     "name": "Zásilkovna na adresu SK",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2026-03-06",
     "type": "shipping",
     "name": "Zásilkovna na výdejní místo SK",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2026-03-07",
     "type": "payment",
     "name": "Online platba kartou",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-03-07",
     "type": "shipping",
     "name": "Zásilkovna na adresu SK",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2026-03-08",
     "type": "payment",
     "name": "Apple Pay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-03-08",
     "type": "payment",
     "name": "Online platba kartou",
     "count": 4,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-03-08",
     "type": "shipping",
     "name": "Zásilkovna na adresu SK",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2026-03-08",
     "type": "shipping",
     "name": "Zásilkovna na výdejní místo SK",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 3
   },
   {
     "date": "2026-03-09",
     "type": "payment",
     "name": "Google Pay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-03-09",
     "type": "payment",
     "name": "Online platba kartou",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-03-09",
     "type": "shipping",
     "name": "Zásilkovna na adresu SK",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2026-03-09",
     "type": "shipping",
     "name": "Zásilkovna na výdejní místo SK",
     "count": 2,
-    "revenue_vat": 7
+    "revenue_vat": 7,
+    "free_count": 0
   },
   {
     "date": "2026-03-12",
     "type": "payment",
     "name": "Apple Pay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-03-12",
     "type": "payment",
     "name": "Google Pay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-03-12",
     "type": "shipping",
     "name": "Zásilkovna na výdejní místo SK",
     "count": 2,
-    "revenue_vat": 7
+    "revenue_vat": 7,
+    "free_count": 0
   },
   {
     "date": "2026-03-13",
     "type": "payment",
     "name": "Apple Pay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-03-13",
     "type": "payment",
     "name": "Google Pay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-03-13",
     "type": "payment",
     "name": "Online platba kartou",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-03-13",
     "type": "shipping",
     "name": "Zásilkovna na adresu SK",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2026-03-13",
     "type": "shipping",
     "name": "Zásilkovna na výdejní místo SK",
-    "count": 1,
-    "revenue_vat": 3.5
-  },
-  {
-    "date": "2026-03-13",
-    "type": "shipping",
-    "name": "Zásilkovna na výdejní místo SK",
-    "count": 1,
-    "revenue_vat": 0
+    "count": 2,
+    "revenue_vat": 3.5,
+    "free_count": 1
   },
   {
     "date": "2026-03-14",
     "type": "payment",
     "name": "Apple Pay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-03-14",
     "type": "shipping",
     "name": "Zásilkovna na výdejní místo SK",
     "count": 1,
-    "revenue_vat": 3.5
+    "revenue_vat": 3.5,
+    "free_count": 0
   },
   {
     "date": "2026-03-15",
     "type": "payment",
     "name": "Apple Pay",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-03-15",
     "type": "payment",
     "name": "Online platba kartou",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-03-15",
     "type": "shipping",
     "name": "Zásilkovna na výdejní místo SK",
-    "count": 3,
-    "revenue_vat": 10.5
-  },
-  {
-    "date": "2026-03-15",
-    "type": "shipping",
-    "name": "Zásilkovna na výdejní místo SK",
-    "count": 2,
-    "revenue_vat": 0
+    "count": 5,
+    "revenue_vat": 10.5,
+    "free_count": 2
   },
   {
     "date": "2026-03-16",
     "type": "payment",
     "name": "Apple Pay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-03-16",
     "type": "payment",
     "name": "Google Pay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-03-16",
     "type": "payment",
     "name": "Online platba kartou",
     "count": 5,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-03-16",
     "type": "shipping",
     "name": "Zásilkovna na adresu SK",
-    "count": 2,
-    "revenue_vat": 8.14
-  },
-  {
-    "date": "2026-03-16",
-    "type": "shipping",
-    "name": "Zásilkovna na adresu SK",
-    "count": 1,
-    "revenue_vat": 0
+    "count": 3,
+    "revenue_vat": 8.14,
+    "free_count": 1
   },
   {
     "date": "2026-03-16",
     "type": "shipping",
     "name": "Zásilkovna na výdejní místo SK",
-    "count": 2,
-    "revenue_vat": 0
-  },
-  {
-    "date": "2026-03-16",
-    "type": "shipping",
-    "name": "Zásilkovna na výdejní místo SK",
-    "count": 2,
-    "revenue_vat": 7
+    "count": 4,
+    "revenue_vat": 7,
+    "free_count": 2
   },
   {
     "date": "2026-03-17",
     "type": "payment",
     "name": "Online platba kartou",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-03-17",
     "type": "shipping",
     "name": "Zásilkovna na adresu SK",
     "count": 2,
-    "revenue_vat": 8.6
+    "revenue_vat": 8.6,
+    "free_count": 0
   },
   {
     "date": "2026-03-17",
     "type": "shipping",
     "name": "Zásilkovna na výdejní místo SK",
     "count": 1,
-    "revenue_vat": 3.5
+    "revenue_vat": 3.5,
+    "free_count": 0
   },
   {
     "date": "2026-03-18",
     "type": "payment",
     "name": "Apple Pay",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-03-18",
     "type": "payment",
     "name": "Google Pay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-03-18",
     "type": "payment",
     "name": "Online platba kartou",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-03-18",
     "type": "shipping",
     "name": "Zásilkovna na adresu SK",
-    "count": 2,
-    "revenue_vat": 0
-  },
-  {
-    "date": "2026-03-18",
-    "type": "shipping",
-    "name": "Zásilkovna na adresu SK",
-    "count": 1,
-    "revenue_vat": 3.84
+    "count": 3,
+    "revenue_vat": 3.84,
+    "free_count": 2
   },
   {
     "date": "2026-03-18",
     "type": "shipping",
     "name": "Zásilkovna na výdejní místo SK",
     "count": 3,
-    "revenue_vat": 10.5
+    "revenue_vat": 10.5,
+    "free_count": 0
   },
   {
     "date": "2026-03-19",
     "type": "payment",
     "name": "Apple Pay",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-03-19",
     "type": "payment",
     "name": "Online platba kartou",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-03-19",
     "type": "shipping",
     "name": "Zásilkovna na adresu SK",
-    "count": 1,
-    "revenue_vat": 0
-  },
-  {
-    "date": "2026-03-19",
-    "type": "shipping",
-    "name": "Zásilkovna na adresu SK",
-    "count": 1,
-    "revenue_vat": 4.3
+    "count": 2,
+    "revenue_vat": 4.3,
+    "free_count": 1
   },
   {
     "date": "2026-03-19",
     "type": "shipping",
     "name": "Zásilkovna na výdejní místo SK",
     "count": 1,
-    "revenue_vat": 3.5
+    "revenue_vat": 3.5,
+    "free_count": 0
   },
   {
     "date": "2026-03-20",
     "type": "payment",
     "name": "Apple Pay",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-03-20",
     "type": "payment",
     "name": "Google Pay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-03-20",
     "type": "payment",
     "name": "Online platba kartou",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-03-20",
     "type": "shipping",
     "name": "Zásilkovna na adresu SK",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2026-03-20",
     "type": "shipping",
     "name": "Zásilkovna na výdejní místo SK",
-    "count": 2,
-    "revenue_vat": 7
-  },
-  {
-    "date": "2026-03-20",
-    "type": "shipping",
-    "name": "Zásilkovna na výdejní místo SK",
-    "count": 1,
-    "revenue_vat": 0
+    "count": 3,
+    "revenue_vat": 7,
+    "free_count": 1
   },
   {
     "date": "2026-03-21",
     "type": "payment",
     "name": "Google Pay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-03-21",
     "type": "payment",
     "name": "Online platba kartou",
     "count": 4,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-03-21",
     "type": "shipping",
     "name": "Zásilkovna na výdejní místo SK",
-    "count": 4,
-    "revenue_vat": 14
-  },
-  {
-    "date": "2026-03-21",
-    "type": "shipping",
-    "name": "Zásilkovna na výdejní místo SK",
-    "count": 1,
-    "revenue_vat": 0
+    "count": 5,
+    "revenue_vat": 14,
+    "free_count": 1
   },
   {
     "date": "2026-03-22",
     "type": "payment",
     "name": "Google Pay",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-03-22",
     "type": "payment",
     "name": "Online platba kartou",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-03-22",
     "type": "shipping",
     "name": "Zásilkovna na adresu SK",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2026-03-22",
     "type": "shipping",
     "name": "Zásilkovna na výdejní místo SK",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2026-03-23",
     "type": "payment",
     "name": "Apple Pay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-03-23",
     "type": "payment",
     "name": "Online platba kartou",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-03-23",
     "type": "shipping",
     "name": "Zásilkovna na adresu SK",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2026-03-23",
     "type": "shipping",
     "name": "Zásilkovna na výdejní místo SK",
     "count": 1,
-    "revenue_vat": 3.5
+    "revenue_vat": 3.5,
+    "free_count": 0
   },
   {
     "date": "2026-03-24",
     "type": "payment",
     "name": "Google Pay",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-03-24",
     "type": "payment",
     "name": "Online platba kartou",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-03-24",
     "type": "shipping",
     "name": "Zásilkovna na adresu SK",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2026-03-24",
     "type": "shipping",
     "name": "Zásilkovna na výdejní místo SK",
     "count": 3,
-    "revenue_vat": 10.5
+    "revenue_vat": 10.5,
+    "free_count": 0
   },
   {
     "date": "2026-03-25",
     "type": "payment",
     "name": "Online platba kartou",
     "count": 5,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-03-25",
     "type": "shipping",
     "name": "Zásilkovna na adresu SK",
-    "count": 1,
-    "revenue_vat": 4.3
-  },
-  {
-    "date": "2026-03-25",
-    "type": "shipping",
-    "name": "Zásilkovna na adresu SK",
-    "count": 3,
-    "revenue_vat": 0
+    "count": 4,
+    "revenue_vat": 4.3,
+    "free_count": 3
   },
   {
     "date": "2026-03-25",
     "type": "shipping",
     "name": "Zásilkovna na výdejní místo SK",
     "count": 1,
-    "revenue_vat": 3.5
+    "revenue_vat": 3.5,
+    "free_count": 0
   },
   {
     "date": "2026-03-26",
     "type": "payment",
     "name": "Google Pay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-03-26",
     "type": "payment",
     "name": "Online platba kartou",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-03-26",
     "type": "shipping",
     "name": "Zásilkovna na adresu SK",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2026-03-26",
     "type": "shipping",
     "name": "Zásilkovna na výdejní místo SK",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2026-03-27",
     "type": "payment",
     "name": "Google Pay",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-03-27",
     "type": "payment",
     "name": "Online platba kartou",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-03-27",
     "type": "shipping",
     "name": "Zásilkovna na výdejní místo SK",
     "count": 3,
-    "revenue_vat": 10.5
+    "revenue_vat": 10.5,
+    "free_count": 0
   },
   {
     "date": "2026-03-28",
     "type": "payment",
     "name": "Apple Pay",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-03-28",
     "type": "payment",
     "name": "Online platba kartou",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-03-28",
     "type": "shipping",
     "name": "Zásilkovna na adresu SK",
-    "count": 1,
-    "revenue_vat": 4.3
-  },
-  {
-    "date": "2026-03-28",
-    "type": "shipping",
-    "name": "Zásilkovna na adresu SK",
-    "count": 1,
-    "revenue_vat": 0
+    "count": 2,
+    "revenue_vat": 4.3,
+    "free_count": 1
   },
   {
     "date": "2026-03-28",
     "type": "shipping",
     "name": "Zásilkovna na výdejní místo SK",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2026-03-29",
     "type": "payment",
     "name": "Apple Pay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-03-29",
     "type": "payment",
     "name": "Online platba kartou",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-03-29",
     "type": "shipping",
     "name": "Zásilkovna na adresu SK",
     "count": 1,
-    "revenue_vat": 4.3
+    "revenue_vat": 4.3,
+    "free_count": 0
   },
   {
     "date": "2026-03-29",
     "type": "shipping",
     "name": "Zásilkovna na výdejní místo SK",
     "count": 1,
-    "revenue_vat": 3.5
+    "revenue_vat": 3.5,
+    "free_count": 0
   },
   {
     "date": "2026-03-31",
     "type": "payment",
     "name": "Online platba kartou",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-03-31",
     "type": "shipping",
     "name": "Zásilkovna na adresu SK",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2026-03-31",
     "type": "shipping",
     "name": "Zásilkovna na výdejní místo SK",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2026-04-01",
     "type": "payment",
     "name": "Google Pay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-04-01",
     "type": "shipping",
     "name": "Zásilkovna na výdejní místo SK",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2026-04-03",
     "type": "payment",
     "name": "Google Pay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-04-03",
     "type": "payment",
     "name": "Online platba kartou",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-04-03",
     "type": "shipping",
     "name": "Zásilkovna na výdejní místo SK",
     "count": 2,
-    "revenue_vat": 7
+    "revenue_vat": 7,
+    "free_count": 0
   },
   {
     "date": "2026-04-04",
     "type": "payment",
     "name": "Online platba kartou",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-04-04",
     "type": "shipping",
     "name": "Zásilkovna na výdejní místo SK",
     "count": 1,
-    "revenue_vat": 3.5
+    "revenue_vat": 3.5,
+    "free_count": 0
   },
   {
     "date": "2026-04-06",
     "type": "payment",
     "name": "Online platba kartou",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-04-06",
     "type": "shipping",
     "name": "Zásilkovna na výdejní místo SK",
     "count": 1,
-    "revenue_vat": 3.5
+    "revenue_vat": 3.5,
+    "free_count": 0
   },
   {
     "date": "2026-04-11",
     "type": "payment",
     "name": "Online platba kartou",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-04-11",
     "type": "shipping",
     "name": "Zásilkovna na adresu SK",
     "count": 1,
-    "revenue_vat": 4.3
+    "revenue_vat": 4.3,
+    "free_count": 0
   },
   {
     "date": "2026-04-12",
     "type": "payment",
     "name": "Online platba kartou",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-04-12",
     "type": "shipping",
     "name": "Zásilkovna na výdejní místo SK",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2026-04-14",
     "type": "payment",
     "name": "Apple Pay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-04-14",
     "type": "payment",
     "name": "Online platba kartou",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-04-14",
     "type": "shipping",
     "name": "Zásilkovna na adresu SK",
-    "count": 1,
-    "revenue_vat": 3.84
-  },
-  {
-    "date": "2026-04-14",
-    "type": "shipping",
-    "name": "Zásilkovna na adresu SK",
-    "count": 1,
-    "revenue_vat": 0
+    "count": 2,
+    "revenue_vat": 3.84,
+    "free_count": 1
   },
   {
     "date": "2026-04-14",
     "type": "shipping",
     "name": "Zásilkovna na výdejní místo SK",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2026-04-16",
     "type": "payment",
     "name": "Apple Pay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-04-16",
     "type": "payment",
     "name": "Online platba kartou",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-04-16",
     "type": "shipping",
     "name": "Zásilkovna na výdejní místo SK",
-    "count": 1,
-    "revenue_vat": 0
-  },
-  {
-    "date": "2026-04-16",
-    "type": "shipping",
-    "name": "Zásilkovna na výdejní místo SK",
-    "count": 2,
-    "revenue_vat": 7
+    "count": 3,
+    "revenue_vat": 7,
+    "free_count": 1
   },
   {
     "date": "2026-04-17",
     "type": "payment",
     "name": "Apple Pay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-04-17",
     "type": "payment",
     "name": "Online platba kartou",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-04-17",
     "type": "shipping",
     "name": "Zásilkovna na výdejní místo SK",
-    "count": 1,
-    "revenue_vat": 3.5
-  },
-  {
-    "date": "2026-04-17",
-    "type": "shipping",
-    "name": "Zásilkovna na výdejní místo SK",
-    "count": 1,
-    "revenue_vat": 0
+    "count": 2,
+    "revenue_vat": 3.5,
+    "free_count": 1
   },
   {
     "date": "2026-04-18",
     "type": "payment",
     "name": "Online platba kartou",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-04-18",
     "type": "shipping",
     "name": "Zásilkovna na výdejní místo SK",
     "count": 1,
-    "revenue_vat": 3.5
+    "revenue_vat": 3.5,
+    "free_count": 0
   },
   {
     "date": "2026-04-19",
     "type": "payment",
     "name": "Online platba kartou",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-04-19",
     "type": "shipping",
     "name": "Zásilkovna na adresu SK",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2026-04-21",
     "type": "payment",
     "name": "Apple Pay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-04-21",
     "type": "shipping",
     "name": "Zásilkovna na adresu SK",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2026-04-22",
     "type": "payment",
     "name": "Online platba kartou",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-04-22",
     "type": "shipping",
     "name": "Zásilkovna na adresu SK",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2026-04-22",
     "type": "shipping",
     "name": "Zásilkovna na výdejní místo SK",
     "count": 1,
-    "revenue_vat": 3.5
+    "revenue_vat": 3.5,
+    "free_count": 0
   },
   {
     "date": "2026-04-23",
     "type": "payment",
     "name": "Apple Pay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-04-23",
     "type": "payment",
     "name": "Google Pay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-04-23",
     "type": "payment",
     "name": "Online platba kartou",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-04-23",
     "type": "shipping",
     "name": "Zásilkovna na výdejní místo SK",
     "count": 3,
-    "revenue_vat": 10.5
+    "revenue_vat": 10.5,
+    "free_count": 0
   },
   {
     "date": "2026-04-24",
     "type": "payment",
     "name": "Apple Pay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-04-24",
     "type": "shipping",
     "name": "Zásilkovna na adresu SK",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2026-04-25",
     "type": "payment",
     "name": "Google Pay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-04-25",
     "type": "payment",
     "name": "Online platba kartou",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-04-25",
     "type": "shipping",
     "name": "Zásilkovna na adresu SK",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2026-04-25",
     "type": "shipping",
     "name": "Zásilkovna na výdejní místo SK",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2026-04-26",
     "type": "payment",
     "name": "Apple Pay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-04-26",
     "type": "payment",
     "name": "Google Pay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-04-26",
     "type": "payment",
     "name": "Online platba kartou",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-04-26",
     "type": "shipping",
     "name": "Zásilkovna na výdejní místo SK",
-    "count": 1,
-    "revenue_vat": 0
-  },
-  {
-    "date": "2026-04-26",
-    "type": "shipping",
-    "name": "Zásilkovna na výdejní místo SK",
-    "count": 2,
-    "revenue_vat": 7
+    "count": 3,
+    "revenue_vat": 7,
+    "free_count": 1
   },
   {
     "date": "2026-04-27",
     "type": "payment",
     "name": "Online platba kartou",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-04-27",
     "type": "shipping",
     "name": "Zásilkovna na výdejní místo SK",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2026-04-29",
     "type": "payment",
     "name": "Google Pay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-04-29",
     "type": "shipping",
     "name": "Zásilkovna na výdejní místo SK",
     "count": 1,
-    "revenue_vat": 3.5
+    "revenue_vat": 3.5,
+    "free_count": 0
   },
   {
     "date": "2026-05-01",
     "type": "payment",
     "name": "Google Pay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-05-01",
     "type": "shipping",
     "name": "Zásilkovna na výdejní místo SK",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2026-05-02",
     "type": "payment",
     "name": "Google Pay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-05-02",
     "type": "payment",
     "name": "Online platba kartou",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-05-02",
     "type": "shipping",
     "name": "Zásilkovna na výdejní místo SK",
-    "count": 1,
-    "revenue_vat": 3.5
-  },
-  {
-    "date": "2026-05-02",
-    "type": "shipping",
-    "name": "Zásilkovna na výdejní místo SK",
-    "count": 2,
-    "revenue_vat": 0
+    "count": 3,
+    "revenue_vat": 3.5,
+    "free_count": 2
   },
   {
     "date": "2026-05-04",
     "type": "payment",
     "name": "Apple Pay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-05-04",
     "type": "payment",
     "name": "Google Pay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-05-04",
     "type": "payment",
     "name": "Online platba kartou",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-05-04",
     "type": "shipping",
     "name": "Zásilkovna na výdejní místo SK",
-    "count": 2,
-    "revenue_vat": 6.63
-  },
-  {
-    "date": "2026-05-04",
-    "type": "shipping",
-    "name": "Zásilkovna na výdejní místo SK",
-    "count": 1,
-    "revenue_vat": 0
+    "count": 3,
+    "revenue_vat": 6.63,
+    "free_count": 1
   },
   {
     "date": "2026-05-05",
     "type": "payment",
     "name": "Apple Pay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-05-05",
     "type": "payment",
     "name": "Google Pay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-05-05",
     "type": "shipping",
     "name": "Zásilkovna na výdejní místo SK",
     "count": 2,
-    "revenue_vat": 7
+    "revenue_vat": 7,
+    "free_count": 0
   },
   {
     "date": "2026-05-07",
     "type": "payment",
     "name": "Apple Pay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-05-07",
     "type": "payment",
     "name": "Online platba kartou",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-05-07",
     "type": "shipping",
     "name": "Zásilkovna na adresu SK",
-    "count": 1,
-    "revenue_vat": 0
-  },
-  {
-    "date": "2026-05-07",
-    "type": "shipping",
-    "name": "Zásilkovna na adresu SK",
-    "count": 1,
-    "revenue_vat": 4.3
+    "count": 2,
+    "revenue_vat": 4.3,
+    "free_count": 1
   },
   {
     "date": "2026-05-07",
     "type": "shipping",
     "name": "Zásilkovna na výdejní místo SK",
     "count": 1,
-    "revenue_vat": 3.5
+    "revenue_vat": 3.5,
+    "free_count": 0
   },
   {
     "date": "2026-05-10",
     "type": "payment",
     "name": "Apple Pay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-05-10",
     "type": "payment",
     "name": "Online platba kartou",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-05-10",
     "type": "shipping",
     "name": "Zásilkovna na výdejní místo SK",
     "count": 2,
-    "revenue_vat": 7
+    "revenue_vat": 7,
+    "free_count": 0
   },
   {
     "date": "2026-05-11",
     "type": "payment",
     "name": "Apple Pay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-05-11",
     "type": "payment",
     "name": "Online platba kartou",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-05-11",
     "type": "shipping",
     "name": "Zásilkovna na adresu SK",
     "count": 1,
-    "revenue_vat": 4.3
+    "revenue_vat": 4.3,
+    "free_count": 0
   },
   {
     "date": "2026-05-11",
     "type": "shipping",
     "name": "Zásilkovna na výdejní místo SK",
     "count": 1,
-    "revenue_vat": 3.5
+    "revenue_vat": 3.5,
+    "free_count": 0
   },
   {
     "date": "2026-05-12",
     "type": "payment",
     "name": "Apple Pay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-05-12",
     "type": "payment",
     "name": "Online platba kartou",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-05-12",
     "type": "shipping",
     "name": "Zásilkovna na výdejní místo SK",
-    "count": 2,
-    "revenue_vat": 0
-  },
-  {
-    "date": "2026-05-12",
-    "type": "shipping",
-    "name": "Zásilkovna na výdejní místo SK",
-    "count": 1,
-    "revenue_vat": 3.5
+    "count": 3,
+    "revenue_vat": 3.5,
+    "free_count": 2
   },
   {
     "date": "2026-05-14",
     "type": "payment",
     "name": "Google Pay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-05-14",
     "type": "shipping",
     "name": "Zásilkovna na adresu SK",
     "count": 1,
-    "revenue_vat": 4.3
+    "revenue_vat": 4.3,
+    "free_count": 0
   },
   {
     "date": "2026-05-16",
     "type": "payment",
     "name": "Apple Pay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-05-16",
     "type": "payment",
     "name": "Google Pay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-05-16",
     "type": "payment",
     "name": "Online platba kartou",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-05-16",
     "type": "shipping",
     "name": "Zásilkovna na výdejní místo SK",
-    "count": 2,
-    "revenue_vat": 0
-  },
-  {
-    "date": "2026-05-16",
-    "type": "shipping",
-    "name": "Zásilkovna na výdejní místo SK",
-    "count": 2,
-    "revenue_vat": 7
+    "count": 4,
+    "revenue_vat": 7,
+    "free_count": 2
   },
   {
     "date": "2026-05-17",
     "type": "payment",
     "name": "Apple Pay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-05-17",
     "type": "payment",
     "name": "Google Pay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-05-17",
     "type": "payment",
     "name": "Online platba kartou",
     "count": 4,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-05-17",
     "type": "shipping",
     "name": "Zásilkovna na adresu SK",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2026-05-17",
     "type": "shipping",
     "name": "Zásilkovna na výdejní místo SK",
     "count": 5,
-    "revenue_vat": 17.5
+    "revenue_vat": 17.5,
+    "free_count": 0
   },
   {
     "date": "2026-05-18",
     "type": "payment",
     "name": "Apple Pay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-05-18",
     "type": "payment",
     "name": "Online platba kartou",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-05-18",
     "type": "shipping",
     "name": "Zásilkovna na výdejní místo SK",
     "count": 2,
-    "revenue_vat": 7
+    "revenue_vat": 7,
+    "free_count": 0
   },
   {
     "date": "2026-05-19",
     "type": "payment",
     "name": "Google Pay",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-05-19",
     "type": "payment",
     "name": "Online platba kartou",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-05-19",
     "type": "shipping",
     "name": "Zásilkovna na výdejní místo SK",
     "count": 4,
-    "revenue_vat": 14
+    "revenue_vat": 14,
+    "free_count": 0
   },
   {
     "date": "2026-05-20",
     "type": "payment",
     "name": "Google Pay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-05-20",
     "type": "payment",
     "name": "Online platba kartou",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-05-20",
     "type": "shipping",
     "name": "Zásilkovna na adresu SK",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2026-05-20",
     "type": "shipping",
     "name": "Zásilkovna na výdejní místo SK",
     "count": 1,
-    "revenue_vat": 3.5
+    "revenue_vat": 3.5,
+    "free_count": 0
   },
   {
     "date": "2026-05-22",
     "type": "payment",
     "name": "Apple Pay",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-05-22",
     "type": "payment",
     "name": "Google Pay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-05-22",
     "type": "payment",
     "name": "Online platba kartou",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-05-22",
     "type": "shipping",
     "name": "Zásilkovna na adresu SK",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2026-05-22",
     "type": "shipping",
     "name": "Zásilkovna na výdejní místo SK",
     "count": 4,
-    "revenue_vat": 14
+    "revenue_vat": 14,
+    "free_count": 0
   },
   {
     "date": "2026-05-23",
     "type": "payment",
     "name": "Online platba kartou",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-05-23",
     "type": "shipping",
     "name": "Zásilkovna na výdejní místo SK",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2026-05-24",
     "type": "payment",
     "name": "Google Pay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-05-24",
     "type": "payment",
     "name": "Online platba kartou",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-05-24",
     "type": "shipping",
     "name": "Zásilkovna na výdejní místo SK",
-    "count": 2,
-    "revenue_vat": 7
-  },
-  {
-    "date": "2026-05-24",
-    "type": "shipping",
-    "name": "Zásilkovna na výdejní místo SK",
-    "count": 1,
-    "revenue_vat": 0
+    "count": 3,
+    "revenue_vat": 7,
+    "free_count": 1
   },
   {
     "date": "2026-05-25",
     "type": "payment",
     "name": "Apple Pay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-05-25",
     "type": "shipping",
     "name": "Zásilkovna na výdejní místo SK",
     "count": 1,
-    "revenue_vat": 3.5
+    "revenue_vat": 3.5,
+    "free_count": 0
   },
   {
     "date": "2026-05-26",
     "type": "payment",
     "name": "Online platba kartou",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-05-26",
     "type": "shipping",
     "name": "Zásilkovna na adresu SK",
-    "count": 1,
-    "revenue_vat": 0
-  },
-  {
-    "date": "2026-05-26",
-    "type": "shipping",
-    "name": "Zásilkovna na adresu SK",
-    "count": 1,
-    "revenue_vat": 4.3
+    "count": 2,
+    "revenue_vat": 4.3,
+    "free_count": 1
   },
   {
     "date": "2026-05-27",
     "type": "payment",
     "name": "Apple Pay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-05-27",
     "type": "payment",
     "name": "Online platba kartou",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-05-27",
     "type": "shipping",
     "name": "Zásilkovna na výdejní místo SK",
     "count": 3,
-    "revenue_vat": 10.5
+    "revenue_vat": 10.5,
+    "free_count": 0
   },
   {
     "date": "2026-05-28",
     "type": "payment",
     "name": "Online platba kartou",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-05-28",
     "type": "shipping",
     "name": "Zásilkovna na výdejní místo SK",
     "count": 1,
-    "revenue_vat": 3.5
+    "revenue_vat": 3.5,
+    "free_count": 0
   },
   {
     "date": "2026-05-29",
     "type": "payment",
     "name": "Online platba kartou",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-05-29",
     "type": "shipping",
     "name": "Zásilkovna na výdejní místo SK",
     "count": 1,
-    "revenue_vat": 3.5
+    "revenue_vat": 3.5,
+    "free_count": 0
   },
   {
     "date": "2026-05-30",
     "type": "payment",
     "name": "Apple Pay",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-05-30",
     "type": "payment",
     "name": "Google Pay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-05-30",
     "type": "payment",
     "name": "Online platba kartou",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-05-30",
     "type": "shipping",
     "name": "Zásilkovna na adresu SK",
     "count": 1,
-    "revenue_vat": 4.3
+    "revenue_vat": 4.3,
+    "free_count": 0
   },
   {
     "date": "2026-05-30",
     "type": "shipping",
     "name": "Zásilkovna na výdejní místo SK",
-    "count": 2,
-    "revenue_vat": 7
-  },
-  {
-    "date": "2026-05-30",
-    "type": "shipping",
-    "name": "Zásilkovna na výdejní místo SK",
-    "count": 1,
-    "revenue_vat": 0
+    "count": 3,
+    "revenue_vat": 7,
+    "free_count": 1
   },
   {
     "date": "2026-05-31",
     "type": "payment",
     "name": "Apple Pay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-05-31",
     "type": "payment",
     "name": "Online platba kartou",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-05-31",
     "type": "shipping",
     "name": "Zásilkovna na adresu SK",
     "count": 1,
-    "revenue_vat": 4.3
+    "revenue_vat": 4.3,
+    "free_count": 0
   },
   {
     "date": "2026-05-31",
     "type": "shipping",
     "name": "Zásilkovna na výdejní místo SK",
     "count": 1,
-    "revenue_vat": 3.5
+    "revenue_vat": 3.5,
+    "free_count": 0
   },
   {
     "date": "2026-06-01",
     "type": "payment",
     "name": "Online platba kartou",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-06-01",
     "type": "shipping",
     "name": "Zásilkovna na výdejní místo SK",
     "count": 2,
-    "revenue_vat": 7
+    "revenue_vat": 7,
+    "free_count": 0
   },
   {
     "date": "2026-06-03",
     "type": "payment",
     "name": "Google Pay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-06-03",
     "type": "shipping",
     "name": "Zásilkovna na výdejní místo SK",
     "count": 1,
-    "revenue_vat": 3.5
+    "revenue_vat": 3.5,
+    "free_count": 0
   },
   {
     "date": "2026-06-05",
     "type": "payment",
     "name": "Online platba kartou",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-06-05",
     "type": "shipping",
     "name": "Zásilkovna na adresu SK",
     "count": 1,
-    "revenue_vat": 4.3
+    "revenue_vat": 4.3,
+    "free_count": 0
   },
   {
     "date": "2026-06-06",
     "type": "payment",
     "name": "Google Pay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-06-06",
     "type": "shipping",
     "name": "Zásilkovna na adresu SK",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2026-06-08",
     "type": "payment",
     "name": "Online platba kartou",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-06-08",
     "type": "shipping",
     "name": "Zásilkovna na adresu SK",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2026-06-09",
     "type": "payment",
     "name": "Online platba kartou",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-06-09",
     "type": "shipping",
     "name": "Zásilkovna na adresu SK",
-    "count": 1,
-    "revenue_vat": 0
-  },
-  {
-    "date": "2026-06-09",
-    "type": "shipping",
-    "name": "Zásilkovna na adresu SK",
-    "count": 1,
-    "revenue_vat": 4.3
+    "count": 2,
+    "revenue_vat": 4.3,
+    "free_count": 1
   },
   {
     "date": "2026-06-10",
     "type": "payment",
     "name": "Google Pay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-06-10",
     "type": "shipping",
     "name": "Zásilkovna na výdejní místo SK",
     "count": 1,
-    "revenue_vat": 3.5
+    "revenue_vat": 3.5,
+    "free_count": 0
   },
   {
     "date": "2026-06-13",
     "type": "payment",
     "name": "Online platba kartou",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-06-13",
     "type": "shipping",
     "name": "Zásilkovna na výdejní místo SK",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2026-06-14",
     "type": "payment",
     "name": "Google Pay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-06-14",
     "type": "shipping",
     "name": "Zásilkovna na výdejní místo SK",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2026-06-15",
     "type": "payment",
     "name": "Online platba kartou",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-06-15",
     "type": "shipping",
     "name": "Zásilkovna na výdejní místo SK",
-    "count": 1,
-    "revenue_vat": 0
-  },
-  {
-    "date": "2026-06-15",
-    "type": "shipping",
-    "name": "Zásilkovna na výdejní místo SK",
-    "count": 1,
-    "revenue_vat": 3.5
+    "count": 2,
+    "revenue_vat": 3.5,
+    "free_count": 1
   },
   {
     "date": "2026-06-16",
     "type": "payment",
     "name": "Online platba kartou",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-06-16",
     "type": "shipping",
     "name": "Zásilkovna na výdejní místo SK",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2026-06-17",
     "type": "payment",
     "name": "Apple Pay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-06-17",
     "type": "payment",
     "name": "Online platba kartou",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-06-17",
     "type": "shipping",
     "name": "Zásilkovna na adresu SK",
     "count": 1,
-    "revenue_vat": 4.3
+    "revenue_vat": 4.3,
+    "free_count": 0
   },
   {
     "date": "2026-06-17",
     "type": "shipping",
     "name": "Zásilkovna na výdejní místo SK",
     "count": 1,
-    "revenue_vat": 3.5
+    "revenue_vat": 3.5,
+    "free_count": 0
   },
   {
     "date": "2026-06-18",
     "type": "payment",
     "name": "Google Pay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-06-18",
     "type": "payment",
     "name": "Online platba kartou",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-06-18",
     "type": "shipping",
     "name": "Zásilkovna na adresu SK",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2026-06-18",
     "type": "shipping",
     "name": "Zásilkovna na výdejní místo SK",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2026-06-19",
     "type": "payment",
     "name": "Online platba kartou",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-06-19",
     "type": "shipping",
     "name": "Zásilkovna na adresu SK",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2026-06-19",
     "type": "shipping",
     "name": "Zásilkovna na výdejní místo SK",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2026-06-21",
     "type": "payment",
     "name": "Apple Pay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-06-21",
     "type": "payment",
     "name": "Google Pay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-06-21",
     "type": "payment",
     "name": "Online platba kartou",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-06-21",
     "type": "shipping",
     "name": "Zásilkovna na adresu SK",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2026-06-21",
     "type": "shipping",
     "name": "Zásilkovna na výdejní místo SK",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2026-06-22",
     "type": "payment",
     "name": "Online platba kartou",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-06-22",
     "type": "shipping",
     "name": "Zásilkovna na adresu SK",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2026-06-23",
     "type": "payment",
     "name": "Online platba kartou",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-06-23",
     "type": "shipping",
     "name": "Zásilkovna na výdejní místo SK",
     "count": 2,
-    "revenue_vat": 7
+    "revenue_vat": 7,
+    "free_count": 0
   },
   {
     "date": "2026-06-26",
     "type": "payment",
     "name": "Online platba kartou",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-06-26",
     "type": "shipping",
     "name": "Zásilkovna na adresu SK",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2026-06-26",
     "type": "shipping",
     "name": "Zásilkovna na výdejní místo SK",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2026-06-28",
     "type": "payment",
     "name": "Online platba kartou",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-06-28",
     "type": "shipping",
     "name": "Zásilkovna na výdejní místo SK + termobox / chladící výplň 2,9€",
     "count": 1,
-    "revenue_vat": 6.4
+    "revenue_vat": 6.4,
+    "free_count": 0
   },
   {
     "date": "2026-06-29",
     "type": "payment",
     "name": "Online platba kartou",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-06-29",
     "type": "shipping",
     "name": "Zásilkovna na výdejní místo SK",
     "count": 1,
-    "revenue_vat": 3.5
+    "revenue_vat": 3.5,
+    "free_count": 0
   },
   {
     "date": "2026-07-02",
     "type": "payment",
     "name": "Online platba kartou",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-07-02",
     "type": "shipping",
     "name": "Zásilkovna na výdejní místo SK",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2026-07-03",
     "type": "payment",
     "name": "Online platba kartou",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-07-03",
     "type": "shipping",
     "name": "Zásilkovna na adresu SK",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2026-07-05",
     "type": "payment",
     "name": "Online platba kartou",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-07-05",
     "type": "shipping",
     "name": "Zásilkovna na adresu SK",
     "count": 1,
-    "revenue_vat": 4.3
+    "revenue_vat": 4.3,
+    "free_count": 0
   },
   {
     "date": "2026-07-05",
     "type": "shipping",
     "name": "Zásilkovna na výdejní místo SK",
     "count": 1,
-    "revenue_vat": 3.5
+    "revenue_vat": 3.5,
+    "free_count": 0
   },
   {
     "date": "2026-07-08",
     "type": "payment",
     "name": "Online platba kartou",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-07-08",
     "type": "shipping",
     "name": "Zásilkovna na výdejní místo SK",
     "count": 1,
-    "revenue_vat": 3.5
+    "revenue_vat": 3.5,
+    "free_count": 0
   },
   {
     "date": "2026-07-10",
     "type": "payment",
     "name": "Online platba kartou",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-07-10",
     "type": "shipping",
     "name": "Zásilkovna na adresu SK",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2026-07-12",
     "type": "payment",
     "name": "Online platba kartou",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-07-12",
     "type": "shipping",
     "name": "Zásilkovna na výdejní místo SK",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2026-07-22",
     "type": "payment",
     "name": "Google Pay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-07-22",
     "type": "payment",
     "name": "Online platba kartou",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-07-22",
     "type": "shipping",
     "name": "Zásilkovna na adresu SK",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2026-07-22",
     "type": "shipping",
     "name": "Zásilkovna na výdejní místo SK",
-    "count": 1,
-    "revenue_vat": 0
-  },
-  {
-    "date": "2026-07-22",
-    "type": "shipping",
-    "name": "Zásilkovna na výdejní místo SK",
-    "count": 1,
-    "revenue_vat": 3.5
+    "count": 2,
+    "revenue_vat": 3.5,
+    "free_count": 1
   },
   {
     "date": "2026-07-23",
     "type": "payment",
     "name": "Google Pay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-07-23",
     "type": "shipping",
     "name": "Zásilkovna na výdejní místo SK",
     "count": 1,
-    "revenue_vat": 3.5
+    "revenue_vat": 3.5,
+    "free_count": 0
   },
   {
     "date": "2026-07-24",
     "type": "payment",
     "name": "Apple Pay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-07-24",
     "type": "shipping",
     "name": "Zásilkovna na adresu SK",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2026-07-25",
     "type": "payment",
     "name": "Google Pay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-07-25",
     "type": "shipping",
     "name": "Zásilkovna na adresu SK",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2026-07-27",
     "type": "payment",
     "name": "Online platba kartou",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-07-27",
     "type": "shipping",
     "name": "Zásilkovna na adresu SK",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2026-07-27",
     "type": "shipping",
     "name": "Zásilkovna na výdejní místo SK",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2026-07-28",
     "type": "payment",
     "name": "Online platba kartou",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-07-28",
     "type": "shipping",
     "name": "Zásilkovna na adresu SK",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2026-07-28",
     "type": "shipping",
     "name": "Zásilkovna na výdejní místo SK",
     "count": 1,
-    "revenue_vat": 3.5
+    "revenue_vat": 3.5,
+    "free_count": 0
   },
   {
     "date": "2026-07-31",
     "type": "payment",
     "name": "Online platba kartou",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-07-31",
     "type": "shipping",
     "name": "Zásilkovna na výdejní místo SK",
     "count": 1,
-    "revenue_vat": 3.5
+    "revenue_vat": 3.5,
+    "free_count": 0
   },
   {
     "date": "2026-08-03",
     "type": "payment",
     "name": "Online platba kartou",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-08-03",
     "type": "shipping",
     "name": "Zásilkovna na adresu SK",
     "count": 1,
-    "revenue_vat": 4.3
+    "revenue_vat": 4.3,
+    "free_count": 0
   },
   {
     "date": "2026-08-04",
     "type": "payment",
     "name": "Online platba kartou",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-08-04",
     "type": "shipping",
     "name": "Zásilkovna na výdejní místo SK",
     "count": 1,
-    "revenue_vat": 3.5
+    "revenue_vat": 3.5,
+    "free_count": 0
   },
   {
     "date": "2026-08-10",
     "type": "payment",
     "name": "Apple Pay",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-08-10",
     "type": "payment",
     "name": "Online platba kartou",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-08-10",
     "type": "shipping",
     "name": "Zásilkovna na adresu SK",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 3
   },
   {
     "date": "2026-08-10",
     "type": "shipping",
     "name": "Zásilkovna na výdejní místo SK",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2026-08-11",
     "type": "payment",
     "name": "Apple Pay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-08-11",
     "type": "payment",
     "name": "Online platba kartou",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-08-11",
     "type": "shipping",
     "name": "Zásilkovna na adresu SK",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2026-08-11",
     "type": "shipping",
     "name": "Zásilkovna na výdejní místo SK",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2026-08-12",
     "type": "payment",
     "name": "Apple Pay",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-08-12",
     "type": "payment",
     "name": "Google Pay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-08-12",
     "type": "payment",
     "name": "Online platba kartou",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-08-12",
     "type": "shipping",
     "name": "Zásilkovna na adresu SK",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 3
   },
   {
     "date": "2026-08-12",
     "type": "shipping",
     "name": "Zásilkovna na výdejní místo SK",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2026-08-13",
     "type": "payment",
     "name": "Google Pay",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-08-13",
     "type": "payment",
     "name": "Online platba kartou",
     "count": 4,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-08-13",
     "type": "shipping",
     "name": "Zásilkovna na adresu SK",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2026-08-13",
     "type": "shipping",
     "name": "Zásilkovna na výdejní místo SK",
     "count": 4,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 4
   },
   {
     "date": "2026-08-14",
     "type": "payment",
     "name": "Apple Pay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-08-14",
     "type": "payment",
     "name": "Online platba kartou",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-08-14",
     "type": "shipping",
     "name": "Zásilkovna na adresu SK",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2026-08-14",
     "type": "shipping",
     "name": "Zásilkovna na výdejní místo SK",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 2
   },
   {
     "date": "2026-08-14",
     "type": "shipping",
     "name": "Zásilkovna na výdejní místo SK + termobox / chladící výplň 2,9€",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2026-08-15",
     "type": "payment",
     "name": "Online platba kartou",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-08-15",
     "type": "shipping",
     "name": "Zásilkovna na výdejní místo SK",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2026-08-16",
     "type": "payment",
     "name": "Online platba kartou",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-08-16",
     "type": "shipping",
     "name": "Zásilkovna na adresu SK + termobox / chladící výplň 2,9€",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2026-08-16",
     "type": "shipping",
     "name": "Zásilkovna na výdejní místo SK",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2026-08-17",
     "type": "payment",
     "name": "Apple Pay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-08-17",
     "type": "payment",
     "name": "Google Pay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-08-17",
     "type": "payment",
     "name": "Online platba kartou",
     "count": 4,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-08-17",
     "type": "shipping",
     "name": "Zásilkovna na adresu SK",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 3
   },
   {
     "date": "2026-08-17",
     "type": "shipping",
     "name": "Zásilkovna na výdejní místo SK",
     "count": 3,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 3
   },
   {
     "date": "2026-08-18",
     "type": "payment",
     "name": "Online platba kartou",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-08-18",
     "type": "shipping",
     "name": "Zásilkovna na výdejní místo SK",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2026-08-19",
     "type": "payment",
     "name": "Apple Pay",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-08-19",
     "type": "payment",
     "name": "Online platba kartou",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-08-19",
     "type": "shipping",
     "name": "Zásilkovna na adresu SK",
-    "count": 1,
-    "revenue_vat": 0
-  },
-  {
-    "date": "2026-08-19",
-    "type": "shipping",
-    "name": "Zásilkovna na adresu SK",
-    "count": 1,
-    "revenue_vat": 4.3
+    "count": 2,
+    "revenue_vat": 4.3,
+    "free_count": 1
   },
   {
     "date": "2026-08-19",
     "type": "shipping",
     "name": "Zásilkovna na výdejní místo SK",
     "count": 2,
-    "revenue_vat": 7
+    "revenue_vat": 7,
+    "free_count": 0
   },
   {
     "date": "2026-08-20",
     "type": "payment",
     "name": "Online platba kartou",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-08-20",
     "type": "shipping",
     "name": "Zásilkovna na adresu SK",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2026-08-21",
     "type": "payment",
     "name": "Google Pay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-08-21",
     "type": "payment",
     "name": "Online platba kartou",
     "count": 4,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-08-21",
     "type": "shipping",
     "name": "Zásilkovna na výdejní místo SK",
-    "count": 4,
-    "revenue_vat": 14
-  },
-  {
-    "date": "2026-08-21",
-    "type": "shipping",
-    "name": "Zásilkovna na výdejní místo SK",
-    "count": 1,
-    "revenue_vat": 0
+    "count": 5,
+    "revenue_vat": 14,
+    "free_count": 1
   },
   {
     "date": "2026-08-22",
     "type": "payment",
     "name": "Online platba kartou",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-08-22",
     "type": "shipping",
     "name": "Zásilkovna na výdejní místo SK",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 1
   },
   {
     "date": "2026-08-23",
     "type": "payment",
     "name": "Apple Pay",
     "count": 5,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-08-23",
     "type": "payment",
     "name": "Online platba kartou",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-08-23",
     "type": "shipping",
     "name": "Zásilkovna na adresu SK",
-    "count": 1,
-    "revenue_vat": 0
+    "count": 4,
+    "revenue_vat": 12.9,
+    "free_count": 1
   },
   {
     "date": "2026-08-23",
     "type": "shipping",
-    "name": "Zásilkovna na adresu SK",
+    "name": "Zásilkovna na výdejní místo SK",
     "count": 3,
-    "revenue_vat": 12.9
-  },
-  {
-    "date": "2026-08-23",
-    "type": "shipping",
-    "name": "Zásilkovna na výdejní místo SK",
-    "count": 2,
-    "revenue_vat": 7
-  },
-  {
-    "date": "2026-08-23",
-    "type": "shipping",
-    "name": "Zásilkovna na výdejní místo SK",
-    "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 7,
+    "free_count": 1
   },
   {
     "date": "2026-08-24",
     "type": "payment",
     "name": "Apple Pay",
     "count": 1,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-08-24",
     "type": "payment",
     "name": "Online platba kartou",
     "count": 6,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-08-24",
     "type": "shipping",
     "name": "Zásilkovna na adresu SK",
-    "count": 1,
-    "revenue_vat": 0
-  },
-  {
-    "date": "2026-08-24",
-    "type": "shipping",
-    "name": "Zásilkovna na adresu SK",
-    "count": 1,
-    "revenue_vat": 4.3
+    "count": 2,
+    "revenue_vat": 4.3,
+    "free_count": 1
   },
   {
     "date": "2026-08-24",
     "type": "shipping",
     "name": "Zásilkovna na výdejní místo SK",
-    "count": 1,
-    "revenue_vat": 0
-  },
-  {
-    "date": "2026-08-24",
-    "type": "shipping",
-    "name": "Zásilkovna na výdejní místo SK",
-    "count": 4,
-    "revenue_vat": 14
+    "count": 5,
+    "revenue_vat": 14,
+    "free_count": 1
   },
   {
     "date": "2026-08-25",
     "type": "payment",
     "name": "Google Pay",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-08-25",
     "type": "payment",
     "name": "Online platba kartou",
     "count": 2,
-    "revenue_vat": 0
+    "revenue_vat": 0,
+    "free_count": 0
   },
   {
     "date": "2026-08-25",
     "type": "shipping",
     "name": "Zásilkovna na výdejní místo SK",
     "count": 4,
-    "revenue_vat": 14
+    "revenue_vat": 14,
+    "free_count": 0
   }
 ];

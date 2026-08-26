@@ -309,6 +309,8 @@ Lehký GA4 endpoint jen pro `/main` CVR graf — dělá **2 GA4 volání** (aktu
 
 Pie charty (doručení + platby) jsou v samostatném řádku nad tabulkami. Tabulky jsou v dalším řádku vedle sebe — vždy na stejné výšce.
 
+**Sjednocení vizuálního stylu karet (2026-08)** — všechny karty v sekci (Zisk/Ztráta dopravce, graf Doprava zdarma % v čase, tabulky Dopravce/Platební metoda, Ceník dopravců) sjednoceny na `rounded-xl border-gray-100` s hlavičkou jako samostatný `div` (`px-5 py-4 border-b border-slate-100` + `h2` + `p` podnadpis); dřív mix `rounded-2xl border-slate-100` vs. `rounded-xl border-gray-100` a chybějící nadpisy u tabulek Dopravce/Platební metoda. Zároveň opraven YoY badge u KPI „Doprava zdarma" (počet) — dřív počítal z procenta (`freeShippingPct`) místo z počtu (`freeShippingCount`). Stejné sjednocení provedeno napříč všemi 6 reportingovými projekty (Celtic-supply, Prirozeny-beh, Sardinerie, Zbozi z bali, Úleva pro nohy).
+
 ### Sidebar — skupiny navigace
 
 `components/layout/Sidebar.tsx` — navigace rozdělena do 5 pojmenovaných skupin (`navGroups`):
@@ -326,9 +328,11 @@ Plánovač zisku byl odstraněn ze sidebaru. Google Ads bude přidáno až bude 
 
 `app/crosssell/page.tsx` — používá `useFilters()` a `getDateRange()`. `useMemo` filtruje měsíce v rozsahu, re-agreguje páry přes `pairMap`, re-rankuje a bere top 100.
 
-### `/shipping` — výpočet dopravy zdarma
+### `/shipping` — výpočet dopravy zdarma (přepracováno 2026-08)
 
-`scripts/updateData.js` — `aggregateShippingPayment()`: klíč agregace rozšířen o příznak `free/paid` (`${date}||${type}||${name}||free` nebo `||paid`). Dříve se free a placené objednávky se stejnou metodou ve stejný den sčítaly do jednoho záznamu — `revenue_vat` nebyl 0, i když část objednávek měla dopravu zdarma. Nyní jsou odděleny, `freeShippingPct` v `app/shipping/page.tsx` (detekce přes `revenue_vat === 0`) počítá správně.
+`scripts/updateData.js` — `aggregateShippingPayment()` počítá pole **`free_count`** přímo na úrovni objednávky (ne přes `revenue_vat === 0` na denně agregovaném záznamu, což dřív při mixu placené/zdarma dopravy stejnou metodou ve stejný den dávalo chybný výsledek). `free_count` se inkrementuje, pokud `revVat === 0` a metoda není Osobní odběr/zpětná doprava/zaslání emailem (`isPickupName()` helper) — sjednoceno se schématem Celtic-supply reportingu. `ShippingPaymentRecord.free_count` je nové pole (0 u payment záznamů).
+
+`app/shipping/page.tsx` — KPI „Doprava zdarma"/„Doprava zdarma %" i nový **graf „Doprava zdarma % v čase"** (sloupcový, respektuje Den/Týden/Měsíc přepínač, referenční čára na průměru) používají `r.free_count ?? 0` a helper `isPickup(name)` vylučující Osobní odběr i z jmenovatele — stejná logika jako u Celtic-supply/Sardinerie/Zbozi z bali/Úleva pro nohy reportingu. Dřívější detekce přes `revenue_vat === 0`/název obsahující "zdarma"/"free" byla nahrazena.
 
 ### `/retention` — Noví vs. stávající zákazníci grafy
 

@@ -618,6 +618,12 @@ export const ${varName}: CrossSellMonthlyRecord[] = ${JSON.stringify(records, nu
 // ── Shipping / Payment processing ─────────────────────────────────────────────
 // Aggregates what customers paid for shipping and payment methods per day.
 
+// Osobní odběr / zpětná doprava / zaslání emailem se nepočítá jako "doprava zdarma"
+// (nemá cenu, ale není to výsledek slevy/prahu zdarma dopravy)
+function isPickupName(name) {
+  return ['odběr', 'odber', 'zpětná', 'zpetná', 'emailem', 'údržbu'].some(e => name.toLowerCase().includes(e));
+}
+
 function aggregateShippingPayment(csv, eurMultiplier = 1, colFilter = null) {
   const rows = parseCSV(csv);
 
@@ -655,16 +661,15 @@ function aggregateShippingPayment(csv, eurMultiplier = 1, colFilter = null) {
       continue;
     }
 
-    // Separate free (revVat === 0) from paid so that mixed days are counted correctly
-    const isFree = revVat === 0;
-    const key = `${date}||${type}||${name}||${isFree ? 'free' : 'paid'}`;
-    if (!byKey[key]) byKey[key] = { date, type, name, count: 0, revenue_vat: 0 };
+    const key = `${date}||${type}||${name}`;
+    if (!byKey[key]) byKey[key] = { date, type, name, count: 0, revenue_vat: 0, free_count: 0 };
 
-    // Count each order once per method+free bucket
-    const orderMethodKey = `${code}||${name}||${isFree ? 'free' : 'paid'}`;
+    // Count each order once per method
+    const orderMethodKey = `${code}||${name}`;
     if (!seenOrderMethod.has(orderMethodKey)) {
       seenOrderMethod.add(orderMethodKey);
       byKey[key].count++;
+      if (type === 'shipping' && revVat === 0 && !isPickupName(name)) byKey[key].free_count++;
     }
 
     byKey[key].revenue_vat += revVat;
@@ -687,6 +692,7 @@ export interface ShippingPaymentRecord {
   name: string;         // normalized method name e.g. "Zásilkovna", "Online platba kartou"
   count: number;        // number of orders using this method on this day
   revenue_vat: number;  // total paid by customers incl. VAT
+  free_count: number;   // orders with free shipping (revenue_vat === 0), excl. pickup/return/email; always 0 for payment records
 }
 
 export const ${varName}: ShippingPaymentRecord[] = ${JSON.stringify(records, null, 2)};
