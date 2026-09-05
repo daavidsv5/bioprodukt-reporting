@@ -9,6 +9,20 @@ const client = new BetaAnalyticsDataClient({
   },
 });
 
+// GA4 device filter — 'all' means no filter at all
+const DEVICES = ['desktop', 'mobile', 'tablet'] as const;
+type Device = typeof DEVICES[number] | 'all';
+
+function deviceFilter(device: Device) {
+  if (device === 'all') return undefined;
+  return {
+    filter: {
+      fieldName: 'deviceCategory',
+      stringFilter: { value: device, matchType: 'EXACT' as const },
+    },
+  };
+}
+
 export async function GET(req: NextRequest) {
   const session = await auth();
   if (!session) return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
@@ -16,6 +30,10 @@ export async function GET(req: NextRequest) {
   const { searchParams } = new URL(req.url);
   const year = Number(searchParams.get('year') ?? new Date().getFullYear());
   const propertyId = process.env.GA4_PROPERTY_ID;
+  const rawDevice = searchParams.get('device');
+  const device: Device = (DEVICES as readonly string[]).includes(rawDevice ?? '')
+    ? (rawDevice as Device)
+    : 'all';
 
   const currStart = `${year}-01-01`;
   const currEnd = `${year}-12-31`;
@@ -30,6 +48,7 @@ export async function GET(req: NextRequest) {
         dimensions: [{ name: 'date' }],
         metrics: [{ name: 'sessions' }, { name: 'conversions' }],
         orderBys: [{ dimension: { dimensionName: 'date' } }],
+        dimensionFilter: deviceFilter(device),
       }),
       client.runReport({
         property: `properties/${propertyId}`,
@@ -37,6 +56,7 @@ export async function GET(req: NextRequest) {
         dimensions: [{ name: 'date' }],
         metrics: [{ name: 'sessions' }, { name: 'conversions' }],
         orderBys: [{ dimension: { dimensionName: 'date' } }],
+        dimensionFilter: deviceFilter(device),
       }),
     ]);
 

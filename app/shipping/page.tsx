@@ -165,6 +165,19 @@ function PieLegend({ rows, palette, total }: {
   );
 }
 
+// Metody, které nejsou doručením zákazníkovi, se z výpočtu dopravy zdarma vylučují
+// celé — z čitatele i jmenovatele. Mají revenue_vat=0, ale nejde o "dopravu zdarma":
+// osobní odběr na prodejně, zpětné zásilky, zaslání e-mailem, servis.
+// Seznam musí zůstat shodný se scripts/updateData.js, který podle něj plní free_count —
+// jinak by řádek chyběl v čitateli, ale zůstal ve jmenovateli a podíl by klesal.
+// Kmen "osobn" pokrývá osobní / osobný / osobně; hledat "odběr" nelze, protože to chytá
+// i placená výdejní místa dopravců ("DPD doručenie do odberného miesta").
+const NON_DELIVERY = ['osobn', 'zpětná', 'zpetná', 'emailem', 'údržbu'];
+function isNonDelivery(name: string) {
+  const n = name.toLowerCase();
+  return NON_DELIVERY.some(e => n.includes(e));
+}
+
 export default function ShippingPage() {
   const { filters, eurToCzk } = useFilters();
   const [period, setPeriod] = useState<Period>('day');
@@ -229,11 +242,6 @@ export default function ShippingPage() {
     return ((curr - prev) / prev) * 100;
   }
 
-  // Osobní odběr se vylučuje z výpočtu dopravy zdarma (má shippingRevVat=0 ale není "zdarma")
-  function isPickup(name: string) {
-    return ['odběr', 'odber'].some(e => name.toLowerCase().includes(e));
-  }
-
   // ── KPIs ───────────────────────────────────────────────────────────────────
   const totalShippingRev  = shipping.reduce((s, r) => s + r.revenue_vat, 0);
   const totalPaymentRev   = payment.reduce((s, r) => s + r.revenue_vat, 0);
@@ -241,7 +249,7 @@ export default function ShippingPage() {
   const totalPayCount     = payment.reduce((s, r) => s + r.count, 0);
   const avgShipping       = totalShipCount > 0 ? totalShippingRev / totalShipCount : 0;
   const avgPayment        = totalPayCount  > 0 ? totalPaymentRev  / totalPayCount  : 0;
-  const shipExclPickup    = shipping.filter(r => !isPickup(r.name));
+  const shipExclPickup    = shipping.filter(r => !isNonDelivery(r.name));
   const shipExclPickupCnt = shipExclPickup.reduce((s, r) => s + r.count, 0);
   const freeShippingCount = shipExclPickup.reduce((s, r) => s + (r.free_count ?? 0), 0);
   const freeShippingPct   = shipExclPickupCnt > 0 ? (freeShippingCount / shipExclPickupCnt) * 100 : 0;
@@ -253,7 +261,7 @@ export default function ShippingPage() {
   const prevPayCount          = prevPayment.reduce((s, r) => s + r.count, 0);
   const prevAvgShipping       = prevShipCount > 0 ? prevTotalShippingRev / prevShipCount : 0;
   const prevAvgPayment        = prevPayCount  > 0 ? prevTotalPaymentRev  / prevPayCount  : 0;
-  const prevShipExclPickup    = prevShipping.filter(r => !isPickup(r.name));
+  const prevShipExclPickup    = prevShipping.filter(r => !isNonDelivery(r.name));
   const prevShipExclPickupCnt = prevShipExclPickup.reduce((s, r) => s + r.count, 0);
   const prevFreeCount         = prevShipExclPickup.reduce((s, r) => s + (r.free_count ?? 0), 0);
   const prevFreeShippingPct   = prevShipExclPickupCnt > 0 ? (prevFreeCount / prevShipExclPickupCnt) * 100 : 0;
@@ -262,24 +270,27 @@ export default function ShippingPage() {
   const freeShipTrend = useMemo(() => {
     const byPeriod: Record<string, { count: number; free: number }> = {};
     for (const r of shipping) {
-      if (isPickup(r.name)) continue;
+      if (isNonDelivery(r.name)) continue;
       const key = periodKey(r.date, period);
       if (!byPeriod[key]) byPeriod[key] = { count: 0, free: 0 };
       byPeriod[key].count += r.count;
       byPeriod[key].free  += r.free_count ?? 0;
     }
-    return Object.entries(byPeriod)
+    const rows = Object.entries(byPeriod)
       .sort(([a], [b]) => a.localeCompare(b))
       .map(([key, v]) => ({
         label: formatPeriodLabel(key, period),
         pct: v.count > 0 ? Math.round(v.free / v.count * 1000) / 10 : 0,
       }));
+    // Ø musí být vážený podíl za celé období, ne průměr procent jednotlivých period —
+    // jinak mají slabé měsíce stejnou váhu jako silné a badge nesedí s KPI boxem
+    const totalCount = Object.values(byPeriod).reduce((s, v) => s + v.count, 0);
+    const totalFree  = Object.values(byPeriod).reduce((s, v) => s + v.free,  0);
+    return { rows, avgPct: totalCount > 0 ? Math.round(totalFree / totalCount * 1000) / 10 : 0 };
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [shipping, period]);
 
-  const freeShipAvgPct = freeShipTrend.length > 0
-    ? Math.round(freeShipTrend.reduce((s, r) => s + r.pct, 0) / freeShipTrend.length * 10) / 10
-    : 0;
+  const freeShipAvgPct = freeShipTrend.avgPct;
 
   // Sparkline — daily totals for shipping and payment revenue
   const sparkShipping = useMemo(() => {
@@ -611,7 +622,7 @@ export default function ShippingPage() {
       </div>
 
       {/* Free shipping % trend chart */}
-      {freeShipTrend.length > 0 && (
+      {freeShipTrend.rows.length > 0 && (
         <div className="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
           <div className="px-5 py-4 border-b border-slate-100 flex items-center justify-between gap-3 flex-wrap">
             <div>
@@ -624,7 +635,7 @@ export default function ShippingPage() {
           </div>
           <div className="p-5">
             <ResponsiveContainer width="100%" height={260}>
-              <BarChart data={freeShipTrend} margin={{ top: 5, right: 16, left: 10, bottom: 5 }} barCategoryGap="30%">
+              <BarChart data={freeShipTrend.rows} margin={{ top: 5, right: 16, left: 10, bottom: 5 }} barCategoryGap="30%">
                 <CartesianGrid strokeDasharray="3 3" stroke="#f0f0f0" vertical={false} />
                 <XAxis dataKey="label" tick={{ fontSize: 11, fill: '#9ca3af' }} interval="preserveStartEnd" axisLine={false} tickLine={false} />
                 <YAxis

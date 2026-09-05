@@ -1,5 +1,6 @@
 'use client';
 
+import type { ReactNode } from 'react';
 import {
   BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip,
   Legend, ResponsiveContainer,
@@ -16,19 +17,23 @@ interface Props {
   formatter: (v: number) => string;
   currentYear: number;
   isPercent?: boolean;
+  headerRight?: ReactNode;
 }
 
 export default function YearCompareBarChart({
   title, subtitle, data, dataKey, prevKey, color, colorPrev,
-  formatter, currentYear, isPercent = false,
+  formatter, currentYear, isPercent = false, headerRight,
 }: Props) {
   const fmt = (v: number) => isPercent ? `${v.toFixed(2)} %` : formatter(v);
 
   return (
     <div className="bg-white rounded-2xl p-5 shadow-sm border border-slate-100">
-      <div className="mb-4">
-        <h3 className="text-sm font-semibold text-slate-700">{title}</h3>
-        {subtitle && <p className="text-xs text-slate-400 mt-0.5">{subtitle}</p>}
+      <div className="mb-4 flex items-start justify-between gap-2">
+        <div>
+          <h3 className="text-sm font-semibold text-slate-700">{title}</h3>
+          {subtitle && <p className="text-xs text-slate-400 mt-0.5">{subtitle}</p>}
+        </div>
+        {headerRight}
       </div>
       <ResponsiveContainer width="100%" height={220}>
         <BarChart data={data} margin={{ top: 4, right: 4, left: 0, bottom: 0 }} barGap={2} barCategoryGap="25%">

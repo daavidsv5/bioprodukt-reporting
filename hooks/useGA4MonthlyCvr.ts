@@ -8,6 +8,8 @@ export interface MonthCvrPoint {
   label: string;
   cvr: number | null;
   cvr_prev: number | null;
+  sessions: number;
+  sessions_prev: number;
 }
 
 interface DailyRow {
@@ -34,6 +36,7 @@ function groupByMonth(rows: DailyRow[]): Map<number, { sessions: number; convers
 export function useGA4MonthlyCvr(
   year: number,
   country: string,
+  device: string = 'all',
 ): { data: MonthCvrPoint[] | null; loading: boolean; error: boolean } {
   const [data, setData] = useState<MonthCvrPoint[] | null>(null);
   const [loading, setLoading] = useState(false);
@@ -47,7 +50,7 @@ export function useGA4MonthlyCvr(
     }
     setLoading(true);
     setError(false);
-    fetch(`/api/analytics/monthly-cvr?year=${year}`)
+    fetch(`/api/analytics/monthly-cvr?year=${year}&device=${device}`)
       .then(async (r) => {
         const json = await r.json();
         if (!r.ok) {
@@ -67,6 +70,8 @@ export function useGA4MonthlyCvr(
             label: MONTH_LABELS[i],
             cvr: c.sessions > 0 ? Math.round((c.conversions / c.sessions) * 10000) / 100 : null,
             cvr_prev: p.sessions > 0 ? Math.round((p.conversions / p.sessions) * 10000) / 100 : null,
+            sessions: c.sessions,
+            sessions_prev: p.sessions,
           };
         });
         setData(points);
@@ -77,7 +82,7 @@ export function useGA4MonthlyCvr(
         setData(null);
       })
       .finally(() => setLoading(false));
-  }, [year, country]);
+  }, [year, country, device]);
 
   return { data, loading, error };
 }
