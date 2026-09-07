@@ -23,6 +23,15 @@ export async function GET(req: NextRequest) {
   const startDate = searchParams.get('from') ?? '30daysAgo';
   const endDate   = searchParams.get('to')   ?? 'today';
   const country   = searchParams.get('country') ?? 'cz';
+
+  // Filtr zařízení pro celý přehled — 'all' znamená žádný filtr.
+  // Záměrně se NEaplikuje na deviceRes/devicePrevRes (rozpad podle zařízení musí zůstat
+  // úplný, jinak by karta ukazovala jediný 100% řádek) ani na funnelRes/funnelTrendRes,
+  // které si zařízení rozpadají samy přes dimenzi deviceCategory.
+  const device = searchParams.get('device') ?? 'all'; // all | desktop | mobile | tablet
+  const deviceFilter = device !== 'all' ? {
+    filter: { fieldName: 'deviceCategory', stringFilter: { value: device, matchType: 'EXACT' as const } },
+  } : undefined;
   const propertyId = country === 'sk'
     ? process.env.GA4_PROPERTY_ID_SK
     : process.env.GA4_PROPERTY_ID;
@@ -45,6 +54,7 @@ export async function GET(req: NextRequest) {
         { name: 'sessionConversionRate' },
       ],
       orderBys: [{ dimension: { dimensionName: 'date' } }],
+      dimensionFilter: deviceFilter,
     });
 
     // Aggregate totals: two separate queries to avoid GA4's chronological row ordering
@@ -57,8 +67,8 @@ export async function GET(req: NextRequest) {
       { name: 'sessionConversionRate' },
     ];
     const [[aggCurrentRes], [aggPrevRes]] = await Promise.all([
-      client.runReport({ property: `properties/${propertyId}`, dateRanges: [{ startDate, endDate }], metrics: aggMetrics }),
-      client.runReport({ property: `properties/${propertyId}`, dateRanges: [{ startDate: prevStart, endDate: prevEnd }], metrics: aggMetrics }),
+      client.runReport({ property: `properties/${propertyId}`, dateRanges: [{ startDate, endDate }], metrics: aggMetrics, dimensionFilter: deviceFilter }),
+      client.runReport({ property: `properties/${propertyId}`, dateRanges: [{ startDate: prevStart, endDate: prevEnd }], metrics: aggMetrics, dimensionFilter: deviceFilter }),
     ]);
 
     // Purchase-specific session count — for accurate purchase CVR
@@ -67,8 +77,12 @@ export async function GET(req: NextRequest) {
       filter: { fieldName: 'eventName', stringFilter: { value: 'purchase' } },
     };
     const [[purchaseCurrentRes], [purchasePrevRes]] = await Promise.all([
-      client.runReport({ property: `properties/${propertyId}`, dateRanges: [{ startDate, endDate }], metrics: [{ name: 'sessions' }], dimensionFilter: purchaseFilter }),
-      client.runReport({ property: `properties/${propertyId}`, dateRanges: [{ startDate: prevStart, endDate: prevEnd }], metrics: [{ name: 'sessions' }], dimensionFilter: purchaseFilter }),
+      client.runReport({ property: `properties/${propertyId}`, dateRanges: [{ startDate, endDate }], metrics: [{ name: 'sessions' }], dimensionFilter: deviceFilter
+        ? { andGroup: { expressions: [purchaseFilter, deviceFilter] } }
+        : purchaseFilter }),
+      client.runReport({ property: `properties/${propertyId}`, dateRanges: [{ startDate: prevStart, endDate: prevEnd }], metrics: [{ name: 'sessions' }], dimensionFilter: deviceFilter
+        ? { andGroup: { expressions: [purchaseFilter, deviceFilter] } }
+        : purchaseFilter }),
     ]);
 
     // Traffic by source/medium
@@ -79,6 +93,7 @@ export async function GET(req: NextRequest) {
       metrics: [{ name: 'sessions' }, { name: 'conversions' }, { name: 'activeUsers' }, { name: 'purchaseRevenue' }, { name: 'sessionConversionRate' }],
       orderBys: [{ metric: { metricName: 'sessions' }, desc: true }],
       limit: 20,
+      dimensionFilter: deviceFilter,
     });
 
     // Device category
@@ -103,6 +118,7 @@ export async function GET(req: NextRequest) {
         { name: 'sessionConversionRate' },
       ],
       orderBys: [{ dimension: { dimensionName: 'date' } }],
+      dimensionFilter: deviceFilter,
     });
 
     // Previous year sources
@@ -113,6 +129,7 @@ export async function GET(req: NextRequest) {
       metrics: [{ name: 'sessions' }, { name: 'conversions' }, { name: 'activeUsers' }, { name: 'purchaseRevenue' }, { name: 'sessionConversionRate' }],
       orderBys: [{ metric: { metricName: 'sessions' }, desc: true }],
       limit: 20,
+      dimensionFilter: deviceFilter,
     });
 
     // Previous year devices
@@ -160,6 +177,7 @@ export async function GET(req: NextRequest) {
       metrics: [{ name: 'sessions' }, { name: 'activeUsers' }, { name: 'conversions' }],
       orderBys: [{ metric: { metricName: 'sessions' }, desc: true }],
       limit: 20,
+      dimensionFilter: deviceFilter,
     });
 
     const daily = dailyRes.rows?.map(row => ({

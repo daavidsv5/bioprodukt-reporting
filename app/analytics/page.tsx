@@ -150,6 +150,7 @@ export default function AnalyticsPage() {
   const [data, setData]             = useState<GA4Data | null>(null);
   const [loading, setLoading]       = useState(true);
   const [error, setError]           = useState<string | null>(null);
+  const [deviceFilter, setDeviceFilter] = useState<FunnelDevice>('all');
   const [funnelDevice, setFunnelDevice] = useState<FunnelDevice>('desktop');
 
   useEffect(() => {
@@ -158,7 +159,8 @@ export default function AnalyticsPage() {
     const { start, end } = getDateRange(filters);
     const fmt = (d: Date) => d.toISOString().split('T')[0];
     const country = filters.countries.length === 1 && filters.countries[0] === 'sk' ? 'sk' : 'cz';
-    fetch(`/api/analytics?from=${fmt(start)}&to=${fmt(end)}&country=${country}`)
+    const deviceParam = deviceFilter !== 'all' ? `&device=${deviceFilter}` : '';
+    fetch(`/api/analytics?from=${fmt(start)}&to=${fmt(end)}&country=${country}${deviceParam}`)
       .then(r => r.json())
       .then(json => {
         if (json.error) { setError(json.error); setData(null); }
@@ -167,7 +169,7 @@ export default function AnalyticsPage() {
       .catch(() => setError('Nepodařilo se načíst data'))
       .finally(() => setLoading(false));
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [filters.timePeriod, filters.countries]);
+  }, [filters.timePeriod, filters.countries, deviceFilter]);
 
   const cur  = data?.totals.current;
   const prev = data?.totals.previous;
@@ -200,9 +202,35 @@ export default function AnalyticsPage() {
     return result;
   }) ?? [];
 
+  // Selektor řídí celý přehled i trychtýř najednou, aby se nemohly rozejít
+  const handleDeviceFilter = (d: FunnelDevice) => {
+    setDeviceFilter(d);
+    setFunnelDevice(d);
+  };
+
   return (
     <div className="space-y-6 py-2">
-      <h1 className="text-xl font-bold text-slate-900">Návštěvnost (GA4)</h1>
+      <div className="flex items-center justify-between flex-wrap gap-3">
+        <h1 className="text-xl font-bold text-slate-900">Návštěvnost (GA4)</h1>
+        <div className="flex items-center gap-1 bg-slate-100 rounded-lg p-1">
+          {(['all', 'desktop', 'mobile', 'tablet'] as FunnelDevice[]).map(d => (
+            <button
+              key={d}
+              onClick={() => handleDeviceFilter(d)}
+              className={`flex items-center gap-1.5 px-3 py-1.5 rounded-md text-xs font-medium transition-colors ${
+                deviceFilter === d
+                  ? 'bg-white text-slate-800 shadow-sm'
+                  : 'text-slate-500 hover:text-slate-700'
+              }`}
+            >
+              {d === 'desktop' && <Monitor size={13} />}
+              {d === 'mobile'  && <Smartphone size={13} />}
+              {d === 'tablet'  && <Tablet size={13} />}
+              {FUNNEL_DEVICE_LABELS[d]}
+            </button>
+          ))}
+        </div>
+      </div>
 
       {loading && <p className="text-slate-400 text-sm">Načítám data z Google Analytics…</p>}
 
