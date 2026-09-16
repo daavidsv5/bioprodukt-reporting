@@ -15,6 +15,9 @@ export interface DailyRecord {
 /** Exchange rate used when combining CZK + EUR in a single view */
 export const EUR_TO_CZK = 25;
 
+/** Od tohoto data obsahuje marginDataCZ nákupní ceny; dřív purchaseCost = 0 (marže 100 %). */
+export const CZ_PURCHASE_COST_FROM = '2024-12-01';
+
 export interface KpiData {
   revenuevat: number;
   revenue: number;

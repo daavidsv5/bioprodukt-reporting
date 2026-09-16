@@ -478,3 +478,20 @@ ve všech 6 projektech.
 
 U Bioproduktu má `purchaseCurrentRes`/`purchasePrevRes` vlastní `purchaseFilter` na `eventName`;
 filtr zařízení se s ním kombinuje přes `andGroup`, ne přepisem.
+
+## `/dashboard` — Skupiny KPI boxů, POAS a LTV (2026-09-16)
+
+Převzato ze Sardinerie reportingu.
+
+KPI boxy jsou rozdělené do skupin s nadpisem (`KpiGroup` v `app/dashboard/page.tsx`), řazeno jako výsledovka:
+**Obrat** → **Ziskovost** → **Marketingová efektivita** → **Náklady a zisk na objednávku / zákazníka** + **Hodnota zákazníka** (štítek „celé období“).
+Hrubý zisk a Hrubý zisk % zůstávají zelené (`variant='green'`), samostatný řádek Hrubého zisku zrušen.
+
+**POAS** = `Marže / Marketingové investice` (marže z tržeb bez DPH), formát `2,40×`, s YoY. 1,0× = marketing spotřebuje celou marži.
+**Graf POAS (YoY)** na 5. pozici mezi grafy (`components/charts/PoasChart.tsx`) — denní marže / denní náklady, loňská řada posunutá o +1 rok, dny bez nákladů = `null`, referenční čára 1,0×.
+
+Doplněny boxy **LTV (bez DPH)**, **Ziskové LTV**, **Poměr LTV a CAC (dle marže)**. Graf POAS vložen před AOV (grafy tu jsou rozepsané přímo v `app/dashboard/page.tsx`, ne v `KpiLineCharts`).
+
+**Upozornění na starou CZ marži:** `marginDataCZ` má nákupní ceny až od `CZ_PURCHASE_COST_FROM = '2024-12-01'` (`data/types.ts`). Pokud je ve filtru CZ a období zasahuje před toto datum, boxy z marže a graf POAS zobrazí oranžovou poznámku (prop `note` v `KpiCard`).
+
+Stránka `/hlavni-dashboard` v projektu neexistuje — grafy POAS/LTV z Hlavního Dashboardu ostatních projektů se sem zatím nepřenášely.
