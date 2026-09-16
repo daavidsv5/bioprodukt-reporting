@@ -38,7 +38,8 @@ function TopBarInner({ filters, onChange }: TopBarProps) {
   const isRetention = pathname === '/retention' || pathname === '/crosssell';
   const isAnalytics = pathname === '/analytics';
   const isMainDashboard = pathname === '/main';
-  const isProfitPlanner = pathname === '/profit-planner';
+  // /slovnik nepoužívá filtry → skrýt stejně jako u Profit Planneru
+  const isProfitPlanner = pathname === '/profit-planner' || pathname === '/slovnik';
 
   // Main dashboard local controls (via URL params)
   const mainCountry = (searchParams.get('country') ?? 'all') as 'cz' | 'sk' | 'all';

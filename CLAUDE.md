@@ -495,3 +495,17 @@ Doplněny boxy **LTV (bez DPH)**, **Ziskové LTV**, **Poměr LTV a CAC (dle mar�
 **Upozornění na starou CZ marži:** `marginDataCZ` má nákupní ceny až od `CZ_PURCHASE_COST_FROM = '2024-12-01'` (`data/types.ts`). Pokud je ve filtru CZ a období zasahuje před toto datum, boxy z marže a graf POAS zobrazí oranžovou poznámku (prop `note` v `KpiCard`).
 
 Stránka `/hlavni-dashboard` v projektu neexistuje — grafy POAS/LTV z Hlavního Dashboardu ostatních projektů se sem zatím nepřenášely.
+
+## `/slovnik` — Slovník klíčových metrik (2026-09-16)
+
+Převzato ze Sardinerie reportingu. Stránka pro management: u každé metriky **co vyjadřuje**, **jak se počítá** (vzorec odpovídá kódu), **kde se v aplikaci zobrazuje**, **orientační benchmark** segmentu, případné **upozornění** a **aktuální hodnota** e-shopu za posledních 12 měsíců se štítkem „v pořádku“ / „ke sledování“.
+
+- **`lib/metricsGlossary.ts`** — obsah (segment, `METRICS`, `CATEGORY_LABELS`, `VALUE_LABEL`, `VALUE_SCOPE`). Při změně výpočtu metriky v aplikaci aktualizovat i vzorec zde.
+- **`lib/glossaryValues.ts`** — hook `useCurrentValues()` + společné `computeValues()` (stejné vzorce jako `/dashboard`). CZ + SK v Kč (`eurToCzk`) přímo z `realDataCZ`/`realDataSK` (ne `mockData`, které obsahuje generovaná SK data před spuštěním SK).
+- **`app/slovnik/page.tsx`** — jen vykreslení: vyhledávání, filtr kategorií, ohraničené boxy (`border-2 border-blue-800`) s vnitřními rámečky Co vyjadřuje / Výpočet / Benchmark.
+- **Sidebar:** skupina „Nápověda“ → Slovník klíčových metrik. **TopBar** na `/slovnik` skrývá selektor trhu i období.
+- **Benchmarky jsou orientační** rozpětí z praxe e-shopů v segmentu (zdravé ovocné snacky), ne oficiální statistika. Štítek: `better` higher/lower/range + `min`/`max`; u AOV se hodnotí jen spodní hranice (vyšší AOV není problém).
+- **Texty bez pomlček:** rozpětí „10 až 20 %“, vsuvky čárkou nebo dvojtečkou, zkratky jako „PNO (podíl nákladů na obratu)“. Matematické minus (−) ve vzorcích zůstává.
+- 33 metrik vč. Meta Ads. Benchmark PNO zmiňuje interní cíl 22 % z auditu 9/2026.
+- TopBar: `/slovnik` je přidaný do podmínky `isProfitPlanner` (skrytí filtrů), `isGlossary` se tu nepoužívá.
+- Hlavní Dashboard je na `/main` a nemá grafy POAS/LTV, slovník je u těchto metrik neuvádí.

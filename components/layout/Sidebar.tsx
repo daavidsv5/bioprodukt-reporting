@@ -3,7 +3,7 @@
 import React from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { BarChart2, LayoutDashboard, LayoutGrid, ShoppingCart, TrendingUp, Package, Brain, PieChart, Users, ShieldCheck, LogOut, X, GitMerge, KeyRound, Activity, Truck, Archive, Facebook } from 'lucide-react';
+import { BarChart2, LayoutDashboard, LayoutGrid, ShoppingCart, TrendingUp, Package, Brain, PieChart, Users, ShieldCheck, LogOut, X, GitMerge, KeyRound, Activity, Truck, Archive, Facebook, BookOpen } from 'lucide-react';
 import { useSession, signOut } from 'next-auth/react';
 import { useSidebar } from './ConditionalLayout';
 
@@ -49,6 +49,12 @@ const navGroups: NavGroup[] = [
     items: [
       { icon: Activity, label: 'Webová návštěvnost (GA4)', href: '/analytics' },
       { icon: Facebook, label: 'Meta Ads',                 href: '/meta' },
+    ],
+  },
+  {
+    label: 'Nápověda',
+    items: [
+      { icon: BookOpen, label: 'Slovník klíčových metrik', href: '/slovnik' },
     ],
   },
 ];
