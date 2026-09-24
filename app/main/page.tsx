@@ -214,7 +214,7 @@ export default function MainDashboardPage() {
   return (
     <div className="space-y-6">
       <div>
-        <h1 className="text-xl font-bold text-slate-900">Hlavní Dashboard</h1>
+        <h1 className="text-xl font-bold text-slate-900">Měsíční přehled</h1>
         <p className="text-sm text-slate-500 mt-0.5">
           Měsíční přehled klíčových metrik · srovnání s předchozím rokem
         </p>

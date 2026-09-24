@@ -4,6 +4,7 @@ import { realDataSK } from '@/data/realDataSK';
 import { marginDataCZ } from '@/data/marginDataCZ';
 import { marginDataSK } from '@/data/marginDataSK';
 import { EUR_TO_CZK } from '@/data/types';
+import type { KpiRow } from '@/lib/kpiMetrics';
 
 export type MainCountry = 'cz' | 'sk' | 'all';
 
@@ -53,6 +54,7 @@ function aggregateByMonth(
   marginData: { date: string; purchaseCost: number; revenue: number }[],
   yearStr: string,
   multiplier = 1,
+  dateFilter?: (date: string) => boolean,
 ): Map<number, MonthAgg> {
   const result = new Map<number, MonthAgg>();
 
@@ -62,6 +64,7 @@ function aggregateByMonth(
 
   for (const r of realData) {
     if (!r.date.startsWith(yearStr)) continue;
+    if (dateFilter && !dateFilter(r.date)) continue;
     const m = parseInt(r.date.substring(5, 7), 10);
     const acc = result.get(m)!;
     acc.day.revenue += r.revenue * multiplier;
@@ -71,6 +74,7 @@ function aggregateByMonth(
 
   for (const r of marginData) {
     if (!r.date.startsWith(yearStr)) continue;
+    if (dateFilter && !dateFilter(r.date)) continue;
     const m = parseInt(r.date.substring(5, 7), 10);
     const acc = result.get(m)!;
     acc.margin.purchaseCost += r.purchaseCost * multiplier;
@@ -194,4 +198,33 @@ export function useMainDashboard(country: MainCountry, year: number): MonthlyPoi
       };
     });
   }, [country, year]);
+}
+
+/** Roční součty pro Roční přehled (/rocni-prehled): stejná agregace jako Měsíční přehled,
+ *  `dateFilter` omezí dny (cutoff / stejné období loni). SK se ve „Vše“ přepočítá na Kč. */
+export function aggregateKpiYear(
+  country: MainCountry,
+  year: number,
+  dateFilter?: (date: string) => boolean,
+): KpiRow {
+  const yearStr = String(year);
+  const agg = country === 'all'
+    ? mergeAgg(
+        aggregateByMonth(realDataCZ, marginDataCZ, yearStr, 1, dateFilter),
+        aggregateByMonth(realDataSK, marginDataSK, yearStr, EUR_TO_CZK, dateFilter),
+      )
+    : aggregateByMonth(
+        country === 'cz' ? realDataCZ : realDataSK,
+        country === 'cz' ? marginDataCZ : marginDataSK,
+        yearStr, 1, dateFilter,
+      );
+  const out: KpiRow = { revenue: 0, orders: 0, cost: 0, purchaseCost: 0, marginRev: 0 };
+  for (const { day, margin } of agg.values()) {
+    out.revenue      += day.revenue;
+    out.orders       += day.orders;
+    out.cost         += day.cost;
+    out.purchaseCost += margin.purchaseCost;
+    out.marginRev    += margin.revenue;
+  }
+  return out;
 }

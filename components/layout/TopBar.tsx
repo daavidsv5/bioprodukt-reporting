@@ -8,6 +8,7 @@ import { formatDate } from '@/lib/formatters';
 import { Menu, Clock } from 'lucide-react';
 import { useSidebar } from './ConditionalLayout';
 import { LAST_UPDATE } from '@/data/lastUpdate';
+import { useRocniPrehled } from '@/hooks/useRocniPrehled';
 
 const CURRENT_YEAR = new Date().getFullYear();
 const AVAILABLE_YEARS = Array.from({ length: CURRENT_YEAR - 2023 }, (_, i) => 2024 + i).reverse();
@@ -38,6 +39,8 @@ function TopBarInner({ filters, onChange }: TopBarProps) {
   const isRetention = pathname === '/retention' || pathname === '/crosssell';
   const isAnalytics = pathname === '/analytics';
   const isMainDashboard = pathname === '/main';
+  const isRocniPrehled = pathname === '/rocni-prehled';
+  const rocni = useRocniPrehled();
   // /slovnik nepoužívá filtry → skrýt stejně jako u Profit Planneru
   const isProfitPlanner = pathname === '/profit-planner' || pathname === '/slovnik';
 
@@ -117,8 +120,53 @@ function TopBarInner({ filters, onChange }: TopBarProps) {
         </>
       )}
 
+      {/* Roční přehled — Vše/CZ/SK + výběr roků (více voleb) */}
+      {isRocniPrehled && (
+        <>
+          <div className="flex rounded-lg border border-slate-200 overflow-hidden bg-white flex-shrink-0">
+            {([
+              { value: 'all', label: 'Vše' },
+              { value: 'cz',  label: '🇨🇿 CZ' },
+              { value: 'sk',  label: '🇸🇰 SK' },
+            ] as const).map(({ value, label }, idx) => (
+              <button
+                key={value}
+                onClick={() => rocni.setCountry(value)}
+                className={`px-3 md:px-4 py-1.5 text-sm font-medium transition-colors focus:outline-none ${
+                  idx > 0 ? 'border-l border-slate-200' : ''
+                } ${rocni.country === value ? 'bg-blue-600 text-white' : 'text-slate-600 hover:bg-slate-50'}`}
+              >
+                {label}
+              </button>
+            ))}
+          </div>
+          <div className="h-6 w-px bg-slate-100 hidden md:block flex-shrink-0" />
+          <div className="flex items-center gap-1.5 flex-shrink-0">
+            <span className="text-xs text-slate-400 font-medium hidden sm:inline">Roky:</span>
+            <div className="flex rounded-lg border border-slate-200 overflow-hidden bg-white">
+              {rocni.yearInfos.map(({ year, partial }, idx) => {
+                const active = rocni.selectedYears.includes(year);
+                return (
+                  <button
+                    key={year}
+                    onClick={() => rocni.toggleYear(year)}
+                    aria-pressed={active}
+                    title={partial ? 'Neúplný rok, objednávky nejsou od 1. 1.' : undefined}
+                    className={`px-3 py-1.5 text-sm font-medium transition-colors focus:outline-none ${
+                      idx > 0 ? 'border-l border-slate-200' : ''
+                    } ${active ? 'bg-blue-600 text-white' : 'text-slate-600 hover:bg-slate-50'}`}
+                  >
+                    {year}{partial ? '*' : ''}
+                  </button>
+                );
+              })}
+            </div>
+          </div>
+        </>
+      )}
+
       {/* Country segmented control — hidden on retention + main dashboard + profit planner page */}
-      {!isRetention && !isMainDashboard && !isProfitPlanner && (
+      {!isRetention && !isMainDashboard && !isRocniPrehled && !isProfitPlanner && (
         <div className="flex items-center gap-1.5 flex-shrink-0">
           <span className="text-xs text-slate-400 font-medium hidden sm:inline">Trh:</span>
           <div className="flex rounded-lg border border-slate-200 overflow-hidden bg-white">
@@ -161,10 +209,10 @@ function TopBarInner({ filters, onChange }: TopBarProps) {
       )}
 
       {/* Divider — desktop only */}
-      {!isRetention && !isMainDashboard && !isProfitPlanner && <div className="h-6 w-px bg-slate-100 hidden md:block flex-shrink-0" />}
+      {!isRetention && !isMainDashboard && !isRocniPrehled && !isProfitPlanner && <div className="h-6 w-px bg-slate-100 hidden md:block flex-shrink-0" />}
 
       {/* Time period — hidden on main dashboard + profit planner */}
-      {!isMainDashboard && !isProfitPlanner && (
+      {!isMainDashboard && !isRocniPrehled && !isProfitPlanner && (
         <div className="flex items-center gap-1.5 flex-shrink-0">
           <span className="text-xs text-slate-400 font-medium hidden sm:inline">Období:</span>
           <select
@@ -180,7 +228,7 @@ function TopBarInner({ filters, onChange }: TopBarProps) {
       )}
 
       {/* Custom date range */}
-      {!isMainDashboard && !isProfitPlanner && filters.timePeriod === 'custom' && (
+      {!isMainDashboard && !isRocniPrehled && !isProfitPlanner && filters.timePeriod === 'custom' && (
         <div className="flex items-center gap-1.5 flex-wrap flex-shrink-0">
           <input
             type="date"
@@ -199,7 +247,7 @@ function TopBarInner({ filters, onChange }: TopBarProps) {
       )}
 
       {/* Date range label — hidden on main dashboard + profit planner */}
-      {!isMainDashboard && !isProfitPlanner && (
+      {!isMainDashboard && !isRocniPrehled && !isProfitPlanner && (
         <div className="text-xs md:text-sm text-slate-500 hidden sm:block flex-shrink-0">
           <span className="font-medium text-slate-700">{formatDate(start)}</span>
           <span className="mx-1.5 text-slate-300">–</span>
